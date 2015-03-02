@@ -1,5 +1,9 @@
-BFH carme-m4 linuxsupport
+BFH stm32f4 discovery linuxsupport
 ============================
+
+#TODO
+Adjust this readme
+
 
 ## Synopsis
 
