@@ -11,8 +11,9 @@
 #define DISPLAY_Y 100
 
 QColor colorFromRGB565(uint16_t color) {
+
     int R8 = (int) floor( (color>>(5+6)) * 255.0 / 31.0 + 0.5);
-    int G8 = (int) floor( ((color>>5)&0x2F) * 255.0 / 63.0 + 0.5);
+    int G8 = (int) floor( ((color>>5)&0x3F) * 255.0 / 63.0 + 0.5);
     int B8 = (int) floor( (color&0x1F) * 255.0 / 31.0 + 0.5);
     return QColor::fromRgb(R8,G8,B8);
 }
