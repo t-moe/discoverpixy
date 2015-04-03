@@ -13,7 +13,8 @@ CONFIG += staticlib
 SOURCES += \
     mainwindow.cpp \
     main.cpp \
-    ll_tft.cpp
+    ll_tft.cpp \
+    ll_system.cpp
 HEADERS += \
     mainwindow.h \
 

@@ -16,9 +16,15 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     void draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+    void draw_pixel(uint16_t x,uint16_t y,uint16_t color);
+    void clear(uint16_t color);
+    void draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+    void fill_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+    void draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint8_t* dat);
+
+
 protected:
      void paintEvent(QPaintEvent * evt);
-
     ~MainWindow();
 
 private:
@@ -26,5 +32,6 @@ private:
     QPixmap pixmap;
 
     Ui::MainWindow *ui;
+
 };
 #endif // MAINWINDOW_H
