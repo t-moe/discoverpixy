@@ -1,0 +1,8 @@
+build
+obj
+*.user
+qt/*.o
+qt/*.a
+qt/ui_*
+qt/moc_*
+qt/Makefile
