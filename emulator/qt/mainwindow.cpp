@@ -10,7 +10,7 @@
 #define DISPLAY_X 10
 #define DISPLAY_Y 10
 
-QColor colorFromRGB565(uint16_t color) {
+QColor QColorFromRGB565(uint16_t color) {
 
     int R8 = (int) floor( (color>>(5+6)) * 255.0 / 31.0 + 0.5);
     int G8 = (int) floor( ((color>>5)&0x3F) * 255.0 / 63.0 + 0.5);
@@ -18,81 +18,92 @@ QColor colorFromRGB565(uint16_t color) {
     return QColor::fromRgb(R8,G8,B8);
 }
 
+QRgb QRgbFromRGB565(uint16_t color) {
+
+    int R8 = (int) floor( (color>>(5+6)) * 255.0 / 31.0 + 0.5);
+    int G8 = (int) floor( ((color>>5)&0x3F) * 255.0 / 63.0 + 0.5);
+    int B8 = (int) floor( (color&0x1F) * 255.0 / 31.0 + 0.5);
+    return qRgb(R8,G8,B8);
+}
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    pixmap(DISPLAY_WIDTH,DISPLAY_HEIGHT),
+    image(DISPLAY_WIDTH,DISPLAY_HEIGHT,QImage::Format_RGB16),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    image.fill(Qt::black);
 }
 
 void MainWindow::draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
 {
-
-    render_mutex.lock();
-    QPainter painter(&(pixmap));
-    painter.setPen(colorFromRGB565(color));
+    //render_mutex.lock();
+    QPainter painter(&(image));
+    painter.setPen(QColorFromRGB565(color));
     painter.drawLine(x1,y1,x2,y2);
-    render_mutex.unlock();
+    //render_mutex.unlock();
+    update();
 }
 
 void MainWindow::draw_pixel(uint16_t x, uint16_t y, uint16_t color)
 {
-    render_mutex.lock();
-    QPainter painter(&(pixmap));
-    painter.setPen(colorFromRGB565(color));
-    painter.drawPoint(x,y);
-    render_mutex.unlock();
+    //render_mutex.lock();
+    image.setPixel(x,y,QRgbFromRGB565(color));
+    //render_mutex.unlock();
+    update();
 }
 
 void MainWindow::clear(uint16_t color)
 {
-    render_mutex.lock();
-    pixmap.fill(colorFromRGB565(color));
-    render_mutex.unlock();
+    //render_mutex.lock();
+    image.fill(QColorFromRGB565(color));
+    //render_mutex.unlock();
+    update();
 }
 
 void MainWindow::draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
 {
-    render_mutex.lock();
-    QPainter painter(&(pixmap));
-    painter.setPen(colorFromRGB565(color));
-    painter.drawRect(x1,y1,x2,y2);
-    render_mutex.unlock();
+    //render_mutex.lock();
+    QPainter painter(&(image));
+    painter.setPen(QColorFromRGB565(color));
+    painter.drawRect(x1,y1,abs(x2-x1)+1,abs(y2-y1)+1);
+    //render_mutex.unlock();
+    update();
 }
 
 void MainWindow::fill_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
 {
-    render_mutex.lock();
-    QPainter painter(&(pixmap));
-    painter.fillRect(x1,y1,x2,y2,colorFromRGB565(color));
-    render_mutex.unlock();
+    //render_mutex.lock();
+    QPainter painter(&(image));
+    painter.fillRect(x1,y1,abs(x2-x1)+1,abs(y2-y1)+1,QColorFromRGB565(color));
+    //render_mutex.unlock();
+    update();
 }
 
-void MainWindow::draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint8_t *dat)
+void MainWindow::draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t *dat)
 {
-    render_mutex.lock();
-    QPainter painter(&(pixmap));
+    //render_mutex.lock();
 
     for(int yi=0; yi<height; yi++) {
         for(int xi=0; xi<width; xi++) {
-            painter.setPen(colorFromRGB565(dat[yi*width+xi]));
-            painter.drawPoint(x+xi,y+yi);
+            image.setPixel(x+xi,y+yi,QRgbFromRGB565(dat[yi*width+xi]));
         }
     }
-    render_mutex.unlock();
+
+    //render_mutex.unlock();
+    update();
 }
 
 void MainWindow::paintEvent(QPaintEvent *)
 {
-  render_mutex.lock();
+  //render_mutex.lock();
   QPainter painter(this);
 
-  painter.drawPixmap(DISPLAY_X,DISPLAY_Y,pixmap);
+  painter.drawImage(DISPLAY_X,DISPLAY_Y,image);
   painter.setPen(QPen(Qt::green,2));
   painter.drawRect(DISPLAY_X-1,DISPLAY_Y-1,DISPLAY_WIDTH+2,DISPLAY_HEIGHT+2);
-  render_mutex.unlock();
+  //render_mutex.unlock();
 }
 
 

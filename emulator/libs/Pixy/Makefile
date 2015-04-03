@@ -17,7 +17,7 @@ OBJ_DIR=./obj
 #Architecture flags
 
 #Compiler, Linker Options
-CPPFLAGS=-I$(INC_DIR) -D__LINUX__=1 -DHOST=1 -DDEBUG=1
+CPPFLAGS=-I$(INC_DIR) -D__LINUX__=1 -DHOST=1 #-DDEBUG=1
 CFLAGS=$(ARCH_FLAGS) -O0 -g #-ffunction-sections -fdata-sections -g
 #CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 #CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
