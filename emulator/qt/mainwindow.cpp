@@ -7,8 +7,8 @@
 
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
-#define DISPLAY_X 100
-#define DISPLAY_Y 100
+#define DISPLAY_X 10
+#define DISPLAY_Y 10
 
 QColor colorFromRGB565(uint16_t color) {
 
