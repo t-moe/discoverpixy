@@ -9,21 +9,26 @@ COMMON_DIR=../common
 
 #Tools
 CC=gcc
+GDB=gdb
+
 
 MAKE=make
 MKDIR=mkdir -p
 RM=rm -f
 RMDIR=rm -rf
 
-
-COMMON_INC=-I$(COMMON_DIR)/lowlevel -I$(COMMON_DIR)/tft
+INCLUDES=$(shell  find $(COMMON_DIR) -maxdepth 1 -type d ! -path $(COMMON_DIR) ! -path \*/libs)
+INCLUDES+=$(COMMON_DIR)/libs/Pixy
+INCLUDES:=$(addprefix -I,$(INCLUDES))
 QT_LIB=$(QT_DIR)/libemulatorqt.a
 
 
-CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(COMMON_INC)
+CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(INCLUDES)
 CFLAGS= -O0 -g
 
-LDFLAGS= -L$(QT_DIR) -lQt5Core -lQt5Gui -lQt5Widgets -lemulatorqt -lm -lstdc++ 
+
+LIBS=Qt5Core Qt5Gui Qt5Widgets emulatorqt m stdc++
+LDFLAGS= -L$(QT_DIR) $(addprefix -l,$(LIBS)) 
 
 #Finding Input files
 CFILES=$(shell find . -maxdepth 1 -name '*.c')
@@ -35,10 +40,16 @@ COMMON_OBJS=$(patsubst $(COMMON_DIR)/%,$(OBJ_DIR)/%,$(COMMON_CFILES:.c=.o))
 
 
 #Mark targets which are not "file-targets"
-.PHONY: all clean 
+.PHONY: all clean run debug 
 
 # List of all binaries to build
 all: $(BUILD_DIR)/$(TARGET) $(OBJS) $(QT_LIB) 
+
+run: all
+	./build/emulator
+
+debug: all
+	$(GDB) ./build/emulator
 
 $(QT_LIB): 
 	cd $(QT_DIR) && qmake &&make

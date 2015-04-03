@@ -1,0 +1,6 @@
+build/
+obj/
+
+libs/*/obj
+libs/*/*.a
+libs/*/*.o
