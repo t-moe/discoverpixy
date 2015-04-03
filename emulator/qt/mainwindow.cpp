@@ -4,7 +4,6 @@
 #include <QPainter>
 #include <math.h>
 
-
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
 #define DISPLAY_X 10
@@ -83,14 +82,19 @@ void MainWindow::fill_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t 
 
 void MainWindow::draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t *dat)
 {
-    //render_mutex.lock();
+    //Creating a new image and access it directly is faster than setPixel
+    QImage img(width,height,QImage::Format_RGB32);
 
     for(int yi=0; yi<height; yi++) {
+        uint32_t* line = (uint32_t*)img.scanLine(yi);
         for(int xi=0; xi<width; xi++) {
-            image.setPixel(x+xi,y+yi,QRgbFromRGB565(dat[yi*width+xi]));
+            *line++=QRgbFromRGB565(dat[yi*width+xi]);
         }
     }
 
+    //render_mutex.lock();
+    QPainter p(&image);
+    p.drawImage(x,y,img);
     //render_mutex.unlock();
     update();
 }
