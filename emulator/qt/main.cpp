@@ -17,7 +17,7 @@ void qt_init(int argc, char* argv[]) {
 }
 
 void app_loop() {
-    while(QApplication::activeWindow()!=NULL) {
+    while(!QApplication::closingDown()) {
         app_process();
         QApplication::processEvents();
     }

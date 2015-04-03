@@ -34,8 +34,7 @@ INCLUDES=$(LIB_DIR)/StmCoreNPheriph/inc
 INCLUDES+=$(LIB_DIR)/StmUsbHost/STM32_USB_Device_Specific 
 INCLUDES+=$(LIB_DIR)/StmUsbHost/STM32_USB_OTG_Driver/inc
 INCLUDES+=$(LIB_DIR)/StmUsbHost/STM32_USB_HOST_Library/Core/inc 
-INCLUDES+=$(shell  find $(COMMON_DIR) -maxdepth 1 -type d ! -path $(COMMON_DIR) ! -path \*/libs)
-INCLUDES+=$(COMMON_DIR)/libs/Pixy
+INCLUDES+=$(shell  find $(COMMON_DIR) -maxdepth 1 -type d ! -path $(COMMON_DIR))
 
 INCLUDES:=$(addprefix -I,$(INCLUDES))
 
@@ -47,7 +46,7 @@ CFLAGS=$(ARCH_FLAGS) -O0 -g
 LIBS=pixy usbhost coreperiph stdc++
 LIBSEARCHDIRS=$(LIB_DIR)/StmCoreNPheriph 
 LIBSEARCHDIRS+=$(LIB_DIR)/StmUsbHost 
-LIBSEARCHDIRS+=$(COMMON_DIR)/libs/Pixy
+LIBSEARCHDIRS+=$(LIB_DIR)/Pixy
 
 
 LDFLAGS=--specs=nosys.specs -Wl,--gc-sections

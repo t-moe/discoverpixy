@@ -279,14 +279,6 @@ extern "C"
   */
   int pixy_get_firmware_version(uint16_t * major, uint16_t * minor, uint16_t * build);
 
-  extern int USBH_LL_open();
-  extern int USBH_LL_close();
-  extern int USBH_LL_send(const uint8_t *data, uint32_t len, uint16_t timeoutMs);
-  extern int USBH_LL_receive(uint8_t *data, uint32_t len, uint16_t timeoutMs);
-  extern void USBH_LL_setTimer();
-  extern uint32_t USBH_LL_getTimer();
-
-
 #ifdef __cplusplus
 }
 #endif

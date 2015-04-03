@@ -12,7 +12,7 @@ MKDIR=mkdir -p
 
 #Directories
 SRC_DIR=./src
-INC_DIR=./
+INC_DIR=../../../common/pixy
 OBJ_DIR=./obj
 
 #Architecture flags

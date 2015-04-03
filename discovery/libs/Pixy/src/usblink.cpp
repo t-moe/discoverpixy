@@ -4,6 +4,16 @@
 #include "pixy.h"
 #include "debuglog.h"
 
+extern "C" {
+  extern int USBH_LL_open();
+  extern int USBH_LL_close();
+  extern int USBH_LL_send(const uint8_t *data, uint32_t len, uint16_t timeoutMs);
+  extern int USBH_LL_receive(uint8_t *data, uint32_t len, uint16_t timeoutMs);
+  extern void USBH_LL_setTimer();
+  extern uint32_t USBH_LL_getTimer();
+}
+
+
 USBLink::USBLink()
 {
   m_blockSize = 64;

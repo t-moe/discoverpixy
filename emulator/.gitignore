@@ -6,3 +6,9 @@ qt/*.a
 qt/ui_*
 qt/moc_*
 qt/Makefile
+
+
+libs/*/obj
+libs/*/*.a
+libs/*/*.o
+

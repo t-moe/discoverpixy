@@ -3,6 +3,8 @@ TARGET=emulator
 
 BUILD_DIR=./build
 OBJ_DIR=./obj
+LIB_DIR=./libs
+
 
 QT_DIR=./qt
 COMMON_DIR=../common
@@ -17,8 +19,7 @@ MKDIR=mkdir -p
 RM=rm -f
 RMDIR=rm -rf
 
-INCLUDES=$(shell  find $(COMMON_DIR) -maxdepth 1 -type d ! -path $(COMMON_DIR) ! -path \*/libs)
-INCLUDES+=$(COMMON_DIR)/libs/Pixy
+INCLUDES=$(shell  find $(COMMON_DIR) -maxdepth 1 -type d ! -path $(COMMON_DIR))
 INCLUDES:=$(addprefix -I,$(INCLUDES))
 QT_LIB=$(QT_DIR)/libemulatorqt.a
 
@@ -27,8 +28,13 @@ CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(INCLUDES)
 CFLAGS= -O0 -g
 
 
-LIBS=Qt5Core Qt5Gui Qt5Widgets emulatorqt m stdc++
+LIBS= pixy usb-1.0 boost_system boost_timer boost_chrono
+LIBS+=Qt5Core Qt5Gui Qt5Widgets emulatorqt m stdc++
+
+
 LDFLAGS= -L$(QT_DIR) $(addprefix -l,$(LIBS)) 
+LDFLAGS+= -L$(LIB_DIR)/Pixy 
+
 
 #Finding Input files
 CFILES=$(shell find . -maxdepth 1 -name '*.c')
