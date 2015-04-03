@@ -49,7 +49,7 @@ COMMON_OBJS=$(patsubst $(COMMON_DIR)/%,$(OBJ_DIR)/%,$(COMMON_CFILES:.c=.o))
 .PHONY: all clean run debug 
 
 # List of all binaries to build
-all: $(BUILD_DIR)/$(TARGET) $(OBJS) $(QT_LIB) 
+all: $(BUILD_DIR)/$(TARGET) 
 
 run: all
 	./build/emulator

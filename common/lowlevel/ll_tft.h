@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stdbool.h>
 
 bool ll_tft_init();
 void ll_tft_clear(uint16_t color);

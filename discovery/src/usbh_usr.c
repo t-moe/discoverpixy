@@ -221,14 +221,15 @@ void USBH_USR_OverCurrentDetected (void)
   * @retval Staus
   */
 
-int colorind;
+/*int colorind;
 const uint32_t colors [] = {0xFF0000, 0x00FF00,0x0000FF,0xFFFF00,0x00FFFF,0xFF00FF,0xFFFFFF,0x000000};
 const int num_colors = sizeof(colors)/sizeof(uint32_t);
+*/
 
 int USBH_USR_MSC_Application(void)
 {
 
-	if(colorind==0) {
+/*	if(colorind==0) {
 		pixy_led_set_max_current(5);
 	}
 
@@ -237,7 +238,7 @@ int USBH_USR_MSC_Application(void)
 	 return_value = pixy_command("led_set", INT32(colors[colorind++]), END_OUT_ARGS,  &response, END_IN_ARGS);
 	 colorind%=num_colors;
 	 USB_OTG_BSP_mDelay(500);
-
+*/
 
   return 0;
 }

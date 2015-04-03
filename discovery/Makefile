@@ -56,17 +56,20 @@ LDFLAGS+=$(addprefix -l,$(LIBS))
 #Finding Input files
 CFILES=$(shell find $(SRC_DIR) -name '*.c')
 SFILES=$(SRC_DIR)/startup.s
+COMMON_CFILES=$(shell find $(COMMON_DIR) -name '*.c')
+
 
 #Generate corresponding obj names
 SOBJS=$(SFILES:.s=.o)
 COBJS=$(CFILES:.c=.o)
 OBJS=$(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOBJS) $(COBJS))
-
-#Keep the objects files
-.SECONDARY: $(OBJS)
+COMMON_OBJS=$(patsubst $(COMMON_DIR)/%,$(OBJ_DIR)/%,$(COMMON_CFILES:.c=.o))
 
 #Mark targets which are not "file-targets"
 .PHONY: all debug flash start stop backup clean
+
+#keep objs files
+.SECONDARY: $(OBJS) $(COMMON_OBJS)
 
 # List of all binaries to build
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).bin
@@ -78,7 +81,7 @@ stop:
 	$(STUTIL) stop
 
 #objects to elf
-%.elf : $(OBJS)
+%.elf : $(OBJS) $(COMMON_OBJS)
 	@echo Linking...
 	$(MKDIR) $(BUILD_DIR)
 	$(CC) -o $@ $(CFLAGS) $(CPPFLAGS) -T./utils/stm32_flash.ld -Wl,-Map,$(BUILD_DIR)/$(TARGET).map $^ $(LDFLAGS) 
@@ -98,6 +101,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@echo Compiling $<...
 	$(MKDIR) $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+
+#common C files to objects
+$(OBJ_DIR)/%.o: $(COMMON_DIR)/%.c
+	@echo Compiling Common file $<...
+	$(MKDIR) $(dir $(patsubst $(COMMON_DIR)/%,$(OBJ_DIR)/%, $<))
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
 
 #Clean Obj files and builded stuff
