@@ -55,6 +55,12 @@ bool ll_system_init(void)
   return true;
 }
 
+void ll_system_process() {
+	USBH_Process(&USB_OTG_Core, &USB_Host);
+}
+
+
+
 void ll_system_delay(uint32_t msec) {
 	USB_OTG_BSP_mDelay(msec);
 }

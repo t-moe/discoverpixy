@@ -3,3 +3,4 @@
 
 bool system_init();
 void system_delay(uint32_t msec);
+void system_process();

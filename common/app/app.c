@@ -29,6 +29,10 @@ int pixy_frame_test();
 
 //app event loop
 void app_process() {
+	
+	system_process(); //Let the system handle it's pending events
+
+
 	//Note: The only way to detect that pixy has been disconnected is if a command fails. There's no pixy_is_connected method yet :'(
 
 	if(!pixy_connected) { //Pixy not connected

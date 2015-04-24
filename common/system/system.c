@@ -6,10 +6,10 @@ bool system_init() {
 	return ll_system_init();
 }
 
-
-
 void system_delay(uint32_t msec) {
 	ll_system_delay(msec);
 }
 
-
+void system_process() {
+	ll_system_process();
+}

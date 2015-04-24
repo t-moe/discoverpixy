@@ -181,7 +181,6 @@ int USBH_LL_open() {
 	}
 
 
-        //moved to common
 	cnt_int=0;
 	while(cnt_int<timeoutStartup) { //let pixy's led flashing pass	
 		USBH_Process(&USB_OTG_Core, &USB_Host);
