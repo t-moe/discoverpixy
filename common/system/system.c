@@ -13,3 +13,7 @@ void system_delay(uint32_t msec) {
 void system_process() {
 	ll_system_process();
 }
+
+void system_toggle_led() {
+	ll_system_toggle_led();
+}

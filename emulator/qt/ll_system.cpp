@@ -17,3 +17,6 @@ void ll_system_process() {
         QApplication::processEvents();
 }
 
+void ll_system_toggle_led() {
+
+}

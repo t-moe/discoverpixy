@@ -64,3 +64,8 @@ void ll_system_process() {
 void ll_system_delay(uint32_t msec) {
 	USB_OTG_BSP_mDelay(msec);
 }
+
+
+void ll_system_toggle_led() {	
+	STM_EVAL_LEDToggle(LED6);
+}

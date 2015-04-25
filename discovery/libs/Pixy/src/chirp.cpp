@@ -856,6 +856,10 @@ int Chirp::realloc(uint32_t min)
         min = m_bufSize+CRP_BUFSIZE;
     else
         min += CRP_BUFSIZE;
+    
+    if(min==m_bufSize) 
+        return CRP_RES_OK;
+
     uint8_t *newbuf = new (std::nothrow) uint8_t[min];
     if (newbuf==NULL)
         return CRP_RES_ERROR_MEMORY;

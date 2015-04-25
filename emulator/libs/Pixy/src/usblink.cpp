@@ -111,6 +111,7 @@ usblink_open__close_and_exit:
 
 usblink_open__exit:
   log("pixydebug: USBLink::open() returned %d\n", return_value);
+  usleep(100* 1000); //let pixy init pass
 
   return return_value;
 }
