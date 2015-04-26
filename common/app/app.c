@@ -1,15 +1,45 @@
 #include "app.h"
 #include "tft.h"
 #include "system.h"
+#include "touch.h"
 #include "pixy.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 bool pixy_connected = false;
 
+TOUCH_AREA_STRUCT a1;
+
+
+void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
+	
+	switch(triggeredAction) {
+		case PEN_DOWN:
+			printf("action PEN_DOWN\n");
+		break;
+
+		case PEN_UP:
+			printf("action PEN_UP\n");
+		break;
+		case PEN_MOVE:
+			printf("action PEN_MOVE\n");
+		break;
+		case PEN_ENTER:
+			printf("action PEN_ENTER\n");
+		break;
+		case PEN_LEAVE:
+			printf("action PEN_LEAVE\n");
+		break;
+		default:	
+		printf("action %s\n",triggeredAction);
+		break;
+	}
+}
+
 void app_init() {
 	system_init();
 	tft_init();
+	touch_init();
 
 	pixy_connected = (pixy_init()==0); //try to connect to pixy
 		
@@ -20,7 +50,21 @@ void app_init() {
 	tft_draw_rectangle(40,210,60,235,BLUE);
 	tft_fill_rectangle(100,215,200,225,GREEN);
 	tft_draw_line(10,215,310,225,RGB(0xFF,0,0xFF));
+
+
+	a1.hookedActions = PEN_DOWN | PEN_UP | PEN_MOVE | PEN_ENTER | PEN_LEAVE;
+	a1.x1 = 30;
+        a1.y1 = 30;
+        a1.x2 = 100;
+        a1.y2 = 60;
+        a1.callback = touchCB;
+	touch_register_area(&a1);
+
+	 tft_draw_rectangle(30,30,100,60,BLUE);
+
+
 }
+
 
 
 
@@ -122,7 +166,7 @@ int pixy_frame_test() {
 
 
 
-inline void interpolateBayer(uint16_t width, uint16_t x, uint16_t y, uint8_t *pixel, uint8_t* r, uint8_t* g, uint8_t* b)
+void interpolateBayer(uint16_t width, uint16_t x, uint16_t y, uint8_t *pixel, uint8_t* r, uint8_t* g, uint8_t* b)
 {
     if (y&1)
     {

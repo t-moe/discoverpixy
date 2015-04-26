@@ -25,11 +25,15 @@ public:
 
 protected:
      void paintEvent(QPaintEvent * evt);
+     void mousePressEvent(QMouseEvent* evt);
+     void mouseReleaseEvent(QMouseEvent* evt);
+     void mouseMoveEvent(QMouseEvent* evt);
     ~MainWindow();
 
 private:
     //QMutex render_mutex;
     QImage image;
+    void checkAndSendEvent(QPoint pos, bool down);
 
     Ui::MainWindow *ui;
 

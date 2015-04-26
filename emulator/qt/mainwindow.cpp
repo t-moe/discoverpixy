@@ -3,6 +3,11 @@
 #include <QDebug>
 #include <QPainter>
 #include <math.h>
+#include <QMouseEvent>
+
+extern "C" {
+    #include "touch.h"
+}
 
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
@@ -110,9 +115,38 @@ void MainWindow::paintEvent(QPaintEvent *)
   //render_mutex.unlock();
 }
 
+void MainWindow::mousePressEvent(QMouseEvent *evt)
+{
+    //qDebug() << "down" << evt->pos();
+    checkAndSendEvent(evt->pos(),true);
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *evt)
+{
+    //qDebug() << "up" << evt->pos();
+    checkAndSendEvent(evt->pos(),false);
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *evt)
+{
+   //qDebug() << "move" << evt->pos();
+    checkAndSendEvent(evt->pos(),true);
+
+}
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::checkAndSendEvent(QPoint pos, bool down)
+{
+    QPoint p = pos - QPoint(DISPLAY_X,DISPLAY_Y);
+    if(p.x()<0 || p.y()<0 || p.x() >= DISPLAY_WIDTH || p.y() >= DISPLAY_HEIGHT) return;
+
+    //qDebug() << down << p;
+
+    touch_add_raw_event(p.x(),p.y(),down?TOUCH_DOWN:TOUCH_UP);
 }
 

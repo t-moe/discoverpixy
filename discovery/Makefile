@@ -41,7 +41,7 @@ INCLUDES:=$(addprefix -I,$(INCLUDES))
 
 
 CPPFLAGS=-DUSE_USB_OTG_FS -DUSE_HOST_MODE $(INCLUDES) 
-CFLAGS=$(ARCH_FLAGS) -O0 -g
+CFLAGS=$(ARCH_FLAGS) -O0 -g -std=c99
 
 
 LIBS=pixy usbhost coreperiph stdc++
