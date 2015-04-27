@@ -3,6 +3,7 @@
 #include "system.h"
 #include "touch.h"
 #include "button.h"
+#include "checkbox.h"
 #include "pixy.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,8 +44,11 @@ void buttonCB(void* button) {
 	printf("button pressed\n");
 }
 
+CHECKBOX_STRUCT c1;
 
-
+void checkboxCB(void *checkbox, bool checked) {
+	printf("Checkbox %s\n",(checked?"checked":"unchecked"));
+}
 
 void app_init() {
 	system_init();
@@ -73,8 +77,8 @@ void app_init() {
 	tft_draw_rectangle(30,30,100,60,BLUE);
 	tft_print_line(30, 30, RED, BLUE, 0, "Hallo");*/
 
-	//b_alarm_ok    
-        b1.base.x1=25; //Start X of Button
+        //button test
+	b1.base.x1=25; //Start X of Button
         b1.base.y1=45; //Start Y of Button
         b1.base.x2=AUTO; //b1.base.x1+160; //Auto Calculate X2 with String Width
         b1.base.y2=AUTO; //Auto Calculate Y2 with String Height
@@ -84,6 +88,16 @@ void app_init() {
         b1.text="Hallo"; //Set Text (For formatted strings take sprintf)
         b1.callback=buttonCB; //Call b1_cb as Callback
         gui_button_add(&b1); //Register Button (and run the callback from now on)
+
+	//Checkbox test
+	c1.base.x1=220;
+	c1.base.y1=45;
+	c1.base.x2=c1.base.x1+16;
+	c1.base.y2=c1.base.y1+16;
+	c1.fgcolor = GREEN;
+	c1.checked = true;	
+	c1.callback = checkboxCB;
+	gui_checkbox_add(&c1);
 
 }
 
@@ -97,7 +111,8 @@ int pixy_frame_test();
 void app_process() {
 	
 	system_process(); //Let the system handle it's pending events
-	gui_button_redraw(&b1);
+	//gui_button_redraw(&b1);
+	///gui_checkbox_redraw(&c1);
 
 	//Note: The only way to detect that pixy has been disconnected is if a command fails. There's no pixy_is_connected method yet :'(
 
