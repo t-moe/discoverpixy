@@ -3,16 +3,6 @@
 
 // init functions
 bool ll_tft_init();
-bool ll_fsmc_init();
-bool ll_gpio_init();
-
-// display control functions
-void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value);
-uint16_t ll_tft_read_reg(uint8_t reg_adr);
-
-// fsmc functions
-
-// gpio functions
 
 // draw functions
 void ll_tft_clear(uint16_t color);

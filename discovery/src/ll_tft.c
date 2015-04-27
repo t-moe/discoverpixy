@@ -23,8 +23,22 @@
 #include "stm32f4xx_fsmc.h"
 
 /*
+ * ---------------------- prototypes --------------------------------------------------------------
+ */
+
+// init functions
+bool ll_fsmc_init();
+bool ll_gpio_init();
+bool ll_display_init();
+
+// display control functions
+void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value);
+uint16_t ll_tft_read_reg(uint8_t reg_adr);
+
+/*
  * ---------------------- defines and makros ------------------------------------------------------
  */
+
 // Colors
 #define DISPLAY_COLOR_BLACK          0x0000
 #define DISPLAY_COLOR_BLUE           0x001F
@@ -70,7 +84,25 @@
  * ---------------------- init functions ----------------------------------------------------------
  */
 
-bool ll_tft_init() 
+bool ll_tft_init()
+{
+    bool gpio, fsmc, display;
+
+    // init gpio
+    gpio = ll_gpio_init();
+    // delay
+    system_delay(TFT_INIT_TIMEOUT);
+    // init fsmc
+    fsmc = ll_fsmc_init();
+    // delay
+    system_delay(TFT_INIT_TIMEOUT);
+    // init display
+    display = ll_display_init();
+    
+    return (gpio & fsmc & display);
+}
+
+bool ll_display_init() 
 {
     ll_tft_write_reg(0x0007,0x0021);
     system_delay(TFT_INIT_TIMEOUT);
