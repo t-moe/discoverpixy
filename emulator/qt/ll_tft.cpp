@@ -5,7 +5,6 @@ extern "C" {
 #include "ll_tft.h"
 }
 
-
 MainWindow* mainwindow;
 
 bool ll_tft_init() {
@@ -19,7 +18,6 @@ bool ll_tft_init() {
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) {
     mainwindow->draw_line(x1,y1,x2,y2,color);
 }
-
 
 void ll_tft_clear(uint16_t color) {
     mainwindow->clear(color);
@@ -39,6 +37,10 @@ void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint
 
 void ll_tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat) {
     mainwindow->draw_bitmap_unscaled(x,y,width,height,dat);
+}
+
+void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color) {
+    mainwindow->draw_circle(x,y,r,color);
 }
 
 

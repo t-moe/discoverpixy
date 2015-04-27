@@ -17,6 +17,7 @@ void app_init() {
 	tft_draw_rectangle(40,210,60,235,BLUE);
 	tft_fill_rectangle(100,215,200,225,GREEN);
 	tft_draw_line(10,215,310,225,RGB(0xFF,0,0xFF));
+    tft_draw_circle(10,10,100, RED);
 }
 
 

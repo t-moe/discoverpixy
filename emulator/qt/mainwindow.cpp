@@ -26,11 +26,7 @@ QRgb QRgbFromRGB565(uint16_t color) {
 }
 
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    image(DISPLAY_WIDTH,DISPLAY_HEIGHT,QImage::Format_RGB16),
-    ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), image(DISPLAY_WIDTH,DISPLAY_HEIGHT, QImage::Format_RGB16), ui(new Ui::MainWindow){
     ui->setupUi(this);
     image.fill(Qt::black);
 }
@@ -95,6 +91,16 @@ void MainWindow::draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, ui
     //render_mutex.lock();
     QPainter p(&image);
     p.drawImage(x,y,img);
+    //render_mutex.unlock();
+    update();
+}
+
+void MainWindow::draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
+{
+    //render_mutex.lock();
+    QPainter painter(&(image));
+    painter.setPen(QColorFromRGB565(color));
+    painter.drawEllipse(QPoint(x,y), r, r);
     //render_mutex.unlock();
     update();
 }
