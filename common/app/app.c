@@ -2,14 +2,15 @@
 #include "tft.h"
 #include "system.h"
 #include "touch.h"
+#include "button.h"
 #include "pixy.h"
 #include <stdio.h>
 #include <stdlib.h>
 
+
 bool pixy_connected = false;
 
-TOUCH_AREA_STRUCT a1;
-
+/*TOUCH_AREA_STRUCT a1;
 
 void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
 	
@@ -34,7 +35,16 @@ void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
 		printf("action %s\n",triggeredAction);
 		break;
 	}
+}*/
+
+BUTTON_STRUCT b1;
+
+void buttonCB(void* button) {
+	printf("button pressed\n");
 }
+
+
+
 
 void app_init() {
 	system_init();
@@ -52,7 +62,7 @@ void app_init() {
 	tft_draw_line(10,215,310,225,RGB(0xFF,0,0xFF));
     	tft_draw_circle(10,10,100, RED);
 
-	a1.hookedActions = PEN_DOWN | PEN_UP | PEN_MOVE | PEN_ENTER | PEN_LEAVE;
+	/*a1.hookedActions = PEN_DOWN | PEN_UP | PEN_MOVE | PEN_ENTER | PEN_LEAVE;
 	a1.x1 = 30;
         a1.y1 = 30;
         a1.x2 = 100;
@@ -61,7 +71,20 @@ void app_init() {
 	touch_register_area(&a1);
 
 	tft_draw_rectangle(30,30,100,60,BLUE);
-	tft_print_line(30, 30, RED, BLUE, 0, "Hallo");
+	tft_print_line(30, 30, RED, BLUE, 0, "Hallo");*/
+
+	//b_alarm_ok    
+        b1.base.x1=25; //Start X of Button
+        b1.base.y1=45; //Start Y of Button
+        b1.base.x2=AUTO; //b1.base.x1+160; //Auto Calculate X2 with String Width
+        b1.base.y2=AUTO; //Auto Calculate Y2 with String Height
+        b1.txtcolor=WHITE; //Set foreground color
+        b1.bgcolor=HEX(0xDE1010); //Set background color (Don't take 255 or 0 on at least one channel, to make shadows possible)
+        b1.font=0; //Select Font
+        b1.text="Hallo"; //Set Text (For formatted strings take sprintf)
+        b1.callback=buttonCB; //Call b1_cb as Callback
+        gui_button_add(&b1); //Register Button (and run the callback from now on)
+
 }
 
 
@@ -74,7 +97,7 @@ int pixy_frame_test();
 void app_process() {
 	
 	system_process(); //Let the system handle it's pending events
-
+	gui_button_redraw(&b1);
 
 	//Note: The only way to detect that pixy has been disconnected is if a command fails. There's no pixy_is_connected method yet :'(
 
