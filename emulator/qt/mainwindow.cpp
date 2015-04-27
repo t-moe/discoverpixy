@@ -7,6 +7,7 @@
 
 extern "C" {
     #include "touch.h"
+    #include "tft.h"
 }
 
 #define DISPLAY_WIDTH 320
@@ -106,6 +107,24 @@ void MainWindow::draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
     QPainter painter(&(image));
     painter.setPen(QColorFromRGB565(color));
     painter.drawEllipse(QPoint(x,y), r, r);
+    //render_mutex.unlock();
+    update();
+}
+
+void MainWindow::draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, QFont font, char c)
+{
+    //render_mutex.lock();
+    QPainter painter(&(image));
+    painter.setFont(font);
+
+    if(bgcolor!=TRANSPARENT) {
+            painter.setBackgroundMode(Qt::OpaqueMode);
+            painter.setBackground(QColorFromRGB565(bgcolor));
+    }
+
+    painter.setPen(QColorFromRGB565(color));
+    y+=QFontMetrics(font).ascent(); //use y pos as highest point of char, instead of baseline
+    painter.drawText(QPoint(x,y), QString(QChar(c)));
     //render_mutex.unlock();
     update();
 }

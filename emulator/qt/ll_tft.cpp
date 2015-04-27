@@ -43,4 +43,37 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color) {
     mainwindow->draw_circle(x,y,r,color);
 }
 
+uint8_t ll_tft_num_fonts() {
+    return 1;
+}
+
+QFont get_font(uint8_t fontnum) {
+    switch(fontnum) {
+        case 0:
+            return QFont("Monospace",8);
+        default:
+        return QFont();
+    }
+}
+
+
+uint8_t ll_tft_font_height(uint8_t fontnum) {
+    QFont f = get_font(fontnum);
+    if(f == QFont()) return -1;
+    QFontMetrics m(f);
+    return m.height();
+}
+
+uint8_t ll_tft_font_width(uint8_t fontnum) {
+    QFont f = get_font(fontnum);
+    if(f == QFont()) return -1;
+    QFontMetrics m(f);
+    return m.averageCharWidth();
+}
+
+void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, char c) {
+    QFont f = get_font(font);
+    if(f == QFont()) return;
+    mainwindow->draw_char(x,y,color,bgcolor,f,c);
+}
 

@@ -50,7 +50,7 @@ void app_init() {
 	tft_draw_rectangle(40,210,60,235,BLUE);
 	tft_fill_rectangle(100,215,200,225,GREEN);
 	tft_draw_line(10,215,310,225,RGB(0xFF,0,0xFF));
-    tft_draw_circle(10,10,100, RED);
+    	tft_draw_circle(10,10,100, RED);
 
 	a1.hookedActions = PEN_DOWN | PEN_UP | PEN_MOVE | PEN_ENTER | PEN_LEAVE;
 	a1.x1 = 30;
@@ -60,8 +60,8 @@ void app_init() {
         a1.callback = touchCB;
 	touch_register_area(&a1);
 
-	 tft_draw_rectangle(30,30,100,60,BLUE);
-
+	tft_draw_rectangle(30,30,100,60,BLUE);
+	tft_print_line(30, 30, RED, BLUE, 0, "Hallo");
 }
 
 

@@ -32,6 +32,23 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color) {
 
 }
 
+uint8_t ll_tft_num_fonts() {
+	return 0;
+}
+
+uint8_t ll_tft_font_height(uint8_t fontnum) {
+	return -1;
+}
+
+uint8_t ll_tft_font_width(uint8_t fontnum) {
+	return -1;
+}
+
+void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, char c) {
+
+
+}
+
 
 
 
