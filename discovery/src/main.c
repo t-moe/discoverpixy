@@ -7,7 +7,6 @@ int main(void)
   while (1)
   {
     app_process();
-    //USBH_Process(&USB_OTG_Core, &USB_Host);
   }
   
 }

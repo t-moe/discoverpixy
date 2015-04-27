@@ -25,7 +25,7 @@ QT_LIB=$(QT_DIR)/libemulatorqt.a
 
 
 CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(INCLUDES)
-CFLAGS= -O0 -g
+CFLAGS= -O0 -g -std=c99
 
 
 LIBS= pixy usb-1.0 boost_system boost_timer boost_chrono

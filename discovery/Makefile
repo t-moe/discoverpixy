@@ -8,6 +8,7 @@ CROSS_COMPILE=arm-none-eabi-
 CC=$(CROSS_COMPILE)gcc
 OBJCOPY=$(CROSS_COMPILE)objcopy
 GDB=$(CROSS_COMPILE)gdb
+SIZE=$(CROSS_COMPILE)size
 
 MKDIR=mkdir -p
 RM=rm -f
@@ -40,7 +41,7 @@ INCLUDES:=$(addprefix -I,$(INCLUDES))
 
 
 CPPFLAGS=-DUSE_USB_OTG_FS -DUSE_HOST_MODE $(INCLUDES) 
-CFLAGS=$(ARCH_FLAGS) -O0 -g
+CFLAGS=$(ARCH_FLAGS) -O0 -g -std=c99
 
 
 LIBS=pixy usbhost coreperiph stdc++
@@ -90,6 +91,7 @@ stop:
 #elf to binary
 %.bin: %.elf
 	$(OBJCOPY) -O binary $< $@
+	$(SIZE) $<
 
 #Asm files to objects
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s

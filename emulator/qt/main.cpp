@@ -10,7 +10,6 @@ extern "C" {
 void app_loop() {
     while(!QApplication::closingDown()) {
         app_process();
-        QApplication::processEvents();
     }
 }
 

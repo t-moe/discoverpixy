@@ -1,7 +1,6 @@
 
 #include "usbh_msc_core.h"
 #include "usbh_core.h"
-#include "pixy.h"
 
 
 static USBH_Status USBH_MSC_InterfaceInit  (USB_OTG_CORE_HANDLE *pdev ,
@@ -18,6 +17,8 @@ static USBH_Status USBH_MSC_ClassRequest(USB_OTG_CORE_HANDLE *pdev ,
 
 
 extern USB_OTG_CORE_HANDLE USB_OTG_Core;
+extern USBH_HOST USB_Host;
+
 
 
 USBH_Class_cb_TypeDef  USBH_MSC_cb = 
@@ -40,8 +41,6 @@ typedef struct
 }
 MSC_Machine_TypeDef;
 MSC_Machine_TypeDef MSC_Machine;
-
-enum {init,running,down}state;
 
 
 static USBH_Status USBH_MSC_InterfaceInit ( USB_OTG_CORE_HANDLE *pdev, 
@@ -108,11 +107,6 @@ static USBH_Status USBH_MSC_InterfaceInit ( USB_OTG_CORE_HANDLE *pdev,
 void USBH_MSC_InterfaceDeInit ( USB_OTG_CORE_HANDLE *pdev,
                                 void *phost)
 {	
-  if(state==running) {
-	pixy_close();
-	state=down;
-  }
-
   if ( MSC_Machine.hc_num_out)
   {
     USB_OTG_HC_Halt(pdev, MSC_Machine.hc_num_out);
@@ -133,8 +127,6 @@ static USBH_Status USBH_MSC_ClassRequest(USB_OTG_CORE_HANDLE *pdev ,
 {   
   
   USBH_Status status = USBH_OK ;
-  state=init;
-  
   return status; 
 }
 
@@ -147,32 +139,11 @@ static USBH_Status USBH_MSC_Handle(USB_OTG_CORE_HANDLE *pdev ,
 
   if(HCD_IsDeviceConnected(pdev))
   {
-    switch(state)
-    {
-    case init:
-    	state = running;
-    	USB_OTG_BSP_mDelay(3000); //let the pixy led flashing pass
-    	pixy_init();
-    	break;
-    case running:
-		pixy_service();
-		int appliStatus = pphost->usr_cb->USBH_USR_MSC_Application();
-		if(appliStatus == 0)
-		{
-		  state=running; //stay here
-		}
-		else if (appliStatus == 1)
-		{
-		  status =  USBH_APPLY_DEINIT;
-		  pixy_close();
-		  state=down;
-		}
-    	break;
-    case down:
-    	break;
-    default:
-    	break;
-    }
+	int appliStatus = pphost->usr_cb->USBH_USR_MSC_Application();
+	if(appliStatus != 0)
+	{
+	  status =  USBH_APPLY_DEINIT;
+	}
   }
   return status;
 
@@ -197,16 +168,36 @@ uint32_t USBH_LL_getTimer() {
 
 
 int USBH_LL_open() {
+	int timeoutDetect=100;
+	int timeoutStartup=3000;
+	cnt_int=0; //reset timer
+
+	while(USB_Host.gState!=HOST_CLASS && cnt_int < timeoutDetect) {
+            	USBH_Process(&USB_OTG_Core, &USB_Host);		
+	}
+
+	if(USB_Host.gState!=HOST_CLASS) {
+		return -5; // = LIBUSB_ERROR_NOT_FOUND
+	}
+
+
+	cnt_int=0;
+	while(cnt_int<timeoutStartup) { //let pixy's led flashing pass	
+		USBH_Process(&USB_OTG_Core, &USB_Host);
+	}
 	return 0; //ok
 }
 
 int USBH_LL_close() {
+	USBH_Process(&USB_OTG_Core, &USB_Host);		
 	return 0;
 }
 
 int USBH_LL_send(const uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 	USB_OTG_CORE_HANDLE *pdev = &USB_OTG_Core;
 	
+	if(!HCD_IsDeviceConnected(pdev)) return -1;
+
 	USBH_BulkSendData (pdev,
                          (uint8_t*)data,
                          len ,
@@ -214,7 +205,7 @@ int USBH_LL_send(const uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 
 	URB_STATE state;
 	cnt_int=0; //reset timer
-	if(timeoutMs==0) timeoutMs=10000; //Force 10s timeout (testwise)
+	if(timeoutMs==0) timeoutMs=1000; //Force 1s timeout (testwise)
 
 	while((state=HCD_GetURB_State(pdev , MSC_Machine.hc_num_out)) == URB_IDLE &&
 	      (timeoutMs==0 || cnt_int < timeoutMs));
@@ -222,7 +213,7 @@ int USBH_LL_send(const uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 	if(state!=URB_DONE) {
 		if(timeoutMs>0 && cnt_int>=timeoutMs) {
 			STM_EVAL_LEDOn(LED3);
-			return -7; //timeout (error code like with libusb
+			return -7; //timeout (error code like with libusb)
 
 		}
 		return -1;
@@ -234,6 +225,8 @@ int USBH_LL_receive(uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 
 	USB_OTG_CORE_HANDLE *pdev = &USB_OTG_Core;
 	
+	if(!HCD_IsDeviceConnected(pdev)) return -1;
+	
 	USBH_BulkReceiveData (pdev,
                          data,
                          len ,
@@ -241,7 +234,7 @@ int USBH_LL_receive(uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 
 	URB_STATE state;
 	cnt_int=0; //reset timer
-	if(timeoutMs==0) timeoutMs=10000; //Force 10s timeout (testwise)
+	if(timeoutMs==0) timeoutMs=1000; //Force 1s timeout (testwise)
 
 	while((state=HCD_GetURB_State(pdev , MSC_Machine.hc_num_in)) == URB_IDLE &&
 	      (timeoutMs==0 || cnt_int < timeoutMs));
@@ -249,7 +242,7 @@ int USBH_LL_receive(uint8_t *data, uint32_t len, uint16_t timeoutMs) {
 	if(state!=URB_DONE) {
 		if(timeoutMs>0 && cnt_int>=timeoutMs) {
 			STM_EVAL_LEDOn(LED3);
-			return -7; //timeout (error code like with libusb
+			return -7; //timeout (error code like with libusb)
 		}
 		return -1;
 	}

@@ -14,12 +14,14 @@ SOURCES += \
     mainwindow.cpp \
     main.cpp \
     ll_tft.cpp \
-    ll_system.cpp
+    ll_system.cpp \
+    ll_touch.cpp
 HEADERS += \
     mainwindow.h \
 
 
-INCLUDEPATH+= ../../common/lowlevel/
+INCLUDEPATH+= ../../common/lowlevel/ \
+            ../../common/touch/
 
 
 FORMS += \
