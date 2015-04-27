@@ -1,3 +1,7 @@
+#ifndef TOUCH_H
+#define TOUCH_H
+
+
 #include<stdbool.h>
 #include<stdint.h>
 
@@ -25,3 +29,4 @@ bool touch_register_area(TOUCH_AREA_STRUCT* area);
 void touch_unregister_area(TOUCH_AREA_STRUCT* area);
 
 
+#endif /* TOUCH_H */

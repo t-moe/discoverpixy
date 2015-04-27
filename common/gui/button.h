@@ -1,3 +1,9 @@
+#ifndef BUTTON_H
+#define BUTTON_H
+
+
+#include "touch.h"
+
 
 typedef void (*BUTTON_CALLBACK)(void *button);	//!< Function pointer used...
 typedef struct {
@@ -31,5 +37,8 @@ void gui_button_redraw(BUTTON_STRUCT* button);
 bool guiAddBitmapButton(BITMAPBUTTON_STRUCT* button);
 void guiRemoveBitmapButton(BITMAPBUTTON_STRUCT* button);
 void guiRedrawBitmapButton(BITMAPBUTTON_STRUCT* button);
-
 */
+
+
+
+#endif /* BUTTON_H */
