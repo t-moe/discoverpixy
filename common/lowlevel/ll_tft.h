@@ -1,7 +1,20 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+// init functions
 bool ll_tft_init();
+bool ll_fsmc_init();
+bool ll_gpio_init();
+
+// display control functions
+void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value);
+uint16_t ll_tft_read_reg(uint8_t reg_adr);
+
+// fsmc functions
+
+// gpio functions
+
+// draw functions
 void ll_tft_clear(uint16_t color);
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
 void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
