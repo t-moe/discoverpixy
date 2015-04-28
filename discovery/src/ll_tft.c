@@ -315,6 +315,14 @@ bool ll_gpio_init()
  * ---------------------- display control functions -------------------------------------------------------
  */
 
+void ll_tft_set_cursor(uint16_t xpos, uint16_t ypos)
+{
+    // set cursor
+    ll_tft_write_reg(TFT_SSD1289_REG_4E, xpos);
+    ll_tft_write_reg(TFT_SSD1289_REG_4F, ypos);
+    TFT_REG = TFT_SSD1289_REG_22;
+}
+
 void ll_tft_set_backlight(bool state) 
 {
     if(state){
@@ -326,7 +334,14 @@ void ll_tft_set_backlight(bool state)
 
 void ll_tft_clear(uint16_t color) 
 {
-    // TODO
+    uint32_t n = 0;
+    
+    // set cursor to 0
+    ll_tft_set_cursor(0,0);
+    
+    for(n = 0; n < TFT_PIXEL; n++) {
+        TFT_RAM = color;
+    }
 }
 
 void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value)
@@ -339,6 +354,20 @@ uint16_t ll_tft_read_reg(uint8_t reg_adr)
 {
     TFT_REG = reg_adr;
     return TFT_RAM;
+}
+
+void ll_tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend)
+{
+    uint16_t start,end;
+    uint16_t xstart_end;
+
+    start = (xstart & 0x00FF);
+    end = ((xend & 0x00FF) << 8);
+    xstart_end = (start | end);
+
+    ll_tft_write_reg(TFT_SSD1289_REG_44, xstart_end);  
+    ll_tft_write_reg(TFT_SSD1289_REG_45, ystart);
+    ll_tft_write_reg(TFT_SSD1289_REG_46, yend);
 }
 
 /*
@@ -362,7 +391,20 @@ void ll_tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint
 
 void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color)
 {
-    // TODO
+    uint16_t area;
+    uint32_t n;
+    
+    // set window 
+    ll_tft_set_window(x1, y1, x2, y2);
+    ll_tft_set_cursor(x1, y1);
+
+    // calculate area
+    area = (x2 - x1 + 1) * (y2 - y1 + 1);        
+
+    // fill area
+    for(n = 0; n < area; n++) {
+        TFT_RAM = color;
+    }
 }
 
 void ll_tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat)
