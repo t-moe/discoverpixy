@@ -26,3 +26,4 @@ uint8_t tft_num_fonts();
 uint8_t tft_font_height(uint8_t fontnum);
 uint8_t tft_font_width(uint8_t fontnum);
 void tft_print_line(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, const char* text);
+void tft_print_formatted(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, const char* format, ...);
