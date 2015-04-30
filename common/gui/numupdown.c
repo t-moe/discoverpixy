@@ -64,29 +64,29 @@ bool gui_numupdown_add(NUMUPDOWN_STRUCT* numupdown)
 		 if(tw2 > tw1) tw1 = tw2;
 	         uint8_t width= tft_font_width(0)*(tw1+1);	
 
-		 numupdown->buttonUp.base.x1=numupdown->x;
-		 numupdown->buttonUp.base.y1=numupdown->y;
-		 numupdown->buttonUp.base.x2=numupdown->x+width;
-		 numupdown->buttonUp.base.y2=AUTO;
-		 numupdown->buttonUp.text="+";
-		 numupdown->buttonUp.font=0;
-		 numupdown->buttonUp.bgcolor=BASE_COLOR;
-		 numupdown->buttonUp.txtcolor=WHITE;
-		 numupdown->buttonUp.callback = button_up_cb;
-		 gui_button_add(&numupdown->buttonUp);
 		 numupdown->buttonDown.base.x1=numupdown->x;
-		 numupdown->buttonDown.base.y1=numupdown->buttonUp.base.y2+2*tft_font_height(0);
-		 numupdown->buttonDown.base.x2=numupdown->x+width;
-		 numupdown->buttonDown.base.y2=AUTO;
+		 numupdown->buttonDown.base.y1=numupdown->y;
+		 numupdown->buttonDown.base.x2=AUTO;
+		 numupdown->buttonDown.base.y2=numupdown->y+tft_font_height(0)*2;
 		 numupdown->buttonDown.text="-";
 		 numupdown->buttonDown.font=0;
 		 numupdown->buttonDown.bgcolor=BASE_COLOR;
 		 numupdown->buttonDown.txtcolor=WHITE;
 		 numupdown->buttonDown.callback = button_down_cb;
 		 gui_button_add(&numupdown->buttonDown);
+		 numupdown->buttonUp.base.x1=numupdown->buttonDown.base.x2+width+2;
+		 numupdown->buttonUp.base.y1=numupdown->y;
+		 numupdown->buttonUp.base.x2=AUTO;
+		 numupdown->buttonUp.base.y2=numupdown->y +tft_font_height(0)*2;
+		 numupdown->buttonUp.text="+";
+		 numupdown->buttonUp.font=0;
+		 numupdown->buttonUp.bgcolor=BASE_COLOR;
+		 numupdown->buttonUp.txtcolor=WHITE;
+		 numupdown->buttonUp.callback = button_up_cb;
+		 gui_button_add(&numupdown->buttonUp);
 
-		 tft_fill_rectangle(numupdown->x,numupdown->buttonUp.base.y2+1,numupdown->x+width,numupdown->buttonDown.base.y1-1,BASE_COLOR);
-		 tft_print_formatted(numupdown->x+tft_font_width(0)/2,numupdown->buttonUp.base.y2+tft_font_height(0)/2,numupdown->fgcolor,BASE_COLOR,0,"%*d",tw1,numupdown->value);
+		 tft_fill_rectangle(numupdown->buttonDown.base.x2+2,numupdown->y,numupdown->buttonDown.base.x2+width,numupdown->buttonUp.base.y2,BASE_COLOR);
+		 tft_print_formatted(numupdown->buttonDown.base.x2+2+tft_font_width(0)/2,numupdown->y+tft_font_height(0)/2,numupdown->fgcolor,BASE_COLOR,0,"%*d",tw1,numupdown->value);
 		
 		 return true;
 	 }
@@ -108,9 +108,8 @@ void gui_numupdown_update(NUMUPDOWN_STRUCT* numupdown)
 	 if(tw2 > tw1) tw1 = tw2;
 	 uint8_t width= tft_font_width(0)*(tw1+1);
 
- 
-	 tft_fill_rectangle(numupdown->x,numupdown->buttonUp.base.y2+1,numupdown->x+width,numupdown->buttonDown.base.y1-1,BASE_COLOR);
-	 tft_print_formatted(numupdown->x+tft_font_width(0)/2,numupdown->buttonUp.base.y2+tft_font_height(0)/2,numupdown->fgcolor,BASE_COLOR,0,"%*d",tw1,numupdown->value);
+	 tft_fill_rectangle(numupdown->buttonDown.base.x2+2,numupdown->y,numupdown->buttonDown.base.x2+width,numupdown->buttonUp.base.y2,BASE_COLOR);
+	 tft_print_formatted(numupdown->buttonDown.base.x2+2+tft_font_width(0)/2,numupdown->y+tft_font_height(0)/2,numupdown->fgcolor,BASE_COLOR,0,"%*d",tw1,numupdown->value);
  }
 
  void gui_numupdown_redraw(NUMUPDOWN_STRUCT* numupdown)
