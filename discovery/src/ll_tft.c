@@ -104,6 +104,10 @@ bool ll_tft_init()
 
 bool ll_display_init() 
 {
+    ll_tft_reset(true); // toggle reset
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_reset(false);
+
     ll_tft_write_reg(0x0007,0x0021);
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x0000,0x0001);
@@ -114,11 +118,11 @@ bool ll_display_init()
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x0007,0x0033);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(TFT_SSD1289_REG_11,CURRENT_MODE); // set mode (landscape, portrait)
+    ll_tft_write_reg(TFT_SSD1289_REG_11,0x6018); // set mode (landscape, portrait)
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x0002,0x0600);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0012,0x6CEB);
+    //ll_tft_write_reg(0x0012,0x6CEB);
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x0003,0xA8A4);
     system_delay(TFT_INIT_TIMEOUT);
@@ -180,7 +184,7 @@ bool ll_display_init()
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x003A,0x0302);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x002F,0x12BE);
+    //ll_tft_write_reg(0x002F,0x12BE);
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x003B,0x0302);
     system_delay(TFT_INIT_TIMEOUT);
@@ -194,6 +198,90 @@ bool ll_display_init()
     system_delay(TFT_INIT_TIMEOUT);
     ll_tft_write_reg(0x004e,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
+/*
+    ll_tft_write_reg(0x00,0x0001);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x03,0xA8A4);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x0C,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x0D,0x080C);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x0E,0x2B00);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x1E,0x00B7);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x01,0x2B3F);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x02,0x0600);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x10,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x11,0x6018);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x05,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x06,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x16,0xEF1C);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x17,0x0003);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x07,0x0233);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x0B,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x0F,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x41,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x42,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x48,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x49,0x013F);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x4A,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x4B,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x44,0xEF00);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x45,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x46,0x013F);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x30,0x0707);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x31,0x0204);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x32,0x0204);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x33,0x0502);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x34,0x0507);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x35,0x0204);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x36,0x0204);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x37,0x0502);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x3A,0x0302);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x3B,0x0302);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x23,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x24,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x25,0x8000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x4f,0x0000);
+    system_delay(TFT_INIT_TIMEOUT);
+    ll_tft_write_reg(0x4e,0x0000);
+*/
+    TFT_REG = TFT_SSD1289_REG_22;
 
     return true;
 }
@@ -248,11 +336,11 @@ bool ll_gpio_init()
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE,ENABLE);
     
     // PORT_B init -------------------------------------------------------------------------------------
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;              
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT;
-    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
-    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Pin     = GPIO_Pin_0;              
+    GPIO_InitStructure.GPIO_Mode    = GPIO_Mode_OUT;
+    GPIO_InitStructure.GPIO_OType   = GPIO_OType_PP;
+    GPIO_InitStructure.GPIO_PuPd    = GPIO_PuPd_UP;
+    GPIO_InitStructure.GPIO_Speed   = GPIO_Speed_50MHz;
     // configure PORT_B
     GPIO_Init(GPIOB, &GPIO_InitStructure);  
     
@@ -318,12 +406,21 @@ bool ll_gpio_init()
 void ll_tft_set_cursor(uint16_t xpos, uint16_t ypos)
 {
     // set cursor
-    ll_tft_write_reg(TFT_SSD1289_REG_4E, xpos);
-    ll_tft_write_reg(TFT_SSD1289_REG_4F, ypos);
+    ll_tft_write_reg(TFT_SSD1289_REG_4E, ypos);
+    ll_tft_write_reg(TFT_SSD1289_REG_4F, 319-xpos);
     TFT_REG = TFT_SSD1289_REG_22;
 }
 
 void ll_tft_set_backlight(bool state) 
+{
+    if(state){
+        GPIOB->BSRRH = GPIO_Pin_0;
+    } else {
+        GPIOB->BSRRL = GPIO_Pin_0;    
+    }
+}
+
+void ll_tft_reset(bool state) 
 {
     if(state){
         GPIOB->BSRRH = GPIO_Pin_0;
@@ -359,15 +456,23 @@ uint16_t ll_tft_read_reg(uint8_t reg_adr)
 void ll_tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend)
 {
     uint16_t start,end;
-    uint16_t xstart_end;
+    uint16_t ystart_end;
 
-    start = (xstart & 0x00FF);
-    end = ((xend & 0x00FF) << 8);
-    xstart_end = (start | end);
+    start = (ystart & 0x00FF);
+    end = ((yend & 0x00FF) << 8);
+    ystart_end = (start | end);
 
-    ll_tft_write_reg(TFT_SSD1289_REG_44, xstart_end);  
-    ll_tft_write_reg(TFT_SSD1289_REG_45, ystart);
-    ll_tft_write_reg(TFT_SSD1289_REG_46, yend);
+
+   // _tftCmdData(0x44,(y2<<8)+y1);
+   // _tftCmdData(0x45,319-x2);
+   // _tftCmdData(0x46,319-x1);
+   // _tftSetXYQM(x1,y1); 
+
+
+
+    ll_tft_write_reg(TFT_SSD1289_REG_44, ystart_end);  
+    ll_tft_write_reg(TFT_SSD1289_REG_45, 319-xend);
+    ll_tft_write_reg(TFT_SSD1289_REG_46, 319-xstart);
 }
 
 /*
@@ -381,7 +486,8 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
 
 void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color) 
 {
-    // TODO
+    ll_tft_set_cursor(x,y);
+    TFT_RAM = color;
 }
 
 void ll_tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color) 
@@ -416,7 +522,3 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
 {
     // TODO
 }
-
-
-
-
