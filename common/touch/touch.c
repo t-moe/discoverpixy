@@ -5,8 +5,7 @@
 #define NUM_AREAS 50    //Number of Structs Reserved in Memory for TouchAreas (e.g Buttons)
 TOUCH_AREA_STRUCT* areas[NUM_AREAS] = {NULL};
 
-volatile int touchY=0; //Last Y Coordinate in pixels
-volatile int touchX=0; //Last X Coordinate in pixels
+volatile POINT_STRUCT pos;
 volatile TOUCH_STATE oldState=TOUCH_UP;
 
 bool touch_init() {
@@ -14,12 +13,12 @@ bool touch_init() {
 }
 
 
-bool touch_add_raw_event(uint16_t x, uint16_t y, TOUCH_STATE state) {
+bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
  	bool penDown = (state==TOUCH_DOWN);
         bool oldPenDown = (oldState==TOUCH_DOWN);
         oldState=state;
-	uint16_t touchX = x;
-	uint16_t touchY = y;
+	pos.x=touchX;
+	pos.y=touchY;
  	if(penDown)
         {
         //      tftDrawPixel(touchX,touchY,WHITE);
@@ -127,3 +126,10 @@ void touch_unregister_area(TOUCH_AREA_STRUCT* area)//Unregisters an Area
                 }
         }
 }
+
+
+POINT_STRUCT touch_get_last_point() {
+	return pos;
+}
+
+

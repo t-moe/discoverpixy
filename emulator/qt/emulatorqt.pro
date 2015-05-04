@@ -21,7 +21,8 @@ HEADERS += \
 
 
 INCLUDEPATH+= ../../common/lowlevel/ \
-            ../../common/touch/
+              ../../common/touch/ \
+              ../../common/tft/
 
 
 FORMS += \

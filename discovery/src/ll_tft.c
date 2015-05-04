@@ -490,6 +490,23 @@ void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color)
     TFT_RAM = color;
 }
 
+uint8_t ll_tft_num_fonts() {
+	return 1;
+}
+
+uint8_t ll_tft_font_height(uint8_t fontnum) {
+	return 8;
+}
+
+uint8_t ll_tft_font_width(uint8_t fontnum) {
+	return 5;
+}
+
+void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, char c) {
+
+
+}
+
 void ll_tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color) 
 {
     // TODO
