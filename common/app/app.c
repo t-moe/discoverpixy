@@ -3,12 +3,13 @@
 #include "system.h"
 #include "touch.h"
 #include "screen_main.h"
-
+#include "filesystem.h"
 
 void app_init() {
 	system_init();
 	tft_init();
 	touch_init();
+	filesystem_init();
 
 	gui_screen_navigate(get_screen_main());
 }
