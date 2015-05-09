@@ -15,6 +15,7 @@ void ll_system_delay(uint32_t msec) {
 
 void ll_system_process() {
         QApplication::processEvents();
+        QThread::msleep(1);
 }
 
 void ll_system_toggle_led() {

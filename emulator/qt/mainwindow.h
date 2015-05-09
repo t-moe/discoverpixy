@@ -31,9 +31,13 @@ protected:
      void mouseMoveEvent(QMouseEvent* evt);
     ~MainWindow();
 
+private slots:
+     void on_cboZoom_currentIndexChanged(int index);
+
 private:
     //QMutex render_mutex;
     QImage image;
+    int currentScale;
     void checkAndSendEvent(QPoint pos, bool down);
 
     Ui::MainWindow *ui;
