@@ -1,8 +1,8 @@
 #include "screen.h"
 
 
-static volatile SCREEN_STRUCT* screen_list = NULL;
-static volatile SCREEN_STRUCT* screen_current = NULL;
+static SCREEN_STRUCT* screen_list = NULL;
+static SCREEN_STRUCT* screen_current = NULL;
 static volatile SCREEN_STRUCT* screen_goto = NULL;
 
 SCREEN_STRUCT* gui_screen_get_current() {
@@ -11,7 +11,7 @@ SCREEN_STRUCT* gui_screen_get_current() {
 
 void gui_screen_update() {
   	if(screen_goto!=NULL) { //we received the task to switch the screen
-		SCREEN_STRUCT* go = screen_goto; //Backup volatile variable
+		SCREEN_STRUCT* go = (SCREEN_STRUCT*) screen_goto; //Backup volatile variable
 		screen_goto=NULL;
 		if(go->next!=NULL) { //we're going back
 		        if(go->next!=screen_current) return; //list corrupted?
@@ -26,7 +26,7 @@ void gui_screen_update() {
        			}
 		}
         	go->on_enter(go);
-       		screen_current = go;
+       		screen_current =go;
 	}		
 
 	if(screen_current!=NULL) { //A screen has been set
