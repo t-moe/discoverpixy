@@ -7,7 +7,6 @@
 
 static BUTTON_STRUCT b_back;
 
-
 static void b_back_cb(void* button) {
         gui_screen_back();
 }
