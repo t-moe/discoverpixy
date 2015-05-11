@@ -39,7 +39,7 @@
 #define TRANSPARENT ((uint16_t)0x80C2)
 
 /**
- * Initializes the display
+ * Initializes the display. Call this method before using any tft_* functions
  * @return true on success
  */
 bool tft_init();
