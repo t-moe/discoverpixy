@@ -1,3 +1,5 @@
+#ifndef TFT_H
+#define TFT_H
 
 /**
  * @defgroup tft TFT
@@ -150,3 +152,5 @@ void tft_print_line(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, ui
 void tft_print_formatted(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, const char* format, ...);
 
 /*@}*/
+
+#endif /* TFT_H */

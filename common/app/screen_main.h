@@ -1,6 +1,18 @@
 #include "screen.h"
 
 /**
+ * @addtogroup app
+ */
+/*@{*/
+
+/**
+ * @defgroup screens Screens
+ * The Screens of the application. \sa Screen
+ */
+/*@}*/
+
+
+/**
  * @addtogroup screens
  */
 /*@{*/

@@ -1,6 +1,16 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
+/**
+ * @addtogroup gui
+ */
+/*@{*/
+
+/**
+ * @defgroup screen Screen
+ * The Screen Submodule
+ */
+/*@{*/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -29,5 +39,7 @@ SCREEN_STRUCT* gui_screen_get_current();
 
 //Updates/switches the screens. Call this from the app main loop, as fast as you can.
 void gui_screen_update();
+
+/*@}@}*/
 
 #endif /* SCREEN_H */

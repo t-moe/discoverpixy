@@ -1,3 +1,5 @@
+#ifndef TOUCH_H
+#define TOUCH_H
 
 /**
  * @defgroup touch Touch
@@ -10,9 +12,6 @@
  */
 /*@{*/
 
-
-#ifndef TOUCH_H
-#define TOUCH_H
 
 #include<stdbool.h>
 #include<stdint.h>
@@ -108,6 +107,6 @@ void touch_unregister_area(TOUCH_AREA_STRUCT* area);
 POINT_STRUCT touch_get_last_point();
 
 
-#endif /* TOUCH_H */
-
 /*@}*/
+
+#endif /* TOUCH_H */

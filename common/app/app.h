@@ -1,11 +1,9 @@
+#ifndef APP_H
+#define APP_H
+
 /**
  * @defgroup app Application
  * The App Module contains the effective, platform independent application.
- */
-
-
-/**
- * @addtogroup app
  */
 /*@{*/
 
@@ -21,10 +19,7 @@ void app_init();
  */
 void app_process();
 
-/**
- * @defgroup screens Screens
- * The Screens of the application. \sa Screen
- */
-
 
 /*@}*/
+
+#endif /* APP_H */

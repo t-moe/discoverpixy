@@ -1,6 +1,19 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+/**
+ * @defgroup gui Gui
+ * The Gui Module
+ */
+/*@{*/
+
+/**
+ * @defgroup button Button
+ * The Button Gui-Element
+ */
+/*@{*/
+
+
 
 #include "touch.h"
 
@@ -39,6 +52,6 @@ void guiRemoveBitmapButton(BITMAPBUTTON_STRUCT* button);
 void guiRedrawBitmapButton(BITMAPBUTTON_STRUCT* button);
 */
 
-
+/*@}@}*/
 
 #endif /* BUTTON_H */
