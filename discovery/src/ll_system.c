@@ -8,13 +8,9 @@
 #include "usbh_core.h"
 #include "usbh_msc_core.h"
 
-
-
-
 USB_OTG_CORE_HANDLE          USB_OTG_Core;
 USBH_HOST                    USB_Host;
 RCC_ClocksTypeDef RCC_Clocks;
-
 
 void SysTick_Handler(void)
 {
@@ -26,12 +22,10 @@ void TIM2_IRQHandler(void)
   USB_OTG_BSP_TimerIRQ();
 }
 
-
 void OTG_FS_IRQHandler(void)
 {
   USBH_OTG_ISR_Handler(&USB_OTG_Core);
 }
-
 
 bool ll_system_init(void)
 { 
@@ -59,12 +53,9 @@ void ll_system_process() {
 	USBH_Process(&USB_OTG_Core, &USB_Host);
 }
 
-
-
 void ll_system_delay(uint32_t msec) {
 	USB_OTG_BSP_mDelay(msec);
 }
-
 
 void ll_system_toggle_led() {	
 	STM_EVAL_LEDToggle(LED6);
