@@ -1,0 +1,46 @@
+[PORT]  -> [DISPLAY] (PINNUMBER)
+
+DISPLAY
+-------
+PB0     -> LED-A  (19) (Backlight) (Driver needed or LED-A Pin via 100Ohm to VCC)
+
+PE3     -> LCD_RS (4)   
+PD5     -> LCD_WR (5)
+PD4     -> LCD_RD (6)
+PD7     -> LCD_CS (15)
+
+PD14    -> LCD_D0 (21)   
+PD15    -> LCD_D1 (22)
+PD0     -> LCD_D2 (23)           
+PD1     -> LCD_D3 (24)
+PE7     -> LCD_D4 (25)
+PE8     -> LCD_D5 (26)           
+PE9     -> LCD_D6 (27)    
+PE10    -> LCD_D7 (28)           
+PE11    -> LCD_D8 (7)      
+PE12    -> LCD_D9 (8)
+PE13    -> LCD_D10 (9)          
+PE14    -> LCD_D11 (10)
+PE15    -> LCD_D12 (11)
+PD8     -> LCD_D13 (12)
+PD9     -> LCD_D14 (13) 
+PD10    -> LCD_D15 (14) 
+
+SD-Karte
+--------
+PA4     -> SD_CS  (38)
+PA5     -> SD_SCK (36)
+PA6     -> SD_DIN ? (37)
+PA7     -> SD_OUT ? (35)
+
+Touch Controller
+----------------
+PB9     -> D_CS  (30)
+PB10    -> D_CLK (29)
+PB14    -> D_DIN ? (31)
+PB15    -> D_OUT ? (33)
+
+Interrupts
+----------
+PA0     -> D_Penirq (34)
+PB2     -> D_BUSY   (32)
