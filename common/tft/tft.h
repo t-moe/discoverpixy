@@ -41,7 +41,8 @@
 #define TRANSPARENT ((uint16_t)0x80C2)
 
 /**
- * Initializes the display. Call this method before using any tft_* functions
+ * Initializes the display.
+ * Call this method before using any tft_* functions
  * @return true on success
  */
 bool tft_init();
@@ -71,7 +72,8 @@ void tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t 
 void tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
 
 /**
- * Draws the outline of a rectangle onto the display. The outline is one pixel wide and goes through the specified start and endpoint.
+ * Draws the outline of a rectangle onto the display.
+ * The outline is one pixel wide and goes through the specified start and endpoint.
  * @param x1 The x-Coordinate of the start-point
  * @param y1 The y-Coordinate of the start-point
  * @param x2 The x-Coordinate of the end-point
@@ -91,7 +93,8 @@ void tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_
 void tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);
 
 /**
- * Draws a bitmap onto the display without scaling/cropping. The bitmap must be provided as an array of 16-bit colors
+ * Draws a bitmap onto the display without scaling/cropping.
+ * The bitmap must be provided as an array of 16-bit colors
  * @param x The x-coordinate of the top-left corner to draw the bitmap at
  * @param y The y-coordinate of the top-left corner to draw the bitmap at
  * @param width The width of the bitmap in pixels

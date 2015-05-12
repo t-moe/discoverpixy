@@ -7,7 +7,7 @@
 
 /**
  * @defgroup screens Screens
- * The Screens of the application. \sa Screen
+ * The Screens of the application. \sa \ref screen
  */
 /*@}*/
 

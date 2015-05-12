@@ -25,7 +25,8 @@ typedef enum {
 } TOUCH_STATE ;
 
 /**
- * Enum to describe the hooked actions for which you want to receive events for. You can OR-combine them. \sa touch_register_area
+ * Enum to describe the hooked actions for which you want to receive events for.
+ * You can OR-combine them. \sa touch_register_area
  */
 typedef enum {
 	NONE=0x00,      //!< Do not receive any events
@@ -38,7 +39,7 @@ typedef enum {
 
 /**
  * Prototype for Event Listeners (called for every occurring, hooked action)
- * @param touchArea The pointer to the touchArea in which the event occurred
+ * @param touchArea The pointer to the TOUCH_AREA_STRUCT in which the event occurred
  * @param triggeredAction The Action which occurred
  */
 typedef void (*TOUCH_CALLBACK)(void* touchArea, TOUCH_ACTION triggeredAction);
@@ -66,13 +67,16 @@ typedef struct {
 } POINT_STRUCT;
 
 /**
- * Initializes the Touch Controller. Call this method before using any touch_* functions
+ * Initializes the Touch Controller.
+ * Call this method before using any touch_* functions
  * @return true on success
  */
 bool touch_init();
 
 /**
- * Processes a native touch event. You may call this function from an (SPI)-Interrupt
+ * Processes a native touch event.
+ * Call this function when the pen goes down (\ref TOUCH_DOWN), when it moves (\ref TOUCH_DOWN) and also when it goes up again (\ref TOUCH_UP)!
+ * It's safe to call this function from an (SPI)-Interrupt.
  * @param x The x-Coordinate of the touch event
  * @param y The y-Coordinate of the touch event
  * @param state Whether the pen is up or down
@@ -81,7 +85,7 @@ bool touch_init();
 bool touch_add_raw_event(uint16_t x, uint16_t y,TOUCH_STATE state);
 
 /**
- * Checks whether or not we have memory to manage and track additional "num" TOUCH_AREAs
+ * Checks whether or not we have memory to manage and track additional \p num TOUCH_AREA_STRUCT%s
  * @param num The number of touch areas you would like to allocate
  * @return True if there's enough memory to allocate num TOUCH_AREAs
  */
@@ -89,14 +93,14 @@ bool touch_have_empty(unsigned char num);
 
 /**
  * Registers a new touch Area. You will receive events for this area from now on.
- * @param area A pointer to the configured TOUCH_AREA struct
- * @return True if everything was successful and the TOUCH_AREA will be monitored from now on
+ * @param area A pointer to the configured TOUCH_AREA_STRUCT
+ * @return True if everything was successful and the corresponding Touch Area will be monitored from now on
  */
 bool touch_register_area(TOUCH_AREA_STRUCT* area);
 
 /**
  * Unregisters a touch area. You will no longer receive events for this area
- * @param area A pointer to the TOUCH_AREA instance
+ * @param area A pointer to the TOUCH_AREA_STRUCT instance
  */
 void touch_unregister_area(TOUCH_AREA_STRUCT* area);
 
