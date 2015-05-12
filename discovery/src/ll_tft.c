@@ -29,14 +29,34 @@
  * ---------------------- prototypes --------------------------------------------------------------
  */
 
-// init functions
-bool ll_fsmc_init();
-bool ll_gpio_init();
-bool ll_display_init();
+/* init functions */
+bool ll_tft_init();
+static bool display_init();
+static bool fsmc_init();
+static bool gpio_init();
 
-// display control functions
-void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value);
-uint16_t ll_tft_read_reg(uint8_t reg_adr);
+/* display functions */
+void ll_tft_clear(uint16_t color);
+static void tft_set_cursor(uint16_t xpos, uint16_t ypos);
+static void tft_set_backlight(bool state);
+static void tft_reset(bool state);
+static void tft_write_reg(uint8_t reg_adr, uint16_t reg_value);
+static uint16_t tft_read_reg(uint8_t reg_adr);
+static void tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend);void tft_reset_window();
+
+/* draw functions */
+void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
+void ll_tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
+void ll_tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat);
+void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color);
+
+/* font functions */
+static const char *get_font(uint8_t font);
+uint8_t ll_tft_num_fonts();
+uint8_t ll_tft_font_height(uint8_t fontnum);
+uint8_t ll_tft_font_width(uint8_t fontnum);
+void    ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t fontnum, char c);
 
 /*
  * ---------------------- defines and makros ------------------------------------------------------
@@ -86,133 +106,129 @@ uint16_t ll_tft_read_reg(uint8_t reg_adr);
 /*
  * ---------------------- init functions ----------------------------------------------------------
  */
-
 bool ll_tft_init()
 {
     bool gpio, fsmc, display;
 
-    // init gpio
-    gpio = ll_gpio_init();
-    // delay
-    system_delay(TFT_INIT_TIMEOUT);
-    // init fsmc
-    fsmc = ll_fsmc_init();
-    // delay
-    system_delay(TFT_INIT_TIMEOUT);
-    // init display
-    display = ll_display_init();
+    gpio = gpio_init();                         // init gpio
+    system_delay(TFT_INIT_TIMEOUT);             // delay
+    fsmc = fsmc_init();                         // init fsmc
+    system_delay(TFT_INIT_TIMEOUT);             // delay
+    display = display_init();                   // init display
     
     return (gpio & fsmc & display);
 }
 
-bool ll_display_init() 
+static bool display_init() 
 {
-    ll_tft_reset(true); // toggle reset
+    tft_reset(true);                            // toggle reset
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_reset(false);
+    tft_reset(false);
 
-    ll_tft_write_reg(0x0007,0x0021);
+    tft_write_reg(0x0007,0x0021);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0000,0x0001);
+    tft_write_reg(0x0000,0x0001);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0007,0x0023);
+    tft_write_reg(0x0007,0x0023);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0010,0x0000);
+    tft_write_reg(0x0010,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0007,0x0033);
+    tft_write_reg(0x0007,0x0033);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(TFT_SSD1289_REG_11,0x6018); // set mode (landscape, portrait)
+    tft_write_reg(TFT_SSD1289_REG_11,0x6018);   // set mode (landscape, portrait)
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0002,0x0600);
+    tft_write_reg(0x0002,0x0600);
     system_delay(TFT_INIT_TIMEOUT);
-    //ll_tft_write_reg(0x0012,0x6CEB);
+    //tft_write_reg(0x0012,0x6CEB);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0003,0xA8A4);
+    tft_write_reg(0x0003,0xA8A4);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x000C,0x0000);
+    tft_write_reg(0x000C,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x000D,0x080C);
+    tft_write_reg(0x000D,0x080C);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x000E,0x2B00);
+    tft_write_reg(0x000E,0x2B00);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x001E,0x00B0);
+    tft_write_reg(0x001E,0x00B0);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0001,0x2b3F);
+    tft_write_reg(0x0001,0x2b3F);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0005,0x0000);
+    tft_write_reg(0x0005,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0006,0x0000);
+    tft_write_reg(0x0006,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0016,0xEF1C);
+    tft_write_reg(0x0016,0xEF1C);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0017,0x0103);
+    tft_write_reg(0x0017,0x0103);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x000B,0x0000);
+    tft_write_reg(0x000B,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x000F,0x0000);
+    tft_write_reg(0x000F,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0041,0x0000);
+    tft_write_reg(0x0041,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0042,0x0000);
+    tft_write_reg(0x0042,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0048,0x0000);
+    tft_write_reg(0x0048,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0049,0x013F);
+    tft_write_reg(0x0049,0x013F);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x004A,0x0000);
+    tft_write_reg(0x004A,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x004B,0x0000);
+    tft_write_reg(0x004B,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0044,0xEF00);  // horizontal start and end
+    tft_write_reg(0x0044,0xEF00);  // horizontal start and end
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0045,0x0000);  // vertical start
+    tft_write_reg(0x0045,0x0000);  // vertical start
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0046,0x013F);  // vertical end
+    tft_write_reg(0x0046,0x013F);  // vertical end
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0030,0x0707);
+    tft_write_reg(0x0030,0x0707);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0031,0x0204);
+    tft_write_reg(0x0031,0x0204);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0032,0x0204);
+    tft_write_reg(0x0032,0x0204);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0033,0x0502);
+    tft_write_reg(0x0033,0x0502);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0034,0x0507);
+    tft_write_reg(0x0034,0x0507);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0035,0x0204);
+    tft_write_reg(0x0035,0x0204);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0036,0x0204);
+    tft_write_reg(0x0036,0x0204);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0037,0x0502);
+    tft_write_reg(0x0037,0x0502);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x003A,0x0302);
+    tft_write_reg(0x003A,0x0302);
     system_delay(TFT_INIT_TIMEOUT);
-    //ll_tft_write_reg(0x002F,0x12BE);
+    //tft_write_reg(0x002F,0x12BE);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x003B,0x0302);
+    tft_write_reg(0x003B,0x0302);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0023,0x0000);
+    tft_write_reg(0x0023,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0024,0x0000);
+    tft_write_reg(0x0024,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x0025,0x8000);
+    tft_write_reg(0x0025,0x8000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x004f,0x0000);
+    tft_write_reg(0x004f,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
-    ll_tft_write_reg(0x004e,0x0000);
+    tft_write_reg(0x004e,0x0000);
     system_delay(TFT_INIT_TIMEOUT);
     TFT_REG = TFT_SSD1289_REG_22;
 
     return true;
 }
 
-bool ll_fsmc_init()
+static bool fsmc_init()
 {
     // generate init structures
     FSMC_NORSRAMInitTypeDef        FSMC_NORSRAMInitStructure;
     FSMC_NORSRAMTimingInitTypeDef  FSMC_NORSRAMTimingInitStructure;
+   
     // clock enable 
     RCC_AHB3PeriphClockCmd(RCC_AHB3Periph_FSMC, ENABLE);  
+   
     // prepare timing struct 
     FSMC_NORSRAMTimingInitStructure.FSMC_AddressSetupTime = TFT_SSD1289_FSMC_AST;
     FSMC_NORSRAMTimingInitStructure.FSMC_AddressHoldTime = 1;
@@ -221,7 +237,8 @@ bool ll_fsmc_init()
     FSMC_NORSRAMTimingInitStructure.FSMC_CLKDivision = 0;
     FSMC_NORSRAMTimingInitStructure.FSMC_DataLatency = 0;
     FSMC_NORSRAMTimingInitStructure.FSMC_AccessMode = FSMC_AccessMode_A;
-    // Bank-1 / PSRAM-1
+    
+    // bank-1 / PSRAM-1
     FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;
     FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable;
     FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_SRAM;
@@ -237,6 +254,7 @@ bool ll_fsmc_init()
     FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;  
     FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &FSMC_NORSRAMTimingInitStructure; 
     FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &FSMC_NORSRAMTimingInitStructure;
+   
     // config FSMC
     FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure); 
     // enable Bank-1 / PSRAM-1
@@ -245,7 +263,7 @@ bool ll_fsmc_init()
     return true;
 }
 
-bool ll_gpio_init()
+static bool gpio_init()
 {
     // generate init structure
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -314,66 +332,59 @@ bool ll_gpio_init()
 }
 
 /*
- * ---------------------- GPIO control functions ----------------------------------------------------------
- */
-
-// TODO
-
-/*
  * ---------------------- display control functions -------------------------------------------------------
  */
-
-void ll_tft_set_cursor(uint16_t xpos, uint16_t ypos)
-{
-    // set cursor
-    ll_tft_write_reg(TFT_SSD1289_REG_4E, ypos);
-    ll_tft_write_reg(TFT_SSD1289_REG_4F, 319-xpos);
-    TFT_REG = TFT_SSD1289_REG_22;
-}
-
-void ll_tft_set_backlight(bool state) 
-{
-    if(state){
-        GPIOB->BSRRH = GPIO_Pin_0;
-    } else {
-        GPIOB->BSRRL = GPIO_Pin_0;    
-    }
-}
-
-void ll_tft_reset(bool state) 
-{
-    if(state){
-        GPIOB->BSRRH = GPIO_Pin_0;
-    } else {
-        GPIOB->BSRRL = GPIO_Pin_0;    
-    }
-}
-
 void ll_tft_clear(uint16_t color) 
 {
     uint32_t n = 0;
     
     // set cursor to 0
-    ll_tft_set_cursor(0,0);
+    tft_set_cursor(0,0);
     
     for(n = 0; n < TFT_PIXEL; n++) {
         TFT_RAM = color;
     }
 }
 
-void ll_tft_write_reg(uint8_t reg_adr, uint16_t reg_value)
+static void tft_set_cursor(uint16_t xpos, uint16_t ypos)
+{
+    // set cursor
+    tft_write_reg(TFT_SSD1289_REG_4E, ypos);
+    tft_write_reg(TFT_SSD1289_REG_4F, 319-xpos);
+    TFT_REG = TFT_SSD1289_REG_22;
+}
+
+static void tft_set_backlight(bool state) 
+{
+    if(state){
+        GPIOB->BSRRH = GPIO_Pin_0;
+    } else {
+        GPIOB->BSRRL = GPIO_Pin_0;    
+    }
+}
+
+static void tft_reset(bool state) 
+{
+    if(state){
+        GPIOB->BSRRH = GPIO_Pin_0;
+    } else {
+        GPIOB->BSRRL = GPIO_Pin_0;    
+    }
+}
+
+static void tft_write_reg(uint8_t reg_adr, uint16_t reg_value)
 {
     TFT_REG = reg_adr;
     TFT_RAM = reg_value;  
 }
 
-uint16_t ll_tft_read_reg(uint8_t reg_adr)
+static uint16_t tft_read_reg(uint8_t reg_adr)
 {
     TFT_REG = reg_adr;
     return TFT_RAM;
 }
 
-void ll_tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend)
+static void tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend)
 {
     uint16_t start,end;
     uint16_t ystart_end;
@@ -382,16 +393,16 @@ void ll_tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t
     end = ((yend & 0x00FF) << 8);
     ystart_end = (start | end);
 
-    ll_tft_write_reg(TFT_SSD1289_REG_44, ystart_end);  
-    ll_tft_write_reg(TFT_SSD1289_REG_45, 319-xend);
-    ll_tft_write_reg(TFT_SSD1289_REG_46, 319-xstart);
+    tft_write_reg(TFT_SSD1289_REG_44, ystart_end);  
+    tft_write_reg(TFT_SSD1289_REG_45, 319-xend);
+    tft_write_reg(TFT_SSD1289_REG_46, 319-xstart);
 }
 
-void ll_tft_reset_window()
+void tft_reset_window()
 {
-    ll_tft_write_reg(0x44,239<<8);
-    ll_tft_write_reg(0x45,0);
-    ll_tft_write_reg(0x46,319);
+    tft_write_reg(0x44,239<<8);
+    tft_write_reg(0x45,0);
+    tft_write_reg(0x46,319);
 }
 
 /*
@@ -400,39 +411,37 @@ void ll_tft_reset_window()
 
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) 
 {
-    
     if(y1==y2){
         if(x2<x1){
-            ll_tft_set_cursor(x2,y1);
+            tft_set_cursor(x2,y1);
             do{
-                TFT_RAM = color;        //Let Semi away, because of block makro
+                TFT_RAM = color;       
             } while(x2++!=x1);
         } else {
-            ll_tft_set_cursor(x1,y1);
+            tft_set_cursor(x1,y1);
             do{
-                TFT_RAM = color;        //Let Semi away, because of block makro
+                TFT_RAM = color;       
             } while(x1++!=x2);
         }       
     }
     else if(x1==x2){
-           ll_tft_write_reg(0x11,0x6030); // Change adresspointer direction
+           tft_write_reg(0x11,0x6030); // Change adresspointer direction
           
-          // (is quicker than defining a region)
           if(y2<y1)
           {
-               ll_tft_set_cursor(x1,y2);
+               tft_set_cursor(x1,y2);
                do {
-                    TFT_RAM = color;        //Let Semi away, because of block makro
+                    TFT_RAM = color;        
                } while(y2++!=y1);
           }
           else
           {
-               ll_tft_set_cursor(x1,y1);
+               tft_set_cursor(x1,y1);
                do {
-                    TFT_RAM = color;        //Let Semi away, because of block makro
+                    TFT_RAM = color;    
                }while(y1++!=y2);
           }
-           ll_tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
+           tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
     }
     else
     {
@@ -440,14 +449,13 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
         {   
             //Without floating point!
             int deltax = ((int)x2-(int)x1);
-            int deltay = ((int)y2-(int)y1)<<1;  // multiple by 2 to make it easier to round
+            int deltay = ((int)y2-(int)y1)<<1;
             int x = 0;
             if (x1>x2)
             {
                 do
                 { 
-                    //y = mx + b (math theory, linear functions)
-                    ll_tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1)); // Add 1 and divde by 2 = +0.5
+                    tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
                     TFT_RAM = color;
                 }
                 while(x--!=deltax);
@@ -456,7 +464,7 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
             {
                 do
                 { 
-                    ll_tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
+                    tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
                     TFT_RAM = color;
                 }
                 while(x++!=deltax);
@@ -471,7 +479,7 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
             {
                 do
                 { 
-                    ll_tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
+                    tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
                     TFT_RAM = color;
                 }
                 while(y--!=deltay);
@@ -480,7 +488,7 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
             {
                 do
                 { 
-                    ll_tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
+                    tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
                     TFT_RAM = color;
                 }
                 while(y++!=deltay);
@@ -491,7 +499,7 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
 
 void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color) 
 {
-    ll_tft_set_cursor(x,y);
+    tft_set_cursor(x,y);
     TFT_RAM = color;
 }
 
@@ -514,25 +522,19 @@ void ll_tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, u
 
     i = x1;
 
-    ll_tft_set_cursor(x1, y1);
-    
+    tft_set_cursor(x1, y1);
     while(i++ != x2) TFT_RAM = color;
-    
-    ll_tft_set_cursor(x1,y2);
-    
+    tft_set_cursor(x1,y2);
     while(i-- != x1) TFT_RAM = color;
     
     i = y1;
     
-    ll_tft_write_reg(0x11,0x6030); // Change adresspointer direction
-    ll_tft_set_cursor(x2, y1);
-    
+    tft_write_reg(0x11,0x6030); // Change adresspointer direction
+    tft_set_cursor(x2, y1);
     while(i++ != y2) TFT_RAM = color;
-    
-    ll_tft_set_cursor(x1, y1);
-    
+    tft_set_cursor(x1, y1);
     while(i-- != y1) TFT_RAM = color;
-    ll_tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
+    tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
 }
 
 void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color)
@@ -541,8 +543,8 @@ void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint
     uint32_t n;
     
     // set window 
-    ll_tft_set_window(x1, y1, x2, y2);
-    ll_tft_set_cursor(x1, y1);
+    tft_set_window(x1, y1, x2, y2);
+    tft_set_cursor(x1, y1);
 
     // calculate area
     area = (x2 - x1 + 1) * (y2 - y1 + 1);        
@@ -552,7 +554,7 @@ void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint
         TFT_RAM = color;
     }
     
-    ll_tft_reset_window();
+    tft_reset_window();
 }
 
 void ll_tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat)
@@ -565,7 +567,11 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
     // TODO
 }
 
-const char *get_font(uint8_t font)
+/*
+ * ---------------------- font functions -----------------------------------------------------------
+ */
+
+static const char *get_font(uint8_t font)
 {
     switch(font){
         case 0: return small_font;
@@ -579,12 +585,14 @@ uint8_t ll_tft_num_fonts()
 	return 3;
 }
 
-uint8_t ll_tft_font_height(uint8_t fontnum) {
+uint8_t ll_tft_font_height(uint8_t fontnum) 
+{
     const char *font = get_font(fontnum);
     return (uint8_t) font[1];
 }
 
-uint8_t ll_tft_font_width(uint8_t fontnum) {
+uint8_t ll_tft_font_width(uint8_t fontnum) 
+{
     const char *font = get_font(fontnum);
     return (uint8_t) font[0];
 }
@@ -603,16 +611,16 @@ void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, 
     bool bgIsTrans          = (bgcolor == TRANSPARENT);
     bool enTrans            = 0;
     
-    ll_tft_set_window(x, y, x + width - 1, y + height - 1);
-    ll_tft_set_cursor(x, y);   
+    tft_set_window(x, y, x + width - 1, y + height - 1);
+    tft_set_cursor(x, y);   
  
     for(cnt = (width / 8) * height; cnt > 0; cnt--){
         for(bitm = 0x80; bitm > 0; bitm >>= 1){
             if((font[ind]) & bitm){
                 if(enTrans){
                     enTrans = 0;
-                    ll_tft_write_reg(0x23,0x0000); 
-                    ll_tft_write_reg(0x24,0x0000); 
+                    tft_write_reg(0x23,0x0000); 
+                    tft_write_reg(0x24,0x0000); 
                     TFT_REG = TFT_SSD1289_REG_22;
                 }
 
@@ -621,8 +629,8 @@ void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, 
             } else {
                 if(bgIsTrans && !enTrans){
                     enTrans = 1;
-                    ll_tft_write_reg(0x23,0xFFFF); 
-                    ll_tft_write_reg(0x24,0xFFFF); 
+                    tft_write_reg(0x23,0xFFFF); 
+                    tft_write_reg(0x24,0xFFFF); 
                     TFT_REG = TFT_SSD1289_REG_22;
                 }
 
@@ -634,9 +642,9 @@ void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, 
     }
     
     if(enTrans){
-        ll_tft_write_reg(0x23,0x0000);
-        ll_tft_write_reg(0x24,0x0000); 
+        tft_write_reg(0x23,0x0000);
+        tft_write_reg(0x24,0x0000); 
     }
 
-    ll_tft_reset_window();
+    tft_reset_window();
 }

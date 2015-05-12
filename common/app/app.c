@@ -2,7 +2,7 @@
 #include "tft.h"
 #include "system.h"
 #include "touch.h"
-#include "screen_main.h"
+#include "screen_guitest.h"
 #include "filesystem.h"
 
 void app_init() {
@@ -11,7 +11,7 @@ void app_init() {
 	touch_init();
 	filesystem_init();
 
-	gui_screen_navigate(get_screen_main());
+	gui_screen_navigate(get_screen_guitest());
 }
 
 
