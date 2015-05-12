@@ -5,7 +5,7 @@ TARGET=discoverpixy
 
 #Tools
 CROSS_COMPILE=arm-none-eabi-
-CC=$(CROSS_COMPILE)gcc
+CC=$(CROSS_COMPILE)gcc -fdiagnostics-color=auto
 OBJCOPY=$(CROSS_COMPILE)objcopy
 GDB=$(CROSS_COMPILE)gdb
 SIZE=$(CROSS_COMPILE)size

@@ -10,7 +10,7 @@ QT_DIR=./qt
 COMMON_DIR=../common
 
 #Tools
-CC=gcc
+CC=gcc -fdiagnostics-color=auto
 GDB=gdb
 
 
