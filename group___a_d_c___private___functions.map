@@ -1,0 +1,10 @@
+<map id="ADC_Private_Functions" name="ADC_Private_Functions">
+<area shape="rect" id="node2" href="$group___a_d_c___group1.html" title="Initialization and Configuration functions. " alt="" coords="332,5,489,47"/>
+<area shape="rect" id="node3" href="$group___a_d_c___group2.html" title="Analog Watchdog configuration functions. " alt="" coords="309,71,512,112"/>
+<area shape="rect" id="node4" href="$group___a_d_c___group3.html" title="Temperature Sensor, Vrefint and VBAT management functions. " alt="" coords="323,135,499,191"/>
+<area shape="rect" id="node5" href="$group___a_d_c___group4.html" title="Regular Channels Configuration functions. " alt="" coords="309,215,512,256"/>
+<area shape="rect" id="node6" href="$group___a_d_c___group5.html" title="Regular Channels DMA Configuration functions. " alt="" coords="332,280,489,321"/>
+<area shape="rect" id="node7" href="$group___a_d_c___group6.html" title="Injected channels Configuration functions. " alt="" coords="309,345,512,387"/>
+<area shape="rect" id="node8" href="$group___a_d_c___group7.html" title="Interrupts and flags management functions. " alt="" coords="332,411,489,452"/>
+<area shape="rect" id="node9" href="$group___a_d_c.html" title="ADC driver modules. " alt="" coords="5,222,55,249"/>
+</map>

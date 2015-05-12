@@ -1,0 +1,15 @@
+<map id="_Host_TypeDef" name="_Host_TypeDef">
+<area shape="rect" id="node2" href="$struct___ctrl.html" title="_Ctrl" alt="" coords="981,53,1031,80"/>
+<area shape="rect" id="node3" href="$union___u_s_b___setup.html" title="_USB_Setup" alt="" coords="694,36,791,63"/>
+<area shape="rect" id="node4" href="$struct___u_s_b___setup_1_1___setup_pkt___struc.html" title="_USB_Setup::_SetupPkt\l_Struc" alt="" coords="435,29,601,70"/>
+<area shape="rect" id="node5" href="$unionuint16__t__uint8__t.html" title="uint16_t_uint8_t" alt="" coords="219,36,333,63"/>
+<area shape="rect" id="node6" href="$structuint16__t__uint8__t_1_1_b_w.html" title="uint16_t_uint8_t::BW" alt="" coords="5,36,149,63"/>
+<area shape="rect" id="node7" href="$struct___u_s_b_h___u_s_r___p_r_o_p.html" title="_USBH_USR_PROP" alt="" coords="935,127,1077,153"/>
+<area shape="rect" id="node8" href="$struct___device_prop.html" title="_DeviceProp" alt="" coords="959,177,1053,204"/>
+<area shape="rect" id="node9" href="$struct___h_i_d_descriptor.html" title="_HIDDescriptor" alt="" coords="688,87,797,113"/>
+<area shape="rect" id="node10" href="$struct___endpoint_descriptor.html" title="_EndpointDescriptor" alt="" coords="673,137,812,164"/>
+<area shape="rect" id="node11" href="$struct___device_descriptor.html" title="_DeviceDescriptor" alt="" coords="679,188,806,215"/>
+<area shape="rect" id="node12" href="$struct___interface_descriptor.html" title="_InterfaceDescriptor" alt="" coords="674,239,811,265"/>
+<area shape="rect" id="node13" href="$struct___configuration_descriptor.html" title="_ConfigurationDescriptor" alt="" coords="661,289,824,316"/>
+<area shape="rect" id="node14" href="$struct___u_s_b_h___class__cb.html" title="_USBH_Class_cb" alt="" coords="943,228,1069,255"/>
+</map>

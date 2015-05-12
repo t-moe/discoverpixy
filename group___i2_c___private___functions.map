@@ -1,0 +1,8 @@
+<map id="I2C_Private_Functions" name="I2C_Private_Functions">
+<area shape="rect" id="node3" href="$group___i2_c___group1.html" title="Initialization and Configuration functions. " alt="" coords="309,5,466,47"/>
+<area shape="rect" id="node4" href="$group___i2_c___group2.html" title="Data transfers functions. " alt="" coords="308,71,467,98"/>
+<area shape="rect" id="node5" href="$group___i2_c___group3.html" title="PEC management functions. " alt="" coords="295,122,479,149"/>
+<area shape="rect" id="node6" href="$group___i2_c___group4.html" title="DMA transfers management functions. " alt="" coords="296,173,479,215"/>
+<area shape="rect" id="node7" href="$group___i2_c___group5.html" title="Interrupts, events and flags management functions. " alt="" coords="293,239,481,280"/>
+<area shape="rect" id="node2" href="$group___i2_c.html" title="I2C driver modules. " alt="" coords="5,122,47,149"/>
+</map>

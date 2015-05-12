@@ -1,0 +1,4 @@
+<map id="USART_DeInit" name="USART_DeInit">
+<area shape="rect" id="node2" href="$group___r_c_c.html#gad94553850ac07106a27ee85fec37efdf" title="Forces or releases High Speed APB (APB2) peripheral reset. " alt="" coords="159,5,347,32"/>
+<area shape="rect" id="node3" href="$group___r_c_c.html#gab197ae4369c10b92640a733b40ed2801" title="Forces or releases Low Speed APB (APB1) peripheral reset. " alt="" coords="159,56,347,83"/>
+</map>

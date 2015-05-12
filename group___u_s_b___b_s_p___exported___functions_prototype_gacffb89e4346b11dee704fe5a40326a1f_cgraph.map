@@ -1,0 +1,7 @@
+<map id="USB_OTG_BSP_Init" name="USB_OTG_BSP_Init">
+<area shape="rect" id="node2" href="$group___r_c_c.html#ga80c89116820d48bb38db2e7d5e5a49b9" title="Enables or disables the AHB1 peripheral clock. " alt="" coords="195,5,381,32"/>
+<area shape="rect" id="node3" href="$group___g_p_i_o.html#ga71abf9404261370d03cca449b88d3a65" title="Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct. " alt="" coords="249,56,327,83"/>
+<area shape="rect" id="node4" href="$group___g_p_i_o.html#ga0a77617a322562ae84f8d72486032c5d" title="Changes the mapping of the specified pin. " alt="" coords="221,107,355,133"/>
+<area shape="rect" id="node5" href="$group___r_c_c.html#ga56ff55caf8d835351916b40dd030bc87" title="Enables or disables the High Speed APB (APB2) peripheral clock. " alt="" coords="195,157,381,184"/>
+<area shape="rect" id="node6" href="$group___r_c_c.html#gaadffedbd87e796f01d9776b8ee01ff5e" title="Enables or disables the AHB2 peripheral clock. " alt="" coords="195,208,381,235"/>
+</map>

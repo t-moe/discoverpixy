@@ -1,0 +1,8 @@
+<map id="USBH_HandleControl" name="USBH_HandleControl">
+<area shape="rect" id="node2" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gae2467690d1fabbaa76ce49f01d981aa6" title="USBH_CtlSendSetup Sends the Setup Packet to the Device. " alt="" coords="205,5,351,32"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="207,56,349,83"/>
+<area shape="rect" id="node5" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga3be73e419f4919980c1f6da01b179bee" title="HCD_GetCurrentFrame This function returns the frame number for sof packet. " alt="" coords="200,107,356,133"/>
+<area shape="rect" id="node6" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gaa5ee43776566a31d27f92560a2ef464b" title="USBH_CtlReceiveData Receives the Device Response to the Setup Packet. " alt="" coords="201,157,355,184"/>
+<area shape="rect" id="node7" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#ga8378f12c873a1225e0b76e9f39150830" title="USBH_CtlSendData Sends a data Packet to the Device. " alt="" coords="209,208,347,235"/>
+<area shape="rect" id="node3" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gad07e6e0a136a94695425c6663d7ce5f2" title="HCD_SubmitRequest This function prepare a HC and start a transfer. " alt="" coords="404,157,549,184"/>
+</map>

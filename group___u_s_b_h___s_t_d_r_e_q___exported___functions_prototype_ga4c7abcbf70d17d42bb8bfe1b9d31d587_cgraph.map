@@ -1,0 +1,5 @@
+<map id="USBH_Get_CfgDesc" name="USBH_Get_CfgDesc">
+<area shape="rect" id="node2" href="$group___u_s_b_h___s_t_d_r_e_q___private___functions.html#ga77fdd53f367e63f009bc425bfabfe49d" title="USBH_GetDescriptor Issues Descriptor command to the device. Once the response received, it parses the descriptor and updates the status. " alt="" coords="196,5,341,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gafd139f087c16697bc60526eb3d2578a2" title="USBH_CtlReq USBH_CtlReq sends a control request and provide the status after completion of the reques..." alt="" coords="389,5,493,32"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="541,5,684,32"/>
+</map>

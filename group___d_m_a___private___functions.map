@@ -1,0 +1,7 @@
+<map id="DMA_Private_Functions" name="DMA_Private_Functions">
+<area shape="rect" id="node1" href="$group___d_m_a___group1.html" title="Initialization and Configuration functions. " alt="" coords="313,5,471,47"/>
+<area shape="rect" id="node2" href="$group___d_m_a___group2.html" title="Data Counter functions. " alt="" coords="315,71,469,98"/>
+<area shape="rect" id="node3" href="$group___d_m_a___group3.html" title="Double Buffer mode functions. " alt="" coords="325,123,459,164"/>
+<area shape="rect" id="node4" href="$group___d_m_a___group4.html" title="Interrupts and flags management functions. " alt="" coords="313,188,471,229"/>
+<area shape="rect" id="node5" href="$group___d_m_a.html" title="DMA driver modules. " alt="" coords="5,101,56,127"/>
+</map>

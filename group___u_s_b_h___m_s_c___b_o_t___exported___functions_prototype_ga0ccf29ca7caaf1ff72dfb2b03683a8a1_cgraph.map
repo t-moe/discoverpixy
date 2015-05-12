@@ -1,0 +1,5 @@
+<map id="USBH_MSC_BOT_Abort" name="USBH_MSC_BOT_Abort">
+<area shape="rect" id="node2" href="$group___u_s_b_h___s_t_d_r_e_q___exported___functions_prototype.html#gad304748be74421018460f63bd8b90753" title="USBH_ClrFeature This request is used to clear or disable a specific feature. " alt="" coords="219,5,344,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gafd139f087c16697bc60526eb3d2578a2" title="USBH_CtlReq USBH_CtlReq sends a control request and provide the status after completion of the reques..." alt="" coords="392,5,496,32"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="544,5,687,32"/>
+</map>

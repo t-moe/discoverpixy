@@ -1,0 +1,7 @@
+<map id="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Class/HID/inc/usbh_hid_core.h" name="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Class/HID/inc/usbh_hid_core.h">
+<area shape="rect" id="node2" href="$usbh__hid__keybd_8h.html" title="This file contains all the prototypes for the usbh_hid_keybd.c. " alt="" coords="95,109,284,180"/>
+<area shape="rect" id="node3" href="$usbh__hid__core_8c.html" title="This file is the HID Layer Handlers for USB Host HID class. " alt="" coords="219,235,424,291"/>
+<area shape="rect" id="node5" href="$usbh__hid__mouse_8h.html" title="This file contains all the prototypes for the usbh_hid_mouse.c. " alt="" coords="359,109,548,180"/>
+<area shape="rect" id="node4" href="$usbh__hid__keybd_8c.html" title="This file is the application layer for USB Host HID Keyboard handling QWERTY and AZERTY Keyboard are ..." alt="" coords="5,228,195,299"/>
+<area shape="rect" id="node6" href="$usbh__hid__mouse_8c.html" title="This file is the application layer for USB Host HID Mouse Handling. " alt="" coords="448,228,637,299"/>
+</map>

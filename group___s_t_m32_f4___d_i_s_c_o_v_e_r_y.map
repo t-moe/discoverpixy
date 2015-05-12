@@ -1,0 +1,5 @@
+<map id="STM32F4_DISCOVERY" name="STM32F4_DISCOVERY">
+<area shape="rect" id="node1" href="$group___utilities.html" title="Utilities" alt="" coords="5,35,71,61"/>
+<area shape="rect" id="node2" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l.html" title="STM32F4_DISCOVERY_LIS302DL" alt="" coords="328,5,552,32"/>
+<area shape="rect" id="node4" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l.html" title="This file provides set of firmware functions to manage Leds and push&#45;button available on STM32F4&#45;Disc..." alt="" coords="341,57,539,98"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="gui_checkbox_update" name="gui_checkbox_update">
+<area shape="rect" id="node2" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="218,5,331,32"/>
+<area shape="rect" id="node5" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="201,56,348,83"/>
+<area shape="rect" id="node3" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="396,31,527,57"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="575,31,625,57"/>
+</map>

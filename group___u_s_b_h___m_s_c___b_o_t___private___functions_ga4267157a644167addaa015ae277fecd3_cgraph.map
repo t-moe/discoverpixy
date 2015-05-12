@@ -1,0 +1,4 @@
+<map id="USBH_MSC_DecodeCSW" name="USBH_MSC_DecodeCSW">
+<area shape="rect" id="node2" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga74595e1854638eae4be812d804a4fe1b" title="HCD_IsDeviceConnected Check if the device is connected. " alt="" coords="229,5,396,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gafc5ff8391e45b525c0c243477e7fd59a" title="HCD_GetXferCnt This function returns the last URBstate. " alt="" coords="253,56,372,83"/>
+</map>

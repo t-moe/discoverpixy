@@ -1,0 +1,4 @@
+<map id="USBH_ClrFeature" name="USBH_ClrFeature">
+<area shape="rect" id="node2" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga0ccf29ca7caaf1ff72dfb2b03683a8a1" title="USBH_MSC_BOT_Abort This function manages the different Error handling for STALL. " alt="" coords="179,5,344,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga9bc4c591c3ab94488eef0886cc127ac9" title="USBH_MSC_HandleBOTXfer This function manages the different states of BOT transfer and updates the sta..." alt="" coords="392,5,580,32"/>
+</map>

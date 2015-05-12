@@ -1,0 +1,6 @@
+<map id="TIM_ICInit" name="TIM_ICInit">
+<area shape="rect" id="node2" href="$group___t_i_m___group3.html#gaf0f684dea88e222de9689d8ed0ca8805" title="Sets the TIMx Input Capture 1 prescaler. " alt="" coords="132,5,276,32"/>
+<area shape="rect" id="node3" href="$group___t_i_m___group3.html#ga3cc4869b5fe73271808512c89322a325" title="Sets the TIMx Input Capture 2 prescaler. " alt="" coords="132,56,276,83"/>
+<area shape="rect" id="node4" href="$group___t_i_m___group3.html#ga76f906383b8132ebe00dffadb70cf7f9" title="Sets the TIMx Input Capture 3 prescaler. " alt="" coords="132,107,276,133"/>
+<area shape="rect" id="node5" href="$group___t_i_m___group3.html#ga0f2c784271356d6b64b8c0da64dbdbc2" title="Sets the TIMx Input Capture 4 prescaler. " alt="" coords="132,157,276,184"/>
+</map>

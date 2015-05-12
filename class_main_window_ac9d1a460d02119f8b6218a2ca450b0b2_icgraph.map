@@ -1,0 +1,5 @@
+<map id="checkAndSendEvent" name="checkAndSendEvent">
+<area shape="rect" id="node2" href="$class_main_window.html#ab6b13500eeb6769a2f4ceab39044cd7d" title="mousePressEvent" alt="" coords="203,5,329,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ad8f2588e2600909fd8cb701381b74977" title="mouseReleaseEvent" alt="" coords="196,56,336,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#a4630e35595209fef104bd05f06ba38a5" title="mouseMoveEvent" alt="" coords="205,107,327,133"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="DMA_Exported_Constants" name="DMA_Exported_Constants">
+<area shape="rect" id="node1" href="$group___d_m_a__memory__data__size.html" title="DMA_memory_data_size" alt="" coords="359,5,527,32"/>
+<area shape="rect" id="node3" href="$group___d_m_a__fifo__status__level.html" title="DMA_fifo_status_level" alt="" coords="369,56,518,83"/>
+<area shape="rect" id="node4" href="$group___d_m_a__fifo__threshold__level.html" title="DMA_fifo_threshold\l_level" alt="" coords="376,107,511,149"/>
+<area shape="rect" id="node5" href="$group___d_m_a__data__buffer__size.html" title="DMA_data_buffer_size" alt="" coords="367,173,519,200"/>
+<area shape="rect" id="node6" href="$group___d_m_a__circular__normal__mode.html" title="DMA_circular_normal_mode" alt="" coords="351,224,536,251"/>
+<area shape="rect" id="node7" href="$group___d_m_a__peripheral__data__size.html" title="DMA_peripheral_data_size" alt="" coords="355,275,532,301"/>
+<area shape="rect" id="node8" href="$group___d_m_a__interrupts__definitions.html" title="DMA_interrupts_definitions" alt="" coords="355,325,532,352"/>
+<area shape="rect" id="node9" href="$group___d_m_a__peripheral__burst.html" title="DMA_peripheral_burst" alt="" coords="368,376,519,403"/>
+<area shape="rect" id="node10" href="$group___d_m_a__priority__level.html" title="DMA_priority_level" alt="" coords="379,427,508,453"/>
+<area shape="rect" id="node11" href="$group___d_m_a__data__transfer__direction.html" title="DMA_data_transfer_direction" alt="" coords="349,477,538,504"/>
+<area shape="rect" id="node12" href="$group___d_m_a__interrupt__enable__definitions.html" title="DMA_interrupt_enable\l_definitions" alt="" coords="368,529,519,570"/>
+<area shape="rect" id="node14" href="$group___d_m_a__peripheral__incremented__mode.html" title="DMA_peripheral_incremented_mode" alt="" coords="328,595,559,621"/>
+<area shape="rect" id="node15" href="$group___d_m_a__memory__incremented__mode.html" title="DMA_memory_incremented_mode" alt="" coords="332,645,555,672"/>
+<area shape="rect" id="node16" href="$group___d_m_a__fifo__direct__mode.html" title="DMA_fifo_direct_mode" alt="" coords="367,696,519,723"/>
+<area shape="rect" id="node17" href="$group___d_m_a__peripheral__increment__offset.html" title="DMA_peripheral_increment\l_offset" alt="" coords="354,747,533,789"/>
+<area shape="rect" id="node18" href="$group___d_m_a__flags__definition.html" title="DMA_flags_definition" alt="" coords="372,813,515,840"/>
+<area shape="rect" id="node19" href="$group___d_m_a__flow__controller__definitions.html" title="DMA_flow_controller\l_definitions" alt="" coords="373,865,513,906"/>
+<area shape="rect" id="node20" href="$group___d_m_a__memory__burst.html" title="DMA_memory_burst" alt="" coords="373,931,514,957"/>
+<area shape="rect" id="node21" href="$group___d_m_a__memory__targets__definitions.html" title="DMA_memory_targets\l_definitions" alt="" coords="367,982,519,1023"/>
+<area shape="rect" id="node22" href="$group___d_m_a__channel.html" title="DMA_channel" alt="" coords="392,1048,495,1075"/>
+<area shape="rect" id="node13" href="$group___d_m_a.html" title="DMA driver modules. " alt="" coords="5,507,56,533"/>
+</map>

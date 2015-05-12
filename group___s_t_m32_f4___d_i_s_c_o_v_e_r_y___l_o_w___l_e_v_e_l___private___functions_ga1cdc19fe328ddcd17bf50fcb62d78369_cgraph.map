@@ -1,0 +1,8 @@
+<map id="STM_EVAL_PBInit" name="STM_EVAL_PBInit">
+<area shape="rect" id="node2" href="$group___r_c_c.html#ga80c89116820d48bb38db2e7d5e5a49b9" title="Enables or disables the AHB1 peripheral clock. " alt="" coords="184,5,371,32"/>
+<area shape="rect" id="node3" href="$group___r_c_c.html#ga56ff55caf8d835351916b40dd030bc87" title="Enables or disables the High Speed APB (APB2) peripheral clock. " alt="" coords="184,56,371,83"/>
+<area shape="rect" id="node4" href="$group___g_p_i_o.html#ga71abf9404261370d03cca449b88d3a65" title="Initializes the GPIOx peripheral according to the specified parameters in the GPIO_InitStruct. " alt="" coords="238,107,317,133"/>
+<area shape="rect" id="node5" href="$group___s_y_s_c_f_g.html#gafedab1f64cef720aeafeafd409ba6ae7" title="Selects the GPIO pin used as EXTI Line. " alt="" coords="193,157,362,184"/>
+<area shape="rect" id="node6" href="$group___e_x_t_i.html#ga8c9ce6352a3a2dfc8fc9287cb24c6501" title="Initializes the EXTI peripheral according to the specified parameters in the EXTI_InitStruct. " alt="" coords="241,208,313,235"/>
+<area shape="rect" id="node7" href="$group___m_i_s_c.html#ga4ab373ed0870c06fca5eb51d639adf41" title="Initializes the NVIC peripheral according to the specified parameters in the NVIC_InitStruct. " alt="" coords="239,259,315,285"/>
+</map>

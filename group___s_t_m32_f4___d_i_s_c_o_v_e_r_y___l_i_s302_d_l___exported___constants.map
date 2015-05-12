@@ -1,0 +1,16 @@
+<map id="STM32F4_DISCOVERY_LIS302DL_Exported_Constants" name="STM32F4_DISCOVERY_LIS302DL_Exported_Constants">
+<area shape="rect" id="node1" href="$group__latch___interrupt___request__selection.html" title="Latch_Interrupt_Request\l_selection" alt="" coords="542,5,705,47"/>
+<area shape="rect" id="node2" href="$group___data___rate__selection.html" title="Data_Rate_selection" alt="" coords="552,71,695,98"/>
+<area shape="rect" id="node3" href="$group___double___click___interrupt___x_y_z__selection.html" title="Double_Click_Interrupt\l_XYZ_selection" alt="" coords="547,123,699,164"/>
+<area shape="rect" id="node4" href="$group___high___pass___filter__selection.html" title="High_Pass_Filter_selection" alt="" coords="533,189,713,215"/>
+<area shape="rect" id="node5" href="$group___high___pass___filter___interrupt__selection.html" title="High_Pass_Filter_Interrupt\l_selection" alt="" coords="536,240,711,281"/>
+<area shape="rect" id="node6" href="$group___boot___mode__selection.html" title="Boot_Mode_selection" alt="" coords="550,306,697,333"/>
+<area shape="rect" id="node7" href="$group___self___test__selection.html" title="Self_Test_selection" alt="" coords="556,357,691,383"/>
+<area shape="rect" id="node8" href="$group___full___scale__selection.html" title="Full_Scale_selection" alt="" coords="552,407,695,434"/>
+<area shape="rect" id="node9" href="$group___power___mode__selection.html" title="Power_Mode_selection" alt="" coords="545,458,701,485"/>
+<area shape="rect" id="node11" href="$group___direction___x_y_z__selection.html" title="Direction_XYZ_selection" alt="" coords="542,509,705,535"/>
+<area shape="rect" id="node13" href="$group___s_p_i___serial___interface___mode__selection.html" title="SPI_Serial_Interface\l_Mode_selection" alt="" coords="554,560,693,601"/>
+<area shape="rect" id="node14" href="$group___filtered___data___selection___mode__selection.html" title="Filtered_Data_Selection\l_Mode_selection" alt="" coords="543,625,703,667"/>
+<area shape="rect" id="node15" href="$group___click___interrupt___x_y_z__selection.html" title="Click_Interrupt_XYZ\l_selection" alt="" coords="556,691,691,732"/>
+<area shape="rect" id="node12" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l.html" title="STM32F4_DISCOVERY_LIS302DL" alt="" coords="5,357,229,383"/>
+</map>

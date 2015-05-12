@@ -1,0 +1,7 @@
+<map id="touch_unregister_area" name="touch_unregister_area">
+<area shape="rect" id="node2" href="$screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="613,98,664,125"/>
+<area shape="rect" id="node3" href="$button_8h.html#a39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="214,60,345,86"/>
+<area shape="rect" id="node6" href="$checkbox_8h.html#a86fc603e59c7a723138b77f4a8f39e76" title="gui_checkbox_remove" alt="" coords="204,136,355,162"/>
+<area shape="rect" id="node4" href="$screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="459,48,509,74"/>
+<area shape="rect" id="node5" href="$numupdown_8h.html#a9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="403,98,565,125"/>
+</map>

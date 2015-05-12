@@ -1,0 +1,5 @@
+<map id="app_process" name="app_process">
+<area shape="rect" id="node2" href="$system_8c.html#a222cd9a0957fe56d9bb3e745acfb7f1f" title="system_process" alt="" coords="155,5,274,32"/>
+<area shape="rect" id="node4" href="$screen_8c.html#ab7394734ee1d57093721cbd22b901323" title="gui_screen_update" alt="" coords="149,56,280,83"/>
+<area shape="rect" id="node3" href="$ll__system_8h.html#a1314af5893cdde97e48bf135b6996b1c" title="ll_system_process" alt="" coords="328,5,459,32"/>
+</map>

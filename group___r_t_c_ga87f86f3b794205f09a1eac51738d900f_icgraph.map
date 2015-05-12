@@ -1,0 +1,8 @@
+<map id="RTC_ExitInitMode" name="RTC_ExitInitMode">
+<area shape="rect" id="node2" href="$group___r_t_c___group1.html#ga8eb747bf9698b2482ba6ef4d811de8e0" title="Initializes the RTC registers according to the specified parameters in RTC_InitStruct. " alt="" coords="225,5,295,32"/>
+<area shape="rect" id="node3" href="$group___r_t_c___group1.html#gaa60079ec257fb3a277d058ca8305533d" title="Enables or disables the RTC reference clock detection. " alt="" coords="193,56,327,83"/>
+<area shape="rect" id="node4" href="$group___r_t_c___group2.html#ga9f9df80cfa82f7a4dd9f4d0cf2ffb3a6" title="Set the RTC current time. " alt="" coords="209,107,311,133"/>
+<area shape="rect" id="node5" href="$group___r_t_c___group2.html#ga69d08538147f3d89c818dcfabf50e362" title="Set the RTC current date. " alt="" coords="209,157,311,184"/>
+<area shape="rect" id="node6" href="$group___r_t_c___group7.html#gaa3bb10170a2c70ac9ce3e41c611bdd43" title="Configures the Coarse calibration parameters. " alt="" coords="180,208,340,235"/>
+<area shape="rect" id="node7" href="$group___r_t_c___group7.html#ga008ae7173b2befe876f5e76686bc9089" title="Enables or disables the Coarse calibration process. " alt="" coords="185,259,335,285"/>
+</map>

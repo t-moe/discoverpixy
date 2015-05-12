@@ -1,0 +1,14 @@
+<map id="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Core/inc/usbh_hcs.h" name="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Core/inc/usbh_hcs.h">
+<area shape="rect" id="node2" href="$usbh__hid__core_8h.html" title="This file contains all the prototypes for the usbh_hid_core.c. " alt="" coords="219,109,423,165"/>
+<area shape="rect" id="node8" href="$libs_2_stm_usb_host_2_s_t_m32___u_s_b___h_o_s_t___library_2_class_2_m_s_c_2inc_2usbh__msc__core_8h_source.html" title="discovery/libs/StmUsbHost\l/STM32_USB_HOST_Library\l/Class/MSC/inc/usbh_msc_core.h" alt="" coords="447,109,667,165"/>
+<area shape="rect" id="node9" href="$usbh__core_8c.html" title="This file implements the functions for the core state machine process the enumeration and the control..." alt="" coords="716,109,905,165"/>
+<area shape="rect" id="node10" href="$usbh__hcs_8c.html" title="This file implements functions for opening and closing host channels. " alt="" coords="929,109,1119,165"/>
+<area shape="rect" id="node11" href="$src_2usbh__msc__core_8h_source.html" title="discovery/src/usbh\l_msc_core.h" alt="" coords="1143,117,1273,158"/>
+<area shape="rect" id="node3" href="$usbh__hid__keybd_8h.html" title="This file contains all the prototypes for the usbh_hid_keybd.c. " alt="" coords="359,213,548,284"/>
+<area shape="rect" id="node4" href="$usbh__hid__core_8c.html" title="This file is the HID Layer Handlers for USB Host HID class. " alt="" coords="219,339,424,395"/>
+<area shape="rect" id="node6" href="$usbh__hid__mouse_8h.html" title="This file contains all the prototypes for the usbh_hid_mouse.c. " alt="" coords="95,213,284,284"/>
+<area shape="rect" id="node5" href="$usbh__hid__keybd_8c.html" title="This file is the application layer for USB Host HID Keyboard handling QWERTY and AZERTY Keyboard are ..." alt="" coords="448,332,637,403"/>
+<area shape="rect" id="node7" href="$usbh__hid__mouse_8c.html" title="This file is the application layer for USB Host HID Mouse Handling. " alt="" coords="5,332,195,403"/>
+<area shape="rect" id="node12" href="$usbh__msc__bot_8c.html" title="This file includes the mass storage related functions. " alt="" coords="1221,221,1435,277"/>
+<area shape="rect" id="node13" href="$usbh__msc__scsi_8c.html" title="This file implements the SCSI commands. " alt="" coords="977,221,1197,277"/>
+</map>

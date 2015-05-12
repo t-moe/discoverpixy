@@ -1,0 +1,4 @@
+<map id="TIM_PWMIConfig" name="TIM_PWMIConfig">
+<area shape="rect" id="node2" href="$group___t_i_m___group3.html#gaf0f684dea88e222de9689d8ed0ca8805" title="Sets the TIMx Input Capture 1 prescaler. " alt="" coords="176,5,320,32"/>
+<area shape="rect" id="node3" href="$group___t_i_m___group3.html#ga3cc4869b5fe73271808512c89322a325" title="Sets the TIMx Input Capture 2 prescaler. " alt="" coords="176,56,320,83"/>
+</map>

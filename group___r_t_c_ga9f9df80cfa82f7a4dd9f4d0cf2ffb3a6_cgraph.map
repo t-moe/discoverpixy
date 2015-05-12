@@ -1,0 +1,5 @@
+<map id="RTC_SetTime" name="RTC_SetTime">
+<area shape="rect" id="node2" href="$group___r_t_c___group1.html#ga679f8883cbfb267a53ffb1ab4cc5c8c5" title="Enters the RTC Initialization mode. " alt="" coords="163,5,297,32"/>
+<area shape="rect" id="node3" href="$group___r_t_c___group1.html#ga87f86f3b794205f09a1eac51738d900f" title="Exits the RTC Initialization mode. " alt="" coords="167,56,293,83"/>
+<area shape="rect" id="node4" href="$group___r_t_c___group1.html#ga2938febeef6baf0d91cc066ca5caf095" title="Waits until the RTC Time and Date registers (RTC_TR and RTC_DR) are synchronized with RTC APB clock..." alt="" coords="156,107,304,133"/>
+</map>

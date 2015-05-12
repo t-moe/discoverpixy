@@ -1,0 +1,4 @@
+<map id="HCD_GetXferCnt" name="HCD_GetXferCnt">
+<area shape="rect" id="node2" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga4267157a644167addaa015ae277fecd3" title="USBH_MSC_DecodeCSW This function decodes the CSW received by the device and updates the same to upper..." alt="" coords="172,5,348,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga9bc4c591c3ab94488eef0886cc127ac9" title="USBH_MSC_HandleBOTXfer This function manages the different states of BOT transfer and updates the sta..." alt="" coords="396,5,584,32"/>
+</map>

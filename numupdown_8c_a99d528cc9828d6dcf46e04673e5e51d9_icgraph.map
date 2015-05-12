@@ -1,0 +1,7 @@
+<map id="gui_numupdown_update" name="gui_numupdown_update">
+<area shape="rect" id="node2" href="$numupdown_8c.html#a47b81268e10355aa5abbb05788e99dfc" title="button_up_cb" alt="" coords="245,5,345,32"/>
+<area shape="rect" id="node5" href="$numupdown_8c.html#a0422809516212448deaf10314d0c01d5" title="button_down_cb" alt="" coords="237,56,353,83"/>
+<area shape="rect" id="node6" href="$numupdown_8h.html#a4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="215,107,375,133"/>
+<area shape="rect" id="node3" href="$numupdown_8h.html#ab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="423,31,565,57"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="613,31,664,57"/>
+</map>

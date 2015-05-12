@@ -1,0 +1,41 @@
+<map id="discovery/libs/StmUsbHost/STM32_USB_OTG_Driver/src/usb_core.c" name="discovery/libs/StmUsbHost/STM32_USB_OTG_Driver/src/usb_core.c">
+<area shape="rect" id="node3" href="$usb__core_8h.html" title="Header of the Core Layer. " alt="" coords="2148,184,2235,211"/>
+<area shape="rect" id="node41" href="$usb__bsp_8h.html" title="Specific api&#39;s relative to the used hardware platform. " alt="" coords="2229,109,2311,136"/>
+<area shape="rect" id="node4" href="$usb__conf_8h_source.html" title="usb_conf.h" alt="" coords="2107,333,2193,360"/>
+<area shape="rect" id="node39" href="$usb__regs_8h.html" title="hardware registers " alt="" coords="2089,259,2176,285"/>
+<area shape="rect" id="node40" href="$usb__defines_8h.html" title="Header of the Core Layer. " alt="" coords="2200,259,2303,285"/>
+<area shape="rect" id="node5" href="$stm32f4xx_8h.html" title="CMSIS Cortex&#45;M4 Device Peripheral Access Layer Header File. This file contains all the peripheral reg..." alt="" coords="2189,408,2282,435"/>
+<area shape="rect" id="node6" href="$core__cm4_8h.html" title="CMSIS Cortex&#45;M4 Core Peripheral Access Layer Header File. " alt="" coords="237,483,327,509"/>
+<area shape="rect" id="node11" href="$system__stm32f4xx_8h.html" title="CMSIS Cortex&#45;M4 Device System Source File for STM32F4xx devices. " alt="" coords="1472,483,1615,509"/>
+<area shape="rect" id="node12" href="$stm32f4xx__conf_8h_source.html" title="stm32f4xx_conf.h" alt="" coords="2299,483,2423,509"/>
+<area shape="rect" id="node8" href="$core__cm_instr_8h.html" title="CMSIS Cortex&#45;M Core Instruction Access Header File. " alt="" coords="95,557,202,584"/>
+<area shape="rect" id="node9" href="$core__cm_func_8h.html" title="CMSIS Cortex&#45;M Core Function Access Header File. " alt="" coords="226,557,338,584"/>
+<area shape="rect" id="node10" href="$core__cm4__simd_8h.html" title="CMSIS Cortex&#45;M4 SIMD Header File. " alt="" coords="362,557,487,584"/>
+<area shape="rect" id="node13" href="$stm32f4xx__adc_8h.html" title="This file contains all the functions prototypes for the ADC firmware library. " alt="" coords="512,557,633,584"/>
+<area shape="rect" id="node14" href="$stm32f4xx__crc_8h.html" title="This file contains all the functions prototypes for the CRC firmware library. " alt="" coords="657,557,776,584"/>
+<area shape="rect" id="node15" href="$stm32f4xx__dbgmcu_8h.html" title="This file contains all the functions prototypes for the DBGMCU firmware library. " alt="" coords="801,557,947,584"/>
+<area shape="rect" id="node16" href="$stm32f4xx__dma_8h.html" title="This file contains all the functions prototypes for the DMA firmware library. " alt="" coords="971,557,1097,584"/>
+<area shape="rect" id="node17" href="$stm32f4xx__exti_8h.html" title="This file contains all the functions prototypes for the EXTI firmware library. " alt="" coords="1121,557,1243,584"/>
+<area shape="rect" id="node18" href="$stm32f4xx__flash_8h.html" title="This file contains all the functions prototypes for the FLASH firmware library. " alt="" coords="1267,557,1393,584"/>
+<area shape="rect" id="node19" href="$stm32f4xx__gpio_8h.html" title="This file contains all the functions prototypes for the GPIO firmware library. " alt="" coords="1417,557,1541,584"/>
+<area shape="rect" id="node20" href="$stm32f4xx__i2c_8h.html" title="This file contains all the functions prototypes for the I2C firmware library. " alt="" coords="1565,557,1682,584"/>
+<area shape="rect" id="node21" href="$stm32f4xx__iwdg_8h.html" title="This file contains all the functions prototypes for the IWDG firmware library. " alt="" coords="1707,557,1833,584"/>
+<area shape="rect" id="node22" href="$stm32f4xx__pwr_8h.html" title="This file contains all the functions prototypes for the PWR firmware library. " alt="" coords="1857,557,1976,584"/>
+<area shape="rect" id="node23" href="$stm32f4xx__rcc_8h.html" title="This file contains all the functions prototypes for the RCC firmware library. " alt="" coords="2000,557,2119,584"/>
+<area shape="rect" id="node24" href="$stm32f4xx__rtc_8h.html" title="This file contains all the functions prototypes for the RTC firmware library. " alt="" coords="2143,557,2258,584"/>
+<area shape="rect" id="node25" href="$stm32f4xx__sdio_8h.html" title="This file contains all the functions prototypes for the SDIO firmware library. " alt="" coords="2283,557,2407,584"/>
+<area shape="rect" id="node26" href="$stm32f4xx__spi_8h.html" title="This file contains all the functions prototypes for the SPI firmware library. " alt="" coords="2430,557,2547,584"/>
+<area shape="rect" id="node27" href="$stm32f4xx__syscfg_8h.html" title="This file contains all the functions prototypes for the SYSCFG firmware library. " alt="" coords="2571,557,2710,584"/>
+<area shape="rect" id="node28" href="$stm32f4xx__tim_8h.html" title="This file contains all the functions prototypes for the TIM firmware library. " alt="" coords="2735,557,2853,584"/>
+<area shape="rect" id="node29" href="$stm32f4xx__usart_8h.html" title="This file contains all the functions prototypes for the USART firmware library. " alt="" coords="2877,557,3007,584"/>
+<area shape="rect" id="node30" href="$stm32f4xx__wwdg_8h.html" title="This file contains all the functions prototypes for the WWDG firmware library. " alt="" coords="3031,557,3163,584"/>
+<area shape="rect" id="node31" href="$misc_8h.html" title="This file contains all the functions prototypes for the miscellaneous firmware library functions (add..." alt="" coords="3187,557,3249,584"/>
+<area shape="rect" id="node32" href="$stm32f4xx__cryp_8h.html" title="This file contains all the functions prototypes for the Cryptographic processor(CRYP) firmware librar..." alt="" coords="3273,557,3398,584"/>
+<area shape="rect" id="node33" href="$stm32f4xx__hash_8h.html" title="This file contains all the functions prototypes for the HASH firmware library. " alt="" coords="3422,557,3550,584"/>
+<area shape="rect" id="node34" href="$stm32f4xx__rng_8h.html" title="This file contains all the functions prototypes for the Random Number Generator(RNG) firmware library..." alt="" coords="3575,557,3693,584"/>
+<area shape="rect" id="node35" href="$stm32f4xx__can_8h.html" title="This file contains all the functions prototypes for the CAN firmware library. " alt="" coords="3717,557,3839,584"/>
+<area shape="rect" id="node36" href="$stm32f4xx__dac_8h.html" title="This file contains all the functions prototypes for the DAC firmware library. " alt="" coords="3863,557,3984,584"/>
+<area shape="rect" id="node37" href="$stm32f4xx__dcmi_8h.html" title="This file contains all the functions prototypes for the DCMI firmware library. " alt="" coords="4009,557,4137,584"/>
+<area shape="rect" id="node38" href="$stm32f4xx__fsmc_8h.html" title="This file contains all the functions prototypes for the FSMC firmware library. " alt="" coords="4161,557,4289,584"/>
+<area shape="rect" id="node42" href="$stm32f4__discovery_8h.html" title="This file contains definitions for STM32F4&#45;Discovery Kit&#39;s Leds and push&#45;button hardware resources..." alt="" coords="2253,333,2391,360"/>
+</map>

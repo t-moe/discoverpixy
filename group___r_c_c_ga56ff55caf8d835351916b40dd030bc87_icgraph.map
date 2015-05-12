@@ -1,0 +1,5 @@
+<map id="RCC_APB2PeriphClockCmd" name="RCC_APB2PeriphClockCmd">
+<area shape="rect" id="node2" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_o_w___l_e_v_e_l___private___functions.html#ga1cdc19fe328ddcd17bf50fcb62d78369" title="Configures Button GPIO and EXTI Line. " alt="" coords="245,5,376,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___b_s_p___exported___functions_prototype.html#gacffb89e4346b11dee704fe5a40326a1f" title="USB_OTG_BSP_Init Initilizes BSP configurations. " alt="" coords="240,56,381,83"/>
+<area shape="rect" id="node4" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gae365cd3b28aa14f76325c31138190f52" title="USBH_Init Host hardware and stack initializations. " alt="" coords="429,56,512,83"/>
+</map>

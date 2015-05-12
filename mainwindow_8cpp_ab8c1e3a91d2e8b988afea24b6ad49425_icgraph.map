@@ -1,0 +1,36 @@
+<map id="QColorFromRGB565" name="QColorFromRGB565">
+<area shape="rect" id="node2" href="$class_main_window.html#a2f3254df4a8008be5c04b2196bd6be93" title="MainWindow::draw_line" alt="" coords="211,358,369,385"/>
+<area shape="rect" id="node16" href="$class_main_window.html#ae06ea0792b334636008381c3f60a0035" title="MainWindow::clear" alt="" coords="224,459,356,486"/>
+<area shape="rect" id="node19" href="$class_main_window.html#ae279dedfc6ff135df38c1dbc587e4c57" title="MainWindow::draw_rectangle" alt="" coords="195,219,385,246"/>
+<area shape="rect" id="node23" href="$class_main_window.html#a9be393832ae0ea503d13d3ef686fd3f7" title="MainWindow::fill_rectangle" alt="" coords="202,307,378,334"/>
+<area shape="rect" id="node29" href="$class_main_window.html#a4f86c6023d8b866a60ae0f67b242e7cb" title="MainWindow::draw_circle" alt="" coords="205,510,375,537"/>
+<area shape="rect" id="node32" href="$class_main_window.html#ad2d75b9195314357011163961ba8f0ce" title="MainWindow::draw_char" alt="" coords="209,409,371,435"/>
+<area shape="rect" id="node3" href="$ll__tft_8cpp.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="443,358,549,385"/>
+<area shape="rect" id="node4" href="$tft_8h.html#a5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="629,358,724,385"/>
+<area shape="rect" id="node5" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="1255,535,1305,562"/>
+<area shape="rect" id="node6" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="825,358,912,385"/>
+<area shape="rect" id="node10" href="$button_8h.html#a6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="805,307,932,334"/>
+<area shape="rect" id="node12" href="$checkbox_8h.html#a669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="795,105,943,131"/>
+<area shape="rect" id="node7" href="$button_8h.html#a64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="1016,358,1127,385"/>
+<area shape="rect" id="node8" href="$numupdown_8h.html#ab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="1408,333,1551,359"/>
+<area shape="rect" id="node9" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="1599,155,1649,182"/>
+<area shape="rect" id="node11" href="$numupdown_8h.html#a4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="1200,257,1360,283"/>
+<area shape="rect" id="node13" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="1015,105,1128,131"/>
+<area shape="rect" id="node15" href="$checkbox_8h.html#a3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="998,54,1145,81"/>
+<area shape="rect" id="node14" href="$checkbox_8h.html#afc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="1215,105,1345,131"/>
+<area shape="rect" id="node17" href="$ll__tft_8cpp.html#a74b49691a101619b939c085ff607a582" title="ll_tft_clear" alt="" coords="455,459,537,486"/>
+<area shape="rect" id="node18" href="$tft_8h.html#a6a2e3b3878ae5eea184d4c3ffe091b78" title="tft_clear" alt="" coords="643,561,711,587"/>
+<area shape="rect" id="node20" href="$ll__tft_8cpp.html#a3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="607,169,747,195"/>
+<area shape="rect" id="node21" href="$tft_8h.html#ab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="805,155,932,182"/>
+<area shape="rect" id="node22" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="1028,510,1115,537"/>
+<area shape="rect" id="node24" href="$ll__tft_8cpp.html#a0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="433,295,559,322"/>
+<area shape="rect" id="node25" href="$tft_8h.html#a781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="621,245,733,271"/>
+<area shape="rect" id="node26" href="$numupdown_8h.html#a99d528cc9828d6dcf46e04673e5e51d9" title="gui_numupdown_update" alt="" coords="991,307,1152,334"/>
+<area shape="rect" id="node27" href="$numupdown_8c.html#a47b81268e10355aa5abbb05788e99dfc" title="button_up_cb" alt="" coords="1230,307,1330,334"/>
+<area shape="rect" id="node28" href="$numupdown_8c.html#a0422809516212448deaf10314d0c01d5" title="button_down_cb" alt="" coords="1222,358,1338,385"/>
+<area shape="rect" id="node30" href="$ll__tft_8cpp.html#aa2d2a94a228ad5fc8364a642f32b680d" title="ll_tft_draw_circle" alt="" coords="437,611,555,638"/>
+<area shape="rect" id="node31" href="$tft_8h.html#ab0639f829418b928bf37fdcf50d71b8d" title="tft_draw_circle" alt="" coords="1427,561,1532,587"/>
+<area shape="rect" id="node33" href="$ll__tft_8cpp.html#a408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="440,409,552,435"/>
+<area shape="rect" id="node34" href="$tft_8h.html#abf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="631,409,723,435"/>
+<area shape="rect" id="node35" href="$tft_8h.html#a765c521ee1b01ab0c34449936500291b" title="tft_print_formatted" alt="" coords="805,409,932,435"/>
+</map>

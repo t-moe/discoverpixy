@@ -1,0 +1,10 @@
+<map id="USB_OTG_handle" name="USB_OTG_handle">
+<area shape="rect" id="node2" href="$struct_u_s_b___o_t_g__core__cfg.html" title="USB_OTG_core_cfg" alt="" coords="329,81,468,108"/>
+<area shape="rect" id="node3" href="$struct_u_s_b___o_t_g__core__regs.html" title="USB_OTG_core_regs" alt="" coords="325,132,472,159"/>
+<area shape="rect" id="node4" href="$struct___u_s_b___o_t_g___g_r_e_g_s.html" title="_USB_OTG_GREGS" alt="" coords="23,5,167,32"/>
+<area shape="rect" id="node5" href="$struct___u_s_b___o_t_g___h_r_e_g_s.html" title="_USB_OTG_HREGS" alt="" coords="23,56,166,83"/>
+<area shape="rect" id="node6" href="$struct___u_s_b___o_t_g___o_u_t_e_p_r_e_g_s.html" title="_USB_OTG_OUTEPREGS" alt="" coords="5,107,184,133"/>
+<area shape="rect" id="node7" href="$struct___u_s_b___o_t_g___i_n_e_p_r_e_g_s.html" title="_USB_OTG_INEPREGS" alt="" coords="13,157,177,184"/>
+<area shape="rect" id="node8" href="$struct___u_s_b___o_t_g___h_c___r_e_g_s.html" title="_USB_OTG_HC_REGS" alt="" coords="15,208,174,235"/>
+<area shape="rect" id="node9" href="$struct___u_s_b___o_t_g___d_r_e_g_s.html" title="_USB_OTG_DREGS" alt="" coords="23,259,166,285"/>
+</map>

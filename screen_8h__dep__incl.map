@@ -1,0 +1,12 @@
+<map id="common/gui/screen.h" name="common/gui/screen.h">
+<area shape="rect" id="node2" href="$screen__main_8h.html" title="common/app/screen_main.h" alt="" coords="71,80,257,107"/>
+<area shape="rect" id="node5" href="$screen__filetest_8h.html" title="common/app/screen_filetest.h" alt="" coords="282,80,478,107"/>
+<area shape="rect" id="node7" href="$screen__guitest_8h.html" title="common/app/screen_guitest.h" alt="" coords="503,80,700,107"/>
+<area shape="rect" id="node9" href="$screen__pixytest_8h.html" title="common/app/screen_pixytest.h" alt="" coords="725,80,929,107"/>
+<area shape="rect" id="node11" href="$screen_8c.html" title="common/gui/screen.c" alt="" coords="953,80,1100,107"/>
+<area shape="rect" id="node3" href="$app_8c.html" title="common/app/app.c" alt="" coords="5,155,139,181"/>
+<area shape="rect" id="node4" href="$screen__main_8c.html" title="common/app/screen_main.c" alt="" coords="384,155,571,181"/>
+<area shape="rect" id="node6" href="$screen__filetest_8c.html" title="common/app/screen_filetest.c" alt="" coords="163,155,359,181"/>
+<area shape="rect" id="node8" href="$screen__guitest_8c.html" title="common/app/screen_guitest.c" alt="" coords="595,155,792,181"/>
+<area shape="rect" id="node10" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="817,155,1021,181"/>
+</map>

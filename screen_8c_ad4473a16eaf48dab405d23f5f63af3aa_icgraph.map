@@ -1,0 +1,7 @@
+<map id="gui_screen_navigate" name="gui_screen_navigate">
+<area shape="rect" id="node2" href="$group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385" title="app_init" alt="" coords="210,5,277,32"/>
+<area shape="rect" id="node3" href="$screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="195,56,291,83"/>
+<area shape="rect" id="node5" href="$screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="196,107,291,133"/>
+<area shape="rect" id="node6" href="$screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="192,157,295,184"/>
+<area shape="rect" id="node4" href="$screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="343,107,393,133"/>
+</map>

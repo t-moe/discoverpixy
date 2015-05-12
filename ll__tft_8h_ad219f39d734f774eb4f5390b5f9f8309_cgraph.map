@@ -1,0 +1,5 @@
+<map id="ll_tft_draw_pixel" name="ll_tft_draw_pixel">
+<area shape="rect" id="node2" href="$class_main_window.html#aac742af2c0f4d7207740c02135a8a3cd" title="MainWindow::draw_pixel" alt="" coords="168,31,333,57"/>
+<area shape="rect" id="node3" href="$mainwindow_8cpp.html#ae66187ed2f21cc6d89422f49b344ddca" title="QRgbFromRGB565" alt="" coords="381,5,516,32"/>
+<area shape="rect" id="node4" href="$screen__filetest_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="418,56,479,83"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="tft_font_width" name="tft_font_width">
+<area shape="rect" id="node2" href="$button_8h.html#a64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="386,5,497,32"/>
+<area shape="rect" id="node4" href="$numupdown_8h.html#ab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="569,132,712,159"/>
+<area shape="rect" id="node6" href="$button_8h.html#a6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="169,56,296,83"/>
+<area shape="rect" id="node8" href="$numupdown_8h.html#a99d528cc9828d6dcf46e04673e5e51d9" title="gui_numupdown_update" alt="" coords="152,107,313,133"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="615,5,666,32"/>
+<area shape="rect" id="node5" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="760,132,811,159"/>
+<area shape="rect" id="node7" href="$numupdown_8h.html#a4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="361,56,521,83"/>
+<area shape="rect" id="node9" href="$numupdown_8c.html#a47b81268e10355aa5abbb05788e99dfc" title="button_up_cb" alt="" coords="391,157,491,184"/>
+<area shape="rect" id="node10" href="$numupdown_8c.html#a0422809516212448deaf10314d0c01d5" title="button_down_cb" alt="" coords="383,107,499,133"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="USBH_MSC_HandleBOTXfer" name="USBH_MSC_HandleBOTXfer">
+<area shape="rect" id="node2" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga74595e1854638eae4be812d804a4fe1b" title="HCD_IsDeviceConnected Check if the device is connected. " alt="" coords="465,107,632,133"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#ga7193c2b9caabcd91cf6ee2c127b180bf" title="USBH_BulkSendData Sends the Bulk Packet to the device. " alt="" coords="255,5,403,32"/>
+<area shape="rect" id="node5" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="832,233,975,260"/>
+<area shape="rect" id="node6" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gae3560362d8841b94f27cde9d3ef7219b" title="USBH_BulkReceiveData Receives IN bulk packet from device. " alt="" coords="248,56,411,83"/>
+<area shape="rect" id="node7" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga4267157a644167addaa015ae277fecd3" title="USBH_MSC_DecodeCSW This function decodes the CSW received by the device and updates the same to upper..." alt="" coords="241,157,417,184"/>
+<area shape="rect" id="node9" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga0ccf29ca7caaf1ff72dfb2b03683a8a1" title="USBH_MSC_BOT_Abort This function manages the different Error handling for STALL. " alt="" coords="247,259,412,285"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gad07e6e0a136a94695425c6663d7ce5f2" title="HCD_SubmitRequest This function prepare a HC and start a transfer. " alt="" coords="476,31,621,57"/>
+<area shape="rect" id="node8" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gafc5ff8391e45b525c0c243477e7fd59a" title="HCD_GetXferCnt This function returns the last URBstate. " alt="" coords="489,157,608,184"/>
+<area shape="rect" id="node10" href="$group___u_s_b_h___s_t_d_r_e_q___exported___functions_prototype.html#gad304748be74421018460f63bd8b90753" title="USBH_ClrFeature This request is used to clear or disable a specific feature. " alt="" coords="486,259,611,285"/>
+<area shape="rect" id="node11" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gafd139f087c16697bc60526eb3d2578a2" title="USBH_CtlReq USBH_CtlReq sends a control request and provide the status after completion of the reques..." alt="" coords="680,259,784,285"/>
+</map>

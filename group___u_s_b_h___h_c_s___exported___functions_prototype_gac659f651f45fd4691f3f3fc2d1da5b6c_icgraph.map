@@ -1,0 +1,5 @@
+<map id="USBH_Free_Channel" name="USBH_Free_Channel">
+<area shape="rect" id="node2" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga316a5cd989db120513170e0f7bb79b60" title="USBH_DeInit Re&#45;Initialize Host. " alt="" coords="199,31,297,57"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gae365cd3b28aa14f76325c31138190f52" title="USBH_Init Host hardware and stack initializations. " alt="" coords="361,5,443,32"/>
+<area shape="rect" id="node4" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gaaeb8e272c8ceaa0464f319590324c102" title="USBH_Process USB Host core main state machine process. " alt="" coords="345,56,459,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="RCC_AHB1PeriphResetCmd" name="RCC_AHB1PeriphResetCmd">
+<area shape="rect" id="node2" href="$group___d_m_a2_d___group1.html#gaccfa4814f6cec9d5e4e47d8b92f0de3a" title="Deinitializes the DMA2D peripheral registers to their default reset values. " alt="" coords="241,5,348,32"/>
+<area shape="rect" id="node3" href="$group___g_p_i_o___group1.html#gaa60bdf3182c44b5fa818f237042f52ee" title="De&#45;initializes the GPIOx peripheral registers to their default reset values. " alt="" coords="247,56,342,83"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="USBH_Process" name="USBH_Process">
+<area shape="rect" id="node2" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga9cdf7e999163ca125c1fdecc5ef0e450" title="HCD_ResetPort Issues the reset command to device. " alt="" coords="208,5,323,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga74595e1854638eae4be812d804a4fe1b" title="HCD_IsDeviceConnected Check if the device is connected. " alt="" coords="182,56,349,83"/>
+<area shape="rect" id="node4" href="$group___u_s_b_h___h_c_s___exported___functions_prototype.html#ga7d98a9b122cd4a7b3f7037c919dca31f" title="USBH_DeAllocate_AllChannel Free all USB host channel. " alt="" coords="167,107,364,133"/>
+<area shape="rect" id="node5" href="$group___u_s_b_h___h_c_s___exported___functions_prototype.html#gab14cac43e6a6bca293e21950b13a3aac" title="USBH_Alloc_Channel Allocate a new channel for the pipe. " alt="" coords="191,157,339,184"/>
+<area shape="rect" id="node6" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gaaf30c6c67be1f72ff55f14fbf69eec93" title="HCD_GetCurrentSpeed Get Current device Speed. " alt="" coords="187,208,343,235"/>
+<area shape="rect" id="node7" href="$group___u_s_b_h___h_c_s___exported___functions_prototype.html#ga5ea809bfd56b4684b6d02236a889f677" title="USBH_Open_Channel Open a pipe. " alt="" coords="190,259,341,285"/>
+<area shape="rect" id="node8" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga2e9776917d8843479d9d99b5e84b3f3b" title="USBH_ErrorHandle This function handles the Error on Host side. " alt="" coords="199,309,332,336"/>
+<area shape="rect" id="node9" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga397b1a11970708df55abb73d09623e7a" title="USBH_HandleControl Handles the USB control transfer state machine. " alt="" coords="192,360,339,387"/>
+<area shape="rect" id="node16" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga316a5cd989db120513170e0f7bb79b60" title="USBH_DeInit Re&#45;Initialize Host. " alt="" coords="216,436,315,463"/>
+<area shape="rect" id="node10" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gae2467690d1fabbaa76ce49f01d981aa6" title="USBH_CtlSendSetup Sends the Setup Packet to the Device. " alt="" coords="417,233,563,260"/>
+<area shape="rect" id="node12" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="419,284,561,311"/>
+<area shape="rect" id="node13" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga3be73e419f4919980c1f6da01b179bee" title="HCD_GetCurrentFrame This function returns the frame number for sof packet. " alt="" coords="412,335,568,361"/>
+<area shape="rect" id="node14" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gaa5ee43776566a31d27f92560a2ef464b" title="USBH_CtlReceiveData Receives the Device Response to the Setup Packet. " alt="" coords="413,385,567,412"/>
+<area shape="rect" id="node15" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#ga8378f12c873a1225e0b76e9f39150830" title="USBH_CtlSendData Sends a data Packet to the Device. " alt="" coords="421,436,559,463"/>
+<area shape="rect" id="node11" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#gad07e6e0a136a94695425c6663d7ce5f2" title="HCD_SubmitRequest This function prepare a HC and start a transfer. " alt="" coords="616,385,761,412"/>
+<area shape="rect" id="node17" href="$group___u_s_b_h___h_c_s___exported___functions_prototype.html#gac659f651f45fd4691f3f3fc2d1da5b6c" title="USBH_Free_Pipe Free the USB host channel. " alt="" coords="417,487,563,513"/>
+</map>

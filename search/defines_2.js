@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['crp_5farray',['CRP_ARRAY',['../pixydefs_8h.html#a9ab97bc655744d7a79143d9a4bc0d855',1,'pixydefs.h']]],
+  ['crp_5fflt',['CRP_FLT',['../pixydefs_8h.html#a9cb341c37f13e451ebba2ccc12b2b4ff',1,'pixydefs.h']]],
+  ['crp_5fflt32',['CRP_FLT32',['../pixydefs_8h.html#a3397184db47b93137817d896e1014ea8',1,'pixydefs.h']]],
+  ['crp_5fflt64',['CRP_FLT64',['../pixydefs_8h.html#ad12f3101bbf31023009cc92c3d5c2ac4',1,'pixydefs.h']]],
+  ['crp_5fflts32',['CRP_FLTS32',['../pixydefs_8h.html#acf302ea6c264bb0e5ac860ecc1a31e94',1,'pixydefs.h']]],
+  ['crp_5fflts64',['CRP_FLTS64',['../pixydefs_8h.html#af2184d8264b2b7f0326d5aa3003db355',1,'pixydefs.h']]],
+  ['crp_5fint16',['CRP_INT16',['../pixydefs_8h.html#a94b3a9c85aea9496648d8c6c2a6327b1',1,'pixydefs.h']]],
+  ['crp_5fint32',['CRP_INT32',['../pixydefs_8h.html#a9fd4741d0ed87071fb5ff9b58080b12e',1,'pixydefs.h']]],
+  ['crp_5fint8',['CRP_INT8',['../pixydefs_8h.html#a9b3ed5af642f6a02dcabb134a908937e',1,'pixydefs.h']]],
+  ['crp_5fints16',['CRP_INTS16',['../pixydefs_8h.html#a6b9d2b0e5383589affeb3246e0e101b7',1,'pixydefs.h']]],
+  ['crp_5fints32',['CRP_INTS32',['../pixydefs_8h.html#a271b68136f39ffa552c9c8d0e64e7c63',1,'pixydefs.h']]],
+  ['crp_5fints8',['CRP_INTS8',['../pixydefs_8h.html#a28e4d5ad62e1a95259d1ee33c41a75d4',1,'pixydefs.h']]],
+  ['crp_5fno_5fcopy',['CRP_NO_COPY',['../pixydefs_8h.html#a664ef35cc57851472b4bd3845cd2e092',1,'pixydefs.h']]],
+  ['crp_5fnullterm_5farray',['CRP_NULLTERM_ARRAY',['../pixydefs_8h.html#a97fe933814cecf2658513dc30619d307',1,'pixydefs.h']]],
+  ['crp_5fstring',['CRP_STRING',['../pixydefs_8h.html#adbdf0effda2b5e51334e8e6e522c5f55',1,'pixydefs.h']]],
+  ['crp_5ftype_5fhint',['CRP_TYPE_HINT',['../pixydefs_8h.html#af6cd46ab671332f93a65bdaf7b4f15ca',1,'pixydefs.h']]],
+  ['crp_5fuint16',['CRP_UINT16',['../pixydefs_8h.html#ad42d96195e574c07a7c31f033668954f',1,'pixydefs.h']]],
+  ['crp_5fuint32',['CRP_UINT32',['../pixydefs_8h.html#a529a2646520482955a0c28c0ce2d3cd7',1,'pixydefs.h']]],
+  ['crp_5fuint8',['CRP_UINT8',['../pixydefs_8h.html#a180d59eb8483cde40047922932f27bac',1,'pixydefs.h']]],
+  ['crp_5fuints16',['CRP_UINTS16',['../pixydefs_8h.html#a15bf35caf78bb20ab41d042c12f6eae2',1,'pixydefs.h']]],
+  ['crp_5fuints16_5fno_5fcopy',['CRP_UINTS16_NO_COPY',['../pixydefs_8h.html#a45c597783e25ad77a84b33ed1d0b918b',1,'pixydefs.h']]],
+  ['crp_5fuints32',['CRP_UINTS32',['../pixydefs_8h.html#acc5b0db0bc8372b1cc93bd50a629337f',1,'pixydefs.h']]],
+  ['crp_5fuints32_5fno_5fcopy',['CRP_UINTS32_NO_COPY',['../pixydefs_8h.html#ad09eddc0ff5e1b7ae029de211842f412',1,'pixydefs.h']]],
+  ['crp_5fuints8',['CRP_UINTS8',['../pixydefs_8h.html#a6ecb228905ca37b557a7c445ade16a79',1,'pixydefs.h']]],
+  ['crp_5fuints8_5fno_5fcopy',['CRP_UINTS8_NO_COPY',['../pixydefs_8h.html#a9ab3bb87cbfaff405720f9827896bb9d',1,'pixydefs.h']]]
+];

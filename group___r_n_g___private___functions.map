@@ -1,0 +1,6 @@
+<map id="RNG_Private_Functions" name="RNG_Private_Functions">
+<area shape="rect" id="node1" href="$group___r_n_g.html" title="RNG driver modules. " alt="" coords="5,78,56,105"/>
+<area shape="rect" id="node3" href="$group___r_n_g___group1.html" title="Initialization and Configuration functions. " alt="" coords="323,5,480,47"/>
+<area shape="rect" id="node4" href="$group___r_n_g___group2.html" title="Get 32 bit Random number function. " alt="" coords="312,71,491,112"/>
+<area shape="rect" id="node5" href="$group___r_n_g___group3.html" title="Interrupts and flags management functions. " alt="" coords="323,136,480,177"/>
+</map>

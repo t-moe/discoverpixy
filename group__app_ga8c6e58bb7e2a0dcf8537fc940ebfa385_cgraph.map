@@ -1,0 +1,12 @@
+<map id="app_init" name="app_init">
+<area shape="rect" id="node2" href="$group__system.html#ga3bc3f0cc729bc8f6bf8c0702c4d058dd" title="system_init" alt="" coords="145,5,234,32"/>
+<area shape="rect" id="node4" href="$group__tft.html#gaaaed6a011ff4ec08c6a1a264e8396215" title="tft_init" alt="" coords="161,56,218,83"/>
+<area shape="rect" id="node6" href="$group__touch.html#ga0ff491e3e07321fef794d4f07b103c0f" title="touch_init" alt="" coords="150,107,229,133"/>
+<area shape="rect" id="node8" href="$filesystem_8c.html#a367ec5e73c77ddf5047d05021cf97a8f" title="filesystem_init" alt="" coords="137,157,242,184"/>
+<area shape="rect" id="node10" href="$group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa" title="gui_screen_navigate" alt="" coords="120,208,259,235"/>
+<area shape="rect" id="node11" href="$group__main.html#ga6310b719fc2b06860024d0992d08acd1" title="get_screen_main" alt="" coords="129,259,250,285"/>
+<area shape="rect" id="node3" href="$ll__system_8h.html#ad6c3b701d60604cc59b68e1af81c8f85" title="ll_system_init" alt="" coords="315,5,417,32"/>
+<area shape="rect" id="node5" href="$ll__tft_8h.html#ac974fbb4327f3b0abaac5c33c07337c7" title="ll_tft_init" alt="" coords="331,56,401,83"/>
+<area shape="rect" id="node7" href="$ll__touch_8h.html#a91ec460ea9b170c352be4173da2eaf48" title="ll_touch_init" alt="" coords="321,107,411,133"/>
+<area shape="rect" id="node9" href="$ll__filesystem_8h.html#a5e9b54813d51bd15dff031285911a95e" title="ll_filesystem_init" alt="" coords="307,157,425,184"/>
+</map>

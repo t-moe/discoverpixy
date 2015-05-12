@@ -1,0 +1,4 @@
+<map id="ColorLUT" name="ColorLUT">
+<area shape="rect" id="node2" href="$struct_color_signature.html" title="ColorSignature" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node3" href="$struct_runtime_signature.html" title="RuntimeSignature" alt="" coords="136,5,261,32"/>
+</map>

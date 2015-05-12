@@ -1,0 +1,4 @@
+<map id="USBH_CtlSendData" name="USBH_CtlSendData">
+<area shape="rect" id="node2" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga397b1a11970708df55abb73d09623e7a" title="USBH_HandleControl Handles the USB control transfer state machine. " alt="" coords="192,5,339,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gaaeb8e272c8ceaa0464f319590324c102" title="USBH_Process USB Host core main state machine process. " alt="" coords="387,5,500,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="buttons_cb" name="buttons_cb">
+<area shape="rect" id="node2" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="140,31,251,57"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="345,5,395,32"/>
+<area shape="rect" id="node4" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="299,56,441,83"/>
+<area shape="rect" id="node5" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="489,56,540,83"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="tft_draw_pixel" name="tft_draw_pixel">
+<area shape="rect" id="node2" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="157,5,243,32"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="175,56,225,83"/>
+<area shape="rect" id="node5" href="$screen__pixytest_8c.html#a0a41b38f964c1c064f351623e2fbdfef" title="renderBA81" alt="" coords="155,107,245,133"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="325,5,376,32"/>
+<area shape="rect" id="node6" href="$screen__pixytest_8c.html#ab65251f5014e4556a4aa036f7f8d1b11" title="pixy_frame_test" alt="" coords="293,107,408,133"/>
+<area shape="rect" id="node7" href="$screen__pixytest_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="456,107,517,133"/>
+</map>

@@ -1,0 +1,3 @@
+<map id="RTC_SynchroShiftConfig" name="RTC_SynchroShiftConfig">
+<area shape="rect" id="node2" href="$group___r_t_c___group1.html#ga2938febeef6baf0d91cc066ca5caf095" title="Waits until the RTC Time and Date registers (RTC_TR and RTC_DR) are synchronized with RTC APB clock..." alt="" coords="217,5,365,32"/>
+</map>

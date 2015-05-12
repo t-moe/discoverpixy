@@ -1,0 +1,14 @@
+<map id="USB_HCD" name="USB_HCD">
+<area shape="rect" id="node1" href="$group___u_s_b___h_c_d___private___functions.html" title="USB_HCD_Private_Functions" alt="" coords="341,5,535,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___h_c_d___private___function_prototypes.html" title="USB_HCD_Private_Function\lPrototypes" alt="" coords="345,57,531,98"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___private___variables.html" title="USB_HCD_Private_Variables" alt="" coords="343,123,533,149"/>
+<area shape="rect" id="node5" href="$group___u_s_b___h_c_d___exported___macros.html" title="USB_HCD_Exported_Macros" alt="" coords="342,173,534,200"/>
+<area shape="rect" id="node6" href="$group___u_s_b___h_c_d___private___defines.html" title="USB_HCD_Private_Defines" alt="" coords="349,224,527,251"/>
+<area shape="rect" id="node7" href="$group___u_s_b___h_c_d___exported___variables.html" title="USB_HCD_Exported_Variables" alt="" coords="337,275,539,301"/>
+<area shape="rect" id="node8" href="$group___u_s_b___h_c_d___exported___functions_prototype.html" title="USB_HCD_Exported_Functions\lPrototype" alt="" coords="335,326,541,367"/>
+<area shape="rect" id="node9" href="$group___u_s_b___h_c_d___private___macros.html" title="USB_HCD_Private_Macros" alt="" coords="349,392,527,419"/>
+<area shape="rect" id="node10" href="$group___u_s_b___h_c_d___private___types_definitions.html" title="USB_HCD_Private_TypesDefinitions" alt="" coords="323,443,553,469"/>
+<area shape="rect" id="node11" href="$group___u_s_b___h_c_d___exported___defines.html" title="USB_HCD_Exported_Defines" alt="" coords="342,493,534,520"/>
+<area shape="rect" id="node12" href="$group___u_s_b___h_c_d___exported___types.html" title="USB_HCD_Exported_Types" alt="" coords="347,544,529,571"/>
+<area shape="rect" id="node13" href="$group___u_s_b___o_t_g___d_r_i_v_e_r.html" title="USB_OTG_DRIVER" alt="" coords="5,275,144,301"/>
+</map>

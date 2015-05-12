@@ -1,0 +1,10 @@
+<map id="common/app/screen_main.c" name="common/app/screen_main.c">
+<area shape="rect" id="node2" href="$screen__main_8h.html" title="screen_main.h" alt="" coords="296,80,403,107"/>
+<area shape="rect" id="node6" href="$screen__guitest_8h.html" title="screen_guitest.h" alt="" coords="427,80,546,107"/>
+<area shape="rect" id="node7" href="$screen__pixytest_8h.html" title="screen_pixytest.h" alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node8" href="$screen__filetest_8h.html" title="screen_filetest.h" alt="" coords="155,80,272,107"/>
+<area shape="rect" id="node9" href="$button_8h.html" title="button.h" alt="" coords="621,80,691,107"/>
+<area shape="rect" id="node12" href="$tft_8h.html" title="tft.h" alt="" coords="555,155,599,181"/>
+<area shape="rect" id="node3" href="$screen_8h.html" title="screen.h" alt="" coords="313,155,385,181"/>
+<area shape="rect" id="node10" href="$touch_8h.html" title="touch.h" alt="" coords="623,155,689,181"/>
+</map>

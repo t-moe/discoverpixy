@@ -1,0 +1,5 @@
+<map id="USBH_OTG_ISR_Handler" name="USBH_OTG_ISR_Handler">
+<area shape="rect" id="node2" href="$group___u_s_b___c_o_r_e___exported___functions_prototype.html#ga821f94371b342fe2feaedca5d8c023cf" title="USB_OTG_IsHostMode : Check if it is host mode. " alt="" coords="224,5,383,32"/>
+<area shape="rect" id="node4" href="$group___u_s_b___c_o_r_e___exported___functions_prototype.html#ga178eb6ecc4c0514842c9bbb7ee783d21" title="USB_OTG_ReadCoreItr : returns the Core Interrupt register. " alt="" coords="224,56,383,83"/>
+<area shape="rect" id="node3" href="$group___u_s_b___c_o_r_e___private___functions.html#gadc0c08bc4072271e843b69f1101f8c09" title="USB_OTG_GetMode : Get current mode. " alt="" coords="431,5,573,32"/>
+</map>

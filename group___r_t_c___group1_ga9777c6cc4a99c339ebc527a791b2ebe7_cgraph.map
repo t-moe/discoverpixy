@@ -1,0 +1,4 @@
+<map id="RTC_DeInit" name="RTC_DeInit">
+<area shape="rect" id="node2" href="$group___r_t_c___group1.html#ga679f8883cbfb267a53ffb1ab4cc5c8c5" title="Enters the RTC Initialization mode. " alt="" coords="147,5,281,32"/>
+<area shape="rect" id="node3" href="$group___r_t_c___group1.html#ga2938febeef6baf0d91cc066ca5caf095" title="Waits until the RTC Time and Date registers (RTC_TR and RTC_DR) are synchronized with RTC APB clock..." alt="" coords="140,56,288,83"/>
+</map>

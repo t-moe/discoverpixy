@@ -1,0 +1,6 @@
+<map id="Gui" name="Gui">
+<area shape="rect" id="node1" href="$group__checkbox.html" title="Checkbox" alt="" coords="121,5,201,32"/>
+<area shape="rect" id="node3" href="$group__numupdown.html" title="NummericUpDown" alt="" coords="96,56,225,83"/>
+<area shape="rect" id="node4" href="$group__button.html" title="Button" alt="" coords="131,107,191,133"/>
+<area shape="rect" id="node5" href="$group__screen.html" title="Screen" alt="" coords="129,157,192,184"/>
+</map>

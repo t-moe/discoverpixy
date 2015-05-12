@@ -1,0 +1,15 @@
+<map id="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Core/inc/usbh_ioreq.h" name="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Core/inc/usbh_ioreq.h">
+<area shape="rect" id="node2" href="$usbh__hid__core_8h.html" title="This file contains all the prototypes for the usbh_hid_core.c. " alt="" coords="219,109,423,165"/>
+<area shape="rect" id="node8" href="$libs_2_stm_usb_host_2_s_t_m32___u_s_b___h_o_s_t___library_2_class_2_m_s_c_2inc_2usbh__msc__core_8h_source.html" title="discovery/libs/StmUsbHost\l/STM32_USB_HOST_Library\l/Class/MSC/inc/usbh_msc_core.h" alt="" coords="447,109,667,165"/>
+<area shape="rect" id="node9" href="$usbh__msc__bot_8c.html" title="This file includes the mass storage related functions. " alt="" coords="673,221,887,277"/>
+<area shape="rect" id="node10" href="$usbh__msc__scsi_8c.html" title="This file implements the SCSI commands. " alt="" coords="1213,221,1433,277"/>
+<area shape="rect" id="node11" href="$usbh__core_8c.html" title="This file implements the functions for the core state machine process the enumeration and the control..." alt="" coords="921,109,1111,165"/>
+<area shape="rect" id="node12" href="$usbh__ioreq_8c.html" title="This file handles the issuing of the USB transactions. " alt="" coords="1135,109,1324,165"/>
+<area shape="rect" id="node13" href="$usbh__stdreq_8c.html" title="This file implements the standard requests for device enumeration. " alt="" coords="1348,109,1537,165"/>
+<area shape="rect" id="node14" href="$src_2usbh__msc__core_8h_source.html" title="discovery/src/usbh\l_msc_core.h" alt="" coords="767,117,897,158"/>
+<area shape="rect" id="node3" href="$usbh__hid__keybd_8h.html" title="This file contains all the prototypes for the usbh_hid_keybd.c. " alt="" coords="359,213,548,284"/>
+<area shape="rect" id="node4" href="$usbh__hid__core_8c.html" title="This file is the HID Layer Handlers for USB Host HID class. " alt="" coords="219,339,424,395"/>
+<area shape="rect" id="node6" href="$usbh__hid__mouse_8h.html" title="This file contains all the prototypes for the usbh_hid_mouse.c. " alt="" coords="95,213,284,284"/>
+<area shape="rect" id="node5" href="$usbh__hid__keybd_8c.html" title="This file is the application layer for USB Host HID Keyboard handling QWERTY and AZERTY Keyboard are ..." alt="" coords="448,332,637,403"/>
+<area shape="rect" id="node7" href="$usbh__hid__mouse_8c.html" title="This file is the application layer for USB Host HID Mouse Handling. " alt="" coords="5,332,195,403"/>
+</map>

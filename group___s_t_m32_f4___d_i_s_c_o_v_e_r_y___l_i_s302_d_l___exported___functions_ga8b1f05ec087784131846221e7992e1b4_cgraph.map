@@ -1,0 +1,4 @@
+<map id="LIS302DL_InterruptConfig" name="LIS302DL_InterruptConfig">
+<area shape="rect" id="node2" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#gae578a971afc1699d6056937ad7604d0a" title="Reads a block of data from the LIS302DL. " alt="" coords="222,5,337,32"/>
+<area shape="rect" id="node3" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga43f400565c47cdcf5fd19b8b601e7c41" title="Writes one byte to the LIS302DL. " alt="" coords="221,56,337,83"/>
+</map>

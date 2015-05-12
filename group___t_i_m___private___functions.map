@@ -1,0 +1,12 @@
+<map id="TIM_Private_Functions" name="TIM_Private_Functions">
+<area shape="rect" id="node1" href="$group___t_i_m___group1.html" title="TimeBase management functions. " alt="" coords="317,5,475,47"/>
+<area shape="rect" id="node2" href="$group___t_i_m___group2.html" title="Output Compare management functions. " alt="" coords="298,71,494,112"/>
+<area shape="rect" id="node3" href="$group___t_i_m___group3.html" title="Input Capture management functions. " alt="" coords="307,136,485,177"/>
+<area shape="rect" id="node4" href="$group___t_i_m___group4.html" title="Advanced&#45;control timers (TIM1 and TIM8) specific features. " alt="" coords="313,201,479,257"/>
+<area shape="rect" id="node5" href="$group___t_i_m___group5.html" title="Interrupts, DMA and flags management functions. " alt="" coords="302,280,490,321"/>
+<area shape="rect" id="node6" href="$group___t_i_m___group6.html" title="Clocks management functions. " alt="" coords="297,346,495,373"/>
+<area shape="rect" id="node7" href="$group___t_i_m___group7.html" title="Synchronization management functions. " alt="" coords="299,397,493,439"/>
+<area shape="rect" id="node8" href="$group___t_i_m___group8.html" title="Specific interface management functions. " alt="" coords="317,463,475,504"/>
+<area shape="rect" id="node9" href="$group___t_i_m___group9.html" title="Specific remapping management function. " alt="" coords="321,528,471,569"/>
+<area shape="rect" id="node10" href="$group___t_i_m.html" title="TIM driver modules. " alt="" coords="5,287,48,314"/>
+</map>

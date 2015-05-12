@@ -1,0 +1,27 @@
+<map id="enter" name="enter">
+<area shape="rect" id="node2" href="$group__tft.html#ga6a2e3b3878ae5eea184d4c3ffe091b78" title="tft_clear" alt="" coords="125,81,193,108"/>
+<area shape="rect" id="node4" href="$screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="111,360,207,387"/>
+<area shape="rect" id="node7" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="104,208,215,235"/>
+<area shape="rect" id="node23" href="$screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="108,411,211,437"/>
+<area shape="rect" id="node25" href="$screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="112,461,207,488"/>
+<area shape="rect" id="node3" href="$ll__tft_8h.html#a74b49691a101619b939c085ff607a582" title="ll_tft_clear" alt="" coords="291,5,373,32"/>
+<area shape="rect" id="node5" href="$group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa" title="gui_screen_navigate" alt="" coords="263,461,401,488"/>
+<area shape="rect" id="node6" href="$group__guitest.html#ga75970b2a161e3fce8c6be83c96c75d98" title="get_screen_guitest" alt="" coords="266,360,398,387"/>
+<area shape="rect" id="node8" href="$group__touch.html#gad32e5d122ec3f5f88bc6b2d9f4a629f8" title="touch_have_empty" alt="" coords="267,309,397,336"/>
+<area shape="rect" id="node9" href="$group__tft.html#ga7e99287b1e6b844f6867c63400959ffc" title="tft_font_width" alt="" coords="456,107,555,133"/>
+<area shape="rect" id="node11" href="$group__tft.html#gaea9f6a88da91949befe52cd4ed000c5d" title="tft_font_height" alt="" coords="454,56,557,83"/>
+<area shape="rect" id="node13" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="289,208,375,235"/>
+<area shape="rect" id="node16" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="269,157,395,184"/>
+<area shape="rect" id="node22" href="$group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="264,259,400,285"/>
+<area shape="rect" id="node10" href="$ll__tft_8h.html#a3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="617,107,727,133"/>
+<area shape="rect" id="node12" href="$ll__tft_8h.html#a8dbc8b40717be527e6f1c5a2cfc72aeb" title="ll_tft_font_height" alt="" coords="614,56,730,83"/>
+<area shape="rect" id="node14" href="$group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="458,259,553,285"/>
+<area shape="rect" id="node15" href="$ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="619,309,725,336"/>
+<area shape="rect" id="node17" href="$group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="449,208,561,235"/>
+<area shape="rect" id="node19" href="$group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="459,157,551,184"/>
+<area shape="rect" id="node18" href="$ll__tft_8h.html#a0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="609,259,735,285"/>
+<area shape="rect" id="node20" href="$ll__tft_8h.html#af4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="615,157,729,184"/>
+<area shape="rect" id="node21" href="$ll__tft_8h.html#a408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="616,208,728,235"/>
+<area shape="rect" id="node24" href="$group__pixytest.html#ga6fa63bbb4f8984a3f833b0d109147e39" title="get_screen_pixytest" alt="" coords="263,411,401,437"/>
+<area shape="rect" id="node26" href="$group__filetest.html#gab5ad1c15566c8fbc0cc49faf51d22176" title="get_screen_filetest" alt="" coords="267,512,397,539"/>
+</map>

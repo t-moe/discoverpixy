@@ -1,0 +1,6 @@
+<map id="ll_tft_draw_char" name="ll_tft_draw_char">
+<area shape="rect" id="node2" href="$ll__tft_8cpp.html#a9a266e788a111011b460b33d8ef25163" title="get_font" alt="" coords="213,5,281,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ad2d75b9195314357011163961ba8f0ce" title="MainWindow::draw_char" alt="" coords="165,56,328,83"/>
+<area shape="rect" id="node4" href="$mainwindow_8cpp.html#ab8c1e3a91d2e8b988afea24b6ad49425" title="QColorFromRGB565" alt="" coords="376,31,517,57"/>
+<area shape="rect" id="node5" href="$screen__filetest_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="416,81,477,108"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="USBH_GetDescriptor" name="USBH_GetDescriptor">
+<area shape="rect" id="node2" href="$group___u_s_b_h___s_t_d_r_e_q___private___functions.html#ga4bbce39bb3c8eef3419119ab199dbdbf" title="USBH_Get_DevDesc Issue Get Device Descriptor command to the device. Once the response received..." alt="" coords="205,5,349,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___s_t_d_r_e_q___private___functions.html#ga4c7abcbf70d17d42bb8bfe1b9d31d587" title="USBH_Get_CfgDesc Issues Configuration Descriptor to the device. Once the response received..." alt="" coords="206,56,349,83"/>
+<area shape="rect" id="node4" href="$group___u_s_b_h___s_t_d_r_e_q___private___functions.html#ga1981e3ed0c19ab193530fec727b1c466" title="USBH_Get_StringDesc Issues string Descriptor command to the device. Once the response received..." alt="" coords="199,107,356,133"/>
+</map>

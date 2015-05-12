@@ -1,0 +1,7 @@
+<map id="touch_have_empty" name="touch_have_empty">
+<area shape="rect" id="node2" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="194,5,305,32"/>
+<area shape="rect" id="node4" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="363,56,505,83"/>
+<area shape="rect" id="node6" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="184,107,315,133"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="409,5,459,32"/>
+<area shape="rect" id="node5" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="553,81,604,108"/>
+</map>

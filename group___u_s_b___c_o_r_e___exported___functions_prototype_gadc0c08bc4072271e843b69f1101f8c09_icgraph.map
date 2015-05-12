@@ -1,0 +1,5 @@
+<map id="USB_OTG_GetMode" name="USB_OTG_GetMode">
+<area shape="rect" id="node2" href="$group___u_s_b___c_o_r_e___private___functions.html#ga0cc90949f3d178e3b9d98e8d3e98b799" title="USB_OTG_IsDeviceMode : Check if it is device mode. " alt="" coords="196,5,367,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___c_o_r_e___private___functions.html#ga821f94371b342fe2feaedca5d8c023cf" title="USB_OTG_IsHostMode : Check if it is host mode. " alt="" coords="202,56,361,83"/>
+<area shape="rect" id="node4" href="$group___u_s_b___h_c_d___i_n_t___private___functions.html#ga0d058eb3d6ea01a9e47e6447690aa8c1" title="HOST_Handle_ISR This function handles all USB Host Interrupts. " alt="" coords="415,56,585,83"/>
+</map>

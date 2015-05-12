@@ -1,0 +1,4 @@
+<map id="RCC_GetClocksFreq" name="RCC_GetClocksFreq">
+<area shape="rect" id="node2" href="$group___i2_c___group1.html#gaac29465bca70fbc91c2f922ab67bb88e" title="Initializes the I2Cx peripheral according to the specified parameters in the I2C_InitStruct. " alt="" coords="208,5,273,32"/>
+<area shape="rect" id="node3" href="$group___u_s_a_r_t___group1.html#ga98da340ea0324002ba1b4263e91ab2ff" title="Initializes the USARTx peripheral according to the specified parameters in the USART_InitStruct ..." alt="" coords="196,56,285,83"/>
+</map>

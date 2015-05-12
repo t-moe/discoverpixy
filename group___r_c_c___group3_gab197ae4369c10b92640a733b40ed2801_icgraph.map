@@ -1,0 +1,10 @@
+<map id="RCC_APB1PeriphResetCmd" name="RCC_APB1PeriphResetCmd">
+<area shape="rect" id="node2" href="$group___c_a_n___group1.html#ga002b74cd69574a14b17ad445090245cd" title="Deinitializes the CAN peripheral registers to their default reset values. " alt="" coords="251,5,341,32"/>
+<area shape="rect" id="node3" href="$group___d_a_c___group1.html#ga1fae225204e1e049d6795319e99ba8bc" title="Deinitializes the DAC peripheral registers to their default reset values. " alt="" coords="251,56,341,83"/>
+<area shape="rect" id="node4" href="$group___i2_c___group1.html#ga2ee214364603059ad5d9089f749f5bfd" title="Deinitialize the I2Cx peripheral registers to their default reset values. " alt="" coords="255,107,337,133"/>
+<area shape="rect" id="node5" href="$group___p_w_r___group1.html#gad03a0aac7bc3bc3a9fd012f3769a6990" title="Deinitializes the PWR peripheral registers to their default reset values. " alt="" coords="249,157,343,184"/>
+<area shape="rect" id="node6" href="$group___s_p_i___group1.html#gabe36880945fa56785283a9c0092124cc" title="De&#45;initialize the SPIx peripheral registers to their default reset values. " alt="" coords="241,208,351,235"/>
+<area shape="rect" id="node7" href="$group___t_i_m___group1.html#ga1659cc0ce503ac151568e0c7c02b1ba5" title="Deinitializes the TIMx peripheral registers to their default reset values. " alt="" coords="255,259,337,285"/>
+<area shape="rect" id="node8" href="$group___u_s_a_r_t___group1.html#ga2f8e1ce72da21b6539d8e1f299ec3b0d" title="Deinitializes the USARTx peripheral registers to their default reset values. " alt="" coords="243,309,349,336"/>
+<area shape="rect" id="node9" href="$group___w_w_d_g___group1.html#ga7130f4dc861b9234b62e73f9f57f89a1" title="Deinitializes the WWDG peripheral registers to their default reset values. " alt="" coords="243,360,349,387"/>
+</map>

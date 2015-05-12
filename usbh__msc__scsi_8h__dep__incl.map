@@ -1,0 +1,5 @@
+<map id="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Class/MSC/inc/usbh_msc_scsi.h" name="discovery/libs/StmUsbHost/STM32_USB_HOST_Library/Class/MSC/inc/usbh_msc_scsi.h">
+<area shape="rect" id="node2" href="$libs_2_stm_usb_host_2_s_t_m32___u_s_b___h_o_s_t___library_2_class_2_m_s_c_2inc_2usbh__msc__core_8h_source.html" title="discovery/libs/StmUsbHost\l/STM32_USB_HOST_Library\l/Class/MSC/inc/usbh_msc_core.h" alt="" coords="5,109,225,165"/>
+<area shape="rect" id="node3" href="$usbh__msc__bot_8c.html" title="This file includes the mass storage related functions. " alt="" coords="273,109,488,165"/>
+<area shape="rect" id="node4" href="$usbh__msc__scsi_8c.html" title="This file implements the SCSI commands. " alt="" coords="512,109,732,165"/>
+</map>

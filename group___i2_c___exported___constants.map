@@ -1,0 +1,18 @@
+<map id="I2C_Exported_Constants" name="I2C_Exported_Constants">
+<area shape="rect" id="node1" href="$group___i2_c__registers.html" title="I2C_registers" alt="" coords="357,5,456,32"/>
+<area shape="rect" id="node2" href="$group___i2_c___s_m_bus__alert__pin__level.html" title="I2C_SMBus_alert_pin\l_level" alt="" coords="333,57,480,98"/>
+<area shape="rect" id="node3" href="$group___i2_c__acknowledged__address.html" title="I2C_acknowledged_address" alt="" coords="315,123,498,149"/>
+<area shape="rect" id="node5" href="$group___i2_c___events.html" title="I2C_Events" alt="" coords="363,173,450,200"/>
+<area shape="rect" id="node6" href="$group___i2_c__transfer__direction.html" title="I2C_transfer_direction" alt="" coords="333,224,480,251"/>
+<area shape="rect" id="node8" href="$group___i2_c___p_e_c__position.html" title="I2C_PEC_position" alt="" coords="343,275,470,301"/>
+<area shape="rect" id="node9" href="$group___i2_c__duty__cycle__in__fast__mode.html" title="I2C_duty_cycle_in_fast_mode" alt="" coords="309,325,504,352"/>
+<area shape="rect" id="node10" href="$group___i2_c__acknowledgement.html" title="I2C_acknowledgement" alt="" coords="331,376,483,403"/>
+<area shape="rect" id="node11" href="$group___i2_c__interrupts__definition.html" title="I2C_interrupts_definition" alt="" coords="327,427,487,453"/>
+<area shape="rect" id="node12" href="$group___i2_c__flags__definition.html" title="I2C_flags_definition" alt="" coords="340,477,473,504"/>
+<area shape="rect" id="node13" href="$group___i2_c__own__address1.html" title="I2C_own_address1" alt="" coords="341,528,472,555"/>
+<area shape="rect" id="node14" href="$group___i2_c__mode.html" title="I2C_mode" alt="" coords="367,579,447,605"/>
+<area shape="rect" id="node15" href="$group___i2_c___n_a_c_k__position.html" title="I2C_NACK_position" alt="" coords="339,629,475,656"/>
+<area shape="rect" id="node16" href="$group___i2_c__clock__speed.html" title="I2C_clock_speed" alt="" coords="346,680,467,707"/>
+<area shape="rect" id="node17" href="$group___i2_c___digital___filter.html" title="I2C_Digital_Filter" alt="" coords="347,731,467,757"/>
+<area shape="rect" id="node7" href="$group___i2_c.html" title="I2C driver modules. " alt="" coords="5,376,47,403"/>
+</map>

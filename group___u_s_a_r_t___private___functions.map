@@ -1,0 +1,12 @@
+<map id="USART_Private_Functions" name="USART_Private_Functions">
+<area shape="rect" id="node1" href="$group___u_s_a_r_t___group1.html" title="Initialization and Configuration functions. " alt="" coords="364,5,521,47"/>
+<area shape="rect" id="node2" href="$group___u_s_a_r_t___group2.html" title="Data transfers functions. " alt="" coords="363,71,522,98"/>
+<area shape="rect" id="node3" href="$group___u_s_a_r_t___group3.html" title="Multi&#45;Processor Communication functions. " alt="" coords="341,123,544,164"/>
+<area shape="rect" id="node4" href="$group___u_s_a_r_t___group4.html" title="LIN mode functions. " alt="" coords="376,189,509,215"/>
+<area shape="rect" id="node5" href="$group___u_s_a_r_t___group5.html" title="Half&#45;duplex mode function. " alt="" coords="359,239,526,266"/>
+<area shape="rect" id="node6" href="$group___u_s_a_r_t___group6.html" title="Smartcard mode functions. " alt="" coords="355,290,530,317"/>
+<area shape="rect" id="node7" href="$group___u_s_a_r_t___group7.html" title="IrDA mode functions. " alt="" coords="373,341,512,367"/>
+<area shape="rect" id="node8" href="$group___u_s_a_r_t___group8.html" title="DMA transfers management functions. " alt="" coords="351,392,534,433"/>
+<area shape="rect" id="node9" href="$group___u_s_a_r_t___group9.html" title="Interrupts and flags management functions. " alt="" coords="364,457,521,499"/>
+<area shape="rect" id="node11" href="$group___u_s_a_r_t.html" title="USART driver modules. " alt="" coords="5,239,71,266"/>
+</map>

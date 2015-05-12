@@ -1,0 +1,5 @@
+<map id="gui_button_remove" name="gui_button_remove">
+<area shape="rect" id="node2" href="$screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="240,5,291,32"/>
+<area shape="rect" id="node3" href="$group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="184,56,347,83"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="395,56,445,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="USBH_Set_Report" name="USBH_Set_Report">
+<area shape="rect" id="node2" href="$group___u_s_b_h___i_o_r_e_q___exported___functions_prototype.html#gafd139f087c16697bc60526eb3d2578a2" title="USBH_CtlReq USBH_CtlReq sends a control request and provide the status after completion of the reques..." alt="" coords="184,5,288,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___h_c_d___exported___functions_prototype.html#ga950fe167493f7dc6a66ca536de6f70b4" title="HCD_GetURB_State This function returns the last URBstate. " alt="" coords="336,5,479,32"/>
+</map>

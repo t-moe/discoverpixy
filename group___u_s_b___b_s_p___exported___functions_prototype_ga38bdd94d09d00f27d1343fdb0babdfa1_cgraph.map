@@ -1,0 +1,4 @@
+<map id="USB_OTG_BSP_EnableInterrupt" name="USB_OTG_BSP_EnableInterrupt">
+<area shape="rect" id="node2" href="$group___m_i_s_c.html#gadfb1f34f803ce54c976643db8c484442" title="Configures the priority grouping: pre&#45;emption priority and subpriority. " alt="" coords="264,5,435,32"/>
+<area shape="rect" id="node3" href="$group___m_i_s_c.html#ga4ab373ed0870c06fca5eb51d639adf41" title="Initializes the NVIC peripheral according to the specified parameters in the NVIC_InitStruct. " alt="" coords="311,56,387,83"/>
+</map>

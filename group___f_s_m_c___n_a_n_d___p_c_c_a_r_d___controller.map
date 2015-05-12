@@ -1,0 +1,14 @@
+<map id="FSMC_NAND_PCCARD_Controller" name="FSMC_NAND_PCCARD_Controller">
+<area shape="rect" id="node1" href="$group___f_s_m_c___wait___setup___time.html" title="FSMC_Wait_Setup_Time" alt="" coords="513,5,683,32"/>
+<area shape="rect" id="node2" href="$group___f_s_m_c___hi_z___setup___time.html" title="FSMC_HiZ_Setup_Time" alt="" coords="517,56,679,83"/>
+<area shape="rect" id="node3" href="$group___f_s_m_c___exported___constants.html" title="FSMC_Exported_Constants" alt="" coords="5,259,189,285"/>
+<area shape="rect" id="node4" href="$group___f_s_m_c___t_a_r___setup___time.html" title="FSMC_TAR_Setup_Time" alt="" coords="515,107,681,133"/>
+<area shape="rect" id="node5" href="$group___f_s_m_c___interrupt__sources.html" title="FSMC_Interrupt_sources" alt="" coords="515,157,681,184"/>
+<area shape="rect" id="node6" href="$group___f_s_m_c___e_c_c___page___size.html" title="FSMC_ECC_Page_Size" alt="" coords="517,208,679,235"/>
+<area shape="rect" id="node7" href="$group___f_s_m_c___wait__feature.html" title="FSMC_Wait_feature" alt="" coords="529,259,667,285"/>
+<area shape="rect" id="node8" href="$group___f_s_m_c___hold___setup___time.html" title="FSMC_Hold_Setup_Time" alt="" coords="514,309,682,336"/>
+<area shape="rect" id="node9" href="$group___f_s_m_c___t_c_l_r___setup___time.html" title="FSMC_TCLR_Setup_Time" alt="" coords="511,360,685,387"/>
+<area shape="rect" id="node11" href="$group___f_s_m_c___flags.html" title="FSMC_Flags" alt="" coords="549,411,647,437"/>
+<area shape="rect" id="node12" href="$group___f_s_m_c___setup___time.html" title="FSMC_Setup_Time" alt="" coords="531,461,665,488"/>
+<area shape="rect" id="node13" href="$group___f_s_m_c___e_c_c.html" title="FSMC_ECC" alt="" coords="551,512,645,539"/>
+</map>

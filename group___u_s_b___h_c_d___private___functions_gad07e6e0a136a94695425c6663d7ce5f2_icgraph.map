@@ -1,0 +1,12 @@
+<map id="HCD_SubmitRequest" name="HCD_SubmitRequest">
+<area shape="rect" id="node2" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#gae2467690d1fabbaa76ce49f01d981aa6" title="USBH_CtlSendSetup Sends the Setup Packet to the Device. " alt="" coords="218,5,363,32"/>
+<area shape="rect" id="node5" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#ga8378f12c873a1225e0b76e9f39150830" title="USBH_CtlSendData Sends a data Packet to the Device. " alt="" coords="221,56,360,83"/>
+<area shape="rect" id="node6" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#gaa5ee43776566a31d27f92560a2ef464b" title="USBH_CtlReceiveData Receives the Device Response to the Setup Packet. " alt="" coords="214,107,367,133"/>
+<area shape="rect" id="node7" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#ga7193c2b9caabcd91cf6ee2c127b180bf" title="USBH_BulkSendData Sends the Bulk Packet to the device. " alt="" coords="217,157,365,184"/>
+<area shape="rect" id="node9" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#gae3560362d8841b94f27cde9d3ef7219b" title="USBH_BulkReceiveData Receives IN bulk packet from device. " alt="" coords="209,208,372,235"/>
+<area shape="rect" id="node10" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#gaf49faa89045217e3d2cd299d0470847e" title="USBH_InterruptReceiveData Receives the Device Response to the Interrupt IN token. ..." alt="" coords="199,259,383,285"/>
+<area shape="rect" id="node11" href="$group___u_s_b_h___i_o_r_e_q___private___functions.html#ga9f20c1697923b879982770994b17cd32" title="USBH_InterruptSendData Sends the data on Interrupt OUT Endpoint. " alt="" coords="206,309,375,336"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___c_o_r_e___private___functions.html#ga397b1a11970708df55abb73d09623e7a" title="USBH_HandleControl Handles the USB control transfer state machine. " alt="" coords="451,56,598,83"/>
+<area shape="rect" id="node4" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gaaeb8e272c8ceaa0464f319590324c102" title="USBH_Process USB Host core main state machine process. " alt="" coords="667,56,780,83"/>
+<area shape="rect" id="node8" href="$group___u_s_b_h___m_s_c___b_o_t___private___functions.html#ga9bc4c591c3ab94488eef0886cc127ac9" title="USBH_MSC_HandleBOTXfer This function manages the different states of BOT transfer and updates the sta..." alt="" coords="431,183,619,209"/>
+</map>

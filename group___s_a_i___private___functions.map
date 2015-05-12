@@ -1,0 +1,7 @@
+<map id="SAI_Private_Functions" name="SAI_Private_Functions">
+<area shape="rect" id="node1" href="$group___s_a_i.html" title="SAI driver modules. " alt="" coords="5,101,48,127"/>
+<area shape="rect" id="node2" href="$group___s_a_i___group1.html" title="Initialization and Configuration functions. " alt="" coords="310,5,467,47"/>
+<area shape="rect" id="node3" href="$group___s_a_i___group2.html" title="Data transfers functions. " alt="" coords="309,71,468,98"/>
+<area shape="rect" id="node4" href="$group___s_a_i___group3.html" title="DMA transfers management functions. " alt="" coords="297,123,480,164"/>
+<area shape="rect" id="node5" href="$group___s_a_i___group4.html" title="Interrupts and flags management functions. " alt="" coords="310,188,467,229"/>
+</map>

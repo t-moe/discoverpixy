@@ -1,0 +1,25 @@
+<map id="SPI_Exported_Constants" name="SPI_Exported_Constants">
+<area shape="rect" id="node1" href="$group___s_p_i___i2_s___audio___frequency.html" title="SPI_I2S_Audio_Frequency" alt="" coords="327,5,504,32"/>
+<area shape="rect" id="node2" href="$group___s_p_i___c_r_c__polynomial.html" title="SPI_CRC_polynomial" alt="" coords="342,56,489,83"/>
+<area shape="rect" id="node3" href="$group___s_p_i___i2_s__interrupts__definition.html" title="SPI_I2S_interrupts\l_definition" alt="" coords="350,107,481,149"/>
+<area shape="rect" id="node4" href="$group___s_p_i__direction__transmit__receive.html" title="SPI_direction_transmit\l_receive" alt="" coords="339,173,492,214"/>
+<area shape="rect" id="node5" href="$group___s_p_i__data__size.html" title="SPI_data_size" alt="" coords="362,239,469,265"/>
+<area shape="rect" id="node6" href="$group___s_p_i___i2_s__flags__definition.html" title="SPI_I2S_flags_definition" alt="" coords="335,289,496,316"/>
+<area shape="rect" id="node8" href="$group___s_p_i___i2_s___m_c_l_k___output.html" title="SPI_I2S_MCLK_Output" alt="" coords="336,340,495,367"/>
+<area shape="rect" id="node9" href="$group___s_p_i___i2_s___mode.html" title="SPI_I2S_Mode" alt="" coords="361,391,469,417"/>
+<area shape="rect" id="node10" href="$group___s_p_i___i2_s___clock___polarity.html" title="SPI_I2S_Clock_Polarity" alt="" coords="335,441,495,468"/>
+<area shape="rect" id="node11" href="$group___s_p_i___c_r_c___transmit___receive.html" title="SPI_CRC_Transmit_Receive" alt="" coords="322,492,509,519"/>
+<area shape="rect" id="node12" href="$group___s_p_i___clock___polarity.html" title="SPI_Clock_Polarity" alt="" coords="348,543,483,569"/>
+<area shape="rect" id="node13" href="$group___s_p_i___i2_s___data___format.html" title="SPI_I2S_Data_Format" alt="" coords="340,593,491,620"/>
+<area shape="rect" id="node14" href="$group___s_p_i___i2_s___standard.html" title="SPI_I2S_Standard" alt="" coords="351,644,479,671"/>
+<area shape="rect" id="node16" href="$group___s_p_i___n_s_s__internal__software__management.html" title="SPI_NSS_internal_software\l_management" alt="" coords="325,695,506,737"/>
+<area shape="rect" id="node17" href="$group___s_p_i___m_s_b___l_s_b__transmission.html" title="SPI_MSB_LSB_transmission" alt="" coords="319,761,511,788"/>
+<area shape="rect" id="node18" href="$group___s_p_i___baud_rate___prescaler.html" title="SPI_BaudRate_Prescaler" alt="" coords="331,812,500,839"/>
+<area shape="rect" id="node19" href="$group___s_p_i___slave___select__management.html" title="SPI_Slave_Select_management" alt="" coords="312,863,519,889"/>
+<area shape="rect" id="node20" href="$group___s_p_i___i2_s___legacy.html" title="SPI_I2S_Legacy" alt="" coords="356,913,475,940"/>
+<area shape="rect" id="node21" href="$group___s_p_i__mode.html" title="SPI_mode" alt="" coords="374,964,457,991"/>
+<area shape="rect" id="node22" href="$group___s_p_i___clock___phase.html" title="SPI_Clock_Phase" alt="" coords="352,1015,479,1041"/>
+<area shape="rect" id="node23" href="$group___s_p_i___i2_s___d_m_a__transfer__requests.html" title="SPI_I2S_DMA_transfer\l_requests" alt="" coords="338,1066,493,1107"/>
+<area shape="rect" id="node24" href="$group___s_p_i__data__direction.html" title="SPI_data_direction" alt="" coords="350,1132,481,1159"/>
+<area shape="rect" id="node15" href="$group___s_p_i.html" title="SPI driver modules. " alt="" coords="5,568,48,595"/>
+</map>

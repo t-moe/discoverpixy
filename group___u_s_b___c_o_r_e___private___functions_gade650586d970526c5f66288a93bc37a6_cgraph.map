@@ -1,0 +1,4 @@
+<map id="USB_OTG_SetCurrentMode" name="USB_OTG_SetCurrentMode">
+<area shape="rect" id="node2" href="$group___u_s_b___b_s_p___exported___functions_prototype.html#ga28c906bec05a1b7f91aa0e4ff5d8a16c" title="USB_OTG_BSP_mDelay This function provides delay time in milli sec. " alt="" coords="237,5,405,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b___b_s_p___exported___functions_prototype.html#gaa70213d9a7b9b047dc6d3357f99e19b5" title="USB_OTG_BSP_uDelay This function provides delay time in micro sec. " alt="" coords="453,5,617,32"/>
+</map>

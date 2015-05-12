@@ -1,0 +1,11 @@
+<map id="common/tft/tft.h" name="common/tft/tft.h">
+<area shape="rect" id="node2" href="$app_8c.html" title="common/app/app.c" alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html" title="common/app/screen_filetest.c" alt="" coords="163,80,359,107"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html" title="common/app/screen_guitest.c" alt="" coords="384,80,581,107"/>
+<area shape="rect" id="node5" href="$screen__main_8c.html" title="common/app/screen_main.c" alt="" coords="605,80,792,107"/>
+<area shape="rect" id="node6" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="817,80,1021,107"/>
+<area shape="rect" id="node7" href="$button_8c.html" title="common/gui/button.c" alt="" coords="1045,80,1189,107"/>
+<area shape="rect" id="node8" href="$checkbox_8c.html" title="common/gui/checkbox.c" alt="" coords="1214,80,1378,107"/>
+<area shape="rect" id="node9" href="$numupdown_8c.html" title="common/gui/numupdown.c" alt="" coords="1402,80,1579,107"/>
+<area shape="rect" id="node10" href="$tft_8c.html" title="common/tft/tft.c" alt="" coords="1603,80,1717,107"/>
+</map>

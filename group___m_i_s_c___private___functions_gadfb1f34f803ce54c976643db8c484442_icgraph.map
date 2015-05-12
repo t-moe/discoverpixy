@@ -1,0 +1,4 @@
+<map id="NVIC_PriorityGroupConfig" name="NVIC_PriorityGroupConfig">
+<area shape="rect" id="node2" href="$group___u_s_b___b_s_p___exported___functions_prototype.html#ga38bdd94d09d00f27d1343fdb0babdfa1" title="USB_OTG_BSP_EnableInterrupt Configures USB Global interrupt. " alt="" coords="224,5,435,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gae365cd3b28aa14f76325c31138190f52" title="USBH_Init Host hardware and stack initializations. " alt="" coords="483,5,565,32"/>
+</map>

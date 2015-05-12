@@ -1,0 +1,8 @@
+<map id="calc_text_width" name="calc_text_width">
+<area shape="rect" id="node2" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="583,31,725,57"/>
+<area shape="rect" id="node4" href="$group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9" title="gui_numupdown_update" alt="" coords="165,56,327,83"/>
+<area shape="rect" id="node3" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="773,31,824,57"/>
+<area shape="rect" id="node5" href="$numupdown_8c.html#a47b81268e10355aa5abbb05788e99dfc" title="button_up_cb" alt="" coords="405,31,505,57"/>
+<area shape="rect" id="node6" href="$numupdown_8c.html#a0422809516212448deaf10314d0c01d5" title="button_down_cb" alt="" coords="397,81,513,108"/>
+<area shape="rect" id="node7" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="375,132,535,159"/>
+</map>

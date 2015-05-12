@@ -1,0 +1,9 @@
+<map id="LIS302DL_Read" name="LIS302DL_Read">
+<area shape="rect" id="node2" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga0c2ce8efd66b092a82e64f88ed5b9e9a" title="Set LIS302DL Internal High Pass Filter configuration. " alt="" coords="177,5,328,32"/>
+<area shape="rect" id="node3" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga0c6ea80d35be5abeb3bd1d06355481e8" title="Set LIS302DL Interrupt configuration. " alt="" coords="169,56,337,83"/>
+<area shape="rect" id="node4" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga445e78cca4cd65f59e0ffaa3575db8ae" title="Change the lowpower mode for LIS302DL. " alt="" coords="168,107,337,133"/>
+<area shape="rect" id="node5" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga8542910cb1e71d7031fab7a462c768bd" title="Data Rate command. " alt="" coords="169,157,336,184"/>
+<area shape="rect" id="node6" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#gadb44926aefe4fc8e6cdff256077c0bf4" title="Change the Full Scale of LIS302DL. " alt="" coords="169,208,336,235"/>
+<area shape="rect" id="node7" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#ga34234db89f7d653fea3085007d3d9e0e" title="Reboot memory content of LIS302DL. " alt="" coords="176,259,329,285"/>
+<area shape="rect" id="node8" href="$group___s_t_m32_f4___d_i_s_c_o_v_e_r_y___l_i_s302_d_l___private___functions.html#gaf31f5b65ff8d208eeabae1a8f294fcc2" title="Read LIS302DL output register, and calculate the acceleration ACC[mg]=SENSITIVITY* (out_h*256+out_l)/..." alt="" coords="181,309,324,336"/>
+</map>

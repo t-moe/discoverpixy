@@ -1,0 +1,4 @@
+<map id="USB_OTG_EnableGlobalInt" name="USB_OTG_EnableGlobalInt">
+<area shape="rect" id="node2" href="$group___u_s_b___h_c_d___private___functions.html#gaf8e5fe138e7ddcece159c1c741f5b9d2" title="HCD_Init Initialize the HOST portion of the driver. " alt="" coords="235,5,308,32"/>
+<area shape="rect" id="node3" href="$group___u_s_b_h___c_o_r_e___private___functions.html#gae365cd3b28aa14f76325c31138190f52" title="USBH_Init Host hardware and stack initializations. " alt="" coords="356,5,439,32"/>
+</map>

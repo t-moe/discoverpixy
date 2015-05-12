@@ -1,0 +1,10 @@
+<map id="RCC_APB2PeriphResetCmd" name="RCC_APB2PeriphResetCmd">
+<area shape="rect" id="node2" href="$group___a_d_c___group1.html#ga1962afdd9eebe5c896bbba2e4f26fe09" title="Deinitializes all ADCs peripherals registers to their default reset values. " alt="" coords="255,5,344,32"/>
+<area shape="rect" id="node3" href="$group___l_t_d_c___group1.html#gad3522837b5ef2b99653e230e649fc149" title="Deinitializes the LTDC peripheral registers to their default reset values. " alt="" coords="253,56,346,83"/>
+<area shape="rect" id="node4" href="$group___s_a_i___group1.html#gadcef52be2d2792a70f67b6e7872b334e" title="Deinitialize the SAIx peripheral registers to their default reset values. " alt="" coords="258,107,341,133"/>
+<area shape="rect" id="node5" href="$group___s_d_i_o___group1.html#gac359d2c6c67a2590f8f9b720c0e4ff1b" title="Deinitializes the SDIO peripheral registers to their default reset values. " alt="" coords="253,157,346,184"/>
+<area shape="rect" id="node6" href="$group___s_p_i___group1.html#gabe36880945fa56785283a9c0092124cc" title="De&#45;initialize the SPIx peripheral registers to their default reset values. " alt="" coords="245,208,354,235"/>
+<area shape="rect" id="node7" href="$group___s_y_s_c_f_g___private___functions.html#gaf2f9faa2df9a59a68ae17fae23bc478e" title="Deinitializes the Alternate Functions (remap and EXTI configuration) registers to their default reset..." alt="" coords="241,259,357,285"/>
+<area shape="rect" id="node8" href="$group___t_i_m___group1.html#ga1659cc0ce503ac151568e0c7c02b1ba5" title="Deinitializes the TIMx peripheral registers to their default reset values. " alt="" coords="258,309,341,336"/>
+<area shape="rect" id="node9" href="$group___u_s_a_r_t___group1.html#ga2f8e1ce72da21b6539d8e1f299ec3b0d" title="Deinitializes the USARTx peripheral registers to their default reset values. " alt="" coords="247,360,352,387"/>
+</map>

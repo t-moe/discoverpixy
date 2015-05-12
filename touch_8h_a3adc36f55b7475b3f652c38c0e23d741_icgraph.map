@@ -1,0 +1,7 @@
+<map id="touch_register_area" name="touch_register_area">
+<area shape="rect" id="node2" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="559,95,609,122"/>
+<area shape="rect" id="node3" href="$button_8h.html#a64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="199,56,310,83"/>
+<area shape="rect" id="node6" href="$checkbox_8h.html#afc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="189,132,320,159"/>
+<area shape="rect" id="node4" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="414,44,465,71"/>
+<area shape="rect" id="node5" href="$numupdown_8h.html#ab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="368,95,511,122"/>
+</map>
