@@ -604,7 +604,8 @@ void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, 
     bool enTrans            = 0;
     
     ll_tft_set_window(x, y, x + width - 1, y + height - 1);
-    
+    ll_tft_set_cursor(x, y);   
+ 
     for(cnt = (width / 8) * height; cnt > 0; cnt--){
         for(bitm = 0x80; bitm > 0; bitm >>= 1){
             if((font[ind]) & bitm){

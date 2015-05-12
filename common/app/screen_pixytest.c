@@ -10,14 +10,25 @@ static volatile bool pixy_connected = false;
 
 
 static BUTTON_STRUCT b_back;
+static BUTTON_STRUCT b_runstop;
 static TOUCH_AREA_STRUCT a_area;
 
 static void b_back_cb(void* button) {
         gui_screen_back();
 }
 
-POINT_STRUCT pixy_pos;
-POINT_STRUCT old_pos;
+
+static volatile bool pixy_running = false;
+static bool old_pixy_running= false;
+static void b_runstop_cb(void* button) {
+	pixy_running=!pixy_running;	
+}
+
+
+
+
+static POINT_STRUCT pixy_pos;
+static POINT_STRUCT old_pos;
 static void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
 	POINT_STRUCT p = touch_get_last_point();
 	switch(triggeredAction) {
@@ -68,6 +79,20 @@ static void enter(void* screen) {
         b_back.callback=b_back_cb; //Call b_back_cb as Callback
         gui_button_add(&b_back); //Register Button (and run the callback from now on)
 
+
+	//Back button
+        b_runstop.base.x1=60; //Start X of Button
+        b_runstop.base.y1=210; //Start Y of Button
+        b_runstop.base.x2=AUTO; //b_runstop.base.x1+160; //Auto Calculate X2 with String Width
+        b_runstop.base.y2=AUTO; //Auto Calculate Y2 with String Height
+        b_runstop.txtcolor=WHITE; //Set foreground color
+        b_runstop.bgcolor=HEX(0xAE1010); //Set runstopground color (Don't take 255 or 0 on at least one channel, to make shadows possible)
+        b_runstop.font=0; //Select Font
+        b_runstop.text="Run/Stop"; //Set Text (For formatted strings take sprintf)
+        b_runstop.callback=b_runstop_cb; //Call b_runstop_cb as Callrunstop
+        gui_button_add(&b_runstop); //Register Button (and run the callrunstop from now on)
+
+
 	//Area test
         a_area.hookedActions =  PEN_DOWN | PEN_MOVE |  PEN_ENTER | PEN_UP | PEN_LEAVE;
         a_area.x1 = 0;
@@ -88,11 +113,13 @@ static void enter(void* screen) {
 
 static void leave(void* screen) {
 	gui_button_remove(&b_back);
+	gui_button_remove(&b_runstop);
 	touch_unregister_area(&a_area);
 }
 
 int pixy_led_test();
 int pixy_frame_test();
+
 
 static void update(void* screen) {
 
@@ -110,19 +137,35 @@ static void update(void* screen) {
         if(pixy_connected) {
                 pixy_service(); //Send/receive event data from/to pixy failed
 
-                //Code for tests see below
-                if(pixy_led_test()!=0) {
-                        pixy_connected=false;
-                }
 
                 if(pixy_frame_test()!=0) {
                          pixy_connected=false;
                 }
 
-		
-		pixy_rcs_set_position(0,pixy_pos.x);
-		pixy_rcs_set_position(1,pixy_pos.y);
+		/*if(pixy_led_test()!=0) {
+			pixy_connected=false;
+		}*/
 
+		if(!pixy_running) {	
+			pixy_rcs_set_position(0,pixy_pos.x);
+			pixy_rcs_set_position(1,pixy_pos.y);
+		}
+
+		if(pixy_running!=old_pixy_running) {	
+			old_pixy_running=pixy_running;
+			if(pixy_running) { //start tracking
+
+				int32_t response;
+				int return_value;
+				return_value = pixy_command("runprog", INT8(2), END_OUT_ARGS,  &response, END_IN_ARGS);
+
+			} else { //stop tracking
+				int32_t response;
+				int return_value;
+				return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+			}
+		}
+	
                 //system_delay(500);
         }
 }

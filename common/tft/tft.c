@@ -2,6 +2,7 @@
 #include "ll_tft.h"
 #include <string.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 bool tft_init() {
 	return ll_tft_init();

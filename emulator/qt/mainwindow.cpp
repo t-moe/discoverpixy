@@ -12,8 +12,6 @@ extern "C" {
 
 #define DISPLAY_WIDTH 320
 #define DISPLAY_HEIGHT 240
-#define DISPLAY_X 10
-#define DISPLAY_Y 10
 
 QColor QColorFromRGB565(uint16_t color) {
 
@@ -35,6 +33,7 @@ QRgb QRgbFromRGB565(uint16_t color) {
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), image(DISPLAY_WIDTH,DISPLAY_HEIGHT, QImage::Format_RGB16), ui(new Ui::MainWindow){
     ui->setupUi(this);
     image.fill(Qt::black);
+    currentScale = 1;
 }
 
 void MainWindow::draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
@@ -134,9 +133,13 @@ void MainWindow::paintEvent(QPaintEvent *)
   //render_mutex.lock();
   QPainter painter(this);
 
-  painter.drawImage(DISPLAY_X,DISPLAY_Y,image);
+  QRectF imgRect (ui->widgetDisplay->geometry().topLeft(),QSizeF(DISPLAY_WIDTH*currentScale,DISPLAY_HEIGHT*currentScale));
+
+  painter.drawImage(imgRect,image);
   painter.setPen(QPen(Qt::green,2));
-  painter.drawRect(DISPLAY_X-1,DISPLAY_Y-1,DISPLAY_WIDTH+2,DISPLAY_HEIGHT+2);
+  painter.drawRect(imgRect.adjusted(-1,-1,1,1));
+
+
   //render_mutex.unlock();
 }
 
@@ -167,7 +170,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::checkAndSendEvent(QPoint pos, bool down)
 {
-    QPoint p = pos - QPoint(DISPLAY_X,DISPLAY_Y);
+    QPoint p = pos - ui->widgetDisplay->geometry().topLeft();
+    p/=currentScale;
     if(p.x()<0 || p.y()<0 || p.x() >= DISPLAY_WIDTH || p.y() >= DISPLAY_HEIGHT) return;
 
     //qDebug() << down << p;
@@ -175,3 +179,9 @@ void MainWindow::checkAndSendEvent(QPoint pos, bool down)
     touch_add_raw_event(p.x(),p.y(),down?TOUCH_DOWN:TOUCH_UP);
 }
 
+
+void MainWindow::on_cboZoom_currentIndexChanged(int index)
+{
+    currentScale=index+1;
+    update();
+}

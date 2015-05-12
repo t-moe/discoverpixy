@@ -1,15 +1,20 @@
 #include "screen_main.h"
 #include "screen_guitest.h"
 #include "screen_pixytest.h"
+#include "screen_filetest.h"
 #include "button.h"
 #include "tft.h"
 
 BUTTON_STRUCT b_guitest;
 BUTTON_STRUCT b_pixytest;
-
+BUTTON_STRUCT b_filetest;
 
 static void b_guitest_cb(void* button) {
 	gui_screen_navigate(get_screen_guitest());
+}
+
+static void b_filetest_cb(void* button) {
+	gui_screen_navigate(get_screen_filetest());
 }
 
 static void b_pixytest_cb(void* button) {
@@ -33,7 +38,7 @@ static void enter(void* screen) {
         gui_button_add(&b_guitest); //Register Button (and run the callback from now on)
 
 	//button to reach pixy test
-        b_pixytest.base.x1=200; //Start X of Button
+        b_pixytest.base.x1=150; //Start X of Button
         b_pixytest.base.y1=45; //Start Y of Button
         b_pixytest.base.x2=AUTO; //b_pixytest.base.x1+160; //Auto Calculate X2 with String Width
         b_pixytest.base.y2=AUTO; //Auto Calculate Y2 with String Height
@@ -44,6 +49,18 @@ static void enter(void* screen) {
         b_pixytest.callback=b_pixytest_cb; //Call b_pixytest_cb as Callback
         gui_button_add(&b_pixytest); //Register Button (and run the callback from now on)
 
+        //button to reach filesystem test
+        b_filetest.base.x1=240; //Start X of Button
+        b_filetest.base.y1=45; //Start Y of Button
+        b_filetest.base.x2=AUTO; //b_filetest.base.x1+160; //Auto Calculate X2 with String Width
+        b_filetest.base.y2=AUTO; //Auto Calculate Y2 with String Height
+        b_filetest.txtcolor=WHITE; //Set foreground color
+        b_filetest.bgcolor=HEX(0x501EA0); //Set background color (Don't take 255 or 0 on at least one channel, to make shadows possible)
+        b_filetest.font=0; //Select Font
+        b_filetest.text="File Test"; //Set Text (For formatted strings take sprintf)
+        b_filetest.callback=b_filetest_cb; //Call b_filetest_cb as Callback
+        gui_button_add(&b_filetest); //Register Button (and run the callback from now on)
+
 
 
 }
@@ -51,6 +68,7 @@ static void enter(void* screen) {
 static void leave(void* screen) {
 	gui_button_remove(&b_guitest);
 	gui_button_remove(&b_pixytest);
+	gui_button_remove(&b_filetest);
 }
 
 static void update(void* screen) {

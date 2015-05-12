@@ -62,6 +62,8 @@ static void enter(void* screen) {
 
 
 	//tft test
+	tft_draw_pixel(0,0,BLACK);
+	tft_draw_pixel(319,239,BLACK);
 	tft_draw_pixel(10,210,BLUE);
         tft_draw_pixel(12,210,BLUE);
         tft_draw_rectangle(40,100,60,235,BLUE);
