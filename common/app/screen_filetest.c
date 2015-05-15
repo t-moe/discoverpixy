@@ -130,46 +130,10 @@ SCREEN_STRUCT* get_screen_filetest() {
 }
 
 static void image_test() {
-	//Source: http://stackoverflow.com/a/17040962/2606757
 
-	FILE_HANDLE* file = filesystem_file_open("cpu.bmp");
-	if(file==NULL) {
+
+	if(!tft_draw_bitmap_file_unscaled(250,170,"cpu.bmp")) {
 		tft_print_line(10,180,BLUE,TRANSPARENT,0,"Could not open cpu.bmp");
-		return;
 	}
-
-
-	unsigned char info[54];
-	if(filesystem_file_read(file,info,54)!=F_OK) {
-		tft_print_line(10,180,BLUE,TRANSPARENT,0,"Could not read header of cpu.bmp");
-		filesystem_file_close(file);        
-		return;
-	}
-
-	// extract image height and width from header
-	int width = *(int*)&info[18];
-	int height = *(int*)&info[22];
-
-	filesystem_file_seek(file,*(int*)&info[10]);
-
-	unsigned char data [width*4];
-	tft_draw_rectangle(100-1,160-1,100-1+width,160-1+height,BLACK);
-
-	for(int i = 0; i < height; i++)
-	{
-		filesystem_file_read(file,data,width*4);
-		for(int j = 0; j < width*4; j += 4)
-		{
-			unsigned char a = data[j];
-			unsigned char r = data[j+1]; 
-			unsigned char g = data[j+2]; 
-			unsigned char b = data[j+3]; 
-			if(a!=0) {
-				tft_draw_pixel(100+j/4,160+height-1-i,RGB(r,g,b));
-			}
-		}
-	}
-
-	filesystem_file_close(file);
-
+	tft_draw_rectangle(250-1,170-1,250-1+64,170-1+64,BLACK);
 }
