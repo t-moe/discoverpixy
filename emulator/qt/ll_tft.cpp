@@ -44,13 +44,15 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color) {
 }
 
 uint8_t ll_tft_num_fonts() {
-    return 1;
+    return 2;
 }
 
 QFont get_font(uint8_t fontnum) {
     switch(fontnum) {
         case 0:
             return QFont("Monospace",8);
+        case 1:
+            return QFont("DejaVu Sans Mono",14);
         default:
         return QFont();
     }

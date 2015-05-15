@@ -103,6 +103,18 @@ void tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_
  */
 void tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat);
 
+
+/**
+ * Draws a bitmap from the filesystem onto the display without scaling/cropping
+ * The bitmap must be saved in the windows bitmap format (.bmp) without compression and with 24 (b,g,r) or 32 (a,r,g,b) bits per pixel
+ * @param x The x-coordinate of the top-left corner to draw the bitmap at
+ * @param y The y-coordinate of the top-left corner to draw the bitmap at
+ * @param filename The absolute path to the .bmp file
+ * @return true on success
+ */
+bool tft_draw_bitmap_file_unscaled(uint16_t x, uint16_t y, const char* filename);
+
+
 /**
  * Draws the outline of a circle onto the display
  * @param x The x-Coordinate of the center point
