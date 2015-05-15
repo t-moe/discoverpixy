@@ -17,7 +17,6 @@
 #define __PIXY_H__
 
 #include <stdint.h>
-#include <unistd.h>
 #include "pixydefs.h"
 
 // Pixy C API //

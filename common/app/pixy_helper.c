@@ -6,6 +6,7 @@
 
 
 static int renderBA81(uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t height, uint32_t frameLen, uint8_t *frame);
+static int saveBA81(FILE_HANDLE* handle, uint16_t width, uint16_t height, uint32_t frameLen, uint8_t *frame);
 
 
 int pixy_render_full_frame(uint16_t x, uint16_t y) {
@@ -45,6 +46,44 @@ int pixy_render_cropped_frame(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t
 
 	return return_value;
 }
+
+int pixy_save_full_frame(FILE_HANDLE* handle) {
+	return pixy_save_cropped_frame(handle,0,0,320,200);
+}
+
+int pixy_save_cropped_frame(FILE_HANDLE* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height) {
+	uint8_t* videodata;
+	int32_t response;
+	int32_t fourccc;
+	int8_t renderflags;
+	uint16_t xwidth;
+	uint16_t ywidth;
+	uint32_t size;
+
+
+	int return_value = pixy_command("cam_getFrame",  // String id for remote procedure
+								  INT8(0x21),     // mode
+								  INT16(xoffset),        // xoffset
+								  INT16(yoffset),         // yoffset
+								  INT16(width),       // width
+								  INT16(height),       // height
+								  END_OUT_ARGS,              // separator
+								  &response,      // pointer to mem address for return value
+								  &fourccc,
+								  &renderflags,
+								  &xwidth,
+								  &ywidth,
+								  &size,
+								  &videodata,        // pointer to mem address for returned frame
+								  END_IN_ARGS);
+
+	if(return_value==0) {
+		return_value = saveBA81(handle,xwidth,ywidth,size,videodata);
+	}
+
+	return return_value;
+}
+
 
 
 
@@ -105,7 +144,6 @@ static int renderBA81(uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t hei
 
     if(decodedimage==NULL) { //not enough free space to decode image in memory
         //decode & render image pixel by pixel
-        uint16_t* line = decodedimage;
         for (y=1; y<height-1; y++)
         {
                 frame++;
@@ -137,4 +175,49 @@ static int renderBA81(uint16_t xpos, uint16_t ypos, uint16_t width, uint16_t hei
     }
 
     return 0;
+}
+
+static int saveBA81(FILE_HANDLE* handle, uint16_t width, uint16_t height, uint32_t frameLen, uint8_t *frame)
+{
+    uint16_t x, y;
+    uint8_t r, g, b;
+
+    uint32_t fpos = handle->fpos;
+	uint32_t row_size_padded = ((width-2)*3 + 3) & (~3); //row size aligned to 4 bytes
+	uint32_t fpos_end = fpos + row_size_padded* (height-2);
+
+
+    // skip first line
+    frame += width;
+
+    // don't render top and bottom rows, and left and rightmost columns because of color
+	// interpolation
+
+	for (y=1; y<height-1; y++)
+	{
+			frame++;
+			uint8_t rowbuf[row_size_padded];
+
+			//Bitmaps are saved "bottom-up". Seek to the right row.
+			if(filesystem_file_seek(handle,fpos_end-row_size_padded*y)!=F_OK) {
+				return -1;
+			}
+
+			for (x=1; x<width-1; x++, frame++)
+			{
+				interpolateBayer(width, x, y, frame, &r, &g, &b);
+				//bitmaps are saved in 24bit b,g,r format
+				rowbuf[(x-1)*3] = b;
+				rowbuf[(x-1)*3+1] = g;
+				rowbuf[(x-1)*3+2] = r;
+			}
+
+			if(filesystem_file_write(handle,rowbuf,row_size_padded)!=F_OK) {
+				return -1;
+			}
+
+			frame++;
+	 }
+	return 0;
+
 }
