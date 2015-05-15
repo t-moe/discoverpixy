@@ -7,7 +7,7 @@
 /*@{*/
 
 /**
- * @defgroup guitest Guitest
+ * @defgroup guitest Guitest (Screen)
  * The Gui-Test Screen tests the gui and the tft module.
  */
 /*@{*/
@@ -20,4 +20,5 @@
  */
 SCREEN_STRUCT* get_screen_guitest();
 
-/*@}@}*/
+/*@}*/
+/*@}*/

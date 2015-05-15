@@ -18,7 +18,7 @@
 /*@{*/
 
 /**
- * @defgroup main Main
+ * @defgroup main Main (Screen)
  * The Main Screen is the start-screen for the application
  */
 /*@{*/
@@ -31,4 +31,5 @@
  */
 SCREEN_STRUCT* get_screen_main();
 
-/*@}@}*/
+/*@}*/
+/*@}*/

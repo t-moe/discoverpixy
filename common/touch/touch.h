@@ -1,6 +1,9 @@
 #ifndef TOUCH_H
 #define TOUCH_H
 
+#include<stdbool.h>
+#include<stdint.h>
+
 /**
  * @defgroup touch Touch
  * The Touch module provides access to the touch controller, and executes a callback if a certain region is touched
@@ -11,10 +14,6 @@
  * @addtogroup touch
  */
 /*@{*/
-
-
-#include<stdbool.h>
-#include<stdint.h>
 
 /**
 Enum to describe the current Touch State. \sa touch_add_raw_event
@@ -39,6 +38,7 @@ typedef enum {
 
 /**
  * Prototype for Event Listeners (called for every occurring, hooked action)
+ * \note You should NOT execute long running things in this callback nor should you update the gui. But you can call gui_screen_navigate() for instance.
  * @param touchArea The pointer to the TOUCH_AREA_STRUCT in which the event occurred
  * @param triggeredAction The Action which occurred
  */
@@ -53,8 +53,8 @@ typedef struct {
         uint16_t y1; //!< Top Left Y-Coordinate of Area
         uint16_t x2; //!< Bottom Right X-Coordinate of Area
         uint16_t y2; //!< Bottom Right Y-Coordinate of Area
-        TOUCH_CALLBACK callback; //!< Callback
-        uint8_t flags; //!< For internal Used, don't change, don't initialize
+        TOUCH_CALLBACK callback; //!< Callback which is executed when an event occurred in this Area.
+        uint8_t flags; //!< For internal use, don't change, don't initialize
 } TOUCH_AREA_STRUCT;
 
 

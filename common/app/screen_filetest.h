@@ -6,7 +6,7 @@
 /*@{*/
 
 /**
- * @defgroup filetest Filetest
+ * @defgroup filetest Filetest (Screen)
  * The File-Test Screen tests the filesystem module. It read/writes from/to files and shows a bitmap
  */
 /*@{*/
@@ -19,4 +19,5 @@
  */
 SCREEN_STRUCT* get_screen_filetest();
 
-/*@}@}*/
+/*@}*/
+/*@}*/

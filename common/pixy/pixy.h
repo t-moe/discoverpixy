@@ -27,6 +27,13 @@ extern "C"
 {
 #endif
 
+  /**
+   * @defgroup pixy Pixy
+   * The Pixy Module
+   */
+  /*@{*/
+
+
   #define PIXY_MAX_SIGNATURE          7
 
   // Pixy x-y position values
@@ -164,7 +171,7 @@ extern "C"
 
   /**
     @brief    Enable or disable pixy camera auto white balance.
-    @param    enable  1: Enable white balance.
+    @param    value  1: Enable white balance.
                       0: Disable white balance.
     @return     0         Success
     @return     Negative  Error
@@ -220,7 +227,7 @@ extern "C"
     @return     0         Success
     @return     Negative  Error
   */
-  int pixy_cam_set_exposure_compensation(uint8_t gain, uint16_t compensation);
+  int pixy_cam_set_exposure_compensation(uint8_t gain, uint16_t comp);
 
   /**
     @brief     Get pixy camera exposure compensation.
@@ -229,7 +236,7 @@ extern "C"
     @return     0         Success
     @return     Negative  Error
   */
-  int pixy_cam_get_exposure_compensation(uint8_t * gain, uint16_t * compensation);
+  int pixy_cam_get_exposure_compensation(uint8_t * gain, uint16_t * comp);
 
   /**
     @brief     Set pixy camera brightness.
@@ -278,6 +285,8 @@ extern "C"
     @return      Negative  Error
   */
   int pixy_get_firmware_version(uint16_t * major, uint16_t * minor, uint16_t * build);
+
+  /*@}*/
 
 #ifdef __cplusplus
 }

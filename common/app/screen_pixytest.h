@@ -6,7 +6,7 @@
 /*@{*/
 
 /**
- * @defgroup pixytest Pixytest
+ * @defgroup pixytest Pixytest (Screen)
  * The Pixy-Test Screen tests the pixy module.
  */
 /*@{*/
@@ -18,4 +18,5 @@
  */
 SCREEN_STRUCT* get_screen_pixytest();
 
-/*@}@}*/
+/*@}*/
+/*@}*/

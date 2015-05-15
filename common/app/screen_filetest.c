@@ -70,6 +70,7 @@ static void enter(void* screen) {
 		y+=14;
 	}
 
+	filesystem_dir_close(dir);
 
 	y+=14;
 

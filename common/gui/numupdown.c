@@ -101,8 +101,6 @@ void gui_numupdown_remove(NUMUPDOWN_STRUCT* numupdown)
 
 void gui_numupdown_update(NUMUPDOWN_STRUCT* numupdown)
  {
-	
-	 
 	 uint8_t tw1 = calc_text_width(numupdown->max);
 	 uint8_t tw2 = calc_text_width(numupdown->min);
 	 if(tw2 > tw1) tw1 = tw2;

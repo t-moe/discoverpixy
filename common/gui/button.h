@@ -1,6 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "touch.h"
+
 /**
  * @defgroup gui Gui
  * The Gui Module
@@ -11,14 +13,18 @@
  * @defgroup button Button
  * The Button Gui-Element
  */
+
+/*@}*/
+
+/**
+ * @addtogroup button
+ */
 /*@{*/
 
 
-
-#include "touch.h"
-
 /**
  * Prototype for Event Listeners (called when the button is pressed)
+ * \note You should NOT execute long running things in this callback nor should you update the gui. But you can call gui_screen_navigate() for instance.
  * @param button The pointer to the BUTTON_STRUCT where to corresponding Button was pressed
  */
 typedef void (*BUTTON_CALLBACK)(void *button);
@@ -30,7 +36,7 @@ typedef void (*BUTTON_CALLBACK)(void *button);
 typedef struct {
 	TOUCH_AREA_STRUCT base; //!< Basic geometry of the button. You only need to set the x1, y1, x2, y2 members of this struct.
 	uint16_t bgcolor; //!< The 16-bit background color of the button
-	BUTTON_CALLBACK callback; //!< Callback
+	BUTTON_CALLBACK callback; //!< Callback which is executed when the button is pressed
 	uint16_t txtcolor; //!< The 16-bit text color
 	uint8_t font; //!< The number of the font to use
 	const char *text; //!< The label of the button
@@ -79,6 +85,6 @@ typedef struct {
 
 
 
-/*@}@}*/
+/*@}*/
 
 #endif /* BUTTON_H */
