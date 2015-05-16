@@ -45,5 +45,15 @@ int pixy_save_full_frame(FILE_HANDLE* handle);
  */
 int pixy_save_cropped_frame(FILE_HANDLE* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);
 
+/**
+ * Sets the color signature  to the color in the selected region of the frame
+ * @param signum the color signature number (1..7)
+ * @param xoffset The x-Coordinate of the topleft point of the region
+ * @param yoffset The y-Coordinate of the topleft point of the region
+ * @param width The width of the region
+ * @param height The height of the region
+ * @return 0 on success, otherwise the errorcode from pixy
+ */
+int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);
 
 #endif /* PIXY_HELPER_H */

@@ -3,6 +3,7 @@
 #include "screen_pixytest.h"
 #include "screen_filetest.h"
 #include "screen_photomode.h"
+#include "screen_tracking.h"
 #include "button.h"
 #include "tft.h"
 #include "filesystem.h"
@@ -17,11 +18,13 @@ BUTTON_STRUCT b_photo_mode;
 
 
 static void b_our_tracking_cb(void* button) {
-
+	tracking_set_mode(OUR_TRACKING);
+	gui_screen_navigate(get_screen_tracking());
 }
 
 static void b_ref_tracking_cb(void* button) {
-
+	tracking_set_mode(REFERENCE_TRACKING);
+	gui_screen_navigate(get_screen_tracking());
 }
 
 static void b_photo_mode_cb(void* button) {

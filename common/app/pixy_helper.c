@@ -219,5 +219,23 @@ static int saveBA81(FILE_HANDLE* handle, uint16_t width, uint16_t height, uint32
 			frame++;
 	 }
 	return 0;
-
 }
+
+
+int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height) {
+	int32_t response;
+
+	int return_value = pixy_command("cc_setSigRegion",  // String id for remote procedure
+								  INT32(0),     // type = normal color code
+								  INT8(signum),
+								  INT16(xoffset),        // xoffset
+								  INT16(yoffset),         // yoffset
+								  INT16(width),       // width
+								  INT16(height),       // height
+								  END_OUT_ARGS,              // separator
+								  &response,      // pointer to mem address for return value
+								  END_IN_ARGS);
+	return return_value;
+}
+
+
