@@ -12,6 +12,7 @@
 /**
  * @defgroup screen Screen
  * The Screen Submodule provides an api to navigate between different "screens" on the UI.
+ * Each screen must provide an enter, update and a leave method; which will be called from this module at the right time.
  * The implemented screens of the application are documented in the \ref screens module.
  */
 /*@}*/

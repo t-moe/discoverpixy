@@ -11,7 +11,8 @@
 
 /**
  * @defgroup button Button
- * The Button Gui-Element
+ * The Button Gui-Element is a clickable, rectangular box with a label inside.
+ * When it is pressed and released you will be notified via the provided callback.
  */
 
 /*@}*/
@@ -63,26 +64,6 @@ void gui_button_remove(BUTTON_STRUCT* button);
  * @param button A Pointer to the BUTTON_STRUCT
  */
 void gui_button_redraw(BUTTON_STRUCT* button);
-
-/*
-bool guiAddBitmapButton(BITMAPBUTTON_STRUCT* button);
-void guiRemoveBitmapButton(BITMAPBUTTON_STRUCT* button);
-void guiRedrawBitmapButton(BITMAPBUTTON_STRUCT* button);
-*/
-
-
-/*
-typedef struct {
-	TOUCH_AREA_STRUCT base;
-	unsigned int bgcolor;
-	BUTTON_CALLBACK callback; //Callback
-	unsigned char imgwidth;
-	unsigned char imgheight;
-	char* filename;
-} BITMAPBUTTON_STRUCT;
-*/
-//Notice that the first 3 Members are Equal, so it's possible to cast it to a BUTTON_STRUCT even if it's a BITMAPBUTTON_STRUCT (when changeing only the first 3 Members).
-
 
 
 /*@}*/

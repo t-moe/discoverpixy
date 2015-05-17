@@ -10,7 +10,8 @@
 
 /**
  * @defgroup checkbox Checkbox
- * The Checkbox Gui-Element
+ * The Checkbox Gui-Element is a clickable, rectangular box with an optional tickmark inside of it.
+ * When the checkbox is pressed and released it's tick state changes and you will be notified via the provided callback.
  */
 /*@}*/
 
