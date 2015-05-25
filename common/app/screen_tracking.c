@@ -23,7 +23,7 @@ static void c_frame_toggle_cb(void *checkbox, bool checked) {
 	//Frame will be drawn in the main loop below
 }
 
-static enum {detecting, init, tracking, preselecting, abortselecting, selecting, selected} state; //Current state of the screen state machine
+static enum {detecting, init, tracking, preselecting, abortselecting, selecting, selected, error} state; //Current state of the screen state machine
 
 static POINT_STRUCT point1; //First point of the rectangle selected by the user (color region selection)
 static POINT_STRUCT point2; //End point of the rectangle selected by the user (color region selection)
@@ -67,8 +67,96 @@ static void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
 	}
 }
 
+//Prototype for tracking start/stop methods
+typedef void (*TRACKING_VOID_CALLBACK)(void* tracking_config);
+//Prototype for tracking update method
+typedef void (*TRACKING_BLOCK_CALLBACK)(void* tracking_config, struct Block* blocks, int num_blocks );
+
+//Structure to save callbacks and settings of a tracking implementation
+typedef struct {
+	TRACKING_VOID_CALLBACK start;
+	TRACKING_VOID_CALLBACK stop;
+	TRACKING_BLOCK_CALLBACK update;
+} TRACKING_CONFIG_STRUCT;
+
+//Methods for our tracking implementation ahead
+
+//Method/Callback to start our tracking
+void tracking_our_start(void* tracking_config) {
+	//Activate pixy's data send program
+	int32_t response;
+	int return_value;
+	return_value = pixy_command("runprog", INT8(0), END_OUT_ARGS,  &response, END_IN_ARGS);
+}
+
+//Method/Callback to stop our tracking
+void tracking_our_stop(void* tracking_config) {
+	//Stop pixy's data send programm
+	int32_t response;
+	int return_value;
+	return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+}
+
+//Method/Callback to calculate one step of our tracking
+void tracking_our_update(void* tracking_config, struct Block* blocks, int num_blocks) {
+	//TODO: Implement tracking!
+	//Calculate new servo pos and set the new servo pos
+}
+
+//Variable which stores all the callbacks and settings for our tracking implementation
+static TRACKING_CONFIG_STRUCT tracking_our = {
+		tracking_our_start,
+		tracking_our_stop,
+		tracking_our_update
+};
+
+//Methods for reference tracking implementation ahead
+
+//Method/Callback to start reference tracking
+void tracking_reference_start(void* tracking_config) {
+	//Run reference tracking
+	int32_t response;
+	int return_value;
+	return_value = pixy_command("runprog", INT8(2), END_OUT_ARGS,  &response, END_IN_ARGS);
+}
+
+//Method/Callback to stop reference tracking
+void tracking_reference_stop(void* tracking_config) {
+	//Stop reference tracking
+	int32_t response;
+	int return_value;
+	return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+}
+
+//Method/Callback to calculate one step of the reference tracking
+void tracking_reference_update(void* tracking_config, struct Block* blocks, int num_blocks) {
+	//Nothing to do here. Pixy does it all.
+}
+
+//Variable which stores all the callbacks and settings for the reference tracking implementation
+static TRACKING_CONFIG_STRUCT tracking_reference = {
+		tracking_reference_start,
+		tracking_reference_stop,
+		tracking_reference_update
+};
+
+//Pointer to the currently active tracking implementation. See also tracking_set_mode
+static TRACKING_CONFIG_STRUCT* tracking_current;
+
+//Method to set the current tracking implementation. This function is exported and should be called before getting the screen
 void tracking_set_mode(enum Tracking_Implementation impl) {
-	//not used yet
+	//Depending on the enum value let tracking_current point to a different setting/callback structure
+	switch(impl) {
+		case OUR_TRACKING:
+			tracking_current = &tracking_our;
+			break;
+		case REFERENCE_TRACKING:
+			tracking_current = &tracking_reference;
+			break;
+		default:
+			tracking_current=NULL;
+			break;
+	}
 }
 
 //Callback for when the screen is entered/loaded
@@ -121,7 +209,11 @@ static void enter(void* screen) {
 	a_area.callback = touchCB;
     //Do not register it here, we do that later
 
-	state=detecting; //Start with the detecting state
+	if(tracking_current==NULL) {
+		state = error;
+	} else {
+		state = detecting; //Start with the detecting state
+	}
 }
 
 //Callback for when the screen is left/unloaded
@@ -136,10 +228,8 @@ static void leave(void* screen) {
 	}
 
 	if(state==tracking) { //the user left the screen in the "tracking" phase
-		//Stop reference tracking
-		int32_t response;
-		int return_value;
-		return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+		tracking_current->stop(tracking_current); //stop tracking
+		pixy_led_set_RGB(0,0,0);
 	}
 }
 
@@ -147,100 +237,102 @@ static void leave(void* screen) {
 //This is the main loop of the screen. This method will be called repeatedly
 static void update(void* screen) {
 	switch(state) {
-	case detecting: //Detecting State: Where we try to connect to the pixy
-		if(pixy_init()==0) { //Pixy connection ok
-			state = init; //Go to next state
+		case detecting: //Detecting State: Where we try to connect to the pixy
+			if(pixy_init()==0) { //Pixy connection ok
+				state = init; //Go to next state
+			}
+			break;
+
+		case init: //Init State: Where we start the tracking
+			tracking_current->start(tracking_current);
+			state=tracking;
+		break;
+
+		case tracking: //Tracking state: Where we render the frame and the tracked objects
+			pixy_service(); //Receive events (e.g. block-data) from pixy
+
+			if(pixy_blocks_are_new()) { //There are new blocks available
+				if(frame_visible) { //If the user want's us to draw the video data
+					pixy_render_full_frame(FRAME_START_X,FRAME_START_Y);
+				} else { //the user want's a colored background
+					tft_fill_rectangle(FRAME_START_X,FRAME_START_Y,FRAME_END_X,FRAME_END_Y,RGB(200,200,200));
+				}
+
+				#define BLOCK_BUFFER_SIZE 5 //The maximum amount of blocks that we want to receive
+				struct Block blocks[BLOCK_BUFFER_SIZE]; //Storage to receive blocks from pixy
+				int blocks_received= pixy_get_blocks(BLOCK_BUFFER_SIZE,blocks); //Try to receive up to BLOCK_BUFFER_SIZE Blocks from pixy
+
+				if(blocks_received>=0) { //block receiving ok
+					tracking_current->update(tracking_current,blocks,blocks_received); //apply tracking
+
+					//Draw blocks
+					for(int i=0; i<blocks_received; i++) { //for each received block
+						struct Block* block = &(blocks[i]);
+						//block.x and block.y are the center coordinates of the object relative to the camera origin.
+						uint16_t x = block->x-1+FRAME_START_X -block->width/2; //Calculate x-Coordinate on the display
+						uint16_t y = block->y-1+FRAME_START_Y -block->height/2; //Calculate y-Coordinate on the display
+						tft_draw_rectangle(x,y,x+block->width-1, y+block->height-1,WHITE); //Draw a white rectangle
+					}
+				}
+			}
+			break;
+
+		case preselecting: //Pre-Selecting State: Where we set up the color region selection
+		{
+			tracking_current->stop(tracking_current); //Stop tracking
+
+			pixy_render_full_frame(FRAME_START_X,FRAME_START_Y); //Render one frame
+
+			touch_register_area(&a_area); //Register touch area and receive events from now on
+			point1_valid=false; //we start with an invalid point1
+
+			b_select.text="Abort"; //Change the button text to "Abort"
+			gui_button_redraw(&b_select); //redraw button
+
+			state = selecting; //The user can now select a region
 		}
 		break;
 
-	case init: //Init State: Where we start the tracking
-	{
-		//Run reference tracking
-		int32_t response;
-		int return_value;
-		return_value = pixy_command("runprog", INT8(2), END_OUT_ARGS,  &response, END_IN_ARGS);
-		state=tracking;
-	}
-	break;
-
-	case tracking: //Tracking state: Where we render the frame and the tracked objects
-		pixy_service(); //Receive events (e.g. block-data) from pixy
-
-		if(pixy_blocks_are_new()) { //There are new blocks available
-			if(frame_visible) { //If the user want's us to draw the video data
-				pixy_render_full_frame(FRAME_START_X,FRAME_START_Y);
-			} else { //the user want's a colored background
-				tft_fill_rectangle(FRAME_START_X,FRAME_START_Y,FRAME_END_X,FRAME_END_Y,RGB(200,200,200));
+		case selected: //Selected State: Where we send the users selection to pixy
+		{
+			//Ensure that (x1,y1) represent the top-left point and (x2,y2) the bottom-right.
+			unsigned int tmp;
+			if(point1.x > point2.x){
+				tmp = point1.x;
+				point1.x = point2.x;
+				point2.x = tmp;
 			}
 
-			struct Block block1; //Storage to receive one block from pixy
-			if(pixy_get_blocks(1,&block1)==1) { //Receiving one block succeeded
-				//block1.x and block1.y are the center coordinates of the object relative to the camera origin.
-				uint16_t x = block1.x-1+FRAME_START_X -block1.width/2; //Calculate x-Coordinate on the display
-				uint16_t y = block1.y-1+FRAME_START_Y -block1.height/2; //Calculate y-Coordinate on the display
-				tft_draw_rectangle(x,y,x+block1.width-1, y+block1.height-1,WHITE); //Draw a white rectangle
+			if(point1.y > point2.y){
+				tmp = point1.y;
+				point1.y = point2.y;
+				point2.y = tmp;
 			}
+			//Send pixy the selected region
+			pixy_cc_set_region(1,point1.x,point1.y,point2.x-point1.x,point2.y-point1.y);
+		}
+		//no break here: We want the following code to be executed as well
+
+		case abortselecting: //Abort-Selecting State: Where we deinitialize the stuff we used for region selection
+		{
+			touch_unregister_area(&a_area); //Remove the touch area. We'll no longer receive touch events
+
+			b_select.text="Select Color"; //Change the button text back to "Select Color"
+			gui_button_redraw(&b_select); //redraw button
+
+			tracking_current->start(tracking_current); //Start tracking again
+			state=tracking;
 		}
 		break;
 
-	case preselecting: //Pre-Selecting State: Where we set up the color region selection
-	{
-		//Stop reference tracking
-		int32_t response;
-		int return_value;
-		return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+		case selecting: //Selecting State: Where we wait on the user to select a color region
+			pixy_service(); //receive pixy events
+			//wait on user to select the image area
+			break;
 
-		pixy_render_full_frame(FRAME_START_X,FRAME_START_Y); //Render one frame
-
-		touch_register_area(&a_area); //Register touch area and receive events from now on
-		point1_valid=false; //we start with an invalid point1
-
-		b_select.text="Abort"; //Change the button text to "Abort"
-		gui_button_redraw(&b_select); //redraw button
-
-		state = selecting; //The user can now select a region
-	}
-	break;
-
-	case selected: //Selected State: Where we send the users selection to pixy
-	{
-		//Ensure that (x1,y1) represent the top-left point and (x2,y2) the bottom-right.
-	    unsigned int tmp;
-	    if(point1.x > point2.x){
-	        tmp = point1.x;
-	        point1.x = point2.x;
-	        point2.x = tmp;
-	    }
-
-	    if(point1.y > point2.y){
-	        tmp = point1.y;
-	        point1.y = point2.y;
-	        point2.y = tmp;
-	    }
-	    //Send pixy the selected region
-	    pixy_cc_set_region(1,point1.x,point1.y,point2.x-point1.x,point2.y-point1.y);
-	}
-	//no break here: We want the following code to be executed as well
-
-	case abortselecting: //Abort-Selecting State: Where we deinitialize the stuff we used for region selection
-	{
-		touch_unregister_area(&a_area); //Remove the touch area. We'll no longer receive touch events
-
-		b_select.text="Select Color"; //Change the button text back to "Select Color"
-		gui_button_redraw(&b_select); //redraw button
-
-		//Run reference tracking again
-		int32_t response;
-		int return_value;
-		return_value = pixy_command("runprog", INT8(2), END_OUT_ARGS,  &response, END_IN_ARGS);
-		state=tracking;
-	}
-	break;
-
-	case selecting: //Selecting State: Where we wait on the user to select a color region
-		pixy_service(); //receive pixy events
-		//wait on user to select the image area
-		break;
+		case error: //Error State: Where we show an error message and leave the user no other choice than to click the backbutton
+			//wait on user to click the back button
+			break;
 	}
 }
 
