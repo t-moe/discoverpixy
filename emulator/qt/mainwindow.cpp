@@ -34,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), image(DISPLAY_WID
     ui->setupUi(this);
     image.fill(Qt::black);
     currentScale = 1;
+    ui->widgetDisplay->setMouseTracking(true);
+    ui->widgetDisplay->installEventFilter(this);
 }
 
 void MainWindow::draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color)
@@ -159,7 +161,28 @@ void MainWindow::mouseMoveEvent(QMouseEvent *evt)
 {
    //qDebug() << "move" << evt->pos();
     checkAndSendEvent(evt->pos(),true);
+}
 
+
+bool MainWindow::eventFilter(QObject *obj, QEvent *evt)
+{
+   if(obj==ui->widgetDisplay) {
+        switch(evt->type()) {
+            case QEvent::MouseMove:
+            {
+                QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(evt);
+                QPoint p = (mouseEvent->pos()-QPoint(1,1))/currentScale;
+                if(p.x()<DISPLAY_WIDTH && p.y()<DISPLAY_HEIGHT) {
+                    ui->txtMousePos->setText(QString("Mouse Position: (%1,%2)").arg(p.x()).arg(p.y()));
+                }
+            }
+            break;
+
+            default: break;
+        }
+   }
+
+     return false;
 }
 
 
