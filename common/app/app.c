@@ -19,7 +19,7 @@ void app_init() {
 void app_process() {
 	
 	system_process(); //Let the system handle it's pending events
-	gui_screen_update(); //update the currently active screen
+	//gui_screen_update(); //update the currently active screen
 }
 
 
