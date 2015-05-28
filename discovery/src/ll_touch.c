@@ -14,19 +14,45 @@
 #define REQ_X_COORD     0x90    // Request x coordinate
 #define REQ_Y_COORD     0xD0    // Request y coordinate
 #define REQ_1_DATAB     0x00    // Request one databyte
+#define DWIDTH          320
+#define DHEIGHT         240
+#define CCENTER         20
+#define x1              0x0231
+#define dx              0x0C08
+#define y1              0x0287
+#define dy              0x0B56
+#define NSAMPLE         16
 
 /* Globals ----------------------------------------------------------- */
-volatile bool pen_state = false;    // PenDown = True; PenUp = False;
+volatile bool pen_state     = false;    // PenDown = True; PenUp = False;
+volatile bool tim_flag      = false;
+volatile uint16_t x_samples[NSAMPLE-1];
+volatile uint16_t y_samples[NSAMPLE-1];
+volatile int i;
 
 /* Prototypes -------------------------------------------------------- */
 bool ll_touch_init();
 static void     init_exti();
+static void     init_timer();
 static uint8_t  touch_send(uint8_t dat);
+static uint16_t avg_vals(uint16_t samples[], uint16_t len);
 static uint16_t touch_get_y_coord();
 static uint16_t touch_get_y_coord();
-void touch_test();
+void touch_test(uint16_t x, uint16_t y);
 
 /* Functions --------------------------------------------------------- */
+static uint16_t avg_vals(uint16_t samples[], uint16_t len)
+{
+    uint16_t j = 0;
+    uint32_t tmp = 0;
+
+    for(j = 0; j < len; j++){
+        tmp += samples[j];    
+    }
+
+    return (uint16_t)(tmp/len);
+}
+
 static uint16_t touch_get_x_coord()
 {
     uint16_t buf_x = 0;
@@ -64,16 +90,12 @@ static uint8_t touch_send(uint8_t dat)
   return  SPI_I2S_ReceiveData(SPI2);                                    
 }
 
-void touch_test()
+void touch_test(uint16_t x, uint16_t y)
 {
-    uint16_t x = 0, y = 0;
     char xs[10];
     char ys[10];
 
     tft_clear(BLACK);
-    
-    x = touch_get_x_coord();
-    y = touch_get_y_coord();
 
     itoa(x, xs, 10);
     itoa(y, ys, 10);
@@ -135,9 +157,11 @@ bool ll_touch_init()
     SPI_Cmd(SPI2, ENABLE);                      // enable spi
 
     init_exti();                                // init external interrupt for penirq
+    init_timer();                               // init the timer 6 for sampling x and y coordinates
 
     return true;
 }
+
 static void init_exti()
 {
     /* init structures */
@@ -174,26 +198,54 @@ static void init_exti()
     NVIC_Init(&nvic);                                // Config NVIC
 }
 
+static void init_timer()
+{
+    TIM_TimeBaseInitTypeDef t;
+    const int APB1_CLK = 42E6;
+    
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM7, ENABLE);    // Enable clock for TIM6
+
+    /* Timer 7 configuration */
+    TIM_TimeBaseStructInit(&t);                             // Init TimeBaseStruct
+    t.TIM_Prescaler = APB1_CLK / 1000 - 1;                  // 0..41999 prescaler
+    t.TIM_Period = 20- 1;                                   // 10ms cycle time
+    TIM_TimeBaseInit(TIM7, &t);                             // Init TIM7
+    TIM_ITConfig(TIM7, TIM_IT_Update, ENABLE);              // Enable update IRQ for TIM7
+    NVIC_EnableIRQ(TIM7_IRQn);                              // Enable IRQs for TIM7
+}
+
 /* Interrupt service routines ------------------------------------------ */
 void EXTI0_IRQHandler()
 {
-    if (EXTI_GetITStatus(EXTI_Line0) != RESET) {    // Make sure the interrupt flag is set
-        touch_test();
+    if (EXTI_GetITStatus(EXTI_Line0) == SET) {    // Make sure the interrupt flag is set
 
-        //uint16_t x = touch_get_x_coord();
-        //uint16_t y = touch_get_y_coord();
-
-        uint16_t x = 0;
-        uint16_t y = 0;
-
-        if(pen_state){
-            touch_add_raw_event(x, y, TOUCH_DOWN);
+        if(!pen_state){                             // Check if PENDOWN or PENUP
+            TIM_Cmd(TIM7, ENABLE);                  // Start the timer
+            while(!tim_flag);                       // Wait for the sampling to finish
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);
         }else{
-            touch_add_raw_event(x, y, TOUCH_UP);
+            TIM_Cmd(TIM7, ENABLE);                  // Start the timer
+            while(!tim_flag);                       // Wait for the sampling to finish
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);
         }
  
         pen_state = !pen_state;                     // Toggle penstate
-
+        tim_flag = false;                           // Clear timer flag
         EXTI_ClearITPendingBit(EXTI_Line0);         // Clear interrupt flag
     }
+}
+
+void TIM7_IRQHandler()
+{
+    if(TIM_GetFlagStatus(TIM7, TIM_IT_Update) == SET){  // Make sure the interrupt flag is set
+        for(i = 0; i < (NSAMPLE-1); i++){
+            /* get x and y coordinate and apply calibration */
+            x_samples[i] = (((long)(DWIDTH-2*CCENTER)*2*(long)((long)touch_get_x_coord()-x1)/dx+1)>>1)+CCENTER;  
+            y_samples[i] = (((long)(DHEIGHT-2*CCENTER)*2*(long)((long)touch_get_y_coord()-y1)/dy+1)>>1)+CCENTER;  
+        }
+        
+        tim_flag = true;                                // Set the global timer flag   
+        TIM_Cmd(TIM7, DISABLE);                         // Count only once
+    }
+    
 }

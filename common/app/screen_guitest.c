@@ -104,7 +104,7 @@ static void enter(void* screen) {
 	n_updown.max=11;
 	n_updown.min =-5;
 	n_updown.callback=n_updown_cb;
-	gui_numupdown_add(&n_updown);
+	//gui_numupdown_add(&n_updown);
 
 }
 
