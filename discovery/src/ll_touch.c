@@ -1,7 +1,8 @@
 #include"ll_touch.h"
 #include<stm32f4xx_spi.h>
 #include<stm32f4xx_rcc.h>
-
+#include<stm32f4xx_exti.h>
+#include<stm32f4xx_syscfg.h>
 #include<tft.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -13,37 +14,13 @@
 #define REQ_Y_COORD     0xD0    // Request y coordinate
 #define REQ_1_DATAB     0x00    // Request one databyte
 
-
 /* Prototypes -------------------------------------------------------- */
 bool ll_touch_init();
+static void     init_exti();
 static uint8_t  touch_send(uint8_t dat);
 static uint16_t touch_get_y_coord();
 static uint16_t touch_get_y_coord();
 void touch_test();
-
-/*
-void touch_test()
-{
-    tft_clear(BLACK);
-    //test
-    CLEAR_CS;
-    touch_send(0xD0);
-
-    uint16_t buf = ((uint16_t) touch_send(0x00))<<5;
-    buf|= touch_send(0x00) >> 3;
-
-    int test = 3;
-
-    SET_CS;
- 
-    char b[10];
-
-    itoa(buf, b, 10);
-    
-    tft_print_line(10,10,WHITE,TRANSPARENT,0,(const char*)b);
-    tft_print_formatted(10,50,WHITE,TRANSPARENT,0,"XCoord %d", test);
-}
-*/
 
 /* Functions --------------------------------------------------------- */
 static uint16_t touch_get_x_coord()
@@ -106,29 +83,25 @@ bool ll_touch_init()
     //We have a ADS7843 Touch controller
     //Datasheet: http://www.ti.com/lit/ds/symlink/ads7843.pdf
 
-    // init structures
+    /* init structures */
     SPI_InitTypeDef     SPI_SPI2_InitStructure;
     GPIO_InitTypeDef    GPIO_SPI2_InitStructure;
 
-    // enable gpio clock
-    RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
-    
-    // enable spi clock 
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
+    RCC_APB2PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);   // enable clock on gpiob
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);    // ebable spi clock
 
-    // fill gpio init struct and init gpio
+    /* fill gpio init struct and init gpio */
     GPIO_StructInit(&GPIO_SPI2_InitStructure);
     GPIO_SPI2_InitStructure.GPIO_Pin    = GPIO_Pin_10 | GPIO_Pin_14 | GPIO_Pin_15;     // 10 = SPI2_SCK, 14 = SPI2_MISO, 15 = SPI2_MOSI
     GPIO_SPI2_InitStructure.GPIO_OType  = GPIO_OType_PP;
     GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_AF;
     GPIO_SPI2_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
-    GPIO_SPI2_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;
+    GPIO_SPI2_InitStructure.GPIO_PuPd   = GPIO_PuPd_NOPULL;
     GPIO_Init(GPIOB, &GPIO_SPI2_InitStructure);
     
-    // set chip select
-    SET_CS;
+    SET_CS; // set chip select
 
-    // fill gpio init struct and init gpio
+    /* fill gpio init struct and init gpio */
     GPIO_StructInit(&GPIO_SPI2_InitStructure);
     GPIO_SPI2_InitStructure.GPIO_Pin    = GPIO_Pin_9;                                  // 9 = SPI2_CS
     GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_OUT;
@@ -136,15 +109,14 @@ bool ll_touch_init()
     GPIO_SPI2_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
     GPIO_Init(GPIOB, &GPIO_SPI2_InitStructure);
 
-    // init alternate functions on GPIOB
+    /* init alternate functions on GPIOB */
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource10, GPIO_AF_SPI2);
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource14, GPIO_AF_SPI2);
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource15, GPIO_AF_SPI2);
+    
+    SPI_I2S_DeInit(SPI2); // Clear spi initialisation
 
-    // clear spi initialisation
-    SPI_I2S_DeInit(SPI2);
-
-    // fill spi init structure
+    /* fill spi init structure */
     SPI_StructInit(&SPI_SPI2_InitStructure);
     SPI_SPI2_InitStructure.SPI_Direction            = SPI_Direction_2Lines_FullDuplex;
     SPI_SPI2_InitStructure.SPI_Mode                 = SPI_Mode_Master;
@@ -155,12 +127,54 @@ bool ll_touch_init()
     SPI_SPI2_InitStructure.SPI_BaudRatePrescaler    = SPI_BaudRatePrescaler_256;
     SPI_SPI2_InitStructure.SPI_FirstBit             = SPI_FirstBit_MSB;
 
-    // init spi
-    SPI_Init(SPI2, &SPI_SPI2_InitStructure);  
- 
-    // enable spi   
-    SPI_Cmd(SPI2, ENABLE);
+    SPI_Init(SPI2, &SPI_SPI2_InitStructure);    // init spi
+    SPI_Cmd(SPI2, ENABLE);                      // enable spi
+
+    init_exti();                                // init external interrupt for penirq
 
     return true;
 }
+static void init_exti()
+{
+    /* init structures */
+    GPIO_InitTypeDef gpio;
+    EXTI_InitTypeDef exti;
+    NVIC_InitTypeDef nvic;
 
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);   // enable GPIOA clock
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);  // enable SYSCFG clock
+
+    /* Set GPIOA0 as input */
+    gpio.GPIO_Mode   = GPIO_Mode_IN;
+    gpio.GPIO_OType  = GPIO_OType_PP;
+    gpio.GPIO_Pin    = GPIO_Pin_0;
+    gpio.GPIO_PuPd   = GPIO_PuPd_UP;
+    gpio.GPIO_Speed  = GPIO_Speed_100MHz;
+    GPIO_Init(GPIOA, &gpio);
+
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0); // Bind Exti_line0 to PA0
+
+    /* EXTI on PA0 */
+    EXTI_StructInit(&exti);
+    exti.EXTI_Line      = EXTI_Line0;
+    exti.EXTI_Mode      = EXTI_Mode_Interrupt;
+    exti.EXTI_Trigger   = EXTI_Trigger_Falling;
+    exti.EXTI_LineCmd   = ENABLE;
+    EXTI_Init(&exti);
+
+    /* Add IRQ vector to NVIC */
+    nvic.NVIC_IRQChannel = EXTI0_IRQn;               // PD0 -> EXTI_Line0 -> EXTI0_IRQn vector
+    nvic.NVIC_IRQChannelPreemptionPriority = 0x00;   // Set priority
+    nvic.NVIC_IRQChannelSubPriority = 0x00;          // Set sub priority
+    nvic.NVIC_IRQChannelCmd = ENABLE;                // Enable interrupt
+    NVIC_Init(&nvic);                                // Config NVIC
+}
+
+/* Interrupt service routines ------------------------------------------ */
+void EXTI0_IRQHandler()
+{
+    if (EXTI_GetITStatus(EXTI_Line0) != RESET) {    // Make sure the interrupt flag is set
+        touch_test();
+        EXTI_ClearITPendingBit(EXTI_Line0);         // Clear interrupt flag
+    }
+}

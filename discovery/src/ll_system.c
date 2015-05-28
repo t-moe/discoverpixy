@@ -53,7 +53,7 @@ void touch_test(void);
 
 void ll_system_process() {
 	USBH_Process(&USB_OTG_Core, &USB_Host);
-    touch_test();
+    //touch_test();
 }
 
 void ll_system_delay(uint32_t msec) {
