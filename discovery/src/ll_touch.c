@@ -4,6 +4,7 @@
 #include<stm32f4xx_exti.h>
 #include<stm32f4xx_syscfg.h>
 #include<tft.h>
+#include<touch.h>
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -13,6 +14,9 @@
 #define REQ_X_COORD     0x90    // Request x coordinate
 #define REQ_Y_COORD     0xD0    // Request y coordinate
 #define REQ_1_DATAB     0x00    // Request one databyte
+
+/* Globals ----------------------------------------------------------- */
+volatile bool pen_state = false;    // PenDown = True; PenUp = False;
 
 /* Prototypes -------------------------------------------------------- */
 bool ll_touch_init();
@@ -158,7 +162,7 @@ static void init_exti()
     EXTI_StructInit(&exti);
     exti.EXTI_Line      = EXTI_Line0;
     exti.EXTI_Mode      = EXTI_Mode_Interrupt;
-    exti.EXTI_Trigger   = EXTI_Trigger_Falling;
+    exti.EXTI_Trigger   = EXTI_Trigger_Rising_Falling;
     exti.EXTI_LineCmd   = ENABLE;
     EXTI_Init(&exti);
 
@@ -175,6 +179,21 @@ void EXTI0_IRQHandler()
 {
     if (EXTI_GetITStatus(EXTI_Line0) != RESET) {    // Make sure the interrupt flag is set
         touch_test();
+
+        //uint16_t x = touch_get_x_coord();
+        //uint16_t y = touch_get_y_coord();
+
+        uint16_t x = 0;
+        uint16_t y = 0;
+
+        if(pen_state){
+            touch_add_raw_event(x, y, TOUCH_DOWN);
+        }else{
+            touch_add_raw_event(x, y, TOUCH_UP);
+        }
+ 
+        pen_state = !pen_state;                     // Toggle penstate
+
         EXTI_ClearITPendingBit(EXTI_Line0);         // Clear interrupt flag
     }
 }
