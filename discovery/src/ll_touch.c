@@ -129,8 +129,8 @@ bool ll_touch_init()
 
     /* fill gpio init struct and init gpio */
     GPIO_StructInit(&GPIO_SPI2_InitStructure);
-    GPIO_SPI2_InitStructure.GPIO_Pin    = GPIO_Pin_9;                                  // 9 = SPI2_CS
-    GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_OUT;
+    GPIO_SPI2_InitStructure.GPIO_Pin    = GPIO_Pin_9;           // 9 = SPI2_CS
+    GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_OUT; 
     GPIO_SPI2_InitStructure.GPIO_OType  = GPIO_OType_PP;
     GPIO_SPI2_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
     GPIO_Init(GPIOB, &GPIO_SPI2_InitStructure);
@@ -186,7 +186,7 @@ static void init_exti()
     EXTI_StructInit(&exti);
     exti.EXTI_Line      = EXTI_Line0;
     exti.EXTI_Mode      = EXTI_Mode_Interrupt;
-    exti.EXTI_Trigger   = EXTI_Trigger_Rising_Falling;
+    exti.EXTI_Trigger   = EXTI_Trigger_Falling;      // Trigger on falling edge (PENIRQ) 
     exti.EXTI_LineCmd   = ENABLE;
     EXTI_Init(&exti);
 
@@ -207,8 +207,8 @@ static void init_timer()
 
     /* Timer 7 configuration */
     TIM_TimeBaseStructInit(&t);                             // Init TimeBaseStruct
-    t.TIM_Prescaler = APB1_CLK / 1000 - 1;                  // 0..41999 prescaler
-    t.TIM_Period = 20- 1;                                   // 10ms cycle time
+    t.TIM_Prescaler = APB1_CLK / 1000 - 1;                  // 41999 prescaler
+    t.TIM_Period = 50 - 1;                                  // 50ms count time
     TIM_TimeBaseInit(TIM7, &t);                             // Init TIM7
     TIM_ITConfig(TIM7, TIM_IT_Update, ENABLE);              // Enable update IRQ for TIM7
     NVIC_EnableIRQ(TIM7_IRQn);                              // Enable IRQs for TIM7
@@ -217,35 +217,34 @@ static void init_timer()
 /* Interrupt service routines ------------------------------------------ */
 void EXTI0_IRQHandler()
 {
-    if (EXTI_GetITStatus(EXTI_Line0) == SET) {    // Make sure the interrupt flag is set
-
-        if(!pen_state){                             // Check if PENDOWN or PENUP
-            TIM_Cmd(TIM7, ENABLE);                  // Start the timer
-            while(!tim_flag);                       // Wait for the sampling to finish
-            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);
-        }else{
-            TIM_Cmd(TIM7, ENABLE);                  // Start the timer
-            while(!tim_flag);                       // Wait for the sampling to finish
-            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);
-        }
- 
-        pen_state = !pen_state;                     // Toggle penstate
-        tim_flag = false;                           // Clear timer flag
+    if (EXTI_GetITStatus(EXTI_Line0) == SET) {      // If the right interrupt flag is set
+        TIM_Cmd(TIM7, ENABLE);                      // Start the timer
         EXTI_ClearITPendingBit(EXTI_Line0);         // Clear interrupt flag
     }
 }
 
 void TIM7_IRQHandler()
 {
-    if(TIM_GetFlagStatus(TIM7, TIM_IT_Update) == SET){  // Make sure the interrupt flag is set
-        for(i = 0; i < (NSAMPLE-1); i++){
-            /* get x and y coordinate and apply calibration */
-            x_samples[i] = (((long)(DWIDTH-2*CCENTER)*2*(long)((long)touch_get_x_coord()-x1)/dx+1)>>1)+CCENTER;  
-            y_samples[i] = (((long)(DHEIGHT-2*CCENTER)*2*(long)((long)touch_get_y_coord()-y1)/dy+1)>>1)+CCENTER;  
-        }
-        
-        tim_flag = true;                                // Set the global timer flag   
-        TIM_Cmd(TIM7, DISABLE);                         // Count only once
-    }
-    
+    if(TIM_GetFlagStatus(TIM7, TIM_IT_Update) == SET){      // Make sure the interrupt flag is set
+  
+        TIM_Cmd(TIM7, DISABLE);                             // Disable the timer during the measuring
+
+        if(!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)){      // Only do this if the PENIRQ line is still low
+            /* Sample 16 times and submit */
+            for(i = 0; i < (NSAMPLE-1); i++){
+                /* Apply some calibration to the measured positions */
+                x_samples[i] = (((long)(DWIDTH - 2 * CCENTER) * 2 * (long)((long)touch_get_x_coord() - x1) / dx + 1) >> 1) + CCENTER;  
+                y_samples[i] = (((long)(DHEIGHT -2 * CCENTER) * 2 * (long)((long)touch_get_y_coord() - y1) / dy + 1) >> 1) + CCENTER;  
+            }
+
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);
+            TIM_Cmd(TIM7, ENABLE);
+
+        } else {
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);
+            TIM_Cmd(TIM7, DISABLE);
+        } 
+
+        TIM_ClearFlag(TIM7, TIM_IT_Update);
+    }    
 }
