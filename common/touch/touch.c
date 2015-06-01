@@ -1,5 +1,6 @@
 #include "touch.h"
 #include "ll_touch.h"
+#include "screen_calibrate.h"
 #include <stdio.h>
 
 /* The idea is as follows:
@@ -21,18 +22,16 @@ volatile POINT_STRUCT pos; //the last touch point
 volatile TOUCH_STATE oldState=TOUCH_UP; //the last touch state
 volatile bool calibration = false; //whether or not we're currently calibrating
 
-//Calibration Constants(Defaults= Timo's 3.2")
-/*int cal_xs=0x0231;
-int cal_dx=0x0C08;
-int cal_ys=0x0287;
-int cal_dy=0x0B56;*/
+bool use_calibration=false; //Whether or not the current platform needs calibration and recalc of the values
 
-int cal_xs=20;
-int cal_dx=20;
-int cal_ys=20;
-int cal_dy=20;
+//Calibration parameters (dummy values).
+int cal_xs=10;
+int cal_dx=100;
+int cal_ys=10;
+int cal_dy=100;
 
-void touch_set_calibration_valules(int xs, int dx, int ys, int dy) {
+
+void touch_set_calibration_values(int xs, int dx, int ys, int dy) {
 	cal_xs = xs;
 	cal_ys = ys;
 	cal_dx = dx;
@@ -45,6 +44,10 @@ bool touch_init() {
 	return ll_touch_init();
 }
 
+void touch_set_value_convert_mode(bool uc) {
+	use_calibration=uc;
+}
+
 
 bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
 	//Update current and old position/state
@@ -54,7 +57,6 @@ bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
 
 	if(calibration)	//If in Calibration mode
 	{
-
 		if(penDown)
 		{
 			pos.x=touchX;
@@ -68,9 +70,16 @@ bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
 		return true;
 	}
 
+	//If we reach this point we're not in calibration mode and we need to process the event and call the registred handlers..
 
-	pos.x=touchX;
-	pos.y=touchY;
+	if(use_calibration) { //the underlying touch hardware uses calibration
+		//Calculate the real touch position out of the passed ones, and the calibration values
+		pos.x=touchX=(((long)(DWIDTH-2*CCENTER)*2*(long)((long)touchX-cal_xs)/cal_dx+1)>>1)+CCENTER;
+		pos.y=touchY=(((long)(DHEIGHT-2*CCENTER)*2*(long)((long)touchY-cal_ys)/cal_dy+1)>>1)+CCENTER;
+	} else { //no conversion needed for the underlying hardware
+		pos.x=touchX;
+		pos.y=touchY;
+	}
 
  	if(penDown) //pen is down now
     {

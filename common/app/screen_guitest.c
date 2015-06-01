@@ -10,7 +10,7 @@ static CHECKBOX_STRUCT c_cbox;
 static NUMUPDOWN_STRUCT n_updown;
 
 static void checkboxCB(void *checkbox, bool checked) {
-        printf("Checkbox %s\n",(checked?"checked":"unchecked"));
+       // printf("Checkbox %s\n",(checked?"checked":"unchecked"));
 }
 
 static void b_back_cb(void* button) {
@@ -18,7 +18,7 @@ static void b_back_cb(void* button) {
 }
 
 static void n_updown_cb(void* numupdown, int16_t value) {
-        printf("New NumUpDown Value %d\n",value);
+        //printf("New NumUpDown Value %d\n",value);
 }
 
 static void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {

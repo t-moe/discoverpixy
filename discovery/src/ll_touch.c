@@ -1,14 +1,14 @@
-#include"ll_touch.h"
-#include"screen.h"
-#include"screen_calibrate.h"
-#include<stm32f4xx_spi.h>
-#include<stm32f4xx_rcc.h>
-#include<stm32f4xx_exti.h>
-#include<stm32f4xx_syscfg.h>
-#include<tft.h>
-#include<touch.h>
-#include<stdio.h>
-#include<stdlib.h>
+#include "ll_touch.h"
+#include "screen.h"
+#include "screen_calibrate.h"
+#include <stm32f4xx_spi.h>
+#include <stm32f4xx_rcc.h>
+#include <stm32f4xx_exti.h>
+#include <stm32f4xx_syscfg.h>
+#include "tft.h"
+#include "touch.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /* Defines ----------------------------------------------------------  */
 #define CLEAR_CS        GPIO_ResetBits(GPIOB,GPIO_Pin_9)
@@ -17,13 +17,6 @@
 #define REQ_X_COORD     0x90    // Request x coordinate
 #define REQ_Y_COORD     0xD0    // Request y coordinate
 #define REQ_1_DATAB     0x00    // Request one databyte
-#define DWIDTH          320
-#define DHEIGHT         240
-#define CCENTER         20
-#define x1              0x0231
-#define dx              0x0C08
-#define y1              0x0287
-#define dy              0x0B56
 #define NSAMPLE         16
 
 /* Globals ----------------------------------------------------------- */
@@ -109,6 +102,10 @@ void touch_test(uint16_t x, uint16_t y)
 
 bool ll_touch_init() 
 {
+    touch_set_value_convert_mode(true); //Tell the touch module that we need converted values and display calibration
+    touch_set_calibration_values(0x0231, 0x0C08, 0x0287, 0x0B56); //set calibration values (copied from memory using the debugger)
+    
+    
     //We have a ADS7843 Touch controller
     //Datasheet: http://www.ti.com/lit/ds/symlink/ads7843.pdf
 
@@ -271,9 +268,9 @@ void TIM7_IRQHandler()
         TIM_Cmd(TIM7, DISABLE);                             // Disable the timer during the measuring
 
         if(PENIRQ){                                         // Only do this if the PENIRQ line is still low
-            for(i = 0; i < (NSAMPLE-1); i++){               // Sample 16 times and apply some calibration
-                x_samples[i] = (((long)(DWIDTH - 2 * CCENTER) * 2 * (long)((long)touch_get_x_coord() - x1) / dx + 1) >> 1) + CCENTER;  
-                y_samples[i] = (((long)(DHEIGHT -2 * CCENTER) * 2 * (long)((long)touch_get_y_coord() - y1) / dy + 1) >> 1) + CCENTER;  
+            for(i = 0; i < (NSAMPLE-1); i++){               // Sample 16 times
+                x_samples[i] = touch_get_x_coord();
+                y_samples[i] = touch_get_y_coord();
             }
     
             touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);    // Update position

@@ -117,8 +117,14 @@ POINT_STRUCT touch_get_last_point();
  * @param ys y offset (to calibration point 1)
  * @param dy y difference (between calibration point 1 and 2)
  */
-void touch_set_calibration_valules(int xs, int dx, int ys, int dy);
+void touch_set_calibration_values(int xs, int dx, int ys, int dy);
 
+
+/**
+ * Set's the new value convert mode. Per default use_calibration is false.
+ * @param use_calibration whether or not the current platform needs display calibration
+ */
+void touch_set_value_convert_mode(bool use_calibration);
 
 /*@}*/
 

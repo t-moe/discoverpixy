@@ -45,7 +45,7 @@ void gui_screen_update() {
 
 
 bool gui_screen_navigate(SCREEN_STRUCT* screen) {
-	if(screen==NULL) { //invalid argument passed
+	if(screen==NULL || screen==screen_current || screen==screen_goto) { //invalid argument passed
 		return false;
 	}
 	screen->next = NULL; //this will become the new tail of the list, so the next pointer must be NULL
