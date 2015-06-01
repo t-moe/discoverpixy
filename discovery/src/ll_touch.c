@@ -1,4 +1,6 @@
 #include"ll_touch.h"
+#include"screen.h"
+#include"screen_guitest.h"
 #include<stm32f4xx_spi.h>
 #include<stm32f4xx_rcc.h>
 #include<stm32f4xx_exti.h>
@@ -11,6 +13,7 @@
 /* Defines ----------------------------------------------------------  */
 #define CLEAR_CS        GPIO_ResetBits(GPIOB,GPIO_Pin_9)
 #define SET_CS          GPIO_SetBits(GPIOB,GPIO_Pin_9)
+#define PENIRQ          !GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_1)
 #define REQ_X_COORD     0x90    // Request x coordinate
 #define REQ_Y_COORD     0xD0    // Request y coordinate
 #define REQ_1_DATAB     0x00    // Request one databyte
@@ -35,13 +38,13 @@ bool ll_touch_init();
 static void     init_exti();
 static void     init_timer();
 static uint8_t  touch_send(uint8_t dat);
-static uint16_t avg_vals(uint16_t samples[], uint16_t len);
+static uint16_t avg_vals(volatile uint16_t samples[], uint16_t len);
 static uint16_t touch_get_y_coord();
 static uint16_t touch_get_y_coord();
 void touch_test(uint16_t x, uint16_t y);
 
 /* Functions --------------------------------------------------------- */
-static uint16_t avg_vals(uint16_t samples[], uint16_t len)
+static uint16_t avg_vals(volatile uint16_t samples[], uint16_t len)
 {
     uint16_t j = 0;
     uint32_t tmp = 0;
@@ -164,34 +167,64 @@ bool ll_touch_init()
 
 static void init_exti()
 {
+
+    // PENIRQ       -> EXTI1 (PC1)
+    // Blue Button  -> EXTI0 (PA0)
+
     /* init structures */
     GPIO_InitTypeDef gpio;
     EXTI_InitTypeDef exti;
     NVIC_InitTypeDef nvic;
 
-    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);   // enable GPIOA clock
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);  // enable SYSCFG clock
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);   // enable GPIOC clock
+    RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);   // enable GPIOA clock
 
-    /* Set GPIOA0 as input */
+    /* Set GPIOC1 as input */
     gpio.GPIO_Mode   = GPIO_Mode_IN;
     gpio.GPIO_OType  = GPIO_OType_PP;
-    gpio.GPIO_Pin    = GPIO_Pin_0;
+    gpio.GPIO_Pin    = GPIO_Pin_1;
     gpio.GPIO_PuPd   = GPIO_PuPd_UP;
+    gpio.GPIO_Speed  = GPIO_Speed_100MHz;
+    GPIO_Init(GPIOC, &gpio);
+    
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource1); // Bind Exti_line1 to PC1
+    
+    /* Set GPIOA0 as input */
+    gpio.GPIO_Mode   = GPIO_Mode_IN;
+    gpio.GPIO_OType  = GPIO_OType_OD;
+    gpio.GPIO_Pin    = GPIO_Pin_0;
+    gpio.GPIO_PuPd   = GPIO_PuPd_NOPULL;
     gpio.GPIO_Speed  = GPIO_Speed_100MHz;
     GPIO_Init(GPIOA, &gpio);
 
-    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0); // Bind Exti_line0 to PA0
+    SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource0); // Bind Exti_line1 to PC1
 
-    /* EXTI on PA0 */
+    /* EXTI on PC1 */
     EXTI_StructInit(&exti);
-    exti.EXTI_Line      = EXTI_Line0;
+    exti.EXTI_Line      = EXTI_Line1;
     exti.EXTI_Mode      = EXTI_Mode_Interrupt;
     exti.EXTI_Trigger   = EXTI_Trigger_Falling;      // Trigger on falling edge (PENIRQ) 
     exti.EXTI_LineCmd   = ENABLE;
     EXTI_Init(&exti);
+    
+    /* EXTI on PA0 */
+    EXTI_StructInit(&exti);
+    exti.EXTI_Line      = EXTI_Line0;
+    exti.EXTI_Mode      = EXTI_Mode_Interrupt;
+    exti.EXTI_Trigger   = EXTI_Trigger_Falling;      // Trigger on calibration (Blue button)
+    exti.EXTI_LineCmd   = ENABLE;
+    EXTI_Init(&exti);
 
     /* Add IRQ vector to NVIC */
-    nvic.NVIC_IRQChannel = EXTI0_IRQn;               // PD0 -> EXTI_Line0 -> EXTI0_IRQn vector
+    nvic.NVIC_IRQChannel = EXTI1_IRQn;               // PC1 -> EXTI_Line1 -> EXTI1_IRQn vector
+    nvic.NVIC_IRQChannelPreemptionPriority = 0x00;   // Set priority
+    nvic.NVIC_IRQChannelSubPriority = 0x00;          // Set sub priority
+    nvic.NVIC_IRQChannelCmd = ENABLE;                // Enable interrupt
+    NVIC_Init(&nvic);                                // Config NVIC
+    
+    /* Add IRQ vector to NVIC */
+    nvic.NVIC_IRQChannel = EXTI0_IRQn;               // PA0 -> EXTI_Line0 -> EXTI0_IRQn vector
     nvic.NVIC_IRQChannelPreemptionPriority = 0x00;   // Set priority
     nvic.NVIC_IRQChannelSubPriority = 0x00;          // Set sub priority
     nvic.NVIC_IRQChannelCmd = ENABLE;                // Enable interrupt
@@ -218,8 +251,16 @@ static void init_timer()
 void EXTI0_IRQHandler()
 {
     if (EXTI_GetITStatus(EXTI_Line0) == SET) {      // If the right interrupt flag is set
-        TIM_Cmd(TIM7, ENABLE);                      // Start the timer
+        gui_screen_navigate(get_screen_guitest());
         EXTI_ClearITPendingBit(EXTI_Line0);         // Clear interrupt flag
+    }
+}
+
+void EXTI1_IRQHandler()
+{
+    if (EXTI_GetITStatus(EXTI_Line1) == SET) {      // If the right interrupt flag is set
+        TIM_Cmd(TIM7, ENABLE);                      // Start the timer
+        EXTI_ClearITPendingBit(EXTI_Line1);         // Clear interrupt flag
     }
 }
 
@@ -229,22 +270,22 @@ void TIM7_IRQHandler()
   
         TIM_Cmd(TIM7, DISABLE);                             // Disable the timer during the measuring
 
-        if(!GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_0)){      // Only do this if the PENIRQ line is still low
-            /* Sample 16 times and submit */
-            for(i = 0; i < (NSAMPLE-1); i++){
-                /* Apply some calibration to the measured positions */
+        if(PENIRQ){                                         // Only do this if the PENIRQ line is still low
+            for(i = 0; i < (NSAMPLE-1); i++){               // Sample 16 times and apply some calibration
                 x_samples[i] = (((long)(DWIDTH - 2 * CCENTER) * 2 * (long)((long)touch_get_x_coord() - x1) / dx + 1) >> 1) + CCENTER;  
                 y_samples[i] = (((long)(DHEIGHT -2 * CCENTER) * 2 * (long)((long)touch_get_y_coord() - y1) / dy + 1) >> 1) + CCENTER;  
             }
-
-            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);
-            TIM_Cmd(TIM7, ENABLE);
+    
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);    // Update position
+            //tft_draw_pixel(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), RED);
+            TIM_Cmd(TIM7, ENABLE);                                                                          // Reenable timer
 
         } else {
-            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);
-            TIM_Cmd(TIM7, DISABLE);
+            touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);      // Update position one last time
+            //tft_draw_pixel(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), RED);
+            TIM_Cmd(TIM7, DISABLE);                                                                         // Disable timer
         } 
 
-        TIM_ClearFlag(TIM7, TIM_IT_Update);
+        TIM_ClearFlag(TIM7, TIM_IT_Update);                                                                 // Clear timer interrupt flag
     }    
 }
