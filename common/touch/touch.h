@@ -110,6 +110,15 @@ void touch_unregister_area(TOUCH_AREA_STRUCT* area);
  */
 POINT_STRUCT touch_get_last_point();
 
+/**
+ * Set's the new calibration values
+ * @param xs x offset (to calibration point 1)
+ * @param dx x difference (between calibration point 1 and 2)
+ * @param ys y offset (to calibration point 1)
+ * @param dy y difference (between calibration point 1 and 2)
+ */
+void touch_set_calibration_valules(int xs, int dx, int ys, int dy);
+
 
 /*@}*/
 
