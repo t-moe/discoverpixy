@@ -51,7 +51,7 @@ static void enter(void* screen) {
 	tft_print_line(10,10,BLUE,TRANSPARENT,1,"Discoverpixy");
 	tft_draw_line(0,40,319,40,BLACK);
 
-    #define X_TAB 			90
+    #define X_TAB 			97
 	#define BUTTON_SPACING 	7
 
 	//First line of buttons
@@ -108,7 +108,7 @@ static void enter(void* screen) {
 	b_guitest.txtcolor=BLACK;
 	b_guitest.bgcolor=HEX(0x00FA21);
 	b_guitest.font=0;
-	b_guitest.text="Gui Test";
+	b_guitest.text="Gui & Tft";
 	b_guitest.callback=b_guitest_cb;
 	gui_button_add(&b_guitest);
 
@@ -120,7 +120,7 @@ static void enter(void* screen) {
 	b_pixytest.txtcolor=BLACK;
 	b_pixytest.bgcolor=HEX(0x00FA96);
 	b_pixytest.font=0;
-	b_pixytest.text="Pixy Test";
+	b_pixytest.text="Pixy";
 	b_pixytest.callback=b_pixytest_cb;
 	gui_button_add(&b_pixytest);
 
@@ -132,7 +132,7 @@ static void enter(void* screen) {
 	b_filetest.txtcolor=BLACK;
 	b_filetest.bgcolor=HEX(0x00FAC4);
 	b_filetest.font=0;
-	b_filetest.text="File Test";
+	b_filetest.text="File";
 	b_filetest.callback=b_filetest_cb;
 	gui_button_add(&b_filetest);
 
