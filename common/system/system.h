@@ -1,15 +1,15 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
+#include <stdbool.h>
+#include <stdint.h>
+
 /**
  * @defgroup system System
  * The System Module provides access to delay functions, leds and provides a system init function
  */
 /*@{*/
 
-
-#include <stdbool.h>
-#include <stdint.h>
 
 /**
  * Initializes the system. Call this method at the start of your app_init() function and before using any system_* functions

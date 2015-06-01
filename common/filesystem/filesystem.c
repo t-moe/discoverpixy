@@ -10,7 +10,7 @@ DIRECTORY_STRUCT* filesystem_dir_open(const char* path) {
 }
 
 void filesystem_dir_close(DIRECTORY_STRUCT* dir) {
-	filesystem_dir_close(dir);
+	ll_filesystem_dir_close(dir);
 }
 
 FILE_HANDLE* filesystem_file_open(const char* filename) {

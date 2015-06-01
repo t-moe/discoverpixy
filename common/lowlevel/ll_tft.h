@@ -1,6 +1,23 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+
+/**
+ * @addtogroup lowlevel
+ */
+/*@{*/
+
+/**
+ * @defgroup ll_tft TFT (LowLevel)
+ * Low level functions for the \ref tft module
+ */
+/*@}*/
+
+/**
+ * @addtogroup ll_tft
+ */
+/*@{*/
+
 // init functions
 bool ll_tft_init();
 
@@ -19,6 +36,6 @@ uint8_t ll_tft_font_height(uint8_t fontnum);
 uint8_t ll_tft_font_width(uint8_t fontnum);
 void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, char c);
 
-
+/*@}*/
 
 

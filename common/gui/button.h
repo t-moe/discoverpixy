@@ -1,6 +1,8 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "touch.h"
+
 /**
  * @defgroup gui Gui
  * The Gui Module
@@ -9,16 +11,21 @@
 
 /**
  * @defgroup button Button
- * The Button Gui-Element
+ * The Button Gui-Element is a clickable, rectangular box with a label inside.
+ * When it is pressed and released you will be notified via the provided callback.
+ */
+
+/*@}*/
+
+/**
+ * @addtogroup button
  */
 /*@{*/
 
 
-
-#include "touch.h"
-
 /**
  * Prototype for Event Listeners (called when the button is pressed)
+ * \note You should NOT execute long running things in this callback nor should you update the gui. But you can call gui_screen_navigate() for instance.
  * @param button The pointer to the BUTTON_STRUCT where to corresponding Button was pressed
  */
 typedef void (*BUTTON_CALLBACK)(void *button);
@@ -30,7 +37,7 @@ typedef void (*BUTTON_CALLBACK)(void *button);
 typedef struct {
 	TOUCH_AREA_STRUCT base; //!< Basic geometry of the button. You only need to set the x1, y1, x2, y2 members of this struct.
 	uint16_t bgcolor; //!< The 16-bit background color of the button
-	BUTTON_CALLBACK callback; //!< Callback
+	BUTTON_CALLBACK callback; //!< Callback which is executed when the button is pressed
 	uint16_t txtcolor; //!< The 16-bit text color
 	uint8_t font; //!< The number of the font to use
 	const char *text; //!< The label of the button
@@ -58,27 +65,7 @@ void gui_button_remove(BUTTON_STRUCT* button);
  */
 void gui_button_redraw(BUTTON_STRUCT* button);
 
-/*
-bool guiAddBitmapButton(BITMAPBUTTON_STRUCT* button);
-void guiRemoveBitmapButton(BITMAPBUTTON_STRUCT* button);
-void guiRedrawBitmapButton(BITMAPBUTTON_STRUCT* button);
-*/
 
-
-/*
-typedef struct {
-	TOUCH_AREA_STRUCT base;
-	unsigned int bgcolor;
-	BUTTON_CALLBACK callback; //Callback
-	unsigned char imgwidth;
-	unsigned char imgheight;
-	char* filename;
-} BITMAPBUTTON_STRUCT;
-*/
-//Notice that the first 3 Members are Equal, so it's possible to cast it to a BUTTON_STRUCT even if it's a BITMAPBUTTON_STRUCT (when changeing only the first 3 Members).
-
-
-
-/*@}@}*/
+/*@}*/
 
 #endif /* BUTTON_H */

@@ -1,6 +1,9 @@
 #ifndef TFT_H
 #define TFT_H
 
+#include<stdbool.h>
+#include<stdint.h>
+
 /**
  * @defgroup tft TFT
  * The TFT Modul provides access to the display
@@ -12,9 +15,6 @@
  */
 /*@{*/
 
-
-#include<stdbool.h>
-#include<stdint.h>
 
 /**
  * Creates a 16bit color from 8bit * 3 colors (r,g,b)
@@ -67,7 +67,7 @@ void tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t 
  * Draws a pixel onto the display.
  * @param x The x-Coordinate of the pixel
  * @param y The y-Coordinate of the pixel
- * @param The 16-bit color to draw the pixel with
+ * @param color The 16-bit color to draw the pixel with
  */
 void tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
 
@@ -78,7 +78,7 @@ void tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
  * @param y1 The y-Coordinate of the start-point
  * @param x2 The x-Coordinate of the end-point
  * @param y2 The y-Coordinate of the end-point
- * @param The 16-bit color to draw the pixel with
+ * @param color The 16-bit color to draw the pixel with
  */
 void tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);
 
@@ -88,7 +88,7 @@ void tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_
  * @param y1 The y-Coordinate of the start-point
  * @param x2 The x-Coordinate of the end-point
  * @param y2 The y-Coordinate of the end-point
- * @param The 16-bit color to draw the pixel with
+ * @param color The 16-bit color to draw the pixel with
  */
 void tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);
 
@@ -102,6 +102,18 @@ void tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_
  * @param dat A pointer to a uint16_t array containing the colors for each pixel. Starting in the topleft and going from left to right, line by line.
  */
 void tft_draw_bitmap_unscaled(uint16_t x, uint16_t y, uint16_t width, uint16_t height, const uint16_t* dat);
+
+
+/**
+ * Draws a bitmap from the filesystem onto the display without scaling/cropping
+ * The bitmap must be saved in the windows bitmap format (.bmp) without compression and with 24 (b,g,r) or 32 (a,r,g,b) bits per pixel
+ * @param x The x-coordinate of the top-left corner to draw the bitmap at
+ * @param y The y-coordinate of the top-left corner to draw the bitmap at
+ * @param filename The absolute path to the .bmp file
+ * @return true on success
+ */
+bool tft_draw_bitmap_file_unscaled(uint16_t x, uint16_t y, const char* filename);
+
 
 /**
  * Draws the outline of a circle onto the display
@@ -151,6 +163,7 @@ void tft_print_line(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, ui
  * @param bgcolor The 16-bit background color of the text. You may pass TRANSPARENT as Color
  * @param font The Fontnum to use for drawing
  * @param format The format string (like printf)
+ * @param ... The arguments to format (like printf)
  */
 void tft_print_formatted(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, const char* format, ...);
 

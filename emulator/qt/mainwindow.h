@@ -25,6 +25,7 @@ public:
     void draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, QFont font, char c);
 
 protected:
+     bool eventFilter(QObject * obj , QEvent * env);
      void paintEvent(QPaintEvent * evt);
      void mousePressEvent(QMouseEvent* evt);
      void mouseReleaseEvent(QMouseEvent* evt);

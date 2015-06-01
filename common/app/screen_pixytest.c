@@ -1,173 +1,329 @@
 #include "screen_pixytest.h"
 #include "button.h"
+#include "numupdown.h"
 #include "tft.h"
 #include "touch.h"
 #include "pixy.h"
-#include <stdlib.h>
 #include "system.h"
+#include "pixy_helper.h"
 
-static volatile bool pixy_connected = false;
-
+static volatile enum {detecting, idle,update_servos, update_ledcolor, update_ledcurrent} state; //Current state of the screen state machine
 
 static BUTTON_STRUCT b_back;
-static BUTTON_STRUCT b_runstop;
-static TOUCH_AREA_STRUCT a_area;
+
+static BUTTON_STRUCT b_servos_center;
+static BUTTON_STRUCT b_servos_topleft;
+static BUTTON_STRUCT b_servos_topright;
+static BUTTON_STRUCT b_servos_bottomleft;
+static BUTTON_STRUCT b_servos_bottomright;
+static uint16_t servo_x;
+static uint16_t servo_y;
+
+static BUTTON_STRUCT b_led_off;
+static BUTTON_STRUCT b_led_white;
+static BUTTON_STRUCT b_led_red;
+static BUTTON_STRUCT b_led_green;
+static BUTTON_STRUCT b_led_blue;
+static uint32_t led_color;
+
+static uint32_t led_maxcurrent;
+static NUMUPDOWN_STRUCT n_led_powerlimit;
+
 
 static void b_back_cb(void* button) {
         gui_screen_back();
 }
 
-
-static volatile bool pixy_running = false;
-static bool old_pixy_running= false;
-static void b_runstop_cb(void* button) {
-	pixy_running=!pixy_running;	
-}
-
-
-
-
-static POINT_STRUCT pixy_pos;
-static POINT_STRUCT old_pos;
-static void touchCB(void* touchArea, TOUCH_ACTION triggeredAction) {
-	POINT_STRUCT p = touch_get_last_point();
-	switch(triggeredAction) {
-		case PEN_ENTER:
-                case PEN_DOWN:
-			old_pos = p;
-                break;
-                case PEN_MOVE:
-		{
-			int16_t deltaX = p.x - old_pos.x;
-			int16_t deltaY = p.y - old_pos.y;
-			old_pos=p;
-			printf("%d %d\n",deltaX,deltaY);
-			if(pixy_connected) {
-				int16_t new_x = pixy_pos.x+deltaX*2;
-				int16_t new_y = pixy_pos.y-deltaY*2;
-				if(new_x<0) new_x=0;
-				if(new_x>1000) new_x=1000;
-				if(new_y<0) new_y=0;
-				if(new_y>1000) new_y=1000;
-				pixy_pos.x = new_x;
-				pixy_pos.y= new_y;
-			}
+static void b_servos_center_cb(void* button) {
+		if(state==idle) {
+			servo_x=500;
+			servo_y=500;
+			state=update_servos;
 		}
-                break;
-		case PEN_UP:
-		case PEN_LEAVE:
-			printf("Leave/up\n");
-		default: break;
-        }
-
-	
 }
 
+static void b_servos_topleft_cb(void* button) {
+		if(state==idle) {
+			servo_x=0;
+			servo_y=0;
+			state=update_servos;
+		}
+}
+
+static void b_servos_topright_cb(void* button) {
+		if(state==idle) {
+			servo_x=1000;
+			servo_y=0;
+			state=update_servos;
+		}
+}
+
+static void b_servos_bottomleft_cb(void* button) {
+		if(state==idle) {
+			servo_x=0;
+			servo_y=1000;
+			state=update_servos;
+		}
+}
+
+static void b_servos_bottomright_cb(void* button) {
+		if(state==idle) {
+			servo_x=1000;
+			servo_y=1000;
+			state=update_servos;
+		}
+}
+
+static void b_led_off_cb(void* button) {
+		if(state==idle) {
+			led_color=0x000000;
+			state=update_ledcolor;
+		}
+}
+
+static void b_led_white_cb(void* button) {
+		if(state==idle) {
+			led_color=0xFFFFFF;
+			state=update_ledcolor;
+		}
+}
+
+static void b_led_red_cb(void* button) {
+		if(state==idle) {
+			led_color=0xFF0000;
+			state=update_ledcolor;
+		}
+}
+
+static void b_led_green_cb(void* button) {
+		if(state==idle) {
+			led_color=0x00FF00;
+			state=update_ledcolor;
+		}
+}
+
+static void b_led_blue_cb(void* button) {
+		if(state==idle) {
+			led_color=0x0000FF;
+			state=update_ledcolor;
+		}
+}
+
+static void n_led_powerlimit_cb(void* numupdown, int16_t value) {
+	if(state==idle) {
+		led_maxcurrent=value;
+		state=update_ledcurrent;
+	}
+}
 
 static void enter(void* screen) {
 	tft_clear(WHITE);
 	
 	//Back button
 	b_back.base.x1=10; //Start X of Button
-        b_back.base.y1=210; //Start Y of Button
-        b_back.base.x2=AUTO; //b_back.base.x1+160; //Auto Calculate X2 with String Width
-        b_back.base.y2=AUTO; //Auto Calculate Y2 with String Height
-        b_back.txtcolor=WHITE; //Set foreground color
-        b_back.bgcolor=HEX(0xAE1010); //Set background color (Don't take 255 or 0 on at least one channel, to make shadows possible)
-        b_back.font=0; //Select Font
-        b_back.text="Back"; //Set Text (For formatted strings take sprintf)
-        b_back.callback=b_back_cb; //Call b_back_cb as Callback
-        gui_button_add(&b_back); //Register Button (and run the callback from now on)
+	b_back.base.y1=210; //Start Y of Button
+	b_back.base.x2=AUTO; //Auto Calculate X2 with String Width
+	b_back.base.y2=AUTO; //Auto Calculate Y2 with String Height
+	b_back.txtcolor=WHITE; //Set foreground color
+	b_back.bgcolor=HEX(0xAE1010); //Set background color (Don't take 255 or 0 on at least one channel, to make shadows possible)
+	b_back.font=0; //Select Font
+	b_back.text="Back"; //Set Text (For formatted strings take sprintf)
+	b_back.callback=b_back_cb; //Call b_back_cb as Callback
+	gui_button_add(&b_back); //Register Button (and run the callback from now on)
 
 
-	//Back button
-        b_runstop.base.x1=60; //Start X of Button
-        b_runstop.base.y1=210; //Start Y of Button
-        b_runstop.base.x2=AUTO; //b_runstop.base.x1+160; //Auto Calculate X2 with String Width
-        b_runstop.base.y2=AUTO; //Auto Calculate Y2 with String Height
-        b_runstop.txtcolor=WHITE; //Set foreground color
-        b_runstop.bgcolor=HEX(0xAE1010); //Set runstopground color (Don't take 255 or 0 on at least one channel, to make shadows possible)
-        b_runstop.font=0; //Select Font
-        b_runstop.text="Run/Stop"; //Set Text (For formatted strings take sprintf)
-        b_runstop.callback=b_runstop_cb; //Call b_runstop_cb as Callrunstop
-        gui_button_add(&b_runstop); //Register Button (and run the callrunstop from now on)
+	//Servo stuff
+	#define SERVO_BUTTON_Y 10
+	#define SERVO_BUTTON_SPACING 5
+	tft_print_line(5,SERVO_BUTTON_Y,BLACK,TRANSPARENT,0,"Servos:");
+
+	b_servos_center.base.x1=55;
+	b_servos_center.base.y1=SERVO_BUTTON_Y-3;
+	b_servos_center.base.x2=AUTO;
+	b_servos_center.base.y2=AUTO;
+	b_servos_center.txtcolor=WHITE;
+	b_servos_center.bgcolor=HEX(0xAE1010);
+	b_servos_center.font=0;
+	b_servos_center.text="Center";
+	b_servos_center.callback=b_servos_center_cb;
+	gui_button_add(&b_servos_center);
+
+	b_servos_topleft.base.x1=b_servos_center.base.x2+SERVO_BUTTON_SPACING;
+	b_servos_topleft.base.y1=SERVO_BUTTON_Y-3;
+	b_servos_topleft.base.x2=AUTO;
+	b_servos_topleft.base.y2=AUTO;
+	b_servos_topleft.txtcolor=WHITE;
+	b_servos_topleft.bgcolor=HEX(0xAE1010);
+	b_servos_topleft.font=0;
+	b_servos_topleft.text="ToLe";
+	b_servos_topleft.callback=b_servos_topleft_cb;
+	gui_button_add(&b_servos_topleft);
+
+	b_servos_topright.base.x1=b_servos_topleft.base.x2+SERVO_BUTTON_SPACING;
+	b_servos_topright.base.y1=SERVO_BUTTON_Y-3;
+	b_servos_topright.base.x2=AUTO;
+	b_servos_topright.base.y2=AUTO;
+	b_servos_topright.txtcolor=WHITE;
+	b_servos_topright.bgcolor=HEX(0xAE1010);
+	b_servos_topright.font=0;
+	b_servos_topright.text="ToRi";
+	b_servos_topright.callback=b_servos_topright_cb;
+	gui_button_add(&b_servos_topright);
+
+	b_servos_bottomleft.base.x1=b_servos_topright.base.x2+SERVO_BUTTON_SPACING;
+	b_servos_bottomleft.base.y1=SERVO_BUTTON_Y-3;
+	b_servos_bottomleft.base.x2=AUTO;
+	b_servos_bottomleft.base.y2=AUTO;
+	b_servos_bottomleft.txtcolor=WHITE;
+	b_servos_bottomleft.bgcolor=HEX(0xAE1010);
+	b_servos_bottomleft.font=0;
+	b_servos_bottomleft.text="BoLe";
+	b_servos_bottomleft.callback=b_servos_bottomleft_cb;
+	gui_button_add(&b_servos_bottomleft);
+
+	b_servos_bottomright.base.x1=b_servos_bottomleft.base.x2+SERVO_BUTTON_SPACING;
+	b_servos_bottomright.base.y1=SERVO_BUTTON_Y-3;
+	b_servos_bottomright.base.x2=AUTO;
+	b_servos_bottomright.base.y2=AUTO;
+	b_servos_bottomright.txtcolor=WHITE;
+	b_servos_bottomright.bgcolor=HEX(0xAE1010);
+	b_servos_bottomright.font=0;
+	b_servos_bottomright.text="BoRi";
+	b_servos_bottomright.callback=b_servos_bottomright_cb;
+	gui_button_add(&b_servos_bottomright);
+
+	//Led Color stuff
+	#define LED_COLOR_BUTTON_Y 35
+	#define LED_COLOR_BUTTON_SPACING 5
+	tft_print_line(5,LED_COLOR_BUTTON_Y,BLACK,TRANSPARENT,0,"Led Color:");
+
+	b_led_off.base.x1=85;
+	b_led_off.base.y1=LED_COLOR_BUTTON_Y-3;
+	b_led_off.base.x2=AUTO;
+	b_led_off.base.y2=AUTO;
+	b_led_off.txtcolor=WHITE;
+	b_led_off.bgcolor=BLACK;
+	b_led_off.font=0;
+	b_led_off.text="Off";
+	b_led_off.callback=b_led_off_cb;
+	gui_button_add(&b_led_off);
+
+	b_led_white.base.x1=b_led_off.base.x2+LED_COLOR_BUTTON_SPACING;
+	b_led_white.base.y1=LED_COLOR_BUTTON_Y-3;
+	b_led_white.base.x2=AUTO;
+	b_led_white.base.y2=AUTO;
+	b_led_white.txtcolor=BLACK;
+	b_led_white.bgcolor=HEX(0xEEEEEE);
+	b_led_white.font=0;
+	b_led_white.text="White";
+	b_led_white.callback=b_led_white_cb;
+	gui_button_add(&b_led_white);
+
+	b_led_red.base.x1=b_led_white.base.x2+LED_COLOR_BUTTON_SPACING;
+	b_led_red.base.y1=LED_COLOR_BUTTON_Y-3;
+	b_led_red.base.x2=AUTO;
+	b_led_red.base.y2=AUTO;
+	b_led_red.txtcolor=WHITE;
+	b_led_red.bgcolor=HEX(0xEE0000);
+	b_led_red.font=0;
+	b_led_red.text="Red";
+	b_led_red.callback=b_led_red_cb;
+	gui_button_add(&b_led_red);
+
+	b_led_green.base.x1=b_led_red.base.x2+LED_COLOR_BUTTON_SPACING;
+	b_led_green.base.y1=LED_COLOR_BUTTON_Y-3;
+	b_led_green.base.x2=AUTO;
+	b_led_green.base.y2=AUTO;
+	b_led_green.txtcolor=WHITE;
+	b_led_green.bgcolor=HEX(0x00EE00);
+	b_led_green.font=0;
+	b_led_green.text="Green";
+	b_led_green.callback=b_led_green_cb;
+	gui_button_add(&b_led_green);
+
+	b_led_blue.base.x1=b_led_green.base.x2+LED_COLOR_BUTTON_SPACING;
+	b_led_blue.base.y1=LED_COLOR_BUTTON_Y-3;
+	b_led_blue.base.x2=AUTO;
+	b_led_blue.base.y2=AUTO;
+	b_led_blue.txtcolor=WHITE;
+	b_led_blue.bgcolor=HEX(0x0000EE);
+	b_led_blue.font=0;
+	b_led_blue.text="Blue";
+	b_led_blue.callback=b_led_blue_cb;
+	gui_button_add(&b_led_blue);
+
+	//Led MaxPower stuff
+	#define LED_POWER_BUTTON_Y 70
+	tft_print_line(5,LED_POWER_BUTTON_Y,BLACK,TRANSPARENT,0,"Led Maximum Current:");
+
+	//Num up down test
+	n_led_powerlimit.x=160;
+	n_led_powerlimit.y=LED_POWER_BUTTON_Y-7;
+	n_led_powerlimit.fgcolor=WHITE;
+	n_led_powerlimit.value = 10;
+	n_led_powerlimit.max=40;
+	n_led_powerlimit.min =0;
+	n_led_powerlimit.callback=n_led_powerlimit_cb;
+	gui_numupdown_add(&n_led_powerlimit);
 
 
-	//Area test
-        a_area.hookedActions =  PEN_DOWN | PEN_MOVE |  PEN_ENTER | PEN_UP | PEN_LEAVE;
-        a_area.x1 = 0;
-        a_area.y1 = 0;
-        a_area.x2 = 317;
-        a_area.y2 = 197;
-        a_area.callback = touchCB;
-        touch_register_area(&a_area);
 
-
-
-	//Pixy stuff
-        pixy_connected = (pixy_init()==0); //try to connect to pixy
-	if(pixy_connected) {
-		pixy_pos.x=pixy_pos.y=500;
-	}
+	state=detecting;
 }
 
 static void leave(void* screen) {
 	gui_button_remove(&b_back);
-	gui_button_remove(&b_runstop);
-	touch_unregister_area(&a_area);
-}
+	gui_button_remove(&b_servos_center);
+	gui_button_remove(&b_servos_topleft);
+	gui_button_remove(&b_servos_topright);
+	gui_button_remove(&b_servos_bottomleft);
+	gui_button_remove(&b_servos_bottomright);
+	gui_button_remove(&b_led_off);
+	gui_button_remove(&b_led_white);
+	gui_button_remove(&b_led_red);
+	gui_button_remove(&b_led_green);
+	gui_button_remove(&b_led_blue);
+	gui_numupdown_remove(&n_led_powerlimit);
 
-int pixy_led_test();
-int pixy_frame_test();
+}
 
 
 static void update(void* screen) {
-
-  //Note: The only way to detect that pixy has been disconnected is if a command fails. There's no pixy_is_connected method yet :'(
-
-        if(!pixy_connected) { //Pixy not connected
-                pixy_close(); //Ensure that all pixy resources are freed (failsafe)
-                if(pixy_init()==0) { //try to connect to pixy
-                        pixy_connected=true;
-			pixy_pos.x=pixy_pos.y=500;
-			printf("pixy reinitialized\n");
-                }
-        }
-
-        if(pixy_connected) {
-                pixy_service(); //Send/receive event data from/to pixy failed
-
-
-                if(pixy_frame_test()!=0) {
-                         pixy_connected=false;
-                }
-
-		/*if(pixy_led_test()!=0) {
-			pixy_connected=false;
-		}*/
-
-		if(!pixy_running) {	
-			pixy_rcs_set_position(0,pixy_pos.x);
-			pixy_rcs_set_position(1,pixy_pos.y);
-		}
-
-		if(pixy_running!=old_pixy_running) {	
-			old_pixy_running=pixy_running;
-			if(pixy_running) { //start tracking
-
-				int32_t response;
-				int return_value;
-				return_value = pixy_command("runprog", INT8(2), END_OUT_ARGS,  &response, END_IN_ARGS);
-
-			} else { //stop tracking
+	switch(state) {
+		case detecting: //Detecting State: Where we try to connect to the pixy
+			if(pixy_init()==0) { //Pixy connection ok
 				int32_t response;
 				int return_value;
 				return_value = pixy_command("stop", END_OUT_ARGS,  &response, END_IN_ARGS);
+				pixy_led_set_max_current(10);
+
+				state = idle; //Go to next state
 			}
+			break;
+		case idle:
+			pixy_service();
+		break;
+		case update_servos:
+			pixy_rcs_set_position(0,servo_x);
+			pixy_rcs_set_position(1,servo_y);
+			state = idle;
+			break;
+
+		case update_ledcolor:
+		{
+			int32_t response;
+			int return_value;
+			return_value = pixy_command("led_set", INT32(led_color), END_OUT_ARGS,  &response, END_IN_ARGS);
+			state = idle;
 		}
-	
-                //system_delay(500);
-        }
+		break;
+
+		case update_ledcurrent:
+			pixy_led_set_max_current(led_maxcurrent);
+			state = idle;
+			break;
+	}
+
 }
 
 
@@ -184,157 +340,3 @@ SCREEN_STRUCT* get_screen_pixytest() {
 
 
 
-//-----------------------------------------------------------------------------------------------------------------
-
-int colorind;
-const uint32_t colors [] = {0xFF0000, 0x00FF00,0x0000FF,0xFFFF00,0x00FFFF,0xFF00FF,0xFFFFFF,0x000000};
-const int num_colors = sizeof(colors)/sizeof(uint32_t);
-
-int pixy_led_test() {
-        if(colorind==0) {
-                pixy_led_set_max_current(5);
-        }
-
-        int32_t response;
-        int return_value;
-        return_value = pixy_command("led_set", INT32(colors[colorind++]), END_OUT_ARGS,  &response, END_IN_ARGS);
-        colorind%=num_colors;
-
-        if(return_value!=0) {
-                colorind=0; //reset color ind, to start at zero when plugging pixy in again
-        }
-
-        return return_value;
-}
-
-//----------------------------------------------------------------------------------------------------------------------------
-
-int renderBA81(uint8_t renderFlags, uint16_t width, uint16_t height, uint32_t frameLen, uint8_t *frame);
-
-
-int pixy_frame_test() {
-
- uint8_t* videodata;
-      int32_t response;
-      int32_t fourccc;
-      int8_t renderflags;
-      uint16_t xwidth;
-      uint16_t ywidth;
-      uint32_t size;
-
-
-      int return_value = pixy_command("cam_getFrame",  // String id for remote procedure
-                                      INT8(0x21),     // mode
-                                      INT16(0),        // xoffset
-                                      INT16(0),         // yoffset
-                                      INT16(320),       // width
-                                      INT16(200),       // height
-                                      END_OUT_ARGS,              // separator
-                                      &response,      // pointer to mem address for return value
-                                      &fourccc,
-                                      &renderflags,
-                                      &xwidth,
-                                      &ywidth,
-                                      &size,
-                                      &videodata,        // pointer to mem address for returned frame
-                                      END_IN_ARGS);
-
-      if(return_value==0) {
-            return_value = renderBA81(renderflags,xwidth,ywidth,size,videodata);
-      } 
-      
-      return return_value;
-}   
-
-
-
-
-void interpolateBayer(uint16_t width, uint16_t x, uint16_t y, uint8_t *pixel, uint8_t* r, uint8_t* g, uint8_t* b)
-{
-    if (y&1)
-    {
-        if (x&1)
-        {
-            *r = *pixel;
-            *g = (*(pixel-1)+*(pixel+1)+*(pixel+width)+*(pixel-width))>>2;
-            *b = (*(pixel-width-1)+*(pixel-width+1)+*(pixel+width-1)+*(pixel+width+1))>>2;
-        }
-        else
-        {
-            *r = (*(pixel-1)+*(pixel+1))>>1;
-            *g = *pixel;
-            *b = (*(pixel-width)+*(pixel+width))>>1;
-        }
-    }
-    else
-    {
-        if (x&1)
-        {
-            *r = (*(pixel-width)+*(pixel+width))>>1;
-            *g = *pixel;
-            *b = (*(pixel-1)+*(pixel+1))>>1;
-        }
-        else
-        {
-            *r = (*(pixel-width-1)+*(pixel-width+1)+*(pixel+width-1)+*(pixel+width+1))>>2;
-            *g = (*(pixel-1)+*(pixel+1)+*(pixel+width)+*(pixel-width))>>2;
-            *b = *pixel;
-        }
-    }
-
-}
-
-
-
-
-
-
-int renderBA81(uint8_t renderFlags, uint16_t width, uint16_t height, uint32_t frameLen, uint8_t *frame)
-{   
-    uint16_t x, y;
-    uint8_t r, g, b;
-
-    
-    // skip first line
-    frame += width;
-    
-    // don't render top and bottom rows, and left and rightmost columns because of color
-    // interpolation
-    //uint32_t decodedimage[(width-2)*(height-2)];
-    uint16_t* decodedimage = malloc(sizeof(uint16_t)*(width-2)*(height-2));
-    
-    if(decodedimage==NULL) { //not enough free space to decode image in memory
-        //decode & render image pixel by pixel
-        uint16_t* line = decodedimage;
-        for (y=1; y<height-1; y++)
-        {       
-                frame++;
-                for (x=1; x<width-1; x++, frame++)
-                {   
-                    interpolateBayer(width, x, y, frame, &r, &g, &b);
-                    tft_draw_pixel(x-1,y-1,RGB(r,g,b));
-                }
-                frame++;
-         } 
-    } else { //enough space  
-            uint16_t* line = decodedimage;
-            for (y=1; y<height-1; y++)
-            {   
-                //line = (unsigned int *)img.scanLine(y-1);
-                frame++;
-                for (x=1; x<width-1; x++, frame++)
-                {   
-                    interpolateBayer(width, x, y, frame, &r, &g, &b);
-                    //*line++ = (0xff<<24) | (r<<16) | (g<<8) | (b<<0);
-                    *line++ = RGB(r,g,b);
-                }
-                frame++;
-            }
-            
-            tft_draw_bitmap_unscaled(0,0,width-2,height-2,decodedimage);
-            
-            free(decodedimage);
-    }
-    
-    return 0;
-}
