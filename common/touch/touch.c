@@ -19,6 +19,27 @@ TOUCH_AREA_STRUCT* areas[NUM_AREAS] = {NULL}; //list with pointers to all manage
 
 volatile POINT_STRUCT pos; //the last touch point
 volatile TOUCH_STATE oldState=TOUCH_UP; //the last touch state
+volatile bool calibration = false; //whether or not we're currently calibrating
+
+//Calibration Constants(Defaults= Timo's 3.2")
+/*int cal_xs=0x0231;
+int cal_dx=0x0C08;
+int cal_ys=0x0287;
+int cal_dy=0x0B56;*/
+
+int cal_xs=20;
+int cal_dx=20;
+int cal_ys=20;
+int cal_dy=20;
+
+void touch_set_calibration_valules(int xs, int dx, int ys, int dy) {
+	cal_xs = xs;
+	cal_ys = ys;
+	cal_dx = dx;
+	cal_dy = dy;
+}
+
+
 
 bool touch_init() {
 	return ll_touch_init();
@@ -30,6 +51,24 @@ bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
 	bool penDown = (state==TOUCH_DOWN);
 	bool oldPenDown = (oldState==TOUCH_DOWN);
 	oldState=state;
+
+	if(calibration)	//If in Calibration mode
+	{
+
+		if(penDown)
+		{
+			pos.x=touchX;
+			pos.y=touchY;
+		}
+		else
+		{
+			if(oldPenDown) //Run only if we got at least one pen down
+				calibration=0;	 //Calibration finish (Touch X and Y are the values from the last measure, where the pen was down)
+		}
+		return true;
+	}
+
+
 	pos.x=touchX;
 	pos.y=touchY;
 
