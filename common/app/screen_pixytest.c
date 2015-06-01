@@ -264,7 +264,7 @@ static void enter(void* screen) {
 	n_led_powerlimit.max=40;
 	n_led_powerlimit.min =0;
 	n_led_powerlimit.callback=n_led_powerlimit_cb;
-	gui_numupdown_add(&n_led_powerlimit);
+	//gui_numupdown_add(&n_led_powerlimit);
 
 
 
@@ -283,7 +283,7 @@ static void leave(void* screen) {
 	gui_button_remove(&b_led_red);
 	gui_button_remove(&b_led_green);
 	gui_button_remove(&b_led_blue);
-	gui_numupdown_remove(&n_led_powerlimit);
+	//gui_numupdown_remove(&n_led_powerlimit);
 
 }
 

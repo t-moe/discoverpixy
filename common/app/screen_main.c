@@ -77,7 +77,7 @@ static void enter(void* screen) {
 	b_ref_tracking.txtcolor=WHITE;
 	b_ref_tracking.bgcolor=HEX(0xFF2151);
 	b_ref_tracking.font=0;
-	b_ref_tracking.text="Reference Tracking";
+	b_ref_tracking.text="Ref Tracking";
 	b_ref_tracking.callback=b_ref_tracking_cb;
 	gui_button_add(&b_ref_tracking);
 

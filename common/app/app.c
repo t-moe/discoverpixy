@@ -14,7 +14,6 @@ void app_init() {
 	gui_screen_navigate(get_screen_main());
 }
 
-
 //app event loop
 void app_process() {
 	
