@@ -541,7 +541,20 @@ void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint
 {
     uint16_t area;
     uint32_t n;
-    
+    unsigned int tmp;
+
+    if(x1 > x2){
+        tmp = x1;
+        x1 = x2;
+        x2 = tmp;
+    }
+
+    if(y1 > y2){
+        tmp = y1;
+        y1 = y2;
+        y2 = tmp;
+    }   
+
     // set window 
     tft_set_window(x1, y1, x2, y2);
     tft_set_cursor(x1, y1);
@@ -609,42 +622,39 @@ void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, 
     unsigned char bitm      = 0;
 
     bool bgIsTrans          = (bgcolor == TRANSPARENT);
-    bool enTrans            = 0;
-    
+    unsigned char xadd=0;
+    unsigned char yadd=0;
+
     tft_set_window(x, y, x + width - 1, y + height - 1);
     tft_set_cursor(x, y);   
  
     for(cnt = (width / 8) * height; cnt > 0; cnt--){
         for(bitm = 0x80; bitm > 0; bitm >>= 1){
             if((font[ind]) & bitm){
-                if(enTrans){
-                    enTrans = 0;
-                    tft_write_reg(0x23,0x0000); 
-                    tft_write_reg(0x24,0x0000); 
-                    TFT_REG = TFT_SSD1289_REG_22;
+                if(bgIsTrans) { 
+			        tft_set_cursor(x+xadd,y+yadd);
                 }
-
                 TFT_RAM = color;
             
             } else {
-                if(bgIsTrans && !enTrans){
-                    enTrans = 1;
-                    tft_write_reg(0x23,0xFFFF); 
-                    tft_write_reg(0x24,0xFFFF); 
-                    TFT_REG = TFT_SSD1289_REG_22;
-                }
-
-               TFT_RAM = bgcolor; 
+                if(!bgIsTrans) {
+                    TFT_RAM = bgcolor;
+                } 
             }
+            
+            if(bgIsTrans) 
+			{
+				xadd++;
+				if(xadd==width)
+				{
+					xadd=0;
+					yadd++;
+				}
+			}
         }
         
         ind++;
     }
     
-    if(enTrans){
-        tft_write_reg(0x23,0x0000);
-        tft_write_reg(0x24,0x0000); 
-    }
-
     tft_reset_window();
 }
