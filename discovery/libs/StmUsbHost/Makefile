@@ -27,7 +27,7 @@ ARCH_FLAGS=-mthumb -mcpu=cortex-m4 $(FP_FLAGS)
 
 #Compiler, Linker Options
 CPPFLAGS=-DUSE_USB_OTG_FS -DUSE_HOST_MODE -I$(INC_DIR) -I$(INC_DIR2) -I$(INC_DIR3) -I$(INC_CORE_DIR)
-CFLAGS=$(ARCH_FLAGS) -O0 -g #-ffunction-sections -fdata-sections -g
+CFLAGS=$(ARCH_FLAGS) -O0 -g -ffunction-sections -fdata-sections 
 #CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 #CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 
