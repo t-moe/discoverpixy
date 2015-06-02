@@ -50,7 +50,7 @@ LIBSEARCHDIRS+=$(LIB_DIR)/StmUsbHost
 LIBSEARCHDIRS+=$(LIB_DIR)/Pixy
 
 
-LDFLAGS=--specs=nosys.specs -Wl,--gc-sections
+LDFLAGS=--specs=nano.specs -Wl,--gc-sections
 LDFLAGS+=$(addprefix -L,$(LIBSEARCHDIRS)) 
 LDFLAGS+=$(addprefix -l,$(LIBS))
 

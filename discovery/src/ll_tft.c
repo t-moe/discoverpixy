@@ -411,90 +411,55 @@ void tft_reset_window()
 
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) 
 {
-    if(y1==y2){
-        if(x2<x1){
-            tft_set_cursor(x2,y1);
-            do{
-                TFT_RAM = color;       
-            } while(x2++!=x1);
-        } else {
-            tft_set_cursor(x1,y1);
-            do{
-                TFT_RAM = color;       
-            } while(x1++!=x2);
-        }       
-    }
-    else if(x1==x2){
-           tft_write_reg(0x11,0x6030); // Change adresspointer direction
-          
-          if(y2<y1)
-          {
-               tft_set_cursor(x1,y2);
-               do {
-                    TFT_RAM = color;        
-               } while(y2++!=y1);
-          }
-          else
-          {
-               tft_set_cursor(x1,y1);
-               do {
-                    TFT_RAM = color;    
-               }while(y1++!=y2);
-          }
-           tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
-    }
-    else
-    {
-        if(abs(x2-x1) > abs(y2-y1))
-        {   
-            //Without floating point!
-            int deltax = ((int)x2-(int)x1);
-            int deltay = ((int)y2-(int)y1)<<1;
-            int x = 0;
-            if (x1>x2)
-            {
-                do
-                { 
-                    tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
-                    TFT_RAM = color;
-                }
-                while(x--!=deltax);
+    if(abs(x2-x1) > abs(y2-y1)) //line has more distance in x than y => iterate over x distance
+    {   
+        //Without floating point!
+        int deltax = ((int)x2-(int)x1);
+        int deltay = ((int)y2-(int)y1)<<1;
+        int x = 0;
+        if (x1>x2)
+        {
+            do
+            { 
+                tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
+                TFT_RAM = color;
             }
-            else
-            {
-                do
-                { 
-                    tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
-                    TFT_RAM = color;
-                }
-                while(x++!=deltax);
-            }
+            while(x--!=deltax);
         }
         else
         {
-            int deltax = ((int)x2-(int)x1)<<1;
-            int deltay = ((int)y2-(int)y1);
-            int y = 0;
-            if (y1>y2)
-            {
-                do
-                { 
-                    tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
-                    TFT_RAM = color;
-                }
-                while(y--!=deltay);
+            do
+            { 
+                tft_set_cursor(x1+x,y1+ (((long)deltay*(long)x/deltax+1)>>1));
+                TFT_RAM = color;
             }
-            else
-            {
-                do
-                { 
-                    tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
-                    TFT_RAM = color;
-                }
-                while(y++!=deltay);
-            }   
-        } 
-    }    
+            while(x++!=deltax);
+        }
+    }
+    else // => iterate over y distance
+    {
+        int deltax = ((int)x2-(int)x1)<<1;
+        int deltay = ((int)y2-(int)y1);
+        int y = 0;
+        if (y1>y2)
+        {
+            do
+            { 
+                tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
+                TFT_RAM = color;
+            }
+            while(y--!=deltay);
+        }
+        else
+        {
+            do
+            { 
+                tft_set_cursor(x1+ (((long)deltax*(long)y/deltay+1)>>1),y1+ y);
+                TFT_RAM = color;
+            }
+            while(y++!=deltay);
+        }   
+    } 
 }
 
 void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color) 
@@ -521,20 +486,26 @@ void ll_tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, u
     }
 
     i = x1;
-
+    //Drawing the two horizontal lines
     tft_set_cursor(x1, y1);
     while(i++ != x2) TFT_RAM = color;
     tft_set_cursor(x1,y2);
     while(i-- != x1) TFT_RAM = color;
     
-    i = y1;
     
+    /*
+    //uncommented because tft_write_reg seems to fail sometimes so it's safer to use draw line instead (below)  
+    i = y1;
     tft_write_reg(0x11,0x6030); // Change adresspointer direction
     tft_set_cursor(x2, y1);
     while(i++ != y2) TFT_RAM = color;
     tft_set_cursor(x1, y1);
     while(i-- != y1) TFT_RAM = color;
     tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
+    */
+    tft_draw_line(x1,y1,x1,y2,color);
+    tft_draw_line(x2,y1,x2,y2,color);
+    
 }
 
 void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color)
