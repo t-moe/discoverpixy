@@ -52,8 +52,6 @@ void USBH_USR_DeviceAttached(void)
 	product_ok= false;
 	serial_ok=false;
 
-  
-  	STM_EVAL_LEDOff(LED5);
   	STM_EVAL_LEDOff(LED3);
   	STM_EVAL_LEDOn(LED4);
 }
@@ -75,8 +73,6 @@ void USBH_USR_UnrecoveredError (void)
   */
 void USBH_USR_DeviceDisconnected (void)
 {
-  /* Red Led on if the USB Key is removed */
-  STM_EVAL_LEDOn(LED5);
   STM_EVAL_LEDOff(LED4);
 }
 

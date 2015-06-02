@@ -32,12 +32,10 @@ bool ll_system_init(void)
   /* Initialize LEDS */
   STM_EVAL_LEDInit(LED3);
   STM_EVAL_LEDInit(LED4);
-  STM_EVAL_LEDInit(LED5);
-  STM_EVAL_LEDInit(LED6);
+  //LED5 and LED6 can not be used because of pin conflict. See docu
+  
   STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
  
-  /* Blue Led On: start of application */
-  STM_EVAL_LEDOn(LED6);
        
   /* SysTick end of count event each 1ms */
   RCC_GetClocksFreq(&RCC_Clocks); //we run at 168mhz :)
@@ -58,5 +56,5 @@ void ll_system_delay(uint32_t msec) {
 }
 
 void ll_system_toggle_led() {	
-	STM_EVAL_LEDToggle(LED6);
+    //no led's free :(
 }
