@@ -103,7 +103,7 @@ void touch_test(uint16_t x, uint16_t y)
 bool ll_touch_init() 
 {
     touch_set_value_convert_mode(true); //Tell the touch module that we need converted values and display calibration
-    touch_set_calibration_values(0x0231, 0x0C08, 0x0287, 0x0B56); //set calibration values (copied from memory using the debugger)
+    touch_set_calibration_values(526, 2922, 588, 2736); //set calibration values (copied from memory using the debugger)
     
     
     //We have a ADS7843 Touch controller

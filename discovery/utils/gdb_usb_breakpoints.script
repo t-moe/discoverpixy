@@ -1,0 +1,25 @@
+break usbh_msc_core.c:243
+  commands
+    p state
+    bt
+    c
+  end
+break usbh_msc_core.c:249
+  commands
+    c
+  end
+break usbh_msc_core.c:214
+  commands
+    p state
+    bt
+    c
+  end
+break usbh_msc_core.c:221
+  commands
+    c
+  end
+break newlib_stubs.c:153
+break newlib_stubs.c:158
+  commands
+    c
+  end

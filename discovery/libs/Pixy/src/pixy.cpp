@@ -112,7 +112,10 @@ extern "C"
 
   int pixy_service()
   {
-    return interpreter.service();
+      //Service calls are commented at the moment because they cause problems with USB on the discovery.
+      //TODO: Fix problems.
+       return -1;
+      //return interpreter.service();
   }
 
   int pixy_command(const char *name, ...)
