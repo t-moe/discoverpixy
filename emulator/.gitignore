@@ -5,8 +5,9 @@ qt/*.o
 qt/*.a
 qt/ui_*
 qt/moc_*
-qt/Makefile
-
+qt/Makefile*
+qt/debug
+qt/release
 
 libs/*/obj
 libs/*/*.a

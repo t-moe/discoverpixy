@@ -17,11 +17,13 @@ OBJ_DIR=./obj
 #Architecture flags
 
 #Compiler, Linker Options
-CPPFLAGS=-I$(INC_DIR) -D__LINUX__=1 -DHOST=1 #-DDEBUG=1
+CPPFLAGS=-I$(INC_DIR) -DHOST=1  #-D__LINUX__=1 -DDEBUG=1
 CFLAGS=$(ARCH_FLAGS) -O0 -g #-ffunction-sections -fdata-sections -g
 #CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 #CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
-CFLAGS+=-I/usr/include/libusb-1.0
+CFLAGS+=-I/usr/include/libusb-1.0 
+CFLAGS+=-IC:/boost_1_58_0/buildsys/include/boost-1_58
+CFLAGS+=-I./windows/
 
 #Finding Input files
 CFILES=$(shell find $(SRC_DIR) -name '*.cpp')

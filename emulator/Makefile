@@ -10,7 +10,7 @@ QT_DIR=./qt
 COMMON_DIR=../common
 
 #Tools
-CC=gcc -fdiagnostics-color=auto
+CC=gcc #-fdiagnostics=auto
 GDB=gdb
 
 
@@ -28,13 +28,17 @@ CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(INCLUDES)
 CFLAGS= -O0 -g -std=c99
 
 
-LIBS= pixy usb-1.0 boost_system boost_timer boost_chrono
-LIBS+=Qt5Core Qt5Gui Qt5Widgets emulatorqt m stdc++
+LIBS= emulatorqt pixy usb-1.0 
+LIBS+= boost_system-mgw49-mt-1_58 boost_timer-mgw49-mt-1_58 boost_chrono-mgw49-mt-1_58
+LIBS+= Qt5Core Qt5Gui Qt5Widgets  m stdc++ 
 
-
-LDFLAGS= -L$(QT_DIR) $(addprefix -l,$(LIBS)) 
+LDFLAGS= -static-libgcc -static-libstdc++ #-Wl,-t  -Wl,--Map=a.map
+LDFLAGS+= -L$(QT_DIR)
 LDFLAGS+= -L$(LIB_DIR)/Pixy 
-
+LDFLAGS+= -LC:/boost_1_58_0/buildsys/lib
+LDFLAGS+= -LC:/Qt/5.4/mingw491_32/lib
+LDFLAGS+= -L./libs/Pixy/windows
+LDFLAGS+= $(addprefix -l,$(LIBS)) 
 
 #Finding Input files
 CFILES=$(shell find . -maxdepth 1 -name '*.c')
@@ -58,7 +62,7 @@ debug: all
 	$(GDB) ./build/emulator
 
 $(QT_LIB): 
-	cd $(QT_DIR) && qmake &&make
+	cd $(QT_DIR) && qmake && $(MAKE)
 
 #objects to elf
 $(BUILD_DIR)/$(TARGET): $(OBJS) $(COMMON_OBJS) $(QT_LIB)
@@ -83,7 +87,7 @@ $(OBJ_DIR)/%.o: $(COMMON_DIR)/%.c
 
 #Clean Obj files and builded stuff
 clean:
-	cd $(QT_DIR) && $(MAKE) clean && $(RM) Makefile && $(RM) *.a
+	cd $(QT_DIR) && $(MAKE) clean && $(RM) Makefile* && $(RM) *.a && $(RMDIR) debug release
 	$(RMDIR) $(BUILD_DIR) $(OBJ_DIR)
 
 

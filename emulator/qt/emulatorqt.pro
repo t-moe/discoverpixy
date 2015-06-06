@@ -8,7 +8,7 @@ QT       += widgets gui
 
 TARGET = emulatorqt
 TEMPLATE = lib
-CONFIG += staticlib
+CONFIG += staticlib debug
 
 SOURCES += \
     mainwindow.cpp \
@@ -30,3 +30,6 @@ INCLUDEPATH+= ../../common/lowlevel/ \
 FORMS += \
     mainwindow.ui
 
+DESTDIR = $$_PRO_FILE_PWD_ #force windows to not create subfolders
+
+#QMAKE_CXXFLAGS+= -v
