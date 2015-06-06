@@ -273,7 +273,7 @@ static bool gpio_init()
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD,ENABLE);
     RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE,ENABLE);
     
-    // PORT_B init -------------------------------------------------------------------------------------
+    // PORT_B init 
     GPIO_InitStructure.GPIO_Pin     = GPIO_Pin_0;              
     GPIO_InitStructure.GPIO_Mode    = GPIO_Mode_OUT;
     GPIO_InitStructure.GPIO_OType   = GPIO_OType_PP;
@@ -282,7 +282,7 @@ static bool gpio_init()
     // configure PORT_B
     GPIO_Init(GPIOB, &GPIO_InitStructure);  
     
-    // PORT_D init -------------------------------------------------------------------------------------
+    // PORT_D init
     GPIO_PinAFConfig(GPIOD, GPIO_PinSource0,  GPIO_AF_FSMC); // PD0=FSMC_D2   -> DB2
     GPIO_PinAFConfig(GPIOD, GPIO_PinSource1,  GPIO_AF_FSMC); // PD1=FSMC_D3   -> DB3
     GPIO_PinAFConfig(GPIOD, GPIO_PinSource4,  GPIO_AF_FSMC); // PD4=FSMC_NOE  -> RD
@@ -305,7 +305,7 @@ static bool gpio_init()
     // configure PORT_D
     GPIO_Init(GPIOD, &GPIO_InitStructure);   
     
-    // PORT_E init --------------------------------------------------------------------------------------
+    // PORT_E init
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource3,  GPIO_AF_FSMC); // PE3=FSMC_A19  -> RS
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource7,  GPIO_AF_FSMC); // PE7=FSMC_D4   -> DB4
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource8,  GPIO_AF_FSMC); // PE8=FSMC_D5   -> DB5  
@@ -316,6 +316,7 @@ static bool gpio_init()
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource13, GPIO_AF_FSMC); // PE13=FSMC_D10 -> DB12
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource14, GPIO_AF_FSMC); // PE14=FSMC_D11 -> DB13
     GPIO_PinAFConfig(GPIOE, GPIO_PinSource15, GPIO_AF_FSMC); // PE15=FSMC_D12 -> DB14
+   
     // PORT_E struct
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3 | GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 |
                                 GPIO_Pin_10 | GPIO_Pin_11 | GPIO_Pin_12 | GPIO_Pin_13 |
@@ -325,6 +326,7 @@ static bool gpio_init()
     GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
     GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
     GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+  
     // configure PORT_E
     GPIO_Init(GPIOE, &GPIO_InitStructure);
 
@@ -334,6 +336,8 @@ static bool gpio_init()
 /*
  * ---------------------- display control functions -------------------------------------------------------
  */
+
+// Clear the whole screen by filling it with a specifig color
 void ll_tft_clear(uint16_t color) 
 {
     uint32_t n = 0;
@@ -346,6 +350,7 @@ void ll_tft_clear(uint16_t color)
     }
 }
 
+// Set the cursorposition
 static void tft_set_cursor(uint16_t xpos, uint16_t ypos)
 {
     // set cursor
@@ -354,61 +359,69 @@ static void tft_set_cursor(uint16_t xpos, uint16_t ypos)
     TFT_REG = TFT_SSD1289_REG_22;
 }
 
+// Enable / Disable the backlight
 static void tft_set_backlight(bool state) 
 {
-    if(state){
-        GPIOB->BSRRH = GPIO_Pin_0;
-    } else {
-        GPIOB->BSRRL = GPIO_Pin_0;    
+    if(state){                      // if state is true
+        GPIOB->BSRRH = GPIO_Pin_0;  // set the backlight output
+    } else {                        // else
+        GPIOB->BSRRL = GPIO_Pin_0;  // reset the backlight    
     }
 }
 
+// Port operations on the screen RS PIN
 static void tft_reset(bool state) 
 {
-    if(state){
-        GPIOB->BSRRH = GPIO_Pin_0;
-    } else {
-        GPIOB->BSRRL = GPIO_Pin_0;    
+    if(state){                      // if state is ture
+        GPIOB->BSRRH = GPIO_Pin_0;  // Set the reset pin
+    } else {                        // else
+        GPIOB->BSRRL = GPIO_Pin_0;  // reset the reset pin
     }
 }
 
+// Send a single command to the display controller
 static void tft_write_reg(uint8_t reg_adr, uint16_t reg_value)
 {
-    TFT_REG = reg_adr;
-    TFT_RAM = reg_value;  
+    TFT_REG = reg_adr;      // set adress
+    TFT_RAM = reg_value;    // send command
 }
 
+// Read a register value of the display controller
 static uint16_t tft_read_reg(uint8_t reg_adr)
 {
-    TFT_REG = reg_adr;
-    return TFT_RAM;
+    TFT_REG = reg_adr;      // set adress
+    return TFT_RAM;         // return value
 }
 
+// This sets a window for current draw functions
 static void tft_set_window(uint16_t xstart, uint16_t ystart, uint16_t xend, uint16_t yend)
 {
     uint16_t start,end;
     uint16_t ystart_end;
 
-    start = (ystart & 0x00FF);
-    end = ((yend & 0x00FF) << 8);
-    ystart_end = (start | end);
+    start = (ystart & 0x00FF);              // Start adress of the window
+    end = ((yend & 0x00FF) << 8);           // End adress of the window
+    ystart_end = (start | end);             // Calculate y endpoint 
 
-    tft_write_reg(TFT_SSD1289_REG_44, ystart_end);  
-    tft_write_reg(TFT_SSD1289_REG_45, 319-xend);
-    tft_write_reg(TFT_SSD1289_REG_46, 319-xstart);
+    tft_write_reg(TFT_SSD1289_REG_44, ystart_end);      // Send y size
+    tft_write_reg(TFT_SSD1289_REG_45, 319-xend);        // Send x start
+    tft_write_reg(TFT_SSD1289_REG_46, 319-xstart);      // Send x end
 }
 
+// Reset a Window
 void tft_reset_window()
 {
-    tft_write_reg(0x44,239<<8);
-    tft_write_reg(0x45,0);
-    tft_write_reg(0x46,319);
+    // Commands according to the datasheet
+    tft_write_reg(0x44, 239 << 8);
+    tft_write_reg(0x45, 0);
+    tft_write_reg(0x46, 319);
 }
 
 /*
  * ---------------------- draw functions -----------------------------------------------------------
  */
 
+// Draw a line on the given coordinates
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) 
 {
     if(y1==y2){
@@ -497,12 +510,14 @@ void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16
     }    
 }
 
+// Draw a single pixel on (x,y) with the given color
 void ll_tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color) 
 {
-    tft_set_cursor(x,y);
-    TFT_RAM = color;
+    tft_set_cursor(x,y);            // Set the cursor position
+    TFT_RAM = color;                // Draw the pixel
 }
 
+// Draw a rectangle at the given coordinates with the given color
 void ll_tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) 
 {
     unsigned int tmp;
@@ -537,6 +552,7 @@ void ll_tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, u
     tft_write_reg(0x11,0x6018); // Set adresspointer direction normal again
 }
 
+// Draw a filled rectangle at the given coordinates with the given color
 void ll_tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color)
 {
     uint16_t area;

@@ -103,8 +103,8 @@ void tracking_our_update(void* tracking_config, struct Block* blocks, int num_bl
     uint16_t x = blocks[0].x; // Get x coordinate of the biggest object
     uint16_t y = blocks[0].y; // Get y coordinate of the biggest object
 
-    pixy_rcs_set_position(0, pixy_PID((FRAME_WIDTH / 2), x));  // track x
-    pixy_rcs_set_position(1, pixy_PID((FRAME_HEIGHT / 2), y)); // track y
+    pixy_rcs_set_position(0, pixy_PID_X((FRAME_WIDTH / 2), x));  // track x
+    pixy_rcs_set_position(1, pixy_PID_Y((FRAME_HEIGHT / 2), y)); // track y
 }
 
 //Variable which stores all the callbacks and settings for our tracking implementation
