@@ -50,9 +50,9 @@ uint8_t ll_tft_num_fonts() {
 QFont get_font(uint8_t fontnum) {
     switch(fontnum) {
         case 0:
-            return QFont("Monospace",8);
+            return QFont("Courier New",8);
         case 1:
-            return QFont("DejaVu Sans Mono",14);
+            return QFont("Courier New",14);
         default:
         return QFont();
     }
