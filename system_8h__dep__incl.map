@@ -1,5 +1,7 @@
 <map id="common/system/system.h" name="common/system/system.h">
 <area shape="rect" id="node2" href="$app_8c.html" title="common/app/app.c" alt="" coords="5,80,139,107"/>
-<area shape="rect" id="node3" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="163,80,367,107"/>
-<area shape="rect" id="node4" href="$system_8c.html" title="common/system/system.c" alt="" coords="391,80,569,107"/>
+<area shape="rect" id="node3" href="$screen__photomode_8c.html" title="common/app/screen_photomode.c" alt="" coords="163,80,386,107"/>
+<area shape="rect" id="node4" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="410,80,614,107"/>
+<area shape="rect" id="node5" href="$screen__tracking_8c.html" title="common/app/screen_tracking.c" alt="" coords="638,80,842,107"/>
+<area shape="rect" id="node6" href="$system_8c.html" title="common/system/system.c" alt="" coords="866,80,1043,107"/>
 </map>

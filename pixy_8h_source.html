@@ -108,159 +108,160 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define __PIXY_H__</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pixydefs_8h.html">pixydefs.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Pixy C API //</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="pixy_8h.html#ab9471c2f9186bc9b98e4c8131efd9342">   30</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_SIGNATURE          7</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="comment">// Pixy x-y position values</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="pixy_8h.html#a0834f8933ac1684e28fe4f832488b320">   33</a></span>&#160;<span class="preprocessor">  #define PIXY_MIN_X                  0</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="pixy_8h.html#aec6baba7922a62f334138aa17f3891f8">   34</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_X                  319</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="pixy_8h.html#a0e3a3aa0490fce5c19f571541a997e8c">   35</a></span>&#160;<span class="preprocessor">  #define PIXY_MIN_Y                  0</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="pixy_8h.html#a74b8105f78bc6befa6f639750714c7dd">   36</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_Y                  199</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pixydefs_8h.html">pixydefs.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// Pixy C API //</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group__pixy.html#gab9471c2f9186bc9b98e4c8131efd9342">   36</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_SIGNATURE          7</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// RC-servo values</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="pixy_8h.html#a5361e5e4628b4f8577d2febafc4da088">   39</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_MIN_POS            0</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="pixy_8h.html#a2336b04d0e7669f8491241a455653af8">   40</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_MAX_POS            1000</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="pixy_8h.html#a9182417344deee5ca45dba835416a1a3">   41</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_CENTER_POS         ((PIXY_RCS_MAX_POS-PIXY_RCS_MIN_POS)/2)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Block types</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="pixy_8h.html#ad3106d870305c42c4935dac3375d03d9">   44</a></span>&#160;<span class="preprocessor">  #define PIXY_BLOCKTYPE_NORMAL       0</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="pixy_8h.html#a3edb6eb461c90059cb4926395401b7c0">   45</a></span>&#160;<span class="preprocessor">  #define PIXY_BLOCKTYPE_COLOR_CODE   1</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="struct_block.html">   47</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct_block.html">Block</a></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/*void print(char *buf)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    {</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">      int i, j;</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">      char sig[6], d;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">      bool flag;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">      if (type==PIXY_BLOCKTYPE_COLOR_CODE)</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">      {</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">        // convert signature number to an octal string</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">        for (i=12, j=0, flag=false; i&gt;=0; i-=3)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">        {</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">          d = (signature&gt;&gt;i)&amp;0x07;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">          if (d&gt;0 &amp;&amp; !flag)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">            flag = true;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">          if (flag)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">            sig[j++] = d + &#39;0&#39;;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">        }</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">        sig[j] = &#39;\0&#39;;  </span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">        sprintf(buf, &quot;CC block! sig: %s (%d decimal) x: %d y: %d width: %d height: %d angle %d&quot;, sig, signature, x, y, width, height, angle);</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">      }</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">      else // regular block.  Note, angle is always zero, so no need to print</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">        sprintf(buf, &quot;sig: %d x: %d y: %d width: %d height: %d&quot;, signature, x, y, width, height);       </span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    }*/</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">   72</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">type</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">   73</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">signature</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">   74</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">x</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_block.html#ab0580f504a7428539be299fa71565f30">   75</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">   76</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">width</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">   77</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">height</a>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">   78</a></span>&#160;    int16_t  <a class="code" href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">angle</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  };</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ad269822960ad0073356dab75ce3050b3">pixy_init</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a2df93fdbd04ed434d281a4b9acfa0263">pixy_blocks_are_new</a>();</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ab4113dedad844bc189466552c75b47a0">pixy_get_blocks</a>(uint16_t max_blocks, <span class="keyword">struct</span> <a class="code" href="struct_block.html">Block</a> * blocks);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a72a2cd126f6a5f67842e5ff66424ccb0">pixy_service</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a3d55779001cc649ed85be1a92f09892d">pixy_command</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, ...);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="pixy_8h.html#aada09a1aeda12672050f5c3183ef6f3b">pixy_close</a>();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="pixy_8h.html#a247afb06384e4967395a7059e0bde95d">pixy_error</a>(<span class="keywordtype">int</span> error_code);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// Pixy x-y position values</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="group__pixy.html#ga0834f8933ac1684e28fe4f832488b320">   39</a></span>&#160;<span class="preprocessor">  #define PIXY_MIN_X                  0</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group__pixy.html#gaec6baba7922a62f334138aa17f3891f8">   40</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_X                  319</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__pixy.html#ga0e3a3aa0490fce5c19f571541a997e8c">   41</a></span>&#160;<span class="preprocessor">  #define PIXY_MIN_Y                  0</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="group__pixy.html#ga74b8105f78bc6befa6f639750714c7dd">   42</a></span>&#160;<span class="preprocessor">  #define PIXY_MAX_Y                  199</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// RC-servo values</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__pixy.html#ga5361e5e4628b4f8577d2febafc4da088">   45</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_MIN_POS            0</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__pixy.html#ga2336b04d0e7669f8491241a455653af8">   46</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_MAX_POS            1000</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__pixy.html#ga9182417344deee5ca45dba835416a1a3">   47</a></span>&#160;<span class="preprocessor">  #define PIXY_RCS_CENTER_POS         ((PIXY_RCS_MAX_POS-PIXY_RCS_MIN_POS)/2)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// Block types</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group__pixy.html#gad3106d870305c42c4935dac3375d03d9">   50</a></span>&#160;<span class="preprocessor">  #define PIXY_BLOCKTYPE_NORMAL       0</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__pixy.html#ga3edb6eb461c90059cb4926395401b7c0">   51</a></span>&#160;<span class="preprocessor">  #define PIXY_BLOCKTYPE_COLOR_CODE   1</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="struct_block.html">   53</a></span>&#160;  <span class="keyword">struct </span><a class="code" href="struct_block.html">Block</a></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/*void print(char *buf)</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    {</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">      int i, j;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">      char sig[6], d;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">      bool flag;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">      if (type==PIXY_BLOCKTYPE_COLOR_CODE)</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">      {</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">        // convert signature number to an octal string</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">        for (i=12, j=0, flag=false; i&gt;=0; i-=3)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">        {</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">          d = (signature&gt;&gt;i)&amp;0x07;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">          if (d&gt;0 &amp;&amp; !flag)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">            flag = true;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">          if (flag)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">            sig[j++] = d + &#39;0&#39;;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">        sig[j] = &#39;\0&#39;;  </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">        sprintf(buf, &quot;CC block! sig: %s (%d decimal) x: %d y: %d width: %d height: %d angle %d&quot;, sig, signature, x, y, width, height, angle);</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">      }</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">      else // regular block.  Note, angle is always zero, so no need to print</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">        sprintf(buf, &quot;sig: %d x: %d y: %d width: %d height: %d&quot;, signature, x, y, width, height);       </span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">    }*/</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">   78</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">type</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">   79</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">signature</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">   80</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">x</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="struct_block.html#ab0580f504a7428539be299fa71565f30">   81</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">   82</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">width</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">   83</a></span>&#160;    uint16_t <a class="code" href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">height</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">   84</a></span>&#160;    int16_t  <a class="code" href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">angle</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  };</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gad269822960ad0073356dab75ce3050b3">pixy_init</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga2df93fdbd04ed434d281a4b9acfa0263">pixy_blocks_are_new</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gab4113dedad844bc189466552c75b47a0">pixy_get_blocks</a>(uint16_t max_blocks, <span class="keyword">struct</span> <a class="code" href="struct_block.html">Block</a> * blocks);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0">pixy_service</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d">pixy_command</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *name, ...);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group__pixy.html#gaada09a1aeda12672050f5c3183ef6f3b">pixy_close</a>();</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a28045d2cfce3a28f4c7d5e6673b4bad7">pixy_led_set_RGB</a>(uint8_t red, uint8_t green, uint8_t blue);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a38582b897bb2eb5f36c6f68d2e171d05">pixy_led_set_max_current</a>(uint32_t current);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ace7a7da527f1b01abc6355fd8945d023">pixy_led_get_max_current</a>();</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ac46359533378c0822a463bdd5d2466d8">pixy_cam_set_auto_white_balance</a>(uint8_t value);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a3eb84125292a5bf39f63e8a9378ba5ad">pixy_cam_get_auto_white_balance</a>();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  uint32_t <a class="code" href="pixy_8h.html#a8c1436f86bb954d19f7c9bbb9d5e0ed1">pixy_cam_get_white_balance_value</a>();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ad2ec06c83cc4c8de8551e3151287c264">pixy_cam_set_white_balance_value</a>(uint8_t red, uint8_t green, uint8_t blue);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ad2eff98f2123b2070c64e4c442c859e7">pixy_cam_set_auto_exposure_compensation</a>(uint8_t enable);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a80fe76de4eb898969b0921ce53d83a65">pixy_cam_get_auto_exposure_compensation</a>();</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a394e2d262e6b76690b0a9cff79b7d399">pixy_cam_set_exposure_compensation</a>(uint8_t gain, uint16_t compensation);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a1e1811707c4a8db40e0c342de51ed5f4">pixy_cam_get_exposure_compensation</a>(uint8_t * gain, uint16_t * compensation);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a4abc74c8533b17d9e2aa6dfbf4c6a5e1">pixy_cam_set_brightness</a>(uint8_t brightness);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a9fda296a7a69f42625faf2e675b762ae">pixy_cam_get_brightness</a>();</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#ad8ff0e513bae5acec82c6a7e0e21685f">pixy_rcs_get_position</a>(uint8_t channel);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a5fb9213a5459dc6c74131ecabd6b5995">pixy_rcs_set_position</a>(uint8_t channel, uint16_t position);</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a45bb277d2ea7110def16186468e571f9">pixy_rcs_set_frequency</a>(uint16_t frequency);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="group__pixy.html#ga247afb06384e4967395a7059e0bde95d">pixy_error</a>(<span class="keywordtype">int</span> error_code);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga28045d2cfce3a28f4c7d5e6673b4bad7">pixy_led_set_RGB</a>(uint8_t red, uint8_t green, uint8_t blue);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga38582b897bb2eb5f36c6f68d2e171d05">pixy_led_set_max_current</a>(uint32_t current);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gace7a7da527f1b01abc6355fd8945d023">pixy_led_get_max_current</a>();</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gac46359533378c0822a463bdd5d2466d8">pixy_cam_set_auto_white_balance</a>(uint8_t value);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga3eb84125292a5bf39f63e8a9378ba5ad">pixy_cam_get_auto_white_balance</a>();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  uint32_t <a class="code" href="group__pixy.html#ga8c1436f86bb954d19f7c9bbb9d5e0ed1">pixy_cam_get_white_balance_value</a>();</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gad2ec06c83cc4c8de8551e3151287c264">pixy_cam_set_white_balance_value</a>(uint8_t red, uint8_t green, uint8_t blue);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gad2eff98f2123b2070c64e4c442c859e7">pixy_cam_set_auto_exposure_compensation</a>(uint8_t enable);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga80fe76de4eb898969b0921ce53d83a65">pixy_cam_get_auto_exposure_compensation</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga0b375c58d7ddc701d6c65845ecfc11fb">pixy_cam_set_exposure_compensation</a>(uint8_t gain, uint16_t comp);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga077b6b62e9af99fbd911b92dee2205c0">pixy_cam_get_exposure_compensation</a>(uint8_t * gain, uint16_t * comp);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga4abc74c8533b17d9e2aa6dfbf4c6a5e1">pixy_cam_set_brightness</a>(uint8_t brightness);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga9fda296a7a69f42625faf2e675b762ae">pixy_cam_get_brightness</a>();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#gad8ff0e513bae5acec82c6a7e0e21685f">pixy_rcs_get_position</a>(uint8_t channel);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995">pixy_rcs_set_position</a>(uint8_t channel, uint16_t position);</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="pixy_8h.html#a8ca61cb465cf6dc72fcae79b0c08e810">pixy_get_firmware_version</a>(uint16_t * major, uint16_t * minor, uint16_t * build);</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="pixy_8h_html_a5fb9213a5459dc6c74131ecabd6b5995"><div class="ttname"><a href="pixy_8h.html#a5fb9213a5459dc6c74131ecabd6b5995">pixy_rcs_set_position</a></div><div class="ttdeci">int pixy_rcs_set_position(uint8_t channel, uint16_t position)</div><div class="ttdoc">Set pixy servo axis position. </div></div>
-<div class="ttc" id="pixy_8h_html_a4abc74c8533b17d9e2aa6dfbf4c6a5e1"><div class="ttname"><a href="pixy_8h.html#a4abc74c8533b17d9e2aa6dfbf4c6a5e1">pixy_cam_set_brightness</a></div><div class="ttdeci">int pixy_cam_set_brightness(uint8_t brightness)</div><div class="ttdoc">Set pixy camera brightness. </div></div>
-<div class="ttc" id="pixy_8h_html_aada09a1aeda12672050f5c3183ef6f3b"><div class="ttname"><a href="pixy_8h.html#aada09a1aeda12672050f5c3183ef6f3b">pixy_close</a></div><div class="ttdeci">void pixy_close()</div><div class="ttdoc">Terminates connection with Pixy. </div></div>
-<div class="ttc" id="struct_block_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="struct_block.html#ab0580f504a7428539be299fa71565f30">Block::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> pixy.h:75</div></div>
-<div class="ttc" id="pixy_8h_html_a8ca61cb465cf6dc72fcae79b0c08e810"><div class="ttname"><a href="pixy_8h.html#a8ca61cb465cf6dc72fcae79b0c08e810">pixy_get_firmware_version</a></div><div class="ttdeci">int pixy_get_firmware_version(uint16_t *major, uint16_t *minor, uint16_t *build)</div><div class="ttdoc">Get pixy firmware version. </div></div>
-<div class="ttc" id="pixy_8h_html_ac46359533378c0822a463bdd5d2466d8"><div class="ttname"><a href="pixy_8h.html#ac46359533378c0822a463bdd5d2466d8">pixy_cam_set_auto_white_balance</a></div><div class="ttdeci">int pixy_cam_set_auto_white_balance(uint8_t value)</div><div class="ttdoc">Enable or disable pixy camera auto white balance. </div></div>
-<div class="ttc" id="pixy_8h_html_a8c1436f86bb954d19f7c9bbb9d5e0ed1"><div class="ttname"><a href="pixy_8h.html#a8c1436f86bb954d19f7c9bbb9d5e0ed1">pixy_cam_get_white_balance_value</a></div><div class="ttdeci">uint32_t pixy_cam_get_white_balance_value()</div><div class="ttdoc">Get pixy camera white balance() </div></div>
-<div class="ttc" id="struct_block_html_acb5cfd209ba75c853d03f701e7f91679"><div class="ttname"><a href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">Block::type</a></div><div class="ttdeci">uint16_t type</div><div class="ttdef"><b>Definition:</b> pixy.h:72</div></div>
-<div class="ttc" id="struct_block_html_a81c9f8d0b8c3b49d770be14dbe9f0d37"><div class="ttname"><a href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">Block::height</a></div><div class="ttdeci">uint16_t height</div><div class="ttdef"><b>Definition:</b> pixy.h:77</div></div>
-<div class="ttc" id="pixy_8h_html_ad8ff0e513bae5acec82c6a7e0e21685f"><div class="ttname"><a href="pixy_8h.html#ad8ff0e513bae5acec82c6a7e0e21685f">pixy_rcs_get_position</a></div><div class="ttdeci">int pixy_rcs_get_position(uint8_t channel)</div><div class="ttdoc">Get pixy servo axis position. </div></div>
-<div class="ttc" id="pixy_8h_html_a80fe76de4eb898969b0921ce53d83a65"><div class="ttname"><a href="pixy_8h.html#a80fe76de4eb898969b0921ce53d83a65">pixy_cam_get_auto_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_get_auto_exposure_compensation()</div><div class="ttdoc">Get pixy camera auto exposure compensation setting. </div></div>
-<div class="ttc" id="pixy_8h_html_a394e2d262e6b76690b0a9cff79b7d399"><div class="ttname"><a href="pixy_8h.html#a394e2d262e6b76690b0a9cff79b7d399">pixy_cam_set_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_set_exposure_compensation(uint8_t gain, uint16_t compensation)</div><div class="ttdoc">Set pixy camera exposure compensation. </div></div>
-<div class="ttc" id="pixy_8h_html_ad2ec06c83cc4c8de8551e3151287c264"><div class="ttname"><a href="pixy_8h.html#ad2ec06c83cc4c8de8551e3151287c264">pixy_cam_set_white_balance_value</a></div><div class="ttdeci">int pixy_cam_set_white_balance_value(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Set pixy camera white balance. </div></div>
-<div class="ttc" id="pixy_8h_html_ad2eff98f2123b2070c64e4c442c859e7"><div class="ttname"><a href="pixy_8h.html#ad2eff98f2123b2070c64e4c442c859e7">pixy_cam_set_auto_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_set_auto_exposure_compensation(uint8_t enable)</div><div class="ttdoc">Enable or disable pixy camera auto exposure compensation. </div></div>
-<div class="ttc" id="struct_block_html_ad0eab1042455a2067c812ab8071d5376"><div class="ttname"><a href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">Block::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> pixy.h:76</div></div>
-<div class="ttc" id="pixy_8h_html_a72a2cd126f6a5f67842e5ff66424ccb0"><div class="ttname"><a href="pixy_8h.html#a72a2cd126f6a5f67842e5ff66424ccb0">pixy_service</a></div><div class="ttdeci">int pixy_service()</div></div>
-<div class="ttc" id="pixy_8h_html_a28045d2cfce3a28f4c7d5e6673b4bad7"><div class="ttname"><a href="pixy_8h.html#a28045d2cfce3a28f4c7d5e6673b4bad7">pixy_led_set_RGB</a></div><div class="ttdeci">int pixy_led_set_RGB(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Set color of pixy LED. </div></div>
-<div class="ttc" id="pixy_8h_html_ace7a7da527f1b01abc6355fd8945d023"><div class="ttname"><a href="pixy_8h.html#ace7a7da527f1b01abc6355fd8945d023">pixy_led_get_max_current</a></div><div class="ttdeci">int pixy_led_get_max_current()</div><div class="ttdoc">Get pixy LED maximum current. </div></div>
-<div class="ttc" id="pixy_8h_html_a3eb84125292a5bf39f63e8a9378ba5ad"><div class="ttname"><a href="pixy_8h.html#a3eb84125292a5bf39f63e8a9378ba5ad">pixy_cam_get_auto_white_balance</a></div><div class="ttdeci">int pixy_cam_get_auto_white_balance()</div><div class="ttdoc">Get pixy camera auto white balance setting. </div></div>
-<div class="ttc" id="pixy_8h_html_a38582b897bb2eb5f36c6f68d2e171d05"><div class="ttname"><a href="pixy_8h.html#a38582b897bb2eb5f36c6f68d2e171d05">pixy_led_set_max_current</a></div><div class="ttdeci">int pixy_led_set_max_current(uint32_t current)</div><div class="ttdoc">Set pixy LED maximum current. </div></div>
-<div class="ttc" id="pixy_8h_html_a1e1811707c4a8db40e0c342de51ed5f4"><div class="ttname"><a href="pixy_8h.html#a1e1811707c4a8db40e0c342de51ed5f4">pixy_cam_get_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_get_exposure_compensation(uint8_t *gain, uint16_t *compensation)</div><div class="ttdoc">Get pixy camera exposure compensation. </div></div>
-<div class="ttc" id="struct_block_html_a78963c1ed5ab32c4ac2e81797f484e0f"><div class="ttname"><a href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">Block::signature</a></div><div class="ttdeci">uint16_t signature</div><div class="ttdef"><b>Definition:</b> pixy.h:73</div></div>
-<div class="ttc" id="pixy_8h_html_a3d55779001cc649ed85be1a92f09892d"><div class="ttname"><a href="pixy_8h.html#a3d55779001cc649ed85be1a92f09892d">pixy_command</a></div><div class="ttdeci">int pixy_command(const char *name,...)</div><div class="ttdoc">Send a command to Pixy. </div></div>
-<div class="ttc" id="struct_block_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">Block::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> pixy.h:74</div></div>
-<div class="ttc" id="pixy_8h_html_a9fda296a7a69f42625faf2e675b762ae"><div class="ttname"><a href="pixy_8h.html#a9fda296a7a69f42625faf2e675b762ae">pixy_cam_get_brightness</a></div><div class="ttdeci">int pixy_cam_get_brightness()</div><div class="ttdoc">Get pixy camera brightness. </div></div>
-<div class="ttc" id="pixy_8h_html_a2df93fdbd04ed434d281a4b9acfa0263"><div class="ttname"><a href="pixy_8h.html#a2df93fdbd04ed434d281a4b9acfa0263">pixy_blocks_are_new</a></div><div class="ttdeci">int pixy_blocks_are_new()</div><div class="ttdoc">Indicates when new block data from Pixy is received. </div></div>
-<div class="ttc" id="struct_block_html"><div class="ttname"><a href="struct_block.html">Block</a></div><div class="ttdef"><b>Definition:</b> pixy.h:47</div></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga45bb277d2ea7110def16186468e571f9">pixy_rcs_set_frequency</a>(uint16_t frequency);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <span class="keywordtype">int</span> <a class="code" href="group__pixy.html#ga8ca61cb465cf6dc72fcae79b0c08e810">pixy_get_firmware_version</a>(uint16_t * major, uint16_t * minor, uint16_t * build);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;}</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="group__pixy_html_ga4abc74c8533b17d9e2aa6dfbf4c6a5e1"><div class="ttname"><a href="group__pixy.html#ga4abc74c8533b17d9e2aa6dfbf4c6a5e1">pixy_cam_set_brightness</a></div><div class="ttdeci">int pixy_cam_set_brightness(uint8_t brightness)</div><div class="ttdoc">Set pixy camera brightness. </div></div>
+<div class="ttc" id="group__pixy_html_ga8ca61cb465cf6dc72fcae79b0c08e810"><div class="ttname"><a href="group__pixy.html#ga8ca61cb465cf6dc72fcae79b0c08e810">pixy_get_firmware_version</a></div><div class="ttdeci">int pixy_get_firmware_version(uint16_t *major, uint16_t *minor, uint16_t *build)</div><div class="ttdoc">Get pixy firmware version. </div></div>
+<div class="ttc" id="group__pixy_html_ga45bb277d2ea7110def16186468e571f9"><div class="ttname"><a href="group__pixy.html#ga45bb277d2ea7110def16186468e571f9">pixy_rcs_set_frequency</a></div><div class="ttdeci">int pixy_rcs_set_frequency(uint16_t frequency)</div><div class="ttdoc">Set pixy servo pulse width modulation (PWM) frequency. </div></div>
+<div class="ttc" id="group__pixy_html_gad2ec06c83cc4c8de8551e3151287c264"><div class="ttname"><a href="group__pixy.html#gad2ec06c83cc4c8de8551e3151287c264">pixy_cam_set_white_balance_value</a></div><div class="ttdeci">int pixy_cam_set_white_balance_value(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Set pixy camera white balance. </div></div>
+<div class="ttc" id="struct_block_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="struct_block.html#ab0580f504a7428539be299fa71565f30">Block::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> pixy.h:81</div></div>
+<div class="ttc" id="group__pixy_html_ga80fe76de4eb898969b0921ce53d83a65"><div class="ttname"><a href="group__pixy.html#ga80fe76de4eb898969b0921ce53d83a65">pixy_cam_get_auto_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_get_auto_exposure_compensation()</div><div class="ttdoc">Get pixy camera auto exposure compensation setting. </div></div>
+<div class="ttc" id="group__pixy_html_gad8ff0e513bae5acec82c6a7e0e21685f"><div class="ttname"><a href="group__pixy.html#gad8ff0e513bae5acec82c6a7e0e21685f">pixy_rcs_get_position</a></div><div class="ttdeci">int pixy_rcs_get_position(uint8_t channel)</div><div class="ttdoc">Get pixy servo axis position. </div></div>
+<div class="ttc" id="group__pixy_html_ga2df93fdbd04ed434d281a4b9acfa0263"><div class="ttname"><a href="group__pixy.html#ga2df93fdbd04ed434d281a4b9acfa0263">pixy_blocks_are_new</a></div><div class="ttdeci">int pixy_blocks_are_new()</div><div class="ttdoc">Indicates when new block data from Pixy is received. </div></div>
+<div class="ttc" id="group__pixy_html_ga9fda296a7a69f42625faf2e675b762ae"><div class="ttname"><a href="group__pixy.html#ga9fda296a7a69f42625faf2e675b762ae">pixy_cam_get_brightness</a></div><div class="ttdeci">int pixy_cam_get_brightness()</div><div class="ttdoc">Get pixy camera brightness. </div></div>
+<div class="ttc" id="group__pixy_html_ga72a2cd126f6a5f67842e5ff66424ccb0"><div class="ttname"><a href="group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0">pixy_service</a></div><div class="ttdeci">int pixy_service()</div></div>
+<div class="ttc" id="group__pixy_html_ga3d55779001cc649ed85be1a92f09892d"><div class="ttname"><a href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d">pixy_command</a></div><div class="ttdeci">int pixy_command(const char *name,...)</div><div class="ttdoc">Send a command to Pixy. </div></div>
+<div class="ttc" id="group__pixy_html_ga0b375c58d7ddc701d6c65845ecfc11fb"><div class="ttname"><a href="group__pixy.html#ga0b375c58d7ddc701d6c65845ecfc11fb">pixy_cam_set_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_set_exposure_compensation(uint8_t gain, uint16_t comp)</div><div class="ttdoc">Set pixy camera exposure compensation. </div></div>
+<div class="ttc" id="struct_block_html_acb5cfd209ba75c853d03f701e7f91679"><div class="ttname"><a href="struct_block.html#acb5cfd209ba75c853d03f701e7f91679">Block::type</a></div><div class="ttdeci">uint16_t type</div><div class="ttdef"><b>Definition:</b> pixy.h:78</div></div>
+<div class="ttc" id="struct_block_html_a81c9f8d0b8c3b49d770be14dbe9f0d37"><div class="ttname"><a href="struct_block.html#a81c9f8d0b8c3b49d770be14dbe9f0d37">Block::height</a></div><div class="ttdeci">uint16_t height</div><div class="ttdef"><b>Definition:</b> pixy.h:83</div></div>
+<div class="ttc" id="group__pixy_html_ga38582b897bb2eb5f36c6f68d2e171d05"><div class="ttname"><a href="group__pixy.html#ga38582b897bb2eb5f36c6f68d2e171d05">pixy_led_set_max_current</a></div><div class="ttdeci">int pixy_led_set_max_current(uint32_t current)</div><div class="ttdoc">Set pixy LED maximum current. </div></div>
+<div class="ttc" id="group__pixy_html_gac46359533378c0822a463bdd5d2466d8"><div class="ttname"><a href="group__pixy.html#gac46359533378c0822a463bdd5d2466d8">pixy_cam_set_auto_white_balance</a></div><div class="ttdeci">int pixy_cam_set_auto_white_balance(uint8_t value)</div><div class="ttdoc">Enable or disable pixy camera auto white balance. </div></div>
+<div class="ttc" id="group__pixy_html_gad2eff98f2123b2070c64e4c442c859e7"><div class="ttname"><a href="group__pixy.html#gad2eff98f2123b2070c64e4c442c859e7">pixy_cam_set_auto_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_set_auto_exposure_compensation(uint8_t enable)</div><div class="ttdoc">Enable or disable pixy camera auto exposure compensation. </div></div>
+<div class="ttc" id="group__pixy_html_gad269822960ad0073356dab75ce3050b3"><div class="ttname"><a href="group__pixy.html#gad269822960ad0073356dab75ce3050b3">pixy_init</a></div><div class="ttdeci">int pixy_init()</div><div class="ttdoc">Creates a connection with Pixy and listens for Pixy messages. </div></div>
+<div class="ttc" id="struct_block_html_ad0eab1042455a2067c812ab8071d5376"><div class="ttname"><a href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">Block::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> pixy.h:82</div></div>
+<div class="ttc" id="group__pixy_html_ga5fb9213a5459dc6c74131ecabd6b5995"><div class="ttname"><a href="group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995">pixy_rcs_set_position</a></div><div class="ttdeci">int pixy_rcs_set_position(uint8_t channel, uint16_t position)</div><div class="ttdoc">Set pixy servo axis position. </div></div>
+<div class="ttc" id="group__pixy_html_ga247afb06384e4967395a7059e0bde95d"><div class="ttname"><a href="group__pixy.html#ga247afb06384e4967395a7059e0bde95d">pixy_error</a></div><div class="ttdeci">void pixy_error(int error_code)</div><div class="ttdoc">Send description of pixy error to stdout. </div></div>
+<div class="ttc" id="struct_block_html_a78963c1ed5ab32c4ac2e81797f484e0f"><div class="ttname"><a href="struct_block.html#a78963c1ed5ab32c4ac2e81797f484e0f">Block::signature</a></div><div class="ttdeci">uint16_t signature</div><div class="ttdef"><b>Definition:</b> pixy.h:79</div></div>
+<div class="ttc" id="group__pixy_html_gaada09a1aeda12672050f5c3183ef6f3b"><div class="ttname"><a href="group__pixy.html#gaada09a1aeda12672050f5c3183ef6f3b">pixy_close</a></div><div class="ttdeci">void pixy_close()</div><div class="ttdoc">Terminates connection with Pixy. </div></div>
+<div class="ttc" id="group__pixy_html_ga077b6b62e9af99fbd911b92dee2205c0"><div class="ttname"><a href="group__pixy.html#ga077b6b62e9af99fbd911b92dee2205c0">pixy_cam_get_exposure_compensation</a></div><div class="ttdeci">int pixy_cam_get_exposure_compensation(uint8_t *gain, uint16_t *comp)</div><div class="ttdoc">Get pixy camera exposure compensation. </div></div>
+<div class="ttc" id="group__pixy_html_gab4113dedad844bc189466552c75b47a0"><div class="ttname"><a href="group__pixy.html#gab4113dedad844bc189466552c75b47a0">pixy_get_blocks</a></div><div class="ttdeci">int pixy_get_blocks(uint16_t max_blocks, struct Block *blocks)</div><div class="ttdoc">Copies up to &#39;max_blocks&#39; number of Blocks to the address pointed to by &#39;blocks&#39;. ...</div></div>
+<div class="ttc" id="group__pixy_html_ga28045d2cfce3a28f4c7d5e6673b4bad7"><div class="ttname"><a href="group__pixy.html#ga28045d2cfce3a28f4c7d5e6673b4bad7">pixy_led_set_RGB</a></div><div class="ttdeci">int pixy_led_set_RGB(uint8_t red, uint8_t green, uint8_t blue)</div><div class="ttdoc">Set color of pixy LED. </div></div>
+<div class="ttc" id="struct_block_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">Block::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> pixy.h:80</div></div>
+<div class="ttc" id="group__pixy_html_ga8c1436f86bb954d19f7c9bbb9d5e0ed1"><div class="ttname"><a href="group__pixy.html#ga8c1436f86bb954d19f7c9bbb9d5e0ed1">pixy_cam_get_white_balance_value</a></div><div class="ttdeci">uint32_t pixy_cam_get_white_balance_value()</div><div class="ttdoc">Get pixy camera white balance() </div></div>
+<div class="ttc" id="struct_block_html"><div class="ttname"><a href="struct_block.html">Block</a></div><div class="ttdef"><b>Definition:</b> pixy.h:53</div></div>
 <div class="ttc" id="pixydefs_8h_html"><div class="ttname"><a href="pixydefs_8h.html">pixydefs.h</a></div></div>
-<div class="ttc" id="pixy_8h_html_ad269822960ad0073356dab75ce3050b3"><div class="ttname"><a href="pixy_8h.html#ad269822960ad0073356dab75ce3050b3">pixy_init</a></div><div class="ttdeci">int pixy_init()</div><div class="ttdoc">Creates a connection with Pixy and listens for Pixy messages. </div></div>
-<div class="ttc" id="pixy_8h_html_a247afb06384e4967395a7059e0bde95d"><div class="ttname"><a href="pixy_8h.html#a247afb06384e4967395a7059e0bde95d">pixy_error</a></div><div class="ttdeci">void pixy_error(int error_code)</div><div class="ttdoc">Send description of pixy error to stdout. </div></div>
-<div class="ttc" id="pixy_8h_html_a45bb277d2ea7110def16186468e571f9"><div class="ttname"><a href="pixy_8h.html#a45bb277d2ea7110def16186468e571f9">pixy_rcs_set_frequency</a></div><div class="ttdeci">int pixy_rcs_set_frequency(uint16_t frequency)</div><div class="ttdoc">Set pixy servo pulse width modulation (PWM) frequency. </div></div>
-<div class="ttc" id="pixy_8h_html_ab4113dedad844bc189466552c75b47a0"><div class="ttname"><a href="pixy_8h.html#ab4113dedad844bc189466552c75b47a0">pixy_get_blocks</a></div><div class="ttdeci">int pixy_get_blocks(uint16_t max_blocks, struct Block *blocks)</div><div class="ttdoc">Copies up to &#39;max_blocks&#39; number of Blocks to the address pointed to by &#39;blocks&#39;. ...</div></div>
-<div class="ttc" id="struct_block_html_a0674cf41ba25ce1925233d55ea692994"><div class="ttname"><a href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">Block::angle</a></div><div class="ttdeci">int16_t angle</div><div class="ttdef"><b>Definition:</b> pixy.h:78</div></div>
+<div class="ttc" id="group__pixy_html_ga3eb84125292a5bf39f63e8a9378ba5ad"><div class="ttname"><a href="group__pixy.html#ga3eb84125292a5bf39f63e8a9378ba5ad">pixy_cam_get_auto_white_balance</a></div><div class="ttdeci">int pixy_cam_get_auto_white_balance()</div><div class="ttdoc">Get pixy camera auto white balance setting. </div></div>
+<div class="ttc" id="group__pixy_html_gace7a7da527f1b01abc6355fd8945d023"><div class="ttname"><a href="group__pixy.html#gace7a7da527f1b01abc6355fd8945d023">pixy_led_get_max_current</a></div><div class="ttdeci">int pixy_led_get_max_current()</div><div class="ttdoc">Get pixy LED maximum current. </div></div>
+<div class="ttc" id="struct_block_html_a0674cf41ba25ce1925233d55ea692994"><div class="ttname"><a href="struct_block.html#a0674cf41ba25ce1925233d55ea692994">Block::angle</a></div><div class="ttdeci">int16_t angle</div><div class="ttdef"><b>Definition:</b> pixy.h:84</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

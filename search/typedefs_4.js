@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['touch_5fcallback',['TOUCH_CALLBACK',['../group__touch.html#ga6150d318348792e4c90c9047f88df158',1,'touch.h']]]
+  ['screen_5fcallback',['SCREEN_CALLBACK',['../group__screen.html#gad87c84be7c1bc93ec95a1fa03f49e06d',1,'screen.h']]],
+  ['screen_5fstruct',['SCREEN_STRUCT',['../group__screen.html#gaf7783b8728d6d218aa9e3b29eaf9689c',1,'screen.h']]]
 ];

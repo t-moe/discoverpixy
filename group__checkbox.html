@@ -106,7 +106,6 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga4e76e0aec1a3ec620e09161ed2869b14"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__checkbox.html#ga4e76e0aec1a3ec620e09161ed2869b14">CHECKBOX_CALLBACK</a>) (void *checkbox, bool checked)</td></tr>
-<tr class="memdesc:ga4e76e0aec1a3ec620e09161ed2869b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer used...  <a href="#ga4e76e0aec1a3ec620e09161ed2869b14">More...</a><br /></td></tr>
 <tr class="separator:ga4e76e0aec1a3ec620e09161ed2869b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -121,7 +120,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga3e07fb73eb79e8cf6db8f70455f09a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The Checkbox Gui-Element </p>
+<p>The Checkbox Gui-Element is a clickable, rectangular box with an optional tickmark inside of it. When the checkbox is pressed and released it's tick state changes and you will be notified via the provided callback. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="gac07a837d568fb96977a0658e49ca2ce8"></a>
 <div class="memitem">
@@ -145,8 +144,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Function pointer used... </p>
+<p>Prototype for Event Listeners (called when the checkbox state has changed) </p><dl class="section note"><dt>Note</dt><dd>You should NOT execute long running things in this callback nor should you update the gui. But you can call <a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate()</a> for instance. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox</td><td>The pointer to the <a class="el" href="struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html">CHECKBOX_STRUCT</a> where to corresponding Checkbox has changed the state </td></tr>
+    <tr><td class="paramname">checked</td><td>A boolean which indicates whether the checkbox is now checked or not. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -164,13 +169,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds a checkbox. Your Callback will be called from now on, if the checkbox changes state </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox</td><td>A Pointer to the preinitialized <a class="el" href="struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html">CHECKBOX_STRUCT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__checkbox_gafc328cff61a651c7b7175515b37c2f6c_cgraph.png" border="0" usemap="#group__checkbox_gafc328cff61a651c7b7175515b37c2f6c_cgraph" alt=""/></div>
 <map name="group__checkbox_gafc328cff61a651c7b7175515b37c2f6c_cgraph" id="group__checkbox_gafc328cff61a651c7b7175515b37c2f6c_cgraph">
-<area shape="rect" id="node2" href="group__touch.html#gad32e5d122ec3f5f88bc6b2d9f4a629f8" title="touch_have_empty" alt="" coords="192,5,323,32"/><area shape="rect" id="node3" href="checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="201,56,314,83"/><area shape="rect" id="node9" href="group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="184,107,331,133"/><area shape="rect" id="node12" href="group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="189,157,325,184"/><area shape="rect" id="node4" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="389,107,516,133"/><area shape="rect" id="node6" href="group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="379,56,527,83"/><area shape="rect" id="node5" href="ll__tft_8h.html#a3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="575,107,715,133"/><area shape="rect" id="node7" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="597,56,692,83"/><area shape="rect" id="node8" href="ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="763,56,869,83"/><area shape="rect" id="node10" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="397,157,509,184"/><area shape="rect" id="node11" href="ll__tft_8h.html#a0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="582,157,707,184"/></map>
+<area shape="rect" id="node2" href="group__touch.html#gad32e5d122ec3f5f88bc6b2d9f4a629f8" title="touch_have_empty" alt="" coords="192,5,323,32"/><area shape="rect" id="node3" href="checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="201,56,314,83"/><area shape="rect" id="node9" href="group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="184,107,331,133"/><area shape="rect" id="node12" href="group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="189,157,325,184"/><area shape="rect" id="node4" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="389,107,516,133"/><area shape="rect" id="node6" href="group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="379,56,527,83"/><area shape="rect" id="node5" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="575,107,715,133"/><area shape="rect" id="node7" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="597,56,692,83"/><area shape="rect" id="node8" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="763,56,869,83"/><area shape="rect" id="node10" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="397,157,509,184"/><area shape="rect" id="node11" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="582,157,707,184"/></map>
 </div>
 </p>
 
@@ -198,13 +210,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Redraws the checkbox. Call this method if you have to redraw the entire screen or if you want to draw a checkbox on top of an image. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox</td><td>A Pointer to the <a class="el" href="struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html">CHECKBOX_STRUCT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__checkbox_ga3e07fb73eb79e8cf6db8f70455f09a92_cgraph.png" border="0" usemap="#group__checkbox_ga3e07fb73eb79e8cf6db8f70455f09a92_cgraph" alt=""/></div>
 <map name="group__checkbox_ga3e07fb73eb79e8cf6db8f70455f09a92_cgraph" id="group__checkbox_ga3e07fb73eb79e8cf6db8f70455f09a92_cgraph">
-<area shape="rect" id="node2" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="218,5,330,32"/><area shape="rect" id="node4" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="211,56,337,83"/><area shape="rect" id="node6" href="group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="200,107,348,133"/><area shape="rect" id="node3" href="ll__tft_8h.html#a0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="403,5,529,32"/><area shape="rect" id="node5" href="ll__tft_8h.html#a3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="396,56,536,83"/><area shape="rect" id="node7" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="419,107,513,133"/><area shape="rect" id="node8" href="ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="584,107,691,133"/></map>
+<area shape="rect" id="node2" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="218,5,330,32"/><area shape="rect" id="node4" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="211,56,337,83"/><area shape="rect" id="node6" href="group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="200,107,348,133"/><area shape="rect" id="node3" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="403,5,529,32"/><area shape="rect" id="node5" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="396,56,536,83"/><area shape="rect" id="node7" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="419,107,513,133"/><area shape="rect" id="node8" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="584,107,691,133"/></map>
 </div>
 </p>
 
@@ -232,6 +250,12 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Removes the checkbox. You will no longer receive events for this checkbox. This function will not overdraw the region where the checkbox was located. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox</td><td>A Pointer to the <a class="el" href="struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html">CHECKBOX_STRUCT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -266,13 +290,19 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Updates the checkbox. Call this function when you change the state of the checkbox through code. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">checkbox</td><td>A Pointer to the <a class="el" href="struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html">CHECKBOX_STRUCT</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__checkbox_ga669924dea6a4427dc58d40a5691f677e_cgraph.png" border="0" usemap="#group__checkbox_ga669924dea6a4427dc58d40a5691f677e_cgraph" alt=""/></div>
 <map name="group__checkbox_ga669924dea6a4427dc58d40a5691f677e_cgraph" id="group__checkbox_ga669924dea6a4427dc58d40a5691f677e_cgraph">
-<area shape="rect" id="node2" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="201,5,296,32"/><area shape="rect" id="node3" href="ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="344,5,451,32"/></map>
+<area shape="rect" id="node2" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="201,5,296,32"/><area shape="rect" id="node3" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="344,5,451,32"/></map>
 </div>
 </p>
 
@@ -290,7 +320,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['path',['path',['../struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a3b02c6de5c049804444a246f7fdf46b4',1,'DIRECTORY_STRUCT']]],
-  ['pixy_5fconnected',['pixy_connected',['../screen__pixytest_8c.html#a642398f726d9124d8a2e5e3003fa6348',1,'screen_pixytest.c']]],
-  ['pixy_5fpos',['pixy_pos',['../screen__pixytest_8c.html#af79762591f29f1c5205a3c7db0979368',1,'screen_pixytest.c']]],
-  ['pixy_5frunning',['pixy_running',['../screen__pixytest_8c.html#aa015542dd264f864c7409481f2ccec47',1,'screen_pixytest.c']]],
-  ['pos',['pos',['../touch_8c.html#a364699025317e6e6ff3d1411802b37e6',1,'touch.c']]]
+  ['old_5fpos',['old_pos',['../screen__photomode_8c.html#ae975bea55f48890b48fb10b6e3a3d74e',1,'screen_photomode.c']]],
+  ['oldstate',['oldState',['../touch_8c.html#a0426dedaaca3b21d6346e9415f524a12',1,'touch.c']]],
+  ['on_5fenter',['on_enter',['../struct_s_c_r_e_e_n___s.html#ae6559e38ebbedb8f94a8754256dc454b',1,'SCREEN_S']]],
+  ['on_5fleave',['on_leave',['../struct_s_c_r_e_e_n___s.html#a5e8f3db07ddecd10762ce1088cb2fbd8',1,'SCREEN_S']]],
+  ['on_5fupdate',['on_update',['../struct_s_c_r_e_e_n___s.html#ac795215b462e455f4d482f38c05e0b40',1,'SCREEN_S']]]
 ];

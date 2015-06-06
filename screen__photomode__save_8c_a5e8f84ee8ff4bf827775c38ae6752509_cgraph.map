@@ -1,0 +1,29 @@
+<map id="update" name="update">
+<area shape="rect" id="node2" href="$group__filesystem.html#ga8b1099cbd3464fbe64f2010f16d87101" title="filesystem_dir_open" alt="" coords="117,5,255,32"/>
+<area shape="rect" id="node4" href="$group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="345,81,437,108"/>
+<area shape="rect" id="node8" href="$group__filesystem.html#gab8001e040f37dc57b18e4155532b59ce" title="filesystem_dir_close" alt="" coords="116,157,256,184"/>
+<area shape="rect" id="node10" href="$group__tft.html#ga765c521ee1b01ab0c34449936500291b" title="tft_print_formatted" alt="" coords="123,107,249,133"/>
+<area shape="rect" id="node11" href="$screen__photomode__save_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="150,208,222,235"/>
+<area shape="rect" id="node14" href="$group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="118,259,254,285"/>
+<area shape="rect" id="node15" href="$group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0" title="pixy_service" alt="" coords="139,309,233,336"/>
+<area shape="rect" id="node16" href="$group__filesystem.html#gabd043128e80a4f0573b1360d921b046c" title="filesystem_file_open" alt="" coords="117,360,255,387"/>
+<area shape="rect" id="node18" href="$group__filesystem.html#gac447af479c334caa207d6c279571d8a2" title="filesystem_file_seek" alt="" coords="685,411,824,437"/>
+<area shape="rect" id="node20" href="$group__filesystem.html#gae7124857f3ab32f6032ef129f2a80000" title="filesystem_file_write" alt="" coords="685,537,824,564"/>
+<area shape="rect" id="node22" href="$group__filesystem.html#ga0e6cc31bf4c889249e13254306994c2f" title="filesystem_file_close" alt="" coords="115,617,257,644"/>
+<area shape="rect" id="node24" href="$pixy__helper_8c.html#aeb47b641ad8f8cb10c26debb27c7dead" title="pixy_save_full_frame" alt="" coords="115,461,257,488"/>
+<area shape="rect" id="node3" href="$group__ll__filesystem.html#ga572cb127d4e8affa9701d8562397389e" title="ll_filesystem_dir_open" alt="" coords="315,5,466,32"/>
+<area shape="rect" id="node5" href="$group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="524,31,637,57"/>
+<area shape="rect" id="node6" href="$group__ll__tft.html#ga408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="525,81,637,108"/>
+<area shape="rect" id="node7" href="$group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="525,132,636,159"/>
+<area shape="rect" id="node9" href="$group__ll__filesystem.html#ga43292876112535a7cf9bb26201ed8096" title="ll_filesystem_dir_close" alt="" coords="314,157,467,184"/>
+<area shape="rect" id="node12" href="$group__touch.html#ga42b918ead4f536a63f79601ab2978227" title="touch_get_last_point" alt="" coords="319,208,462,235"/>
+<area shape="rect" id="node13" href="$group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="315,259,466,285"/>
+<area shape="rect" id="node17" href="$group__ll__filesystem.html#ga61e4a1cdb3435031c3a9df014ab21d08" title="ll_filesystem_file_open" alt="" coords="315,360,467,387"/>
+<area shape="rect" id="node19" href="$group__ll__filesystem.html#ga27b21c519c928bc7767fbdcbb9209148" title="ll_filesystem_file_seek" alt="" coords="872,411,1024,437"/>
+<area shape="rect" id="node21" href="$group__ll__filesystem.html#gab7ce3131ebbf7c556c9ebeea312fce02" title="ll_filesystem_file\l_write" alt="" coords="889,530,1007,571"/>
+<area shape="rect" id="node23" href="$group__ll__filesystem.html#ga847113d1c2bffa87807991e2c047bd17" title="ll_filesystem_file\l_close" alt="" coords="332,614,449,655"/>
+<area shape="rect" id="node25" href="$pixy__helper_8c.html#af0820ad9bb1ae6791fecb3916372c479" title="pixy_save_cropped_frame" alt="" coords="305,461,476,488"/>
+<area shape="rect" id="node26" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="525,512,636,539"/>
+<area shape="rect" id="node27" href="$pixy__helper_8c.html#a9b12014ced2f09e5e7d6646b966552ef" title="saveBA81" alt="" coords="541,461,621,488"/>
+<area shape="rect" id="node28" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="697,461,813,488"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="touchCB" name="touchCB">
+<area shape="rect" id="node2" href="$group__touch.html#ga42b918ead4f536a63f79601ab2978227" title="touch_get_last_point" alt="" coords="129,5,272,32"/>
+<area shape="rect" id="node3" href="$group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="125,56,276,83"/>
+</map>

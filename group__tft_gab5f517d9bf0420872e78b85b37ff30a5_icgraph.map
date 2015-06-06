@@ -1,8 +1,9 @@
 <map id="tft_draw_rectangle" name="tft_draw_rectangle">
 <area shape="rect" id="node2" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="210,5,297,32"/>
-<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="553,81,604,108"/>
-<area shape="rect" id="node5" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="197,107,310,133"/>
-<area shape="rect" id="node7" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="180,157,327,184"/>
+<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="553,107,604,133"/>
+<area shape="rect" id="node5" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="223,107,284,133"/>
+<area shape="rect" id="node6" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="197,157,310,184"/>
+<area shape="rect" id="node8" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="180,208,327,235"/>
 <area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="415,5,465,32"/>
-<area shape="rect" id="node6" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="375,107,505,133"/>
+<area shape="rect" id="node7" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="375,157,505,184"/>
 </map>

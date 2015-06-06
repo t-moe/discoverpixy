@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="summary">
+<a href="#groups">Modules</a> &#124;
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
@@ -84,7 +85,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Touch</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for Touch:</div>
+<div class="dyncontent">
+<center><table><tr><td><img src="group__touch.png" border="0" alt="" usemap="#group____touch"/>
+<map name="group____touch" id="group____touch">
+<area shape="rect" id="node1" href="group__calibrate.html" title="Calibrate (Screen)" alt="" coords="109,5,236,32"/></map>
+</td></tr></table></center>
+</div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__calibrate"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__calibrate.html">Calibrate (Screen)</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a></td></tr>
@@ -119,7 +133,7 @@ Enumerations</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ga0ff491e3e07321fef794d4f07b103c0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#ga0ff491e3e07321fef794d4f07b103c0f">touch_init</a> ()</td></tr>
 <tr class="separator:ga0ff491e3e07321fef794d4f07b103c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaa440ed2415b6d37efa1ecf36cc9637f0">touch_add_raw_event</a> (uint16_t x, uint16_t y, <a class="el" href="group__touch.html#gaf9cbd5f564fae35ce693c446ca8bdd9e">TOUCH_STATE</a> state)</td></tr>
+<tr class="memitem:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaa440ed2415b6d37efa1ecf36cc9637f0">touch_add_raw_event</a> (uint16_t x, uint16_t y, <a class="el" href="group__touch.html#gaf9cbd5f564fae35ce693c446ca8bdd9e">TOUCH_STATE</a> <a class="el" href="screen__tracking_8c.html#a51d707e6287e315967c1656b68510f25">state</a>)</td></tr>
 <tr class="separator:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad32e5d122ec3f5f88bc6b2d9f4a629f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gad32e5d122ec3f5f88bc6b2d9f4a629f8">touch_have_empty</a> (unsigned char num)</td></tr>
 <tr class="separator:gad32e5d122ec3f5f88bc6b2d9f4a629f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,6 +143,10 @@ Functions</h2></td></tr>
 <tr class="separator:gaa7d6cd569335d0ddfc9eeab479f3a0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42b918ead4f536a63f79601ab2978227"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_p_o_i_n_t___s_t_r_u_c_t.html">POINT_STRUCT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#ga42b918ead4f536a63f79601ab2978227">touch_get_last_point</a> ()</td></tr>
 <tr class="separator:ga42b918ead4f536a63f79601ab2978227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc714477cb936ab22e00904a69bbc022"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gacc714477cb936ab22e00904a69bbc022">touch_set_calibration_values</a> (int xs, int dx, int ys, int dy)</td></tr>
+<tr class="separator:gacc714477cb936ab22e00904a69bbc022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba794e030c65354b244dc264ed04dfdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaba794e030c65354b244dc264ed04dfdd">touch_set_value_convert_mode</a> (bool <a class="el" href="touch_8c.html#aada9c4e98a37ca59cdbbdbdda4904eb8">use_calibration</a>)</td></tr>
+<tr class="separator:gaba794e030c65354b244dc264ed04dfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>The Touch module provides access to the touch controller, and executes a callback if a certain region is touched </p>
@@ -142,7 +160,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Prototype for Event Listeners (called for every occurring, hooked action) </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Prototype for Event Listeners (called for every occurring, hooked action) </p><dl class="section note"><dt>Note</dt><dd>You should NOT execute long running things in this callback nor should you update the gui. But you can call <a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate()</a> for instance. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">touchArea</td><td>The pointer to the <a class="el" href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a> in which the event occurred </td></tr>
     <tr><td class="paramname">triggeredAction</td><td>The Action which occurred </td></tr>
@@ -268,7 +287,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__touch_ga42b918ead4f536a63f79601ab2978227_icgraph.png" border="0" usemap="#group__touch_ga42b918ead4f536a63f79601ab2978227_icgraph" alt=""/></div>
 <map name="group__touch_ga42b918ead4f536a63f79601ab2978227_icgraph" id="group__touch_ga42b918ead4f536a63f79601ab2978227_icgraph">
-<area shape="rect" id="node2" href="screen__pixytest_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="196,5,268,32"/><area shape="rect" id="node3" href="screen__pixytest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="316,5,367,32"/></map>
+<area shape="rect" id="node2" href="screen__photomode_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="196,5,268,32"/><area shape="rect" id="node4" href="screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="201,56,263,83"/><area shape="rect" id="node3" href="screen__photomode_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="316,5,367,32"/></map>
 </div>
 </p>
 
@@ -325,7 +344,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__touch_ga0ff491e3e07321fef794d4f07b103c0f_cgraph.png" border="0" usemap="#group__touch_ga0ff491e3e07321fef794d4f07b103c0f_cgraph" alt=""/></div>
 <map name="group__touch_ga0ff491e3e07321fef794d4f07b103c0f_cgraph" id="group__touch_ga0ff491e3e07321fef794d4f07b103c0f_cgraph">
-<area shape="rect" id="node2" href="ll__touch_8h.html#a91ec460ea9b170c352be4173da2eaf48" title="ll_touch_init" alt="" coords="132,5,223,32"/></map>
+<area shape="rect" id="node2" href="group__ll__touch.html#ga91ec460ea9b170c352be4173da2eaf48" title="ll_touch_init" alt="" coords="132,5,223,32"/></map>
 </div>
 </p>
 
@@ -366,9 +385,87 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__touch_ga3adc36f55b7475b3f652c38c0e23d741_icgraph.png" border="0" usemap="#group__touch_ga3adc36f55b7475b3f652c38c0e23d741_icgraph" alt=""/></div>
 <map name="group__touch_ga3adc36f55b7475b3f652c38c0e23d741_icgraph" id="group__touch_ga3adc36f55b7475b3f652c38c0e23d741_icgraph">
-<area shape="rect" id="node2" href="screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="559,95,609,122"/><area shape="rect" id="node3" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="199,56,310,83"/><area shape="rect" id="node6" href="group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="189,132,320,159"/><area shape="rect" id="node4" href="screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="414,44,465,71"/><area shape="rect" id="node5" href="group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="368,95,511,122"/></map>
+<area shape="rect" id="node2" href="screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="539,99,589,126"/><area shape="rect" id="node3" href="screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="214,48,275,75"/><area shape="rect" id="node4" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="189,99,300,126"/><area shape="rect" id="node7" href="group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="354,150,485,176"/><area shape="rect" id="node5" href="screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="394,48,445,75"/><area shape="rect" id="node6" href="group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="348,99,491,126"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<a class="anchor" id="gacc714477cb936ab22e00904a69bbc022"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void touch_set_calibration_values </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>xs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set's the new calibration values </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xs</td><td>x offset (to calibration point 1) </td></tr>
+    <tr><td class="paramname">dx</td><td>x difference (between calibration point 1 and 2) </td></tr>
+    <tr><td class="paramname">ys</td><td>y offset (to calibration point 1) </td></tr>
+    <tr><td class="paramname">dy</td><td>y difference (between calibration point 1 and 2) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__touch_gacc714477cb936ab22e00904a69bbc022_icgraph.png" border="0" usemap="#group__touch_gacc714477cb936ab22e00904a69bbc022_icgraph" alt=""/></div>
+<map name="group__touch_gacc714477cb936ab22e00904a69bbc022_icgraph" id="group__touch_gacc714477cb936ab22e00904a69bbc022_icgraph">
+<area shape="rect" id="node2" href="screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="199,13,260,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="gaba794e030c65354b244dc264ed04dfdd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void touch_set_value_convert_mode </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>use_calibration</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set's the new value convert mode. Per default use_calibration is false. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">use_calibration</td><td>whether or not the current platform needs display calibration </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -397,7 +494,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__touch_gaa7d6cd569335d0ddfc9eeab479f3a0a8_icgraph.png" border="0" usemap="#group__touch_gaa7d6cd569335d0ddfc9eeab479f3a0a8_icgraph" alt=""/></div>
 <map name="group__touch_gaa7d6cd569335d0ddfc9eeab479f3a0a8_icgraph" id="group__touch_gaa7d6cd569335d0ddfc9eeab479f3a0a8_icgraph">
-<area shape="rect" id="node2" href="screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="613,98,664,125"/><area shape="rect" id="node3" href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="214,60,345,86"/><area shape="rect" id="node6" href="group__checkbox.html#ga86fc603e59c7a723138b77f4a8f39e76" title="gui_checkbox_remove" alt="" coords="204,136,355,162"/><area shape="rect" id="node4" href="screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="459,48,509,74"/><area shape="rect" id="node5" href="group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="403,98,565,125"/></map>
+<area shape="rect" id="node2" href="screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="593,164,644,191"/><area shape="rect" id="node3" href="screen__photomode__save_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="233,63,305,89"/><area shape="rect" id="node5" href="screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="239,113,300,140"/><area shape="rect" id="node6" href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="204,164,335,191"/><area shape="rect" id="node9" href="group__checkbox.html#ga86fc603e59c7a723138b77f4a8f39e76" title="gui_checkbox_remove" alt="" coords="389,215,539,241"/><area shape="rect" id="node4" href="screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="433,63,495,89"/><area shape="rect" id="node7" href="screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="439,113,489,140"/><area shape="rect" id="node8" href="group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="383,164,545,191"/></map>
 </div>
 </p>
 
@@ -406,7 +503,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

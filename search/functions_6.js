@@ -1,5 +1,5 @@
 var searchData=
 [
   ['image_5ftest',['image_test',['../screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223',1,'screen_filetest.c']]],
-  ['interpolatebayer',['interpolateBayer',['../screen__pixytest_8c.html#a5d50e99a903ae03ddd44be9214ecd4f8',1,'screen_pixytest.c']]]
+  ['interpolatebayer',['interpolateBayer',['../pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76',1,'pixy_helper.c']]]
 ];

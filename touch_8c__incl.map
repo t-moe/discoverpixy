@@ -1,4 +1,6 @@
 <map id="common/touch/touch.c" name="common/touch/touch.c">
-<area shape="rect" id="node2" href="$touch_8h.html" title="touch.h" alt="" coords="108,80,173,107"/>
-<area shape="rect" id="node5" href="$ll__touch_8h.html" title="ll_touch.h" alt="" coords="5,80,84,107"/>
+<area shape="rect" id="node2" href="$touch_8h.html" title="touch.h" alt="" coords="5,80,71,107"/>
+<area shape="rect" id="node5" href="$ll__touch_8h.html" title="ll_touch.h" alt="" coords="95,80,173,107"/>
+<area shape="rect" id="node6" href="$screen__calibrate_8h.html" title="screen_calibrate.h" alt="" coords="198,80,326,107"/>
+<area shape="rect" id="node7" href="$screen_8h.html" title="screen.h" alt="" coords="226,155,298,181"/>
 </map>

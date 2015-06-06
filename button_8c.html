@@ -111,6 +111,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a05bb88dac6f60063eae2bb67dda1f4e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="button_8c.html#a05bb88dac6f60063eae2bb67dda1f4e8">calculate_shadows</a> (uint16_t bgcolor, uint16_t *light_shadow, uint16_t *dark_shadow)</td></tr>
+<tr class="separator:a05bb88dac6f60063eae2bb67dda1f4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dca41e6afa418abaf2d471acac9b649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="button_8c.html#a7dca41e6afa418abaf2d471acac9b649">buttons_cb</a> (void *touchArea, <a class="el" href="group__touch.html#gab6037f32eebdf297a7d601a1e6c87768">TOUCH_ACTION</a> triggeredAction)</td></tr>
 <tr class="separator:a7dca41e6afa418abaf2d471acac9b649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga64d5d2aaff2c917e5d43e7ed849607de"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de">gui_button_add</a> (<a class="el" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a> *button)</td></tr>
@@ -163,7 +165,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="button_8c_a7dca41e6afa418abaf2d471acac9b649_cgraph.png" border="0" usemap="#button_8c_a7dca41e6afa418abaf2d471acac9b649_cgraph" alt=""/></div>
 <map name="button_8c_a7dca41e6afa418abaf2d471acac9b649_cgraph" id="button_8c_a7dca41e6afa418abaf2d471acac9b649_cgraph">
-<area shape="rect" id="node2" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="140,5,235,32"/><area shape="rect" id="node3" href="ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="283,5,389,32"/></map>
+<area shape="rect" id="node2" href="button_8c.html#a05bb88dac6f60063eae2bb67dda1f4e8" title="calculate_shadows" alt="" coords="140,5,272,32"/><area shape="rect" id="node3" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="159,56,253,83"/><area shape="rect" id="node4" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="320,56,427,83"/></map>
 </div>
 </p>
 
@@ -178,10 +180,51 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a05bb88dac6f60063eae2bb67dda1f4e8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calculate_shadows </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>bgcolor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>light_shadow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>dark_shadow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="button_8c_a05bb88dac6f60063eae2bb67dda1f4e8_icgraph.png" border="0" usemap="#button_8c_a05bb88dac6f60063eae2bb67dda1f4e8_icgraph" alt=""/></div>
+<map name="button_8c_a05bb88dac6f60063eae2bb67dda1f4e8_icgraph" id="button_8c_a05bb88dac6f60063eae2bb67dda1f4e8_icgraph">
+<area shape="rect" id="node2" href="button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="205,31,292,57"/><area shape="rect" id="node7" href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="185,81,312,108"/><area shape="rect" id="node3" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="385,31,495,57"/><area shape="rect" id="node4" href="screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="614,5,665,32"/><area shape="rect" id="node5" href="group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="568,56,711,83"/><area shape="rect" id="node6" href="screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="759,56,809,83"/><area shape="rect" id="node8" href="screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="409,81,471,108"/><area shape="rect" id="node9" href="group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="360,132,520,159"/></map>
+</div>
+</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

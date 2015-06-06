@@ -1,13 +1,15 @@
 <map id="tft_draw_line" name="tft_draw_line">
-<area shape="rect" id="node2" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="598,8,649,35"/>
-<area shape="rect" id="node3" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="179,45,265,72"/>
-<area shape="rect" id="node7" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="159,96,285,123"/>
-<area shape="rect" id="node9" href="$group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="148,147,296,173"/>
-<area shape="rect" id="node4" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="369,45,479,72"/>
-<area shape="rect" id="node5" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="552,71,695,97"/>
-<area shape="rect" id="node6" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="743,109,793,136"/>
-<area shape="rect" id="node8" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="344,96,504,123"/>
-<area shape="rect" id="node10" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="367,147,481,173"/>
-<area shape="rect" id="node12" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="351,197,497,224"/>
-<area shape="rect" id="node11" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="558,147,689,173"/>
+<area shape="rect" id="node2" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="598,23,649,50"/>
+<area shape="rect" id="node3" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="179,49,265,75"/>
+<area shape="rect" id="node7" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="159,99,285,126"/>
+<area shape="rect" id="node10" href="$group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="148,175,296,202"/>
+<area shape="rect" id="node14" href="$screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="191,226,253,253"/>
+<area shape="rect" id="node4" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="369,49,479,75"/>
+<area shape="rect" id="node5" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="552,99,695,126"/>
+<area shape="rect" id="node6" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="743,150,793,177"/>
+<area shape="rect" id="node8" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="393,99,455,126"/>
+<area shape="rect" id="node9" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="344,150,504,177"/>
+<area shape="rect" id="node11" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="367,201,481,227"/>
+<area shape="rect" id="node13" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="351,251,497,278"/>
+<area shape="rect" id="node12" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="558,201,689,227"/>
 </map>

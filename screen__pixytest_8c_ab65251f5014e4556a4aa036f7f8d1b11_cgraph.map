@@ -1,9 +1,11 @@
 <map id="pixy_frame_test" name="pixy_frame_test">
-<area shape="rect" id="node2" href="$pixy_8h.html#a3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="168,5,279,32"/>
-<area shape="rect" id="node3" href="$screen__pixytest_8c.html#a0a41b38f964c1c064f351623e2fbdfef" title="renderBA81" alt="" coords="178,56,269,83"/>
-<area shape="rect" id="node4" href="$screen__pixytest_8c.html#a5d50e99a903ae03ddd44be9214ecd4f8" title="interpolateBayer" alt="" coords="355,5,471,32"/>
-<area shape="rect" id="node5" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="362,56,463,83"/>
-<area shape="rect" id="node7" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="327,108,499,135"/>
-<area shape="rect" id="node6" href="$ll__tft_8h.html#ad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="553,53,667,80"/>
-<area shape="rect" id="node8" href="$ll__tft_8h.html#afaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="547,105,673,146"/>
+<area shape="rect" id="node2" href="$pixy__helper_8c.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="168,31,319,57"/>
+<area shape="rect" id="node3" href="$pixy__helper_8c.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="367,23,509,65"/>
+<area shape="rect" id="node4" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="557,5,668,32"/>
+<area shape="rect" id="node5" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="567,56,658,83"/>
+<area shape="rect" id="node6" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="744,5,860,32"/>
+<area shape="rect" id="node7" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="751,56,853,83"/>
+<area shape="rect" id="node9" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="716,108,888,135"/>
+<area shape="rect" id="node8" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="942,53,1057,80"/>
+<area shape="rect" id="node10" href="$group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="936,105,1063,146"/>
 </map>

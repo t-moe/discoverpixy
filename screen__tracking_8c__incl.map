@@ -1,0 +1,13 @@
+<map id="common/app/screen_tracking.c" name="common/app/screen_tracking.c">
+<area shape="rect" id="node2" href="$screen__tracking_8h.html" title="screen_tracking.h" alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node6" href="$button_8h.html" title="button.h" alt="" coords="449,80,519,107"/>
+<area shape="rect" id="node7" href="$touch_8h.html" title="touch.h" alt="" coords="495,155,561,181"/>
+<area shape="rect" id="node9" href="$checkbox_8h.html" title="checkbox.h" alt="" coords="543,80,633,107"/>
+<area shape="rect" id="node10" href="$tft_8h.html" title="tft.h" alt="" coords="427,155,471,181"/>
+<area shape="rect" id="node11" href="$pixy_8h.html" title="pixy.h" alt="" coords="657,80,713,107"/>
+<area shape="rect" id="node13" href="$system_8h.html" title="system.h" alt="" coords="275,155,351,181"/>
+<area shape="rect" id="node14" href="$pixy__helper_8h.html" title="pixy_helper.h" alt="" coords="165,80,264,107"/>
+<area shape="rect" id="node3" href="$screen_8h.html" title="screen.h" alt="" coords="12,155,84,181"/>
+<area shape="rect" id="node12" href="$pixydefs_8h.html" title="pixydefs.h" alt="" coords="645,155,726,181"/>
+<area shape="rect" id="node15" href="$filesystem_8h.html" title="filesystem.h" alt="" coords="159,155,251,181"/>
+</map>

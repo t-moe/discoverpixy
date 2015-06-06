@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pixytest',['Pixytest',['../group__pixytest.html',1,'']]]
+  ['nummericupdown',['NummericUpDown',['../group__numupdown.html',1,'']]]
 ];

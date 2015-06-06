@@ -5,10 +5,10 @@
 <area shape="rect" id="node6" href="$group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="370,107,482,133"/>
 <area shape="rect" id="node8" href="$group__tft.html#ga765c521ee1b01ab0c34449936500291b" title="tft_print_formatted" alt="" coords="363,157,489,184"/>
 <area shape="rect" id="node12" href="$group__tft.html#gaea9f6a88da91949befe52cd4ed000c5d" title="tft_font_height" alt="" coords="375,208,477,235"/>
-<area shape="rect" id="node5" href="$ll__tft_8h.html#a3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="712,69,823,96"/>
-<area shape="rect" id="node7" href="$ll__tft_8h.html#a0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="537,107,663,133"/>
+<area shape="rect" id="node5" href="$group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="712,69,823,96"/>
+<area shape="rect" id="node7" href="$group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="537,107,663,133"/>
 <area shape="rect" id="node9" href="$group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="554,157,646,184"/>
-<area shape="rect" id="node10" href="$ll__tft_8h.html#af4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="711,132,824,159"/>
-<area shape="rect" id="node11" href="$ll__tft_8h.html#a408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="711,183,823,209"/>
-<area shape="rect" id="node13" href="$ll__tft_8h.html#a8dbc8b40717be527e6f1c5a2cfc72aeb" title="ll_tft_font_height" alt="" coords="542,208,658,235"/>
+<area shape="rect" id="node10" href="$group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="711,132,824,159"/>
+<area shape="rect" id="node11" href="$group__ll__tft.html#ga408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="711,183,823,209"/>
+<area shape="rect" id="node13" href="$group__ll__tft.html#ga8dbc8b40717be527e6f1c5a2cfc72aeb" title="ll_tft_font_height" alt="" coords="542,208,658,235"/>
 </map>

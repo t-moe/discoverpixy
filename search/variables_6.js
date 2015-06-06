@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['max',['max',['../group__gui.html#ga43a190f55cab9276eb1d6b6a4f453ccf',1,'NUMUPDOWN_STRUCT']]],
-  ['min',['min',['../struct_f_i_l_e___t_i_m_e___s_t_r_u_c_t.html#a3e054086f983d0603a8919338354951b',1,'FILE_TIME_STRUCT::min()'],['../group__gui.html#ga29dc67311876da954d1fb5911f161fed',1,'NUMUPDOWN_STRUCT::min()']]],
-  ['month',['month',['../struct_f_i_l_e___d_a_t_e___s_t_r_u_c_t.html#a1f902d56334cc3e0a86d4b08f34bfff6',1,'FILE_DATE_STRUCT']]]
+  ['led_5fcolor',['led_color',['../screen__pixytest_8c.html#a230b340b4c3998d343da8186aaba3500',1,'screen_pixytest.c']]],
+  ['led_5fmaxcurrent',['led_maxcurrent',['../screen__pixytest_8c.html#a71a0773356aeb29d6b4276caa281d5eb',1,'screen_pixytest.c']]],
+  ['liststart',['liststart',['../screen__photomode__save_8c.html#a2e097772251828c6d76b32677269b7ab',1,'screen_photomode_save.c']]]
 ];

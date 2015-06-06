@@ -1,0 +1,10 @@
+<map id="filesystem_file_seek" name="filesystem_file_seek">
+<area shape="rect" id="node2" href="$pixy__helper_8c.html#a9b12014ced2f09e5e7d6646b966552ef" title="saveBA81" alt="" coords="220,5,300,32"/>
+<area shape="rect" id="node5" href="$screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="784,31,845,57"/>
+<area shape="rect" id="node6" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="640,132,691,159"/>
+<area shape="rect" id="node7" href="$group__tft.html#gab2955e780414d138b9f90dc6a533b6b8" title="tft_draw_bitmap_file\l_unscaled" alt="" coords="192,158,328,199"/>
+<area shape="rect" id="node3" href="$pixy__helper_8h.html#af0820ad9bb1ae6791fecb3916372c479" title="pixy_save_cropped_frame" alt="" coords="376,5,547,32"/>
+<area shape="rect" id="node4" href="$pixy__helper_8h.html#aeb47b641ad8f8cb10c26debb27c7dead" title="pixy_save_full_frame" alt="" coords="595,5,736,32"/>
+<area shape="rect" id="node8" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="418,157,505,184"/>
+<area shape="rect" id="node9" href="$screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="436,208,487,235"/>
+</map>

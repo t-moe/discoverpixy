@@ -1,5 +1,6 @@
 <map id="tft_draw_bitmap_unscaled" name="tft_draw_bitmap_unscaled">
-<area shape="rect" id="node2" href="$screen__pixytest_8c.html#a0a41b38f964c1c064f351623e2fbdfef" title="renderBA81" alt="" coords="225,5,316,32"/>
-<area shape="rect" id="node3" href="$screen__pixytest_8c.html#ab65251f5014e4556a4aa036f7f8d1b11" title="pixy_frame_test" alt="" coords="364,5,479,32"/>
-<area shape="rect" id="node4" href="$screen__pixytest_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="527,5,588,32"/>
+<area shape="rect" id="node2" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="225,13,316,39"/>
+<area shape="rect" id="node3" href="$pixy__helper_8h.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="364,5,507,47"/>
+<area shape="rect" id="node4" href="$pixy__helper_8h.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="555,13,705,39"/>
+<area shape="rect" id="node5" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="753,13,815,39"/>
 </map>

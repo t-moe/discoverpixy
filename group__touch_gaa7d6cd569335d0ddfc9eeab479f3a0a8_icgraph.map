@@ -1,7 +1,10 @@
 <map id="touch_unregister_area" name="touch_unregister_area">
-<area shape="rect" id="node2" href="$screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="613,98,664,125"/>
-<area shape="rect" id="node3" href="$group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="214,60,345,86"/>
-<area shape="rect" id="node6" href="$group__checkbox.html#ga86fc603e59c7a723138b77f4a8f39e76" title="gui_checkbox_remove" alt="" coords="204,136,355,162"/>
-<area shape="rect" id="node4" href="$screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="459,48,509,74"/>
-<area shape="rect" id="node5" href="$group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="403,98,565,125"/>
+<area shape="rect" id="node2" href="$screen__guitest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="593,164,644,191"/>
+<area shape="rect" id="node3" href="$screen__photomode__save_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="233,63,305,89"/>
+<area shape="rect" id="node5" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="239,113,300,140"/>
+<area shape="rect" id="node6" href="$group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="204,164,335,191"/>
+<area shape="rect" id="node9" href="$group__checkbox.html#ga86fc603e59c7a723138b77f4a8f39e76" title="gui_checkbox_remove" alt="" coords="389,215,539,241"/>
+<area shape="rect" id="node4" href="$screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="433,63,495,89"/>
+<area shape="rect" id="node7" href="$screen__filetest_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8" title="leave" alt="" coords="439,113,489,140"/>
+<area shape="rect" id="node8" href="$group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="383,164,545,191"/>
 </map>

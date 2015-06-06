@@ -1,0 +1,13 @@
+<map id="update" name="update">
+<area shape="rect" id="node2" href="$group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="141,68,233,95"/>
+<area shape="rect" id="node6" href="$group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="140,144,235,171"/>
+<area shape="rect" id="node8" href="$group__touch.html#ga42b918ead4f536a63f79601ab2978227" title="touch_get_last_point" alt="" coords="116,195,259,221"/>
+<area shape="rect" id="node9" href="$group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="131,245,243,272"/>
+<area shape="rect" id="node11" href="$group__touch.html#gacc714477cb936ab22e00904a69bbc022" title="touch_set_calibration\l_values" alt="" coords="115,297,260,338"/>
+<area shape="rect" id="node12" href="$group__screen.html#ga8e14bc7ee0214e2926965f9bdb54a866" title="gui_screen_back" alt="" coords="127,363,247,389"/>
+<area shape="rect" id="node3" href="$group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="314,5,427,32"/>
+<area shape="rect" id="node4" href="$group__ll__tft.html#ga408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="315,56,427,83"/>
+<area shape="rect" id="node5" href="$group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="315,107,426,133"/>
+<area shape="rect" id="node7" href="$group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="317,157,424,184"/>
+<area shape="rect" id="node10" href="$group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="308,245,433,272"/>
+</map>

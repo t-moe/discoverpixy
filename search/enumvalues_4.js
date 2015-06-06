@@ -1,12 +1,5 @@
 var searchData=
 [
-  ['eth_5firqn',['ETH_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083ad71328dd95461b7c55b568cf25966f6a',1,'stm32f4xx.h']]],
-  ['eth_5fwkup_5firqn',['ETH_WKUP_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083a0485578005e12c2e2c0fb253a844ec6f',1,'stm32f4xx.h']]],
-  ['exti0_5firqn',['EXTI0_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083ab6aa6f87d26bbc6cf99b067b8d75c2f7',1,'stm32f4xx.h']]],
-  ['exti15_5f10_5firqn',['EXTI15_10_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083a9fb0ad0c850234d1983fafdb17378e2f',1,'stm32f4xx.h']]],
-  ['exti1_5firqn',['EXTI1_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083ae4badcdecdb94eb10129c4c0577c5e19',1,'stm32f4xx.h']]],
-  ['exti2_5firqn',['EXTI2_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083a082cb3f7839069a0715fd76c7eacbbc9',1,'stm32f4xx.h']]],
-  ['exti3_5firqn',['EXTI3_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083add889c84ba5de466ced209069e05d602',1,'stm32f4xx.h']]],
-  ['exti4_5firqn',['EXTI4_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083ab70a40106ca4486770df5d2072d9ac0e',1,'stm32f4xx.h']]],
-  ['exti9_5f5_5firqn',['EXTI9_5_IRQn',['../group___configuration__section__for___c_m_s_i_s.html#gga666eb0caeb12ec0e281415592ae89083aa3aa50e0353871985facf62d055faa52',1,'stm32f4xx.h']]]
+  ['idle',['idle',['../screen__pixytest_8c.html#adf764cbdea00d65edcd07bb9953ad2b7a0e9a37114c0e458d28d52f06ec0f2242',1,'screen_pixytest.c']]],
+  ['init',['init',['../screen__photomode__save_8c.html#a06fc87d81c62e9abb8790b6e5713c55ba2e804b7c8163d212e6231f5228f73ce9',1,'init():&#160;screen_photomode_save.c'],['../screen__tracking_8c.html#a99fb83031ce9923c84392b4e92f956b5a2e804b7c8163d212e6231f5228f73ce9',1,'init():&#160;screen_tracking.c']]]
 ];

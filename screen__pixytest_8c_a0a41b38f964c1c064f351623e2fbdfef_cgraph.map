@@ -2,6 +2,6 @@
 <area shape="rect" id="node2" href="$screen__pixytest_8c.html#a5d50e99a903ae03ddd44be9214ecd4f8" title="interpolateBayer" alt="" coords="172,5,288,32"/>
 <area shape="rect" id="node3" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="179,56,281,83"/>
 <area shape="rect" id="node5" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="144,108,316,135"/>
-<area shape="rect" id="node4" href="$ll__tft_8h.html#ad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="370,53,485,80"/>
-<area shape="rect" id="node6" href="$ll__tft_8h.html#afaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="364,105,491,146"/>
+<area shape="rect" id="node4" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="370,53,485,80"/>
+<area shape="rect" id="node6" href="$group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="364,105,491,146"/>
 </map>

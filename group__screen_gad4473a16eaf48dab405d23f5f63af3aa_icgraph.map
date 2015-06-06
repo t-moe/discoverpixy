@@ -1,7 +1,12 @@
 <map id="gui_screen_navigate" name="gui_screen_navigate">
-<area shape="rect" id="node2" href="$group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385" title="app_init" alt="" coords="210,5,277,32"/>
-<area shape="rect" id="node3" href="$screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="195,56,291,83"/>
-<area shape="rect" id="node5" href="$screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="196,107,291,133"/>
-<area shape="rect" id="node6" href="$screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="192,157,295,184"/>
-<area shape="rect" id="node4" href="$screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="343,107,393,133"/>
+<area shape="rect" id="node2" href="$group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385" title="app_init" alt="" coords="223,5,289,32"/>
+<area shape="rect" id="node3" href="$screen__main_8c.html#af63dbdd3e891f9e0b15d60c53df83a72" title="b_our_tracking_cb" alt="" coords="192,56,320,83"/>
+<area shape="rect" id="node5" href="$screen__main_8c.html#a92ab4314565044b947e0b14b0c7cb2b9" title="b_ref_tracking_cb" alt="" coords="194,107,318,133"/>
+<area shape="rect" id="node6" href="$screen__main_8c.html#ae36382a0c703d3b2f9796c5b7bc173df" title="b_photo_mode_cb" alt="" coords="192,157,320,184"/>
+<area shape="rect" id="node7" href="$screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="208,208,304,235"/>
+<area shape="rect" id="node8" href="$screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="209,259,303,285"/>
+<area shape="rect" id="node9" href="$screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="205,309,307,336"/>
+<area shape="rect" id="node10" href="$screen__photomode_8c.html#aedad5347e948361ac4f1b371924e74ed" title="b_save_cb" alt="" coords="215,360,297,387"/>
+<area shape="rect" id="node4" href="$screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="368,183,419,209"/>
+<area shape="rect" id="node11" href="$screen__photomode_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="368,360,419,387"/>
 </map>

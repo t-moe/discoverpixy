@@ -1,4 +1,5 @@
 <map id="buttons_cb" name="buttons_cb">
-<area shape="rect" id="node2" href="$group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="140,5,235,32"/>
-<area shape="rect" id="node3" href="$ll__tft_8h.html#a2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="283,5,389,32"/>
+<area shape="rect" id="node2" href="$button_8c.html#a05bb88dac6f60063eae2bb67dda1f4e8" title="calculate_shadows" alt="" coords="140,5,272,32"/>
+<area shape="rect" id="node3" href="$group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="159,56,253,83"/>
+<area shape="rect" id="node4" href="$group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="320,56,427,83"/>
 </map>

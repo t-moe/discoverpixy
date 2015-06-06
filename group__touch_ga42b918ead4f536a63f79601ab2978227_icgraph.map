@@ -1,4 +1,5 @@
 <map id="touch_get_last_point" name="touch_get_last_point">
-<area shape="rect" id="node2" href="$screen__pixytest_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="196,5,268,32"/>
-<area shape="rect" id="node3" href="$screen__pixytest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="316,5,367,32"/>
+<area shape="rect" id="node2" href="$screen__photomode_8c.html#a3d1decbb81b0f181eb0561c0f5f8fe3c" title="touchCB" alt="" coords="196,5,268,32"/>
+<area shape="rect" id="node4" href="$screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="201,56,263,83"/>
+<area shape="rect" id="node3" href="$screen__photomode_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="316,5,367,32"/>
 </map>

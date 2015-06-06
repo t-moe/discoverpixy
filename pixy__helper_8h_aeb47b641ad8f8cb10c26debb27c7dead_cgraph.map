@@ -1,0 +1,10 @@
+<map id="pixy_save_full_frame" name="pixy_save_full_frame">
+<area shape="rect" id="node2" href="$pixy__helper_8c.html#af0820ad9bb1ae6791fecb3916372c479" title="pixy_save_cropped_frame" alt="" coords="195,31,365,57"/>
+<area shape="rect" id="node3" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="413,5,524,32"/>
+<area shape="rect" id="node4" href="$pixy__helper_8c.html#a9b12014ced2f09e5e7d6646b966552ef" title="saveBA81" alt="" coords="429,56,509,83"/>
+<area shape="rect" id="node5" href="$group__filesystem.html#gac447af479c334caa207d6c279571d8a2" title="filesystem_file_seek" alt="" coords="572,5,711,32"/>
+<area shape="rect" id="node7" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="583,56,699,83"/>
+<area shape="rect" id="node8" href="$group__filesystem.html#gae7124857f3ab32f6032ef129f2a80000" title="filesystem_file_write" alt="" coords="572,107,711,133"/>
+<area shape="rect" id="node6" href="$group__ll__filesystem.html#ga27b21c519c928bc7767fbdcbb9209148" title="ll_filesystem_file_seek" alt="" coords="759,5,911,32"/>
+<area shape="rect" id="node9" href="$group__ll__filesystem.html#gab7ce3131ebbf7c556c9ebeea312fce02" title="ll_filesystem_file\l_write" alt="" coords="776,99,893,141"/>
+</map>

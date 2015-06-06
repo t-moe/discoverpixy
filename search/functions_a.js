@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['renderba81',['renderBA81',['../screen__pixytest_8c.html#a0a41b38f964c1c064f351623e2fbdfef',1,'screen_pixytest.c']]]
+  ['renderba81',['renderBA81',['../pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef',1,'pixy_helper.c']]]
 ];

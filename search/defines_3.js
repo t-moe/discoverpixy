@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['end',['END',['../pixydefs_8h.html#a29fd18bed01c4d836c7ebfe73a125c3f',1,'pixydefs.h']]],
-  ['end_5fin_5fargs',['END_IN_ARGS',['../pixydefs_8h.html#a3997998ea42c5ea31902d9e0b7df4bd5',1,'pixydefs.h']]],
-  ['end_5fout_5fargs',['END_OUT_ARGS',['../pixydefs_8h.html#a1e61ec3195f40970b492ff9ace3ce84b',1,'pixydefs.h']]]
+  ['dheight',['DHEIGHT',['../screen__calibrate_8h.html#a2c0e9cadedb91327295c0249e8a3ad6f',1,'screen_calibrate.h']]],
+  ['dwidth',['DWIDTH',['../screen__calibrate_8h.html#a7f32e26ea2ffbc0c5408e65b30d4f0c8',1,'screen_calibrate.h']]]
 ];

@@ -1,5 +1,9 @@
 var searchData=
 [
+  ['cbegin',['CBEGIN',['../screen__calibrate_8h.html#ab27a8a2ceccbcaf9d8123727458f3cdf',1,'screen_calibrate.h']]],
+  ['ccenter',['CCENTER',['../screen__calibrate_8h.html#acc17d86219605385a23782e12bc3899c',1,'screen_calibrate.h']]],
+  ['cend',['CEND',['../screen__calibrate_8h.html#a283da6e6504bde446407b33b014c4b54',1,'screen_calibrate.h']]],
+  ['clength',['CLENGTH',['../screen__calibrate_8h.html#a1b157b9cb83c0673aa50369fa5d52f67',1,'screen_calibrate.h']]],
   ['crp_5farray',['CRP_ARRAY',['../pixydefs_8h.html#a9ab97bc655744d7a79143d9a4bc0d855',1,'pixydefs.h']]],
   ['crp_5fflt',['CRP_FLT',['../pixydefs_8h.html#a9cb341c37f13e451ebba2ccc12b2b4ff',1,'pixydefs.h']]],
   ['crp_5fflt32',['CRP_FLT32',['../pixydefs_8h.html#a3397184db47b93137817d896e1014ea8',1,'pixydefs.h']]],

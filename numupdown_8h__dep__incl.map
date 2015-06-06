@@ -1,4 +1,5 @@
 <map id="common/gui/numupdown.h" name="common/gui/numupdown.h">
 <area shape="rect" id="node2" href="$screen__guitest_8c.html" title="common/app/screen_guitest.c" alt="" coords="5,80,203,107"/>
-<area shape="rect" id="node3" href="$numupdown_8c.html" title="common/gui/numupdown.c" alt="" coords="227,80,405,107"/>
+<area shape="rect" id="node3" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="227,80,431,107"/>
+<area shape="rect" id="node4" href="$numupdown_8c.html" title="common/gui/numupdown.c" alt="" coords="455,80,633,107"/>
 </map>

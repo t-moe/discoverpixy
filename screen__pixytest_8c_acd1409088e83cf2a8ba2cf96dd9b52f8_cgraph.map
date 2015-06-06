@@ -1,4 +1,5 @@
 <map id="leave" name="leave">
-<area shape="rect" id="node2" href="$group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="104,5,235,32"/>
-<area shape="rect" id="node3" href="$group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="283,31,433,57"/>
+<area shape="rect" id="node2" href="$group__button.html#ga39e6ec07616381a15f276cd821dad4fd" title="gui_button_remove" alt="" coords="315,5,445,32"/>
+<area shape="rect" id="node4" href="$group__numupdown.html#ga9470a5c6f0ffbbda7c56e1b8a59f4b97" title="gui_numupdown_remove" alt="" coords="104,31,267,57"/>
+<area shape="rect" id="node3" href="$group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="493,5,644,32"/>
 </map>

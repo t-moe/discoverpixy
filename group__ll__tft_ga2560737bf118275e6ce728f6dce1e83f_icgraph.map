@@ -1,0 +1,16 @@
+<map id="ll_tft_draw_line" name="ll_tft_draw_line">
+<area shape="rect" id="node2" href="$group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="160,99,255,126"/>
+<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="753,23,803,50"/>
+<area shape="rect" id="node4" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="333,49,420,75"/>
+<area shape="rect" id="node8" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="313,99,440,126"/>
+<area shape="rect" id="node11" href="$group__checkbox.html#ga669924dea6a4427dc58d40a5691f677e" title="gui_checkbox_update" alt="" coords="303,175,451,202"/>
+<area shape="rect" id="node15" href="$screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="346,226,407,253"/>
+<area shape="rect" id="node5" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="523,49,634,75"/>
+<area shape="rect" id="node6" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="707,99,849,126"/>
+<area shape="rect" id="node7" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="897,150,948,177"/>
+<area shape="rect" id="node9" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="548,99,609,126"/>
+<area shape="rect" id="node10" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="499,150,659,177"/>
+<area shape="rect" id="node12" href="$checkbox_8c.html#a34f1e43511a3aae8769a19e87ec873d6" title="checkboxes_cb" alt="" coords="522,201,635,227"/>
+<area shape="rect" id="node14" href="$group__checkbox.html#ga3e07fb73eb79e8cf6db8f70455f09a92" title="gui_checkbox_redraw" alt="" coords="505,251,652,278"/>
+<area shape="rect" id="node13" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="713,201,843,227"/>
+</map>

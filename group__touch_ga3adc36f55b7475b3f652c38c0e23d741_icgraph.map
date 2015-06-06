@@ -1,7 +1,8 @@
 <map id="touch_register_area" name="touch_register_area">
-<area shape="rect" id="node2" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="559,95,609,122"/>
-<area shape="rect" id="node3" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="199,56,310,83"/>
-<area shape="rect" id="node6" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="189,132,320,159"/>
-<area shape="rect" id="node4" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="414,44,465,71"/>
-<area shape="rect" id="node5" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="368,95,511,122"/>
+<area shape="rect" id="node2" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="539,99,589,126"/>
+<area shape="rect" id="node3" href="$screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="214,48,275,75"/>
+<area shape="rect" id="node4" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="189,99,300,126"/>
+<area shape="rect" id="node7" href="$group__checkbox.html#gafc328cff61a651c7b7175515b37c2f6c" title="gui_checkbox_add" alt="" coords="354,150,485,176"/>
+<area shape="rect" id="node5" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="394,48,445,75"/>
+<area shape="rect" id="node6" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="348,99,491,126"/>
 </map>

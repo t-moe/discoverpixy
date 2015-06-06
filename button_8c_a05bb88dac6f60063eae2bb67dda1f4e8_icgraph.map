@@ -1,0 +1,10 @@
+<map id="calculate_shadows" name="calculate_shadows">
+<area shape="rect" id="node2" href="$button_8c.html#a7dca41e6afa418abaf2d471acac9b649" title="buttons_cb" alt="" coords="205,31,292,57"/>
+<area shape="rect" id="node7" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="185,81,312,108"/>
+<area shape="rect" id="node3" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="385,31,495,57"/>
+<area shape="rect" id="node4" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="614,5,665,32"/>
+<area shape="rect" id="node5" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="568,56,711,83"/>
+<area shape="rect" id="node6" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="759,56,809,83"/>
+<area shape="rect" id="node8" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="409,81,471,108"/>
+<area shape="rect" id="node9" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="360,132,520,159"/>
+</map>

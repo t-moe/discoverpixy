@@ -95,13 +95,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="touch_8h_source.html">touch.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ll__touch_8h_source.html">ll_touch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="screen__calibrate_8h_source.html">screen_calibrate.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for touch.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="touch_8c__incl.png" border="0" usemap="#common_2touch_2touch_8c" alt=""/></div>
 <map name="common_2touch_2touch_8c" id="common_2touch_2touch_8c">
-<area shape="rect" id="node2" href="touch_8h.html" title="touch.h" alt="" coords="108,80,173,107"/><area shape="rect" id="node5" href="ll__touch_8h.html" title="ll_touch.h" alt="" coords="5,80,84,107"/></map>
+<area shape="rect" id="node2" href="touch_8h.html" title="touch.h" alt="" coords="5,80,71,107"/><area shape="rect" id="node5" href="ll__touch_8h.html" title="ll_touch.h" alt="" coords="95,80,173,107"/><area shape="rect" id="node6" href="screen__calibrate_8h.html" title="screen_calibrate.h" alt="" coords="198,80,326,107"/><area shape="rect" id="node7" href="screen_8h.html" title="screen.h" alt="" coords="226,155,298,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -111,9 +112,13 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:gacc714477cb936ab22e00904a69bbc022"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gacc714477cb936ab22e00904a69bbc022">touch_set_calibration_values</a> (int xs, int dx, int ys, int dy)</td></tr>
+<tr class="separator:gacc714477cb936ab22e00904a69bbc022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ff491e3e07321fef794d4f07b103c0f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#ga0ff491e3e07321fef794d4f07b103c0f">touch_init</a> ()</td></tr>
 <tr class="separator:ga0ff491e3e07321fef794d4f07b103c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaa440ed2415b6d37efa1ecf36cc9637f0">touch_add_raw_event</a> (uint16_t touchX, uint16_t touchY, <a class="el" href="group__touch.html#gaf9cbd5f564fae35ce693c446ca8bdd9e">TOUCH_STATE</a> state)</td></tr>
+<tr class="memitem:gaba794e030c65354b244dc264ed04dfdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaba794e030c65354b244dc264ed04dfdd">touch_set_value_convert_mode</a> (bool uc)</td></tr>
+<tr class="separator:gaba794e030c65354b244dc264ed04dfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gaa440ed2415b6d37efa1ecf36cc9637f0">touch_add_raw_event</a> (uint16_t touchX, uint16_t touchY, <a class="el" href="group__touch.html#gaf9cbd5f564fae35ce693c446ca8bdd9e">TOUCH_STATE</a> <a class="el" href="screen__tracking_8c.html#a51d707e6287e315967c1656b68510f25">state</a>)</td></tr>
 <tr class="separator:gaa440ed2415b6d37efa1ecf36cc9637f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad32e5d122ec3f5f88bc6b2d9f4a629f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__touch.html#gad32e5d122ec3f5f88bc6b2d9f4a629f8">touch_have_empty</a> (unsigned char num)</td></tr>
 <tr class="separator:gad32e5d122ec3f5f88bc6b2d9f4a629f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,6 +137,18 @@ Variables</h2></td></tr>
 <tr class="separator:a364699025317e6e6ff3d1411802b37e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0426dedaaca3b21d6346e9415f524a12"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="group__touch.html#gaf9cbd5f564fae35ce693c446ca8bdd9e">TOUCH_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#a0426dedaaca3b21d6346e9415f524a12">oldState</a> =<a class="el" href="group__touch.html#ggaf9cbd5f564fae35ce693c446ca8bdd9ea90884c2f9baa25f5107bfa334297fce3">TOUCH_UP</a></td></tr>
 <tr class="separator:a0426dedaaca3b21d6346e9415f524a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e440e007cdbbff7dc9442993266bcf0"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#a8e440e007cdbbff7dc9442993266bcf0">calibration</a> = false</td></tr>
+<tr class="separator:a8e440e007cdbbff7dc9442993266bcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aada9c4e98a37ca59cdbbdbdda4904eb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#aada9c4e98a37ca59cdbbdbdda4904eb8">use_calibration</a> =false</td></tr>
+<tr class="separator:aada9c4e98a37ca59cdbbdbdda4904eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89d8cc45a359143969e1232f4bae557"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#ac89d8cc45a359143969e1232f4bae557">cal_xs</a> =10</td></tr>
+<tr class="separator:ac89d8cc45a359143969e1232f4bae557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a731459fdc248eebcd6715040f1d36c44"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#a731459fdc248eebcd6715040f1d36c44">cal_dx</a> =100</td></tr>
+<tr class="separator:a731459fdc248eebcd6715040f1d36c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7dfacb1205c5fc478a64afbc466327d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#ae7dfacb1205c5fc478a64afbc466327d">cal_ys</a> =10</td></tr>
+<tr class="separator:ae7dfacb1205c5fc478a64afbc466327d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a259e19774ad99bcb76a40bfa9a8a9e7e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="touch_8c.html#a259e19774ad99bcb76a40bfa9a8a9e7e">cal_dy</a> =100</td></tr>
+<tr class="separator:a259e19774ad99bcb76a40bfa9a8a9e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ac1695162cb728d8095129dad396baa0d"></a>
@@ -153,6 +170,66 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a>* areas[<a class="el" href="touch_8c.html#ac1695162cb728d8095129dad396baa0d">NUM_AREAS</a>] = {NULL}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a731459fdc248eebcd6715040f1d36c44"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cal_dx =100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a259e19774ad99bcb76a40bfa9a8a9e7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cal_dy =100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac89d8cc45a359143969e1232f4bae557"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cal_xs =10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae7dfacb1205c5fc478a64afbc466327d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cal_ys =10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8e440e007cdbbff7dc9442993266bcf0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool calibration = false</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,10 +260,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aada9c4e98a37ca59cdbbdbdda4904eb8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool use_calibration =false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

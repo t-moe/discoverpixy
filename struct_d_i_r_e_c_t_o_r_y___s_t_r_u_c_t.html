@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">DIRECTORY_STRUCT Struct Reference</div>  </div>
+<div class="title">DIRECTORY_STRUCT Struct Reference<div class="ingroups"><a class="el" href="group__filesystem.html">Filesystem</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -101,13 +101,18 @@ Collaboration diagram for DIRECTORY_STRUCT:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a3b02c6de5c049804444a246f7fdf46b4"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a3b02c6de5c049804444a246f7fdf46b4">path</a></td></tr>
+<tr class="memdesc:a3b02c6de5c049804444a246f7fdf46b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directory path (absolute)  <a href="#a3b02c6de5c049804444a246f7fdf46b4">More...</a><br /></td></tr>
 <tr class="separator:a3b02c6de5c049804444a246f7fdf46b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a256a3eb1c4d0a61a23ff722736ed18df"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a256a3eb1c4d0a61a23ff722736ed18df">num_files</a></td></tr>
+<tr class="memdesc:a256a3eb1c4d0a61a23ff722736ed18df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of files/directories in this directory.  <a href="#a256a3eb1c4d0a61a23ff722736ed18df">More...</a><br /></td></tr>
 <tr class="separator:a256a3eb1c4d0a61a23ff722736ed18df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87f6b6d5b8df736e7d52923a19131f86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_f_i_l_e___s_t_r_u_c_t.html">FILE_STRUCT</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a87f6b6d5b8df736e7d52923a19131f86">files</a></td></tr>
+<tr class="memdesc:a87f6b6d5b8df736e7d52923a19131f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">An array with <a class="el" href="struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a256a3eb1c4d0a61a23ff722736ed18df">num_files</a> <a class="el" href="struct_f_i_l_e___s_t_r_u_c_t.html">FILE_STRUCT</a> entries.  <a href="#a87f6b6d5b8df736e7d52923a19131f86">More...</a><br /></td></tr>
 <tr class="separator:a87f6b6d5b8df736e7d52923a19131f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure which represents an open directory with all it's entries. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__filesystem.html#ga8b1099cbd3464fbe64f2010f16d87101">filesystem_dir_open</a> </dd></dl>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a class="anchor" id="a87f6b6d5b8df736e7d52923a19131f86"></a>
 <div class="memitem">
 <div class="memproto">
@@ -117,6 +122,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>An array with <a class="el" href="struct_d_i_r_e_c_t_o_r_y___s_t_r_u_c_t.html#a256a3eb1c4d0a61a23ff722736ed18df">num_files</a> <a class="el" href="struct_f_i_l_e___s_t_r_u_c_t.html">FILE_STRUCT</a> entries. </p>
 
 </div>
 </div>
@@ -130,6 +137,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Number of files/directories in this directory. </p>
+
 </div>
 </div>
 <a class="anchor" id="a3b02c6de5c049804444a246f7fdf46b4"></a>
@@ -142,6 +151,8 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Directory path (absolute) </p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
@@ -150,7 +161,7 @@ Data Fields</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

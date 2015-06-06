@@ -1,0 +1,14 @@
+<map id="ll_tft_font_height" name="ll_tft_font_height">
+<area shape="rect" id="node2" href="$group__tft.html#gaea9f6a88da91949befe52cd4ed000c5d" title="tft_font_height" alt="" coords="169,107,272,133"/>
+<area shape="rect" id="node3" href="$screen__photomode__save_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="375,5,426,32"/>
+<area shape="rect" id="node4" href="$group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de" title="gui_button_add" alt="" coords="554,56,665,83"/>
+<area shape="rect" id="node6" href="$group__numupdown.html#gab4321e7fc0810ee30355bc7d0a3372db" title="gui_numupdown_add" alt="" coords="737,183,880,209"/>
+<area shape="rect" id="node8" href="$group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="337,157,464,184"/>
+<area shape="rect" id="node11" href="$group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9" title="gui_numupdown_update" alt="" coords="320,233,481,260"/>
+<area shape="rect" id="node5" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="783,56,834,83"/>
+<area shape="rect" id="node7" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="928,183,979,209"/>
+<area shape="rect" id="node9" href="$screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="579,157,640,184"/>
+<area shape="rect" id="node10" href="$group__numupdown.html#ga4ee98a6c6af451123af6c464a851c03a" title="gui_numupdown_redraw" alt="" coords="529,208,689,235"/>
+<area shape="rect" id="node12" href="$numupdown_8c.html#a47b81268e10355aa5abbb05788e99dfc" title="button_up_cb" alt="" coords="559,259,659,285"/>
+<area shape="rect" id="node13" href="$numupdown_8c.html#a0422809516212448deaf10314d0c01d5" title="button_down_cb" alt="" coords="551,309,667,336"/>
+</map>

@@ -99,15 +99,14 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gad87c84be7c1bc93ec95a1fa03f49e06d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#gad87c84be7c1bc93ec95a1fa03f49e06d">SCREEN_CALLBACK</a>) (void *<a class="el" href="screen__pixytest_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td></tr>
-<tr class="memdesc:gad87c84be7c1bc93ec95a1fa03f49e06d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointer used...  <a href="#gad87c84be7c1bc93ec95a1fa03f49e06d">More...</a><br /></td></tr>
+<tr class="memitem:gad87c84be7c1bc93ec95a1fa03f49e06d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#gad87c84be7c1bc93ec95a1fa03f49e06d">SCREEN_CALLBACK</a>) (void *<a class="el" href="screen__calibrate_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td></tr>
 <tr class="separator:gad87c84be7c1bc93ec95a1fa03f49e06d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7783b8728d6d218aa9e3b29eaf9689c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#gaf7783b8728d6d218aa9e3b29eaf9689c">SCREEN_STRUCT</a></td></tr>
 <tr class="separator:gaf7783b8728d6d218aa9e3b29eaf9689c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad4473a16eaf48dab405d23f5f63af3aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate</a> (<a class="el" href="group__screen.html#gaf7783b8728d6d218aa9e3b29eaf9689c">SCREEN_STRUCT</a> *<a class="el" href="screen__pixytest_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td></tr>
+<tr class="memitem:gad4473a16eaf48dab405d23f5f63af3aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate</a> (<a class="el" href="group__screen.html#gaf7783b8728d6d218aa9e3b29eaf9689c">SCREEN_STRUCT</a> *<a class="el" href="screen__calibrate_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td></tr>
 <tr class="separator:gad4473a16eaf48dab405d23f5f63af3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8e14bc7ee0214e2926965f9bdb54a866"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__screen.html#ga8e14bc7ee0214e2926965f9bdb54a866">gui_screen_back</a> ()</td></tr>
 <tr class="separator:ga8e14bc7ee0214e2926965f9bdb54a866"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,19 +116,23 @@ Functions</h2></td></tr>
 <tr class="separator:gab7394734ee1d57093721cbd22b901323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>The Screen Submodule </p>
+<p>The Screen Submodule provides an api to navigate between different "screens" on the UI. Each screen must provide an enter, update and a leave method; which will be called from this module at the right time. The implemented screens of the application are documented in the <a class="el" href="group__screens.html">Screens</a> module. </p>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="gad87c84be7c1bc93ec95a1fa03f49e06d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* SCREEN_CALLBACK) (void *<a class="el" href="screen__pixytest_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td>
+          <td class="memname">typedef void(* SCREEN_CALLBACK) (void *<a class="el" href="screen__calibrate_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Function pointer used... </p>
+<p>Prototype for Event Listeners (called when the screen is entered, left or should be updated) </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen</td><td>The pointer to the SCREEN_STRUCT where the event occurred </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -142,6 +145,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Structure to configure the Screen </p>
 
 </div>
 </div>
@@ -158,13 +162,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Navigate one screen back as soon as the app enters the main loop again. It's safe to call this method from an interrupt </p><dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__screen_ga8e14bc7ee0214e2926965f9bdb54a866_icgraph.png" border="0" usemap="#group__screen_ga8e14bc7ee0214e2926965f9bdb54a866_icgraph" alt=""/></div>
 <map name="group__screen_ga8e14bc7ee0214e2926965f9bdb54a866_icgraph" id="group__screen_ga8e14bc7ee0214e2926965f9bdb54a866_icgraph">
-<area shape="rect" id="node2" href="screen__filetest_8c.html#a26b5a87b61eb1cd0888fdfc12a91a6d7" title="b_back_cb" alt="" coords="173,5,259,32"/><area shape="rect" id="node3" href="screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="307,5,357,32"/></map>
+<area shape="rect" id="node2" href="screen__filetest_8c.html#a26b5a87b61eb1cd0888fdfc12a91a6d7" title="b_back_cb" alt="" coords="173,5,259,32"/><area shape="rect" id="node4" href="screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="185,56,247,83"/><area shape="rect" id="node3" href="screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="307,5,357,32"/></map>
 </div>
 </p>
 
@@ -182,6 +187,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns the currently active screen </p><dl class="section return"><dt>Returns</dt><dd>A Pointer to the active SCREEN_STRUCT </dd></dl>
 
 </div>
 </div>
@@ -198,13 +204,20 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Navigate to the given screen as soon as the app enters the main loop again (and <a class="el" href="group__screen.html#gab7394734ee1d57093721cbd22b901323">gui_screen_update()</a> is called) It's safe to call this method from an interrupt </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">screen</td><td>A Pointer to the preinitialized SCREEN_STRUCT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__screen_gad4473a16eaf48dab405d23f5f63af3aa_icgraph.png" border="0" usemap="#group__screen_gad4473a16eaf48dab405d23f5f63af3aa_icgraph" alt=""/></div>
 <map name="group__screen_gad4473a16eaf48dab405d23f5f63af3aa_icgraph" id="group__screen_gad4473a16eaf48dab405d23f5f63af3aa_icgraph">
-<area shape="rect" id="node2" href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385" title="app_init" alt="" coords="210,5,277,32"/><area shape="rect" id="node3" href="screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="195,56,291,83"/><area shape="rect" id="node5" href="screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="196,107,291,133"/><area shape="rect" id="node6" href="screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="192,157,295,184"/><area shape="rect" id="node4" href="screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="343,107,393,133"/></map>
+<area shape="rect" id="node2" href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385" title="app_init" alt="" coords="223,5,289,32"/><area shape="rect" id="node3" href="screen__main_8c.html#af63dbdd3e891f9e0b15d60c53df83a72" title="b_our_tracking_cb" alt="" coords="192,56,320,83"/><area shape="rect" id="node5" href="screen__main_8c.html#a92ab4314565044b947e0b14b0c7cb2b9" title="b_ref_tracking_cb" alt="" coords="194,107,318,133"/><area shape="rect" id="node6" href="screen__main_8c.html#ae36382a0c703d3b2f9796c5b7bc173df" title="b_photo_mode_cb" alt="" coords="192,157,320,184"/><area shape="rect" id="node7" href="screen__main_8c.html#a7cf63677cfc829e8d9e523c7c811230b" title="b_guitest_cb" alt="" coords="208,208,304,235"/><area shape="rect" id="node8" href="screen__main_8c.html#aae0f62ca08bc3dc66c38cdabf06c96c4" title="b_filetest_cb" alt="" coords="209,259,303,285"/><area shape="rect" id="node9" href="screen__main_8c.html#a358486b95592f8da3dbe39cb8312fbdf" title="b_pixytest_cb" alt="" coords="205,309,307,336"/><area shape="rect" id="node10" href="screen__photomode_8c.html#aedad5347e948361ac4f1b371924e74ed" title="b_save_cb" alt="" coords="215,360,297,387"/><area shape="rect" id="node4" href="screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="368,183,419,209"/><area shape="rect" id="node11" href="screen__photomode_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="368,360,419,387"/></map>
 </div>
 </p>
 
@@ -222,6 +235,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Updates the current screen. Switches the screen if <a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate()</a> or <a class="el" href="group__screen.html#ga8e14bc7ee0214e2926965f9bdb54a866">gui_screen_back()</a> have been called since the last call to this method. This method should be called repeatedly from the main loop (e.g. <a class="el" href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process()</a>) </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -237,7 +251,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

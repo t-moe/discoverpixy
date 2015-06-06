@@ -1,4 +1,5 @@
 <map id="gui_screen_back" name="gui_screen_back">
 <area shape="rect" id="node2" href="$screen__filetest_8c.html#a26b5a87b61eb1cd0888fdfc12a91a6d7" title="b_back_cb" alt="" coords="173,5,259,32"/>
+<area shape="rect" id="node4" href="$screen__calibrate_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="185,56,247,83"/>
 <area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="307,5,357,32"/>
 </map>

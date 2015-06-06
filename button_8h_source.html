@@ -92,73 +92,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="button_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BUTTON_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BUTTON_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="touch_8h.html">touch.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="touch_8h.html">touch.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">   24</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a>)(<span class="keywordtype">void</span> *button);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__gui.html#gadf10d197299522577e67d366877bdd3f">   31</a></span>&#160;    <a class="code" href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a> <a class="code" href="group__gui.html#gadf10d197299522577e67d366877bdd3f">base</a>; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group__gui.html#gaebb27fad2492ea7aa81895d0ede61fcf">   32</a></span>&#160;    uint16_t <a class="code" href="group__gui.html#gaebb27fad2492ea7aa81895d0ede61fcf">bgcolor</a>; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__gui.html#ga269d23c8a60f8acdf9279642999ee6a9">   33</a></span>&#160;    <a class="code" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a> <a class="code" href="group__gui.html#ga269d23c8a60f8acdf9279642999ee6a9">callback</a>; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group__gui.html#gaaf5a5af411fa69950e0b4415c8089c8b">   34</a></span>&#160;    uint16_t <a class="code" href="group__gui.html#gaaf5a5af411fa69950e0b4415c8089c8b">txtcolor</a>; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__gui.html#gadeae49dfe3584e6df726fb4167cd1cf7">   35</a></span>&#160;    uint8_t <a class="code" href="group__gui.html#gadeae49dfe3584e6df726fb4167cd1cf7">font</a>; </div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group__gui.html#ga16343090e80c4472521560f30113d96c">   36</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="group__gui.html#ga16343090e80c4472521560f30113d96c">text</a>; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="group__button.html#ga0cc6f7717df9fbdc0f33efb88720a639">   40</a></span>&#160;<span class="preprocessor">#define AUTO 0  </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de">gui_button_add</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd">gui_button_remove</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1">gui_button_redraw</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">bool guiAddBitmapButton(BITMAPBUTTON_STRUCT* button);</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">void guiRemoveBitmapButton(BITMAPBUTTON_STRUCT* button);</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">void guiRedrawBitmapButton(BITMAPBUTTON_STRUCT* button);</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">   31</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a>)(<span class="keywordtype">void</span> *button);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">   37</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adf10d197299522577e67d366877bdd3f">   38</a></span>&#160;    <a class="code" href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a> <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adf10d197299522577e67d366877bdd3f">base</a>; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aebb27fad2492ea7aa81895d0ede61fcf">   39</a></span>&#160;    uint16_t <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aebb27fad2492ea7aa81895d0ede61fcf">bgcolor</a>; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a269d23c8a60f8acdf9279642999ee6a9">   40</a></span>&#160;    <a class="code" href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a> <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a269d23c8a60f8acdf9279642999ee6a9">callback</a>; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aaf5a5af411fa69950e0b4415c8089c8b">   41</a></span>&#160;    uint16_t <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aaf5a5af411fa69950e0b4415c8089c8b">txtcolor</a>; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adeae49dfe3584e6df726fb4167cd1cf7">   42</a></span>&#160;    uint8_t <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adeae49dfe3584e6df726fb4167cd1cf7">font</a>; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a16343090e80c4472521560f30113d96c">   43</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a16343090e80c4472521560f30113d96c">text</a>; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__button.html#ga0cc6f7717df9fbdc0f33efb88720a639">   47</a></span>&#160;<span class="preprocessor">#define AUTO 0  </span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de">gui_button_add</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd">gui_button_remove</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1">gui_button_redraw</a>(<a class="code" href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a>* button);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">typedef struct {</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">    TOUCH_AREA_STRUCT base;</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">    unsigned int bgcolor;</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">    BUTTON_CALLBACK callback; //Callback</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">    unsigned char imgwidth;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">    unsigned char imgheight;</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    char* filename;</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">} BITMAPBUTTON_STRUCT;</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//Notice that the first 3 Members are Equal, so it&#39;s possible to cast it to a BUTTON_STRUCT even if it&#39;s a BITMAPBUTTON_STRUCT (when changeing only the first 3 Members).</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUTTON_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="group__gui_html_ga16343090e80c4472521560f30113d96c"><div class="ttname"><a href="group__gui.html#ga16343090e80c4472521560f30113d96c">BUTTON_STRUCT::text</a></div><div class="ttdeci">const char * text</div><div class="ttdoc">The label of the button. </div><div class="ttdef"><b>Definition:</b> button.h:36</div></div>
-<div class="ttc" id="group__button_html_ga6da1e251bad09d29fbb3b3f405689ab1"><div class="ttname"><a href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1">gui_button_redraw</a></div><div class="ttdeci">void gui_button_redraw(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:85</div></div>
-<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a></div><div class="ttdef"><b>Definition:</b> button.h:30</div></div>
-<div class="ttc" id="group__button_html_ga64d5d2aaff2c917e5d43e7ed849607de"><div class="ttname"><a href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de">gui_button_add</a></div><div class="ttdeci">bool gui_button_add(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:62</div></div>
-<div class="ttc" id="group__gui_html_gadf10d197299522577e67d366877bdd3f"><div class="ttname"><a href="group__gui.html#gadf10d197299522577e67d366877bdd3f">BUTTON_STRUCT::base</a></div><div class="ttdeci">TOUCH_AREA_STRUCT base</div><div class="ttdoc">Basic geometry of the button. You only need to set the x1, y1, x2, y2 members of this struct...</div><div class="ttdef"><b>Definition:</b> button.h:31</div></div>
-<div class="ttc" id="group__gui_html_gadeae49dfe3584e6df726fb4167cd1cf7"><div class="ttname"><a href="group__gui.html#gadeae49dfe3584e6df726fb4167cd1cf7">BUTTON_STRUCT::font</a></div><div class="ttdeci">uint8_t font</div><div class="ttdoc">The number of the font to use. </div><div class="ttdef"><b>Definition:</b> button.h:35</div></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BUTTON_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_a16343090e80c4472521560f30113d96c"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a16343090e80c4472521560f30113d96c">BUTTON_STRUCT::text</a></div><div class="ttdeci">const char * text</div><div class="ttdoc">The label of the button. </div><div class="ttdef"><b>Definition:</b> button.h:43</div></div>
+<div class="ttc" id="group__button_html_ga6da1e251bad09d29fbb3b3f405689ab1"><div class="ttname"><a href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1">gui_button_redraw</a></div><div class="ttdeci">void gui_button_redraw(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:130</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_aaf5a5af411fa69950e0b4415c8089c8b"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aaf5a5af411fa69950e0b4415c8089c8b">BUTTON_STRUCT::txtcolor</a></div><div class="ttdeci">uint16_t txtcolor</div><div class="ttdoc">The 16-bit text color. </div><div class="ttdef"><b>Definition:</b> button.h:41</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html">BUTTON_STRUCT</a></div><div class="ttdef"><b>Definition:</b> button.h:37</div></div>
+<div class="ttc" id="group__button_html_ga64d5d2aaff2c917e5d43e7ed849607de"><div class="ttname"><a href="group__button.html#ga64d5d2aaff2c917e5d43e7ed849607de">gui_button_add</a></div><div class="ttdeci">bool gui_button_add(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:99</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_aebb27fad2492ea7aa81895d0ede61fcf"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aebb27fad2492ea7aa81895d0ede61fcf">BUTTON_STRUCT::bgcolor</a></div><div class="ttdeci">uint16_t bgcolor</div><div class="ttdoc">The 16-bit background color of the button. </div><div class="ttdef"><b>Definition:</b> button.h:39</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_adf10d197299522577e67d366877bdd3f"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adf10d197299522577e67d366877bdd3f">BUTTON_STRUCT::base</a></div><div class="ttdeci">TOUCH_AREA_STRUCT base</div><div class="ttdoc">Basic geometry of the button. You only need to set the x1, y1, x2, y2 members of this struct...</div><div class="ttdef"><b>Definition:</b> button.h:38</div></div>
 <div class="ttc" id="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t_html"><div class="ttname"><a href="struct_t_o_u_c_h___a_r_e_a___s_t_r_u_c_t.html">TOUCH_AREA_STRUCT</a></div><div class="ttdef"><b>Definition:</b> touch.h:50</div></div>
-<div class="ttc" id="group__gui_html_gaaf5a5af411fa69950e0b4415c8089c8b"><div class="ttname"><a href="group__gui.html#gaaf5a5af411fa69950e0b4415c8089c8b">BUTTON_STRUCT::txtcolor</a></div><div class="ttdeci">uint16_t txtcolor</div><div class="ttdoc">The 16-bit text color. </div><div class="ttdef"><b>Definition:</b> button.h:34</div></div>
 <div class="ttc" id="touch_8h_html"><div class="ttname"><a href="touch_8h.html">touch.h</a></div></div>
-<div class="ttc" id="group__button_html_ga39e6ec07616381a15f276cd821dad4fd"><div class="ttname"><a href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd">gui_button_remove</a></div><div class="ttdeci">void gui_button_remove(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:122</div></div>
-<div class="ttc" id="group__gui_html_gaebb27fad2492ea7aa81895d0ede61fcf"><div class="ttname"><a href="group__gui.html#gaebb27fad2492ea7aa81895d0ede61fcf">BUTTON_STRUCT::bgcolor</a></div><div class="ttdeci">uint16_t bgcolor</div><div class="ttdoc">The 16-bit background color of the button. </div><div class="ttdef"><b>Definition:</b> button.h:32</div></div>
-<div class="ttc" id="group__gui_html_ga269d23c8a60f8acdf9279642999ee6a9"><div class="ttname"><a href="group__gui.html#ga269d23c8a60f8acdf9279642999ee6a9">BUTTON_STRUCT::callback</a></div><div class="ttdeci">BUTTON_CALLBACK callback</div><div class="ttdoc">Callback. </div><div class="ttdef"><b>Definition:</b> button.h:33</div></div>
-<div class="ttc" id="group__button_html_ga2bb66de608267d70a8cc4df574cda2a2"><div class="ttname"><a href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a></div><div class="ttdeci">void(* BUTTON_CALLBACK)(void *button)</div><div class="ttdef"><b>Definition:</b> button.h:24</div></div>
+<div class="ttc" id="group__button_html_ga39e6ec07616381a15f276cd821dad4fd"><div class="ttname"><a href="group__button.html#ga39e6ec07616381a15f276cd821dad4fd">gui_button_remove</a></div><div class="ttdeci">void gui_button_remove(BUTTON_STRUCT *button)</div><div class="ttdef"><b>Definition:</b> button.c:150</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_a269d23c8a60f8acdf9279642999ee6a9"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#a269d23c8a60f8acdf9279642999ee6a9">BUTTON_STRUCT::callback</a></div><div class="ttdeci">BUTTON_CALLBACK callback</div><div class="ttdoc">Callback which is executed when the button is pressed. </div><div class="ttdef"><b>Definition:</b> button.h:40</div></div>
+<div class="ttc" id="struct_b_u_t_t_o_n___s_t_r_u_c_t_html_adeae49dfe3584e6df726fb4167cd1cf7"><div class="ttname"><a href="struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adeae49dfe3584e6df726fb4167cd1cf7">BUTTON_STRUCT::font</a></div><div class="ttdeci">uint8_t font</div><div class="ttdoc">The number of the font to use. </div><div class="ttdef"><b>Definition:</b> button.h:42</div></div>
+<div class="ttc" id="group__button_html_ga2bb66de608267d70a8cc4df574cda2a2"><div class="ttname"><a href="group__button.html#ga2bb66de608267d70a8cc4df574cda2a2">BUTTON_CALLBACK</a></div><div class="ttdeci">void(* BUTTON_CALLBACK)(void *button)</div><div class="ttdef"><b>Definition:</b> button.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 12 2015 11:11:45 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

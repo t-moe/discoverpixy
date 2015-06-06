@@ -1,12 +1,27 @@
 var searchData=
 [
-  ['b_5fback',['b_back',['../screen__filetest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_filetest.c'],['../screen__guitest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_guitest.c'],['../screen__pixytest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_pixytest.c']]],
+  ['b_5fback',['b_back',['../screen__filetest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_filetest.c'],['../screen__guitest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_guitest.c'],['../screen__photomode_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_photomode.c'],['../screen__photomode__save_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_photomode_save.c'],['../screen__pixytest_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_pixytest.c'],['../screen__tracking_8c.html#ae5d8f6a72bbdbe109bc151bfef8ac9a6',1,'b_back():&#160;screen_tracking.c']]],
   ['b_5ffiletest',['b_filetest',['../screen__main_8c.html#a1cbb87e7b3236b3573c83b3085c278fd',1,'screen_main.c']]],
   ['b_5fguitest',['b_guitest',['../screen__main_8c.html#a2d06c6a7aeee28097a04954fbd551f49',1,'screen_main.c']]],
+  ['b_5fled_5fblue',['b_led_blue',['../screen__pixytest_8c.html#a258e60594872309e6e115517ad38e3db',1,'screen_pixytest.c']]],
+  ['b_5fled_5fgreen',['b_led_green',['../screen__pixytest_8c.html#a31c32762a466ff596f6aad802dc0687d',1,'screen_pixytest.c']]],
+  ['b_5fled_5foff',['b_led_off',['../screen__pixytest_8c.html#a0e8603a1738cbcbbd9684e7db228bd26',1,'screen_pixytest.c']]],
+  ['b_5fled_5fred',['b_led_red',['../screen__pixytest_8c.html#a4bc5101262c9c391e81e484b09964188',1,'screen_pixytest.c']]],
+  ['b_5fled_5fwhite',['b_led_white',['../screen__pixytest_8c.html#aa0eb797e4ff7535a507917a95da6711e',1,'screen_pixytest.c']]],
+  ['b_5four_5ftracking',['b_our_tracking',['../screen__main_8c.html#af02a868ba1c15ccf6f75502ad8870856',1,'screen_main.c']]],
+  ['b_5fphoto_5fmode',['b_photo_mode',['../screen__main_8c.html#a0f2c63e6a0139ba4f7c85fd3e0071652',1,'screen_main.c']]],
   ['b_5fpixytest',['b_pixytest',['../screen__main_8c.html#a7c12822d6565f6c9406c8d8a7151e839',1,'screen_main.c']]],
-  ['b_5frunstop',['b_runstop',['../screen__pixytest_8c.html#a578c827995a3de345d945121f533a0f4',1,'screen_pixytest.c']]],
-  ['base',['base',['../group__gui.html#gadf10d197299522577e67d366877bdd3f',1,'BUTTON_STRUCT::base()'],['../group__gui.html#gadf10d197299522577e67d366877bdd3f',1,'CHECKBOX_STRUCT::base()']]],
-  ['bgcolor',['bgcolor',['../group__gui.html#gaebb27fad2492ea7aa81895d0ede61fcf',1,'BUTTON_STRUCT']]],
-  ['buttondown',['buttonDown',['../group__gui.html#ga01aa78c14bf4ac60780c19a6a6d37b34',1,'NUMUPDOWN_STRUCT']]],
-  ['buttonup',['buttonUp',['../group__gui.html#gac607274df9fa6216cd6e7f2b4bf459b8',1,'NUMUPDOWN_STRUCT']]]
+  ['b_5fref_5ftracking',['b_ref_tracking',['../screen__main_8c.html#a6fae7797a1fbb36cbf7e23bdfa9986ad',1,'screen_main.c']]],
+  ['b_5fsave',['b_save',['../screen__photomode_8c.html#a344069e49415e576784993bf0d11c72c',1,'screen_photomode.c']]],
+  ['b_5fselect',['b_select',['../screen__tracking_8c.html#a331878a3b67eaf6cee4a02a64f89dab7',1,'screen_tracking.c']]],
+  ['b_5fservos_5fbottomleft',['b_servos_bottomleft',['../screen__pixytest_8c.html#acfb5dc26db6230fcc2a36cd0baa9d876',1,'screen_pixytest.c']]],
+  ['b_5fservos_5fbottomright',['b_servos_bottomright',['../screen__pixytest_8c.html#aeb4e54b6b5771028eb4e2a6f43b453ca',1,'screen_pixytest.c']]],
+  ['b_5fservos_5fcenter',['b_servos_center',['../screen__pixytest_8c.html#a7a8cd1564547b0fe1b6af8d5eca6fc37',1,'screen_pixytest.c']]],
+  ['b_5fservos_5ftopleft',['b_servos_topleft',['../screen__pixytest_8c.html#ad9e76b7916c4129af8c60eec0d694ae3',1,'screen_pixytest.c']]],
+  ['b_5fservos_5ftopright',['b_servos_topright',['../screen__pixytest_8c.html#aaebdf93a1201ccd09d139ef235054ee1',1,'screen_pixytest.c']]],
+  ['base',['base',['../struct_b_u_t_t_o_n___s_t_r_u_c_t.html#adf10d197299522577e67d366877bdd3f',1,'BUTTON_STRUCT::base()'],['../struct_c_h_e_c_k_b_o_x___s_t_r_u_c_t.html#adf10d197299522577e67d366877bdd3f',1,'CHECKBOX_STRUCT::base()']]],
+  ['bgcolor',['bgcolor',['../struct_b_u_t_t_o_n___s_t_r_u_c_t.html#aebb27fad2492ea7aa81895d0ede61fcf',1,'BUTTON_STRUCT']]],
+  ['bmpheader_5fdata',['bmpheader_data',['../screen__photomode__save_8c.html#acd7de4ca4cce429ec77297ab370bb849',1,'screen_photomode_save.c']]],
+  ['buttondown',['buttonDown',['../struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a01aa78c14bf4ac60780c19a6a6d37b34',1,'NUMUPDOWN_STRUCT']]],
+  ['buttonup',['buttonUp',['../struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#ac607274df9fa6216cd6e7f2b4bf459b8',1,'NUMUPDOWN_STRUCT']]]
 ];

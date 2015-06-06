@@ -1,8 +1,11 @@
 <map id="tft_draw_pixel" name="tft_draw_pixel">
-<area shape="rect" id="node2" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="157,5,243,32"/>
-<area shape="rect" id="node4" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="175,56,225,83"/>
-<area shape="rect" id="node5" href="$screen__pixytest_8c.html#a0a41b38f964c1c064f351623e2fbdfef" title="renderBA81" alt="" coords="155,107,245,133"/>
-<area shape="rect" id="node3" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="325,5,376,32"/>
-<area shape="rect" id="node6" href="$screen__pixytest_8c.html#ab65251f5014e4556a4aa036f7f8d1b11" title="pixy_frame_test" alt="" coords="293,107,408,133"/>
-<area shape="rect" id="node7" href="$screen__pixytest_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="456,107,517,133"/>
+<area shape="rect" id="node2" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="177,13,268,39"/>
+<area shape="rect" id="node6" href="$screen__guitest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="197,63,248,90"/>
+<area shape="rect" id="node7" href="$group__tft.html#gab2955e780414d138b9f90dc6a533b6b8" title="tft_draw_bitmap_file\l_unscaled" alt="" coords="155,115,291,156"/>
+<area shape="rect" id="node3" href="$pixy__helper_8h.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="339,5,481,47"/>
+<area shape="rect" id="node4" href="$pixy__helper_8h.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="529,13,680,39"/>
+<area shape="rect" id="node5" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="728,13,789,39"/>
+<area shape="rect" id="node8" href="$screen__filetest_8c.html#a54566a598cf7f2c507254c62a9d70223" title="image_test" alt="" coords="367,97,453,123"/>
+<area shape="rect" id="node10" href="$screen__main_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="385,147,435,174"/>
+<area shape="rect" id="node9" href="$screen__filetest_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa" title="enter" alt="" coords="579,97,630,123"/>
 </map>
