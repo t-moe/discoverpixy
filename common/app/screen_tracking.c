@@ -1,4 +1,5 @@
 #include "screen_tracking.h"
+#include "pixy_control.h"
 #include "button.h"
 #include "checkbox.h"
 #include "tft.h"
@@ -99,8 +100,11 @@ void tracking_our_stop(void* tracking_config) {
 
 //Method/Callback to calculate one step of our tracking
 void tracking_our_update(void* tracking_config, struct Block* blocks, int num_blocks) {
-	//TODO: Implement tracking!
-	//Calculate new servo pos and set the new servo pos
+    uint16_t x = blocks[0].x; // Get x coordinate of the biggest object
+    uint16_t y = blocks[0].y; // Get y coordinate of the biggest object
+
+    pixy_rcs_set_position(0, pixy_PID_X((FRAME_WIDTH / 2), x));  // track x
+    pixy_rcs_set_position(1, pixy_PID_Y((FRAME_HEIGHT / 2), y)); // track y
 }
 
 //Variable which stores all the callbacks and settings for our tracking implementation
