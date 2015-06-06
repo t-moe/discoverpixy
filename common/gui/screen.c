@@ -6,6 +6,10 @@
  * This makes it safe to change the screen from an touch interrupt (e.g. button callback)
  */
 
+/* Possible Improvements:
+ * Ensure that you can not navigate to a screen which is already in the history (because it will corrupt the list)
+ */
+
 static SCREEN_STRUCT* screen_list = NULL; //Head of the linked list which stores the screen history.
 static SCREEN_STRUCT* screen_current = NULL; //Pointer to the current screen (= tail of the list)
 static volatile SCREEN_STRUCT* screen_goto = NULL; //Screen we should navigate to once we enter the gui_screen_update() method again
