@@ -24,7 +24,8 @@ INCLUDES:=$(addprefix -I,$(INCLUDES))
 QT_LIB=$(QT_DIR)/libemulatorqt.a
 
 
-CPPFLAGS= -march=x86-64 -mtune=generic -fPIC $(INCLUDES)
+CPPFLAGS= -march=x86-64 -mtune=generic #-fPIC 
+CPPFLAGS+= $(INCLUDES)
 CFLAGS= -O0 -g -std=c99
 
 
@@ -35,9 +36,9 @@ LIBS+= Qt5Core Qt5Gui Qt5Widgets  m stdc++
 LDFLAGS= -static-libgcc -static-libstdc++ #-Wl,-t  -Wl,--Map=a.map
 LDFLAGS+= -L$(QT_DIR)
 LDFLAGS+= -L$(LIB_DIR)/Pixy 
-LDFLAGS+= -LC:/boost_1_58_0/buildsys/lib
+LDFLAGS+= -L$(LIB_DIR)/boost/lib
 LDFLAGS+= -LC:/Qt/5.4/mingw491_32/lib
-LDFLAGS+= -L./libs/Pixy/windows
+LDFLAGS+= -L$(LIB_DIR)/Pixy/windows
 LDFLAGS+= $(addprefix -l,$(LIBS)) 
 
 #Finding Input files

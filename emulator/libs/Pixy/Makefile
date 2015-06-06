@@ -22,7 +22,7 @@ CFLAGS=$(ARCH_FLAGS) -O0 -g #-ffunction-sections -fdata-sections -g
 #CFLAGS += -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork
 #CFLAGS += -mfloat-abi=hard -mfpu=fpv4-sp-d16
 CFLAGS+=-I/usr/include/libusb-1.0 
-CFLAGS+=-IC:/boost_1_58_0/buildsys/include/boost-1_58
+CFLAGS+=-I../boost/include/
 CFLAGS+=-I./windows/
 
 #Finding Input files
