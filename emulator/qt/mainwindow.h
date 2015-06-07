@@ -33,12 +33,11 @@ protected:
     ~MainWindow();
 
 private slots:
-     void on_cboZoom_currentIndexChanged(int index);
+     void on_cboZoom_currentIndexChanged(int index); //slot that is called when the zoomlevel changed
 
 private:
-    //QMutex render_mutex;
-    QImage image;
-    int currentScale;
+    QImage image; //Display buffer
+    int currentScale; //current scale factor
     void checkAndSendEvent(QPoint pos, bool down);
 
     Ui::MainWindow *ui;
