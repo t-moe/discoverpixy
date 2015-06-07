@@ -64,7 +64,7 @@ void MainWindow::draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t 
 {
     QPainter painter(&(image));
     painter.setPen(QColorFromRGB565(color));
-    painter.drawRect(qMin(x1,x2),qMin(y1,y2),abs((int)x2-(int)x1)+1,abs((int)y2-(int)y1)+1);
+    painter.drawRect(qMin(x1,x2),qMin(y1,y2),abs((int)x2-(int)x1),abs((int)y2-(int)y1));
     update();
 }
 
