@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include <QDebug>
 
 extern "C" {
 #include "ll_tft.h"
@@ -8,12 +7,13 @@ extern "C" {
 MainWindow* mainwindow;
 
 bool ll_tft_init() {
-   qDebug() << "tft init done";
-   mainwindow = new MainWindow();
-   mainwindow->show();
+   mainwindow = new MainWindow(); //create the designed window
+   mainwindow->show(); //open it (non blocking)
    return true;
 
 }
+
+//the following functions redirect the call to the mainwindow, to a function with the same signature
 
 void ll_tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color) {
     mainwindow->draw_line(x1,y1,x2,y2,color);
@@ -44,9 +44,11 @@ void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color) {
 }
 
 uint8_t ll_tft_num_fonts() {
-    return 2;
+    return 2; //we have two fonts (see below)
 }
 
+//Helper function to get the QFont to the corresponding font number
+//Note: only return monospaced fonts!!!
 QFont get_font(uint8_t fontnum) {
     switch(fontnum) {
         case 0:
@@ -62,20 +64,20 @@ QFont get_font(uint8_t fontnum) {
 uint8_t ll_tft_font_height(uint8_t fontnum) {
     QFont f = get_font(fontnum);
     if(f == QFont()) return -1;
-    QFontMetrics m(f);
+    QFontMetrics m(f); //use font metcris object to calculate height of font
     return m.height();
 }
 
 uint8_t ll_tft_font_width(uint8_t fontnum) {
     QFont f = get_font(fontnum);
     if(f == QFont()) return -1;
-    QFontMetrics m(f);
+    QFontMetrics m(f); //use font metcris object to calculate width of font
     return m.averageCharWidth();
 }
 
 void ll_tft_draw_char(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, char c) {
     QFont f = get_font(font);
-    if(f == QFont()) return;
+    if(f == QFont()) return; //if the font is the default-font, we want to abort.
     mainwindow->draw_char(x,y,color,bgcolor,f,c);
 }
 
