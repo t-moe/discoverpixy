@@ -8,7 +8,7 @@
 #include<stdint.h>
 
 void int_init(void);
-uint16_t pixy_PID_Y(uint16_t x, uint16_t w);
-uint16_t pixy_PID_X(uint16_t x, uint16_t w);
+int16_t pixy_PID_Y(int16_t x, int16_t w);
+int16_t pixy_PID_X(int16_t x, int16_t w);
 
 #endif
