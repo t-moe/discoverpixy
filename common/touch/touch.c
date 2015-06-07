@@ -12,7 +12,6 @@
 
 /* Possible improvements:
  * Exchange pointer-list "areas" with a linked list. This would ensure that we can always accept new regions
- * Implement calibration stuff, and calculate the real coordinates out of the data provided in touch_add_raw_event()
  */
 
 #define NUM_AREAS 50    //Number of Touch Areas we can manage

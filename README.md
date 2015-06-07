@@ -1,5 +1,12 @@
 # discoverpixy
-Project with the Pixy cam and the STM32F4 Discovery
+A Project with the Pixy cam and the STM32F4 Discovery. The project can also be run on linux/windows using a qt-based emulator.
+
+![Pixy Logo](doc/pixy.png)  
+<img src="doc/mainscreen_emulator.png" width="300">
+<img src="doc/tracking_emulator.png" width="300">
+
+## Documentation
+Take a look at our [docu.pdf](./doc/docu.pdf) (German)
 
 ## Folder structure
 * *common*: device independent code and the "Application" itself

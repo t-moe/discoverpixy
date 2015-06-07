@@ -12,7 +12,7 @@
 /**
  * @defgroup screen Screen
  * The Screen Submodule provides an api to navigate between different "screens" on the UI.
- * Each screen must provide an enter, update and a leave method; which will be called from this module at the right time.
+ * Each screen must provide an enter, update and a leave method; which will be called from this module at the right time. 
  * The implemented screens of the application are documented in the \ref screens module.
  */
 /*@}*/
@@ -44,6 +44,7 @@ typedef struct SCREEN_S{
 /**
  * Navigate to the given screen as soon as the app enters the main loop again (and gui_screen_update() is called)
  * It's safe to call this method from an interrupt
+ * @note Do not pass a screen which is already in your history of screens!
  * @param screen A Pointer to the preinitialized SCREEN_STRUCT
  * @return true on success
  */

@@ -1,11 +1,12 @@
 #include "screen_tracking.h"
+#include "pixy_control.h"
 #include "button.h"
 #include "checkbox.h"
 #include "tft.h"
 #include "touch.h"
 #include "pixy.h"
 #include "system.h"
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 
 static BUTTON_STRUCT b_back; //Button to navigate back
 static BUTTON_STRUCT b_select; //Button to start the color region selection
@@ -80,12 +81,19 @@ typedef struct {
 } TRACKING_CONFIG_STRUCT;
 
 //Methods for our tracking implementation ahead
+static int16_t servo_x = 0;
+static int16_t servo_y = 0;
 
 //Method/Callback to start our tracking
 void tracking_our_start(void* tracking_config) {
 	//Activate pixy's data send program
 	int32_t response;
 	int return_value;
+
+    servo_x = servo_y = 500;                // set a default value of 500
+    pixy_rcs_set_position(0, servo_x);      // set default 
+    pixy_rcs_set_position(1, servo_y);      // set default
+
 	return_value = pixy_command("runprog", INT8(0), END_OUT_ARGS,  &response, END_IN_ARGS);
 }
 
@@ -99,8 +107,31 @@ void tracking_our_stop(void* tracking_config) {
 
 //Method/Callback to calculate one step of our tracking
 void tracking_our_update(void* tracking_config, struct Block* blocks, int num_blocks) {
-	//TODO: Implement tracking!
-	//Calculate new servo pos and set the new servo pos
+
+    if(num_blocks <= 0){                    // Check if there are blocks available
+        return;                             // When there are none, do nothing
+    }
+    
+    uint16_t x = blocks[0].x;               // Get x coordinate of the biggest object
+    uint16_t y = blocks[0].y;               // Get y coordinate of the biggest object
+
+    int16_t xset = 0;                       
+    int16_t yset = 0;
+
+    xset = (servo_x + pixy_PID_X((FRAME_WIDTH / 2), x));    // calculate the PID output for x
+    yset = (servo_y - pixy_PID_Y((FRAME_HEIGHT / 2), y));   // calculate the PID output for y
+    
+    xset = (xset < 0) ? 0 : xset;           // x lower boundary check
+    xset = (xset > 1000) ? 1000 : xset;     // x upper boundary check
+    
+    yset = (yset < 0) ? 0 : yset;           // y lower boundary check
+    yset = (yset > 1000) ? 1000 : yset;     // y upper boundary check
+
+    servo_x = xset;                         // update the global, static variable for x
+    servo_y = yset;                         // update the global, statuc variable for y
+
+    pixy_rcs_set_position(0, servo_x);      // set the new x position
+    pixy_rcs_set_position(1, servo_y);      // set the new y position
 }
 
 //Variable which stores all the callbacks and settings for our tracking implementation
