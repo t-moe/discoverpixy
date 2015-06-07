@@ -21,9 +21,6 @@
 #define REG_PID_KD      (0.001f)
 #define REG_PID_TA      (0.01f)
 
-void int_init(void){  
-    // TODO Init ports and outputs if needed.
-}
 
 // PID controller implementatoin for the y-axis
 int16_t pixy_PID_Y(int16_t x, int16_t w)

@@ -1,9 +1,29 @@
-#ifndef PIXY_HELPER_H
-#define PIXY_HELPER_H
+#ifndef PIXY_FRAME_H
+#define PIXY_FRAME_H
 
 #include <stdbool.h>
 #include <stdint.h>
 #include "filesystem.h"
+
+
+/**
+ * @addtogroup app
+ */
+/*@{*/
+
+/**
+ * @defgroup pixy_helper Pixy Frame Helper
+ * A collection of helper functions that allow receiving and rendering a frame from pixy onto the display.
+ * Furthermore you can select a color in a frame, to use for tracking.
+ */
+/*@}*/
+
+
+/**
+ * @addtogroup pixy_helper
+ */
+/*@{*/
+
 
 /**
  * Receives a fullsized frame from pixy and display's it on the display with the topleft corner at (x,y)
@@ -56,4 +76,6 @@ int pixy_save_cropped_frame(FILE_HANDLE* handle, uint16_t xoffset, uint16_t yoff
  */
 int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);
 
-#endif /* PIXY_HELPER_H */
+/*@}*/
+
+#endif /* PIXY_FRAME_H */

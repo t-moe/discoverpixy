@@ -1,4 +1,4 @@
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 #include "pixy.h"
 #include "tft.h"
 #include <stdlib.h>

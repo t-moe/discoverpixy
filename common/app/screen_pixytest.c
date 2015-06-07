@@ -5,7 +5,7 @@
 #include "touch.h"
 #include "pixy.h"
 #include "system.h"
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 
 static volatile enum {detecting, idle,update_servos, update_ledcolor, update_ledcurrent} state; //Current state of the screen state machine
 

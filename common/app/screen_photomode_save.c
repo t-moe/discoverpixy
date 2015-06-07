@@ -4,7 +4,7 @@
 #include "tft.h"
 #include "touch.h"
 #include "pixy.h"
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 #include <stdlib.h>
 #include <string.h>
 

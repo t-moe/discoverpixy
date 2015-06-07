@@ -5,7 +5,7 @@
 #include "touch.h"
 #include "pixy.h"
 #include "system.h"
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 
 static bool pixy_connected = false; //Whether or not the pixy cam is currently connected
 

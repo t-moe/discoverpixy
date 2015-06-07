@@ -6,7 +6,7 @@
 #include "touch.h"
 #include "pixy.h"
 #include "system.h"
-#include "pixy_helper.h"
+#include "pixy_frame.h"
 
 static BUTTON_STRUCT b_back; //Button to navigate back
 static BUTTON_STRUCT b_select; //Button to start the color region selection
