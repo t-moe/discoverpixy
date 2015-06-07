@@ -28,10 +28,10 @@ void int_init(void){
 // PID controller implementatoin for the y-axis
 int16_t pixy_PID_Y(int16_t x, int16_t w)
 {
-    float e;
-    static float esum;
-    static float eold;
-    float y;
+    float e = 0;
+    static float esum = 0;
+    static float eold = 0;
+    float y = 0;
 
     e = (float)(x - w);                         // calculate the controller offset
 
@@ -45,16 +45,16 @@ int16_t pixy_PID_Y(int16_t x, int16_t w)
 
     eold = e;                                   // save the previous value
 
-    return (int16_t) y;
+    return (int16_t)y;
 }
 
 // PID controller implementation for the x-axis
 int16_t pixy_PID_X(int16_t x, int16_t w)
 {
-    float e;
-    static float esum;
-    static float eold;
-    float y;
+    float e = 0;
+    static float esum = 0;
+    static float eold = 0;
+    float y = 0;
 
     e = (float)(x - w);                         // calculate the controller offset
 
@@ -68,5 +68,5 @@ int16_t pixy_PID_X(int16_t x, int16_t w)
 
     eold = e;                                   // save the previous value
 
-    return (int16_t) y;
+    return (int16_t)y;
 }

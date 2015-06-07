@@ -91,8 +91,8 @@ void tracking_our_start(void* tracking_config) {
 	int return_value;
 
     servo_x = servo_y = 500;                // set a default value of 500
-    pixy_rcs_set_position(0, servo_x);      //  
-    pixy_rcs_set_position(1, servo_y);      //
+    pixy_rcs_set_position(0, servo_x);      // set default 
+    pixy_rcs_set_position(1, servo_y);      // set default
 
 	return_value = pixy_command("runprog", INT8(0), END_OUT_ARGS,  &response, END_IN_ARGS);
 }
