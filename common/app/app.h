@@ -1,6 +1,12 @@
 #ifndef APP_H
 #define APP_H
 
+/*! 
+   \mainpage discoverpixy Doxygen Documentation
+   Welcome to the code-documentation for all common (and plattformindependent) code. \n
+   A good point to start is probably the <a href="modules.html">Modules</a> page. 
+ */
+
 /**
  * @defgroup app Application
  * The App Module contains the effective, platform independent application.
