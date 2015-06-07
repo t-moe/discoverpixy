@@ -97,19 +97,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="screen__tracking_8h_source.html">screen_tracking.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pixy__control_8h_source.html">pixy_control.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="button_8h_source.html">button.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="checkbox_8h_source.html">checkbox.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tft_8h_source.html">tft.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="touch_8h_source.html">touch.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="pixy_8h_source.html">pixy.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="system_8h_source.html">system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pixy__helper_8h_source.html">pixy_helper.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="pixy__frame_8h_source.html">pixy_frame.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for screen_tracking.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="screen__tracking_8c__incl.png" border="0" usemap="#common_2app_2screen__tracking_8c" alt=""/></div>
 <map name="common_2app_2screen__tracking_8c" id="common_2app_2screen__tracking_8c">
-<area shape="rect" id="node2" href="screen__tracking_8h.html" title="screen_tracking.h" alt="" coords="5,80,131,107"/><area shape="rect" id="node6" href="button_8h.html" title="button.h" alt="" coords="449,80,519,107"/><area shape="rect" id="node7" href="touch_8h.html" title="touch.h" alt="" coords="495,155,561,181"/><area shape="rect" id="node9" href="checkbox_8h.html" title="checkbox.h" alt="" coords="543,80,633,107"/><area shape="rect" id="node10" href="tft_8h.html" title="tft.h" alt="" coords="427,155,471,181"/><area shape="rect" id="node11" href="pixy_8h.html" title="pixy.h" alt="" coords="657,80,713,107"/><area shape="rect" id="node13" href="system_8h.html" title="system.h" alt="" coords="275,155,351,181"/><area shape="rect" id="node14" href="pixy__helper_8h.html" title="pixy_helper.h" alt="" coords="165,80,264,107"/><area shape="rect" id="node3" href="screen_8h.html" title="screen.h" alt="" coords="12,155,84,181"/><area shape="rect" id="node12" href="pixydefs_8h.html" title="pixydefs.h" alt="" coords="645,155,726,181"/><area shape="rect" id="node15" href="filesystem_8h.html" title="filesystem.h" alt="" coords="159,155,251,181"/></map>
+<area shape="rect" id="node2" href="screen__tracking_8h.html" title="screen_tracking.h" alt="" coords="5,80,131,107"/><area shape="rect" id="node6" href="pixy__control_8h.html" title="pixy_control.h" alt="" coords="653,80,755,107"/><area shape="rect" id="node8" href="button_8h.html" title="button.h" alt="" coords="559,80,628,107"/><area shape="rect" id="node9" href="touch_8h.html" title="touch.h" alt="" coords="499,155,565,181"/><area shape="rect" id="node10" href="checkbox_8h.html" title="checkbox.h" alt="" coords="394,80,483,107"/><area shape="rect" id="node11" href="tft_8h.html" title="tft.h" alt="" coords="163,155,207,181"/><area shape="rect" id="node12" href="pixy_8h.html" title="pixy.h" alt="" coords="780,80,836,107"/><area shape="rect" id="node14" href="system_8h.html" title="system.h" alt="" coords="399,155,475,181"/><area shape="rect" id="node15" href="pixy__frame_8h.html" title="pixy_frame.h" alt="" coords="223,80,319,107"/><area shape="rect" id="node3" href="screen_8h.html" title="screen.h" alt="" coords="16,155,88,181"/><area shape="rect" id="node13" href="pixydefs_8h.html" title="pixydefs.h" alt="" coords="767,155,849,181"/><area shape="rect" id="node16" href="filesystem_8h.html" title="filesystem.h" alt="" coords="231,155,323,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -210,6 +211,10 @@ Variables</h2></td></tr>
 <tr class="separator:a482cc9da54fabd6db45f9c440319c98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bcc693e9b9678e627d0a6fef546440a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="screen__tracking_8c.html#a6bcc693e9b9678e627d0a6fef546440a">point1_valid</a></td></tr>
 <tr class="separator:a6bcc693e9b9678e627d0a6fef546440a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa65afaab05457de746d1c93ac8942f76"><td class="memItemLeft" align="right" valign="top">static int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="screen__tracking_8c.html#aa65afaab05457de746d1c93ac8942f76">servo_x</a> = 0</td></tr>
+<tr class="separator:aa65afaab05457de746d1c93ac8942f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b08d9093c8479925610e104269e4d3"><td class="memItemLeft" align="right" valign="top">static int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="screen__tracking_8c.html#a00b08d9093c8479925610e104269e4d3">servo_y</a> = 0</td></tr>
+<tr class="separator:a00b08d9093c8479925610e104269e4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ad01802d2302a672e63cf5d0080a61a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_t_r_a_c_k_i_n_g___c_o_n_f_i_g___s_t_r_u_c_t.html">TRACKING_CONFIG_STRUCT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="screen__tracking_8c.html#a8ad01802d2302a672e63cf5d0080a61a">tracking_our</a></td></tr>
 <tr class="separator:a8ad01802d2302a672e63cf5d0080a61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc404400e5518dc8701053e6abb74a4c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="struct_t_r_a_c_k_i_n_g___c_o_n_f_i_g___s_t_r_u_c_t.html">TRACKING_CONFIG_STRUCT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="screen__tracking_8c.html#afc404400e5518dc8701053e6abb74a4c">tracking_reference</a></td></tr>
@@ -616,7 +621,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="screen__tracking_8c_a4e5b235d9db4e14eb031143a12e26940_cgraph.png" border="0" usemap="#screen__tracking_8c_a4e5b235d9db4e14eb031143a12e26940_cgraph" alt=""/></div>
 <map name="screen__tracking_8c_a4e5b235d9db4e14eb031143a12e26940_cgraph" id="screen__tracking_8c_a4e5b235d9db4e14eb031143a12e26940_cgraph">
-<area shape="rect" id="node2" href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="180,5,291,32"/></map>
+<area shape="rect" id="node2" href="group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="180,5,328,32"/><area shape="rect" id="node3" href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="199,56,309,83"/></map>
 </div>
 </p>
 
@@ -676,6 +681,15 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="screen__tracking_8c_acb647e6a47a40716583b11336f58e023_cgraph.png" border="0" usemap="#screen__tracking_8c_acb647e6a47a40716583b11336f58e023_cgraph" alt=""/></div>
+<map name="screen__tracking_8c_acb647e6a47a40716583b11336f58e023_cgraph" id="screen__tracking_8c_acb647e6a47a40716583b11336f58e023_cgraph">
+<area shape="rect" id="node2" href="group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902" title="pixy_PID_X" alt="" coords="222,5,310,32"/><area shape="rect" id="node3" href="group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b" title="pixy_PID_Y" alt="" coords="221,56,311,83"/><area shape="rect" id="node4" href="group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="192,107,340,133"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -788,7 +802,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="screen__tracking_8c_a5e8f84ee8ff4bf827775c38ae6752509_cgraph.png" border="0" usemap="#screen__tracking_8c_a5e8f84ee8ff4bf827775c38ae6752509_cgraph" alt=""/></div>
 <map name="screen__tracking_8c_a5e8f84ee8ff4bf827775c38ae6752509_cgraph" id="screen__tracking_8c_a5e8f84ee8ff4bf827775c38ae6752509_cgraph">
-<area shape="rect" id="node2" href="group__pixy.html#gad269822960ad0073356dab75ce3050b3" title="Creates a connection with Pixy and listens for Pixy messages. " alt="" coords="155,5,225,32"/><area shape="rect" id="node3" href="group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0" title="pixy_service" alt="" coords="143,56,237,83"/><area shape="rect" id="node4" href="group__pixy.html#ga2df93fdbd04ed434d281a4b9acfa0263" title="Indicates when new block data from Pixy is received. " alt="" coords="117,107,263,133"/><area shape="rect" id="node5" href="pixy__helper_8c.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="115,157,265,184"/><area shape="rect" id="node12" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="329,233,441,260"/><area shape="rect" id="node14" href="group__pixy.html#gab4113dedad844bc189466552c75b47a0" title="Copies up to &#39;max_blocks&#39; number of Blocks to the address pointed to by &#39;blocks&#39;. ..." alt="" coords="132,360,248,387"/><area shape="rect" id="node15" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="127,411,253,437"/><area shape="rect" id="node17" href="group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="122,461,258,488"/><area shape="rect" id="node18" href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="127,309,253,336"/><area shape="rect" id="node29" href="pixy__helper_8c.html#ad9068bef13bfd5e3cee9ecfe4d070f02" title="pixy_cc_set_region" alt="" coords="317,183,452,209"/><area shape="rect" id="node30" href="group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="115,512,265,539"/><area shape="rect" id="node6" href="pixy__helper_8c.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="313,117,456,158"/><area shape="rect" id="node7" href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="511,179,622,205"/><area shape="rect" id="node8" href="pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="521,124,612,151"/><area shape="rect" id="node9" href="pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="677,99,793,125"/><area shape="rect" id="node10" href="group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="685,149,786,176"/><area shape="rect" id="node11" href="group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="841,149,956,176"/><area shape="rect" id="node13" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="504,233,629,260"/><area shape="rect" id="node16" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="315,537,455,564"/><area shape="rect" id="node19" href="group__tft.html#ga7e99287b1e6b844f6867c63400959ffc" title="tft_font_width" alt="" coords="335,284,434,311"/><area shape="rect" id="node21" href="group__tft.html#gaea9f6a88da91949befe52cd4ed000c5d" title="tft_font_height" alt="" coords="333,385,436,412"/><area shape="rect" id="node23" href="button_8c.html#a05bb88dac6f60063eae2bb67dda1f4e8" title="calculate_shadows" alt="" coords="319,436,451,463"/><area shape="rect" id="node24" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="337,487,432,513"/><area shape="rect" id="node26" href="group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="339,335,431,361"/><area shape="rect" id="node20" href="group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="511,284,622,311"/><area shape="rect" id="node22" href="group__ll__tft.html#ga8dbc8b40717be527e6f1c5a2cfc72aeb" title="ll_tft_font_height" alt="" coords="509,436,625,463"/><area shape="rect" id="node25" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="513,487,620,513"/><area shape="rect" id="node27" href="group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="510,335,623,361"/><area shape="rect" id="node28" href="group__ll__tft.html#ga408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="511,385,623,412"/></map>
+<area shape="rect" id="node2" href="group__pixy.html#gad269822960ad0073356dab75ce3050b3" title="Creates a connection with Pixy and listens for Pixy messages. " alt="" coords="155,5,225,32"/><area shape="rect" id="node3" href="group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0" title="pixy_service" alt="" coords="143,56,237,83"/><area shape="rect" id="node4" href="group__pixy.html#ga2df93fdbd04ed434d281a4b9acfa0263" title="Indicates when new block data from Pixy is received. " alt="" coords="117,107,263,133"/><area shape="rect" id="node5" href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="115,157,265,184"/><area shape="rect" id="node14" href="group__tft.html#ga781855ab93845ce326dfca7c099259c6" title="tft_fill_rectangle" alt="" coords="329,233,441,260"/><area shape="rect" id="node16" href="group__pixy.html#gab4113dedad844bc189466552c75b47a0" title="Copies up to &#39;max_blocks&#39; number of Blocks to the address pointed to by &#39;blocks&#39;. ..." alt="" coords="132,360,248,387"/><area shape="rect" id="node17" href="group__tft.html#gab5f517d9bf0420872e78b85b37ff30a5" title="tft_draw_rectangle" alt="" coords="127,411,253,437"/><area shape="rect" id="node19" href="group__touch.html#ga3adc36f55b7475b3f652c38c0e23d741" title="touch_register_area" alt="" coords="122,461,258,488"/><area shape="rect" id="node20" href="group__button.html#ga6da1e251bad09d29fbb3b3f405689ab1" title="gui_button_redraw" alt="" coords="127,309,253,336"/><area shape="rect" id="node31" href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02" title="pixy_cc_set_region" alt="" coords="317,183,452,209"/><area shape="rect" id="node32" href="group__touch.html#gaa7d6cd569335d0ddfc9eeab479f3a0a8" title="touch_unregister_area" alt="" coords="115,512,265,539"/><area shape="rect" id="node6" href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="313,117,456,158"/><area shape="rect" id="node7" href="group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="511,179,622,205"/><area shape="rect" id="node8" href="pixy__frame_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="521,124,612,151"/><area shape="rect" id="node9" href="pixy__frame_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="705,73,821,100"/><area shape="rect" id="node10" href="group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="713,124,814,151"/><area shape="rect" id="node12" href="group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="677,179,849,205"/><area shape="rect" id="node11" href="group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="903,121,1018,148"/><area shape="rect" id="node13" href="group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="897,173,1024,214"/><area shape="rect" id="node15" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f" title="ll_tft_fill_rectangle" alt="" coords="504,233,629,260"/><area shape="rect" id="node18" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e" title="ll_tft_draw_rectangle" alt="" coords="315,537,455,564"/><area shape="rect" id="node21" href="group__tft.html#ga7e99287b1e6b844f6867c63400959ffc" title="tft_font_width" alt="" coords="335,284,434,311"/><area shape="rect" id="node23" href="group__tft.html#gaea9f6a88da91949befe52cd4ed000c5d" title="tft_font_height" alt="" coords="333,385,436,412"/><area shape="rect" id="node25" href="button_8c.html#a05bb88dac6f60063eae2bb67dda1f4e8" title="calculate_shadows" alt="" coords="319,436,451,463"/><area shape="rect" id="node26" href="group__tft.html#ga5022f91ea04919e698a79c0c309ba6f8" title="tft_draw_line" alt="" coords="337,487,432,513"/><area shape="rect" id="node28" href="group__tft.html#gabf54943131990b366ce6875a0e1925f6" title="tft_print_line" alt="" coords="339,335,431,361"/><area shape="rect" id="node22" href="group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3" title="ll_tft_font_width" alt="" coords="511,284,622,311"/><area shape="rect" id="node24" href="group__ll__tft.html#ga8dbc8b40717be527e6f1c5a2cfc72aeb" title="ll_tft_font_height" alt="" coords="509,436,625,463"/><area shape="rect" id="node27" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f" title="ll_tft_draw_line" alt="" coords="513,487,620,513"/><area shape="rect" id="node29" href="group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6" title="ll_tft_num_fonts" alt="" coords="510,335,623,361"/><area shape="rect" id="node30" href="group__ll__tft.html#ga408570a2b70769255924792ce189f2c1" title="ll_tft_draw_char" alt="" coords="511,385,623,412"/></map>
 </div>
 </p>
 
@@ -977,10 +991,50 @@ Here is the call graph for this function:</div>
 <div class="line">    <a class="code" href="screen__tracking_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8">leave</a>,</div>
 <div class="line">    <a class="code" href="screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509">update</a></div>
 <div class="line">}</div>
-<div class="ttc" id="screen__tracking_8c_html_acd1409088e83cf2a8ba2cf96dd9b52f8"><div class="ttname"><a href="screen__tracking_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8">leave</a></div><div class="ttdeci">static void leave(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:220</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a5e8f84ee8ff4bf827775c38ae6752509"><div class="ttname"><a href="screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509">update</a></div><div class="ttdeci">static void update(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:238</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a3017cd14eca2b9e67a69e7ea559b5eaa"><div class="ttname"><a href="screen__tracking_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa">enter</a></div><div class="ttdeci">static void enter(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:163</div></div>
+<div class="ttc" id="screen__tracking_8c_html_acd1409088e83cf2a8ba2cf96dd9b52f8"><div class="ttname"><a href="screen__tracking_8c.html#acd1409088e83cf2a8ba2cf96dd9b52f8">leave</a></div><div class="ttdeci">static void leave(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:251</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a5e8f84ee8ff4bf827775c38ae6752509"><div class="ttname"><a href="screen__tracking_8c.html#a5e8f84ee8ff4bf827775c38ae6752509">update</a></div><div class="ttdeci">static void update(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:269</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a3017cd14eca2b9e67a69e7ea559b5eaa"><div class="ttname"><a href="screen__tracking_8c.html#a3017cd14eca2b9e67a69e7ea559b5eaa">enter</a></div><div class="ttdeci">static void enter(void *screen)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:194</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a class="anchor" id="aa65afaab05457de746d1c93ac8942f76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t servo_x = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a00b08d9093c8479925610e104269e4d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t servo_y = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a class="anchor" id="a51d707e6287e315967c1656b68510f25"></a>
@@ -1037,9 +1091,9 @@ Here is the call graph for this function:</div>
 <div class="line">        <a class="code" href="screen__tracking_8c.html#a5d91f86f9a46542f9e2f469fc8e7dfc6">tracking_our_stop</a>,</div>
 <div class="line">        <a class="code" href="screen__tracking_8c.html#acb647e6a47a40716583b11336f58e023">tracking_our_update</a></div>
 <div class="line">}</div>
-<div class="ttc" id="screen__tracking_8c_html_acb647e6a47a40716583b11336f58e023"><div class="ttname"><a href="screen__tracking_8c.html#acb647e6a47a40716583b11336f58e023">tracking_our_update</a></div><div class="ttdeci">void tracking_our_update(void *tracking_config, struct Block *blocks, int num_blocks)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:101</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a5d91f86f9a46542f9e2f469fc8e7dfc6"><div class="ttname"><a href="screen__tracking_8c.html#a5d91f86f9a46542f9e2f469fc8e7dfc6">tracking_our_stop</a></div><div class="ttdeci">void tracking_our_stop(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:93</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a4e5b235d9db4e14eb031143a12e26940"><div class="ttname"><a href="screen__tracking_8c.html#a4e5b235d9db4e14eb031143a12e26940">tracking_our_start</a></div><div class="ttdeci">void tracking_our_start(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:85</div></div>
+<div class="ttc" id="screen__tracking_8c_html_acb647e6a47a40716583b11336f58e023"><div class="ttname"><a href="screen__tracking_8c.html#acb647e6a47a40716583b11336f58e023">tracking_our_update</a></div><div class="ttdeci">void tracking_our_update(void *tracking_config, struct Block *blocks, int num_blocks)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:109</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a5d91f86f9a46542f9e2f469fc8e7dfc6"><div class="ttname"><a href="screen__tracking_8c.html#a5d91f86f9a46542f9e2f469fc8e7dfc6">tracking_our_stop</a></div><div class="ttdeci">void tracking_our_stop(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:101</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a4e5b235d9db4e14eb031143a12e26940"><div class="ttname"><a href="screen__tracking_8c.html#a4e5b235d9db4e14eb031143a12e26940">tracking_our_start</a></div><div class="ttdeci">void tracking_our_start(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:88</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1065,16 +1119,16 @@ Here is the call graph for this function:</div>
 <div class="line">        <a class="code" href="screen__tracking_8c.html#ab0a72aefe60e18bcbc6181f6015d1e88">tracking_reference_stop</a>,</div>
 <div class="line">        <a class="code" href="screen__tracking_8c.html#a3d4b2e5f0e97c059eaeca7e088004732">tracking_reference_update</a></div>
 <div class="line">}</div>
-<div class="ttc" id="screen__tracking_8c_html_ab0a72aefe60e18bcbc6181f6015d1e88"><div class="ttname"><a href="screen__tracking_8c.html#ab0a72aefe60e18bcbc6181f6015d1e88">tracking_reference_stop</a></div><div class="ttdeci">void tracking_reference_stop(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:124</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a3d4b2e5f0e97c059eaeca7e088004732"><div class="ttname"><a href="screen__tracking_8c.html#a3d4b2e5f0e97c059eaeca7e088004732">tracking_reference_update</a></div><div class="ttdeci">void tracking_reference_update(void *tracking_config, struct Block *blocks, int num_blocks)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:132</div></div>
-<div class="ttc" id="screen__tracking_8c_html_a64c8fd7aa09f5cc15cce099bf8efb46e"><div class="ttname"><a href="screen__tracking_8c.html#a64c8fd7aa09f5cc15cce099bf8efb46e">tracking_reference_start</a></div><div class="ttdeci">void tracking_reference_start(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:116</div></div>
+<div class="ttc" id="screen__tracking_8c_html_ab0a72aefe60e18bcbc6181f6015d1e88"><div class="ttname"><a href="screen__tracking_8c.html#ab0a72aefe60e18bcbc6181f6015d1e88">tracking_reference_stop</a></div><div class="ttdeci">void tracking_reference_stop(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:155</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a3d4b2e5f0e97c059eaeca7e088004732"><div class="ttname"><a href="screen__tracking_8c.html#a3d4b2e5f0e97c059eaeca7e088004732">tracking_reference_update</a></div><div class="ttdeci">void tracking_reference_update(void *tracking_config, struct Block *blocks, int num_blocks)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:163</div></div>
+<div class="ttc" id="screen__tracking_8c_html_a64c8fd7aa09f5cc15cce099bf8efb46e"><div class="ttname"><a href="screen__tracking_8c.html#a64c8fd7aa09f5cc15cce099bf8efb46e">tracking_reference_start</a></div><div class="ttdeci">void tracking_reference_start(void *tracking_config)</div><div class="ttdef"><b>Definition:</b> screen_tracking.c:147</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

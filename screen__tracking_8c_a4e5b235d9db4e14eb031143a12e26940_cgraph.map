@@ -1,3 +1,4 @@
 <map id="tracking_our_start" name="tracking_our_start">
-<area shape="rect" id="node2" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="180,5,291,32"/>
+<area shape="rect" id="node2" href="$group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="180,5,328,32"/>
+<area shape="rect" id="node3" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="199,56,309,83"/>
 </map>

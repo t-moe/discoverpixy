@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['servo_5fbutton_5fspacing',['SERVO_BUTTON_SPACING',['../screen__pixytest_8c.html#a61f6199ab9d14cc55be19847add309c3',1,'screen_pixytest.c']]],
-  ['servo_5fbutton_5fy',['SERVO_BUTTON_Y',['../screen__pixytest_8c.html#af043ebace98de8929bd147634673743e',1,'screen_pixytest.c']]],
-  ['string',['STRING',['../pixydefs_8h.html#a8f7bd5242b15da973671df869db5fe85',1,'pixydefs.h']]]
+  ['reg_5fpid_5fkd',['REG_PID_KD',['../pixy__control_8c.html#a270b42ec5ef46a54c91fe1958d551231',1,'pixy_control.c']]],
+  ['reg_5fpid_5fki',['REG_PID_KI',['../pixy__control_8c.html#a518bf70ad380fa7605e895f59ba08249',1,'pixy_control.c']]],
+  ['reg_5fpid_5fkp',['REG_PID_KP',['../pixy__control_8c.html#aa229051d61aedca94d95afa01c6ab3fe',1,'pixy_control.c']]],
+  ['reg_5fpid_5fta',['REG_PID_TA',['../pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644',1,'pixy_control.c']]]
 ];

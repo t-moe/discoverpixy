@@ -1,3 +1,7 @@
 <map id="ll_tft_draw_bitmap_unscaled" name="ll_tft_draw_bitmap_unscaled">
 <area shape="rect" id="node2" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="180,13,352,39"/>
+<area shape="rect" id="node3" href="$pixy__frame_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="400,13,491,39"/>
+<area shape="rect" id="node4" href="$group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="539,5,681,47"/>
+<area shape="rect" id="node5" href="$group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="729,13,880,39"/>
+<area shape="rect" id="node6" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="928,13,989,39"/>
 </map>

@@ -8,8 +8,9 @@ var indexSectionsWithContent =
   5: "bcfnst",
   6: "ft",
   7: "adefinoprstu",
-  8: "abcdefilnpsuxy",
-  9: "abcfglmnpst"
+  8: "abcdefilnprsuxy",
+  9: "abcfglmnpst",
+  10: "d"
 };
 
 var indexSectionNames =
@@ -23,7 +24,8 @@ var indexSectionNames =
   6: "enums",
   7: "enumvalues",
   8: "defines",
-  9: "groups"
+  9: "groups",
+  10: "pages"
 };
 
 var indexSectionLabels =
@@ -37,6 +39,7 @@ var indexSectionLabels =
   6: "Enumerations",
   7: "Enumerator",
   8: "Macros",
-  9: "Modules"
+  9: "Modules",
+  10: "Pages"
 };
 

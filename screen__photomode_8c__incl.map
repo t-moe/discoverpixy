@@ -1,13 +1,13 @@
 <map id="common/app/screen_photomode.c" name="common/app/screen_photomode.c">
 <area shape="rect" id="node2" href="$screen__photomode_8h.html" title="screen_photomode.h" alt="" coords="5,80,148,107"/>
 <area shape="rect" id="node6" href="$screen__photomode__save_8h.html" title="screen_photomode_save.h" alt="" coords="173,80,349,107"/>
-<area shape="rect" id="node7" href="$button_8h.html" title="button.h" alt="" coords="647,80,717,107"/>
-<area shape="rect" id="node8" href="$touch_8h.html" title="touch.h" alt="" coords="649,155,715,181"/>
-<area shape="rect" id="node10" href="$tft_8h.html" title="tft.h" alt="" coords="581,155,625,181"/>
-<area shape="rect" id="node11" href="$pixy_8h.html" title="pixy.h" alt="" coords="741,80,797,107"/>
-<area shape="rect" id="node13" href="$system_8h.html" title="system.h" alt="" coords="429,155,505,181"/>
-<area shape="rect" id="node14" href="$pixy__helper_8h.html" title="pixy_helper.h" alt="" coords="373,80,471,107"/>
-<area shape="rect" id="node3" href="$screen_8h.html" title="screen.h" alt="" coords="166,155,238,181"/>
-<area shape="rect" id="node12" href="$pixydefs_8h.html" title="pixydefs.h" alt="" coords="791,155,872,181"/>
-<area shape="rect" id="node15" href="$filesystem_8h.html" title="filesystem.h" alt="" coords="313,155,405,181"/>
+<area shape="rect" id="node7" href="$button_8h.html" title="button.h" alt="" coords="645,80,714,107"/>
+<area shape="rect" id="node8" href="$touch_8h.html" title="touch.h" alt="" coords="647,155,712,181"/>
+<area shape="rect" id="node10" href="$tft_8h.html" title="tft.h" alt="" coords="579,155,623,181"/>
+<area shape="rect" id="node11" href="$pixy_8h.html" title="pixy.h" alt="" coords="738,80,794,107"/>
+<area shape="rect" id="node13" href="$system_8h.html" title="system.h" alt="" coords="427,155,503,181"/>
+<area shape="rect" id="node14" href="$pixy__frame_8h.html" title="pixy_frame.h" alt="" coords="373,80,469,107"/>
+<area shape="rect" id="node3" href="$screen_8h.html" title="screen.h" alt="" coords="163,155,235,181"/>
+<area shape="rect" id="node12" href="$pixydefs_8h.html" title="pixydefs.h" alt="" coords="788,155,869,181"/>
+<area shape="rect" id="node15" href="$filesystem_8h.html" title="filesystem.h" alt="" coords="311,155,403,181"/>
 </map>

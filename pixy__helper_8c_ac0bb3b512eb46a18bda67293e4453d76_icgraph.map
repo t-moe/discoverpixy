@@ -1,10 +1,10 @@
 <map id="interpolateBayer" name="interpolateBayer">
 <area shape="rect" id="node2" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="169,15,260,42"/>
 <area shape="rect" id="node6" href="$pixy__helper_8c.html#a9b12014ced2f09e5e7d6646b966552ef" title="saveBA81" alt="" coords="175,67,255,94"/>
-<area shape="rect" id="node3" href="$pixy__helper_8h.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="322,5,465,47"/>
-<area shape="rect" id="node4" href="$pixy__helper_8h.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="527,13,677,39"/>
+<area shape="rect" id="node3" href="$group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="322,5,465,47"/>
+<area shape="rect" id="node4" href="$group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="527,13,677,39"/>
 <area shape="rect" id="node5" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="725,13,787,39"/>
-<area shape="rect" id="node7" href="$pixy__helper_8h.html#af0820ad9bb1ae6791fecb3916372c479" title="pixy_save_cropped_frame" alt="" coords="308,71,479,98"/>
-<area shape="rect" id="node8" href="$pixy__helper_8h.html#aeb47b641ad8f8cb10c26debb27c7dead" title="pixy_save_full_frame" alt="" coords="531,71,673,98"/>
+<area shape="rect" id="node7" href="$group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479" title="pixy_save_cropped_frame" alt="" coords="308,71,479,98"/>
+<area shape="rect" id="node8" href="$group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead" title="pixy_save_full_frame" alt="" coords="531,71,673,98"/>
 <area shape="rect" id="node9" href="$screen__photomode__save_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="725,71,787,98"/>
 </map>

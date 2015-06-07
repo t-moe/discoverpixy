@@ -96,28 +96,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="filesystem_8h.html">filesystem.h</a>&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pixy__helper_8h.html#a31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a>(uint16_t x, uint16_t y);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pixy__helper_8h.html#ad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a>(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pixy__helper_8h.html#aeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pixy__helper_8h.html#af0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a>(uint16_t x, uint16_t y);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a>(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">int</span> <a class="code" href="pixy__helper_8h.html#ad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a>(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_HELPER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a>(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_HELPER_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="struct_f_i_l_e___h_a_n_d_l_e_html"><div class="ttname"><a href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a></div><div class="ttdef"><b>Definition:</b> filesystem.h:66</div></div>
+<div class="ttc" id="group__pixy__helper_html_gaf0820ad9bb1ae6791fecb3916372c479"><div class="ttname"><a href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a></div><div class="ttdeci">int pixy_save_cropped_frame(FILE_HANDLE *handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:54</div></div>
+<div class="ttc" id="group__pixy__helper_html_gaeb47b641ad8f8cb10c26debb27c7dead"><div class="ttname"><a href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a></div><div class="ttdeci">int pixy_save_full_frame(FILE_HANDLE *handle)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:50</div></div>
+<div class="ttc" id="group__pixy__helper_html_gad8071a378a78f150cd14bbbd9b93c925"><div class="ttname"><a href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a></div><div class="ttdeci">int pixy_render_cropped_frame(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:17</div></div>
 <div class="ttc" id="filesystem_8h_html"><div class="ttname"><a href="filesystem_8h.html">filesystem.h</a></div></div>
-<div class="ttc" id="pixy__helper_8h_html_af0820ad9bb1ae6791fecb3916372c479"><div class="ttname"><a href="pixy__helper_8h.html#af0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a></div><div class="ttdeci">int pixy_save_cropped_frame(FILE_HANDLE *handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:54</div></div>
-<div class="ttc" id="pixy__helper_8h_html_ad9068bef13bfd5e3cee9ecfe4d070f02"><div class="ttname"><a href="pixy__helper_8h.html#ad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a></div><div class="ttdeci">int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:225</div></div>
-<div class="ttc" id="pixy__helper_8h_html_a31b46efdf685d2337447b1e529693e2f"><div class="ttname"><a href="pixy__helper_8h.html#a31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a></div><div class="ttdeci">int pixy_render_full_frame(uint16_t x, uint16_t y)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:12</div></div>
-<div class="ttc" id="pixy__helper_8h_html_aeb47b641ad8f8cb10c26debb27c7dead"><div class="ttname"><a href="pixy__helper_8h.html#aeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a></div><div class="ttdeci">int pixy_save_full_frame(FILE_HANDLE *handle)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:50</div></div>
-<div class="ttc" id="pixy__helper_8h_html_ad8071a378a78f150cd14bbbd9b93c925"><div class="ttname"><a href="pixy__helper_8h.html#ad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a></div><div class="ttdeci">int pixy_render_cropped_frame(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:17</div></div>
+<div class="ttc" id="group__pixy__helper_html_ga31b46efdf685d2337447b1e529693e2f"><div class="ttname"><a href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a></div><div class="ttdeci">int pixy_render_full_frame(uint16_t x, uint16_t y)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:12</div></div>
+<div class="ttc" id="group__pixy__helper_html_gad9068bef13bfd5e3cee9ecfe4d070f02"><div class="ttname"><a href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a></div><div class="ttdeci">int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_helper.c:225</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 6 2015 18:48:32 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 7 2015 17:40:16 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

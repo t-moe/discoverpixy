@@ -1,13 +1,15 @@
 <map id="update" name="update">
 <area shape="rect" id="node2" href="$group__pixy.html#gaada09a1aeda12672050f5c3183ef6f3b" title="Terminates connection with Pixy. " alt="" coords="148,5,232,32"/>
 <area shape="rect" id="node3" href="$group__pixy.html#gad269822960ad0073356dab75ce3050b3" title="Creates a connection with Pixy and listens for Pixy messages. " alt="" coords="155,56,225,83"/>
-<area shape="rect" id="node4" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="504,121,615,148"/>
-<area shape="rect" id="node5" href="$group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0" title="pixy_service" alt="" coords="143,157,237,184"/>
-<area shape="rect" id="node6" href="$pixy__helper_8c.html#a31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="115,208,265,235"/>
-<area shape="rect" id="node12" href="$group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="116,259,264,285"/>
-<area shape="rect" id="node7" href="$pixy__helper_8c.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="313,179,456,221"/>
-<area shape="rect" id="node8" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="514,187,605,213"/>
-<area shape="rect" id="node9" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="663,161,779,188"/>
-<area shape="rect" id="node10" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="670,212,771,239"/>
-<area shape="rect" id="node11" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="827,212,941,239"/>
+<area shape="rect" id="node4" href="$group__pixy.html#ga72a2cd126f6a5f67842e5ff66424ccb0" title="pixy_service" alt="" coords="143,107,237,133"/>
+<area shape="rect" id="node5" href="$group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f" title="pixy_render_full_frame" alt="" coords="115,157,265,184"/>
+<area shape="rect" id="node14" href="$group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="116,208,264,235"/>
+<area shape="rect" id="node6" href="$group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="313,150,456,191"/>
+<area shape="rect" id="node7" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="504,132,615,159"/>
+<area shape="rect" id="node8" href="$pixy__frame_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="514,183,605,209"/>
+<area shape="rect" id="node9" href="$pixy__frame_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="691,132,807,159"/>
+<area shape="rect" id="node10" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="698,183,799,209"/>
+<area shape="rect" id="node12" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="663,235,835,261"/>
+<area shape="rect" id="node11" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="889,180,1003,207"/>
+<area shape="rect" id="node13" href="$group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="883,231,1009,273"/>
 </map>

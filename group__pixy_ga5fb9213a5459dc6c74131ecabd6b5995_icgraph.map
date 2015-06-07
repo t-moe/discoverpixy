@@ -1,3 +1,5 @@
 <map id="pixy_rcs_set_position" name="pixy_rcs_set_position">
-<area shape="rect" id="node2" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="201,5,263,32"/>
+<area shape="rect" id="node2" href="$screen__photomode_8c.html#a5e8f84ee8ff4bf827775c38ae6752509" title="update" alt="" coords="240,5,301,32"/>
+<area shape="rect" id="node3" href="$screen__tracking_8c.html#a4e5b235d9db4e14eb031143a12e26940" title="tracking_our_start" alt="" coords="207,56,334,83"/>
+<area shape="rect" id="node4" href="$screen__tracking_8c.html#acb647e6a47a40716583b11336f58e023" title="tracking_our_update" alt="" coords="201,107,340,133"/>
 </map>

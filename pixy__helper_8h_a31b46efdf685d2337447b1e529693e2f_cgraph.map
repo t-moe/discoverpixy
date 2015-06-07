@@ -2,7 +2,9 @@
 <area shape="rect" id="node2" href="$pixy__helper_8c.html#ad8071a378a78f150cd14bbbd9b93c925" title="pixy_render_cropped\l_frame" alt="" coords="204,23,347,65"/>
 <area shape="rect" id="node3" href="$group__pixy.html#ga3d55779001cc649ed85be1a92f09892d" title="Send a command to Pixy. " alt="" coords="395,5,505,32"/>
 <area shape="rect" id="node4" href="$pixy__helper_8c.html#afb06c0b9c06d1309cf67dcf1a9fc3eef" title="renderBA81" alt="" coords="405,56,495,83"/>
-<area shape="rect" id="node5" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="553,31,669,57"/>
-<area shape="rect" id="node6" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="561,81,662,108"/>
-<area shape="rect" id="node7" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="717,81,832,108"/>
+<area shape="rect" id="node5" href="$pixy__helper_8c.html#ac0bb3b512eb46a18bda67293e4453d76" title="interpolateBayer" alt="" coords="581,5,697,32"/>
+<area shape="rect" id="node6" href="$group__tft.html#ga82f9b498c57296310f0dfdaa3d7928ac" title="tft_draw_pixel" alt="" coords="589,56,690,83"/>
+<area shape="rect" id="node8" href="$group__tft.html#gab8914c547e697f173306d929ca56988f" title="tft_draw_bitmap_unscaled" alt="" coords="553,108,725,135"/>
+<area shape="rect" id="node7" href="$group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309" title="ll_tft_draw_pixel" alt="" coords="779,53,894,80"/>
+<area shape="rect" id="node9" href="$group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61" title="ll_tft_draw_bitmap\l_unscaled" alt="" coords="773,105,900,146"/>
 </map>

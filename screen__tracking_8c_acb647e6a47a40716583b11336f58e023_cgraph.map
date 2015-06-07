@@ -1,0 +1,5 @@
+<map id="tracking_our_update" name="tracking_our_update">
+<area shape="rect" id="node2" href="$group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902" title="pixy_PID_X" alt="" coords="222,5,310,32"/>
+<area shape="rect" id="node3" href="$group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b" title="pixy_PID_Y" alt="" coords="221,56,311,83"/>
+<area shape="rect" id="node4" href="$group__pixy.html#ga5fb9213a5459dc6c74131ecabd6b5995" title="Set pixy servo axis position. " alt="" coords="192,107,340,133"/>
+</map>

@@ -1,3 +1,5 @@
 <map id="Application" name="Application">
-<area shape="rect" id="node2" href="$group__screens.html" title="Screens" alt="" coords="140,5,211,32"/>
+<area shape="rect" id="node1" href="$group__pixy__control.html" title="Pixy Control Helper" alt="" coords="140,5,275,32"/>
+<area shape="rect" id="node3" href="$group__screens.html" title="Screens" alt="" coords="172,56,243,83"/>
+<area shape="rect" id="node4" href="$group__pixy__helper.html" title="Pixy Frame Helper" alt="" coords="142,107,273,133"/>
 </map>

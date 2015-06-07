@@ -1,8 +1,8 @@
 <map id="common/pixy/pixydefs.h" name="common/pixy/pixydefs.h">
-<area shape="rect" id="node2" href="$pixy_8h.html" title="common/pixy/pixy.h" alt="" coords="489,80,627,107"/>
-<area shape="rect" id="node3" href="$pixy__helper_8c.html" title="common/app/pixy_helper.c" alt="" coords="5,162,183,189"/>
-<area shape="rect" id="node4" href="$screen__photomode_8c.html" title="common/app/screen_photomode.c" alt="" coords="207,162,429,189"/>
-<area shape="rect" id="node5" href="$screen__photomode__save_8c.html" title="common/app/screen_photomode\l_save.c" alt="" coords="453,155,663,196"/>
-<area shape="rect" id="node6" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="688,162,892,189"/>
-<area shape="rect" id="node7" href="$screen__tracking_8c.html" title="common/app/screen_tracking.c" alt="" coords="916,162,1120,189"/>
+<area shape="rect" id="node2" href="$pixy_8h.html" title="common/pixy/pixy.h" alt="" coords="486,80,625,107"/>
+<area shape="rect" id="node3" href="$pixy__frame_8c.html" title="common/app/pixy_frame.c" alt="" coords="5,162,180,189"/>
+<area shape="rect" id="node4" href="$screen__photomode_8c.html" title="common/app/screen_photomode.c" alt="" coords="204,162,427,189"/>
+<area shape="rect" id="node5" href="$screen__photomode__save_8c.html" title="common/app/screen_photomode\l_save.c" alt="" coords="450,155,661,196"/>
+<area shape="rect" id="node6" href="$screen__pixytest_8c.html" title="common/app/screen_pixytest.c" alt="" coords="685,162,889,189"/>
+<area shape="rect" id="node7" href="$screen__tracking_8c.html" title="common/app/screen_tracking.c" alt="" coords="913,162,1117,189"/>
 </map>

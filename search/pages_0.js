@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['discoverpixy',['discoverpixy',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['discoverpixy_20doxygen_20documentation',['discoverpixy Doxygen Documentation',['../index.html',1,'']]]
 ];
