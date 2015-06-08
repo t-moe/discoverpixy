@@ -16,10 +16,11 @@
 #include<stdint.h>
 
 // PID tuning factors
-#define REG_PID_KP      (0.5f)
+#define REG_PID_KP      (0.41f)
 #define REG_PID_KI      (0.001f)
-#define REG_PID_KD      (0.001f)
-#define REG_PID_TA      (0.01f)
+#define REG_PID_KD      (0.00025f)
+#define REG_PID_TA      (0.001f)
+#define REG_PID_YKOR    (0.3f)
 
 void int_init(void){  
     // TODO Init ports and outputs if needed.
@@ -38,7 +39,7 @@ int16_t pixy_PID_Y(int16_t x, int16_t w)
     //----PID-control-------------------------------------------------------------------------
     esum = esum + e;                            // add e to the current sum
 
-    y += REG_PID_KP * e;                        // add the proportional part to the output
+    y += (REG_PID_KP + REG_PID_YKOR) * e;       // add the proportional part to the output
     y += REG_PID_KI * REG_PID_TA * esum;        // add the integral part to the output
     y += REG_PID_KD * (e - eold) / REG_PID_TA;  // add the differential part to the output
     //----------------------------------------------------------------------------------------
