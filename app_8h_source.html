@@ -89,22 +89,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">app.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="app_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef APP_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define APP_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385">app_init</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* APP_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="group__app_html_ga071d403b77a003f23a0d2ab1fbb67a36"><div class="ttname"><a href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process</a></div><div class="ttdeci">void app_process()</div><div class="ttdef"><b>Definition:</b> app.c:18</div></div>
-<div class="ttc" id="group__app_html_ga8c6e58bb7e2a0dcf8537fc940ebfa385"><div class="ttname"><a href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385">app_init</a></div><div class="ttdeci">void app_init()</div><div class="ttdef"><b>Definition:</b> app.c:8</div></div>
+<a href="app_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/app/app.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  51089aa Refactored Project Structure for use with emulator</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-05-10    timolang@gmail.com  21edc56 Added doxyfile (doxygen) for the common folder. Started with doxygen comments for app and tft module.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">* 2015-05-11    timolang@gmail.com  08d9fe0 More work on doxygen module structure</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* 2015-06-08    timolang@gmail.com  73db8b5 Added doxygen mainpage comment in app.h</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef APP_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define APP_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385">app_init</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* APP_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="group__app_html_ga071d403b77a003f23a0d2ab1fbb67a36"><div class="ttname"><a href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process</a></div><div class="ttdeci">void app_process()</div><div class="ttdef"><b>Definition:</b> <a href="app_8c_source.html#l00048">app.c:48</a></div></div>
+<div class="ttc" id="group__app_html_ga8c6e58bb7e2a0dcf8537fc940ebfa385"><div class="ttname"><a href="group__app.html#ga8c6e58bb7e2a0dcf8537fc940ebfa385">app_init</a></div><div class="ttdeci">void app_init()</div><div class="ttdef"><b>Definition:</b> <a href="app_8c_source.html#l00037">app.c:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -124,6 +124,22 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Starts/Initializes the app This function should be called at the top of the main function of your platform </p>
 
+<p>Definition at line <a class="el" href="app_8c_source.html#l00037">37</a> of file <a class="el" href="app_8c_source.html">app.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="group__system.html#ga3bc3f0cc729bc8f6bf8c0702c4d058dd">system_init</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="group__tft.html#gaaaed6a011ff4ec08c6a1a264e8396215">tft_init</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="group__touch.html#ga0ff491e3e07321fef794d4f07b103c0f">touch_init</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="group__filesystem.html#ga367ec5e73c77ddf5047d05021cf97a8f">filesystem_init</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate</a>(<a class="code" href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a>());</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="ttc" id="group__main_html_ga6310b719fc2b06860024d0992d08acd1"><div class="ttname"><a href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a></div><div class="ttdeci">SCREEN_STRUCT * get_screen_main()</div><div class="ttdef"><b>Definition:</b> <a href="screen__main_8c_source.html#l00196">screen_main.c:196</a></div></div>
+<div class="ttc" id="group__screen_html_gad4473a16eaf48dab405d23f5f63af3aa"><div class="ttname"><a href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate</a></div><div class="ttdeci">bool gui_screen_navigate(SCREEN_STRUCT *screen)</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00074">screen.c:74</a></div></div>
+<div class="ttc" id="group__system_html_ga3bc3f0cc729bc8f6bf8c0702c4d058dd"><div class="ttname"><a href="group__system.html#ga3bc3f0cc729bc8f6bf8c0702c4d058dd">system_init</a></div><div class="ttdeci">bool system_init()</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00021">system.c:21</a></div></div>
+<div class="ttc" id="group__filesystem_html_ga367ec5e73c77ddf5047d05021cf97a8f"><div class="ttname"><a href="group__filesystem.html#ga367ec5e73c77ddf5047d05021cf97a8f">filesystem_init</a></div><div class="ttdeci">bool filesystem_init()</div><div class="ttdef"><b>Definition:</b> <a href="filesystem_8c_source.html#l00018">filesystem.c:18</a></div></div>
+<div class="ttc" id="group__tft_html_gaaaed6a011ff4ec08c6a1a264e8396215"><div class="ttname"><a href="group__tft.html#gaaaed6a011ff4ec08c6a1a264e8396215">tft_init</a></div><div class="ttdeci">bool tft_init()</div><div class="ttdef"><b>Definition:</b> <a href="tft_8c_source.html#l00039">tft.c:39</a></div></div>
+<div class="ttc" id="group__touch_html_ga0ff491e3e07321fef794d4f07b103c0f"><div class="ttname"><a href="group__touch.html#ga0ff491e3e07321fef794d4f07b103c0f">touch_init</a></div><div class="ttdeci">bool touch_init()</div><div class="ttdef"><b>Definition:</b> <a href="touch_8c_source.html#l00061">touch.c:61</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -149,6 +165,15 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>Executes one cycle of the app Call this function repeatedly from a loop inside the main function </p>
 
+<p>Definition at line <a class="el" href="app_8c_source.html#l00048">48</a> of file <a class="el" href="app_8c_source.html">app.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="group__system.html#ga222cd9a0957fe56d9bb3e745acfb7f1f">system_process</a>(); <span class="comment">//Let the system handle it&#39;s pending events</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="group__screen.html#gab7394734ee1d57093721cbd22b901323">gui_screen_update</a>(); <span class="comment">//update the currently active screen</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="group__screen_html_gab7394734ee1d57093721cbd22b901323"><div class="ttname"><a href="group__screen.html#gab7394734ee1d57093721cbd22b901323">gui_screen_update</a></div><div class="ttdeci">void gui_screen_update()</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00041">screen.c:41</a></div></div>
+<div class="ttc" id="group__system_html_ga222cd9a0957fe56d9bb3e745acfb7f1f"><div class="ttname"><a href="group__system.html#ga222cd9a0957fe56d9bb3e745acfb7f1f">system_process</a></div><div class="ttdeci">void system_process()</div><div class="ttdef"><b>Definition:</b> <a href="system_8c_source.html#l00031">system.c:31</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -163,7 +188,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:19 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

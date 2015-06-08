@@ -132,6 +132,34 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The offset which needs to be added to the X-Servo position </dd></dl>
 
+<p>Definition at line <a class="el" href="pixy__control_8c_source.html#l00067">67</a> of file <a class="el" href="pixy__control_8c_source.html">pixy_control.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> e = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> esum = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> eold = 0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a> = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    e = (float)(<a class="code" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">x</a> - w);                         <span class="comment">// calculate the controller offset</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//----PID-control-------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    esum = esum + e;                            <span class="comment">// add e to the current sum</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    y += <a class="code" href="pixy__control_8c.html#aa229051d61aedca94d95afa01c6ab3fe">REG_PID_KP</a> * e;                        <span class="comment">// add the proportional part to the output</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    y += <a class="code" href="pixy__control_8c.html#a518bf70ad380fa7605e895f59ba08249">REG_PID_KI</a> * <a class="code" href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a> * esum;        <span class="comment">// add the integral part to the output</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    y += <a class="code" href="pixy__control_8c.html#a270b42ec5ef46a54c91fe1958d551231">REG_PID_KD</a> * (e - eold) / <a class="code" href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a>;  <span class="comment">// add the differential part to the output</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//----------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    eold = e;                                   <span class="comment">// save the previous value</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> (int16_t)<a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="ttc" id="pixy__control_8c_html_a518bf70ad380fa7605e895f59ba08249"><div class="ttname"><a href="pixy__control_8c.html#a518bf70ad380fa7605e895f59ba08249">REG_PID_KI</a></div><div class="ttdeci">#define REG_PID_KI</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00038">pixy_control.c:38</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_aa229051d61aedca94d95afa01c6ab3fe"><div class="ttname"><a href="pixy__control_8c.html#aa229051d61aedca94d95afa01c6ab3fe">REG_PID_KP</a></div><div class="ttdeci">#define REG_PID_KP</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00037">pixy_control.c:37</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_ac490324cc61d8be6f8cd13076c0b5644"><div class="ttname"><a href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a></div><div class="ttdeci">#define REG_PID_TA</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00040">pixy_control.c:40</a></div></div>
+<div class="ttc" id="struct_block_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="struct_block.html#ab0580f504a7428539be299fa71565f30">Block::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> <a href="pixy_8h_source.html#l00081">pixy.h:81</a></div></div>
+<div class="ttc" id="struct_block_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">Block::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> <a href="pixy_8h_source.html#l00080">pixy.h:80</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_a270b42ec5ef46a54c91fe1958d551231"><div class="ttname"><a href="pixy__control_8c.html#a270b42ec5ef46a54c91fe1958d551231">REG_PID_KD</a></div><div class="ttdeci">#define REG_PID_KD</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00039">pixy_control.c:39</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -175,6 +203,34 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The offset which needs to be added to the Y-Servo position </dd></dl>
 
+<p>Definition at line <a class="el" href="pixy__control_8c_source.html#l00044">44</a> of file <a class="el" href="pixy__control_8c_source.html">pixy_control.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> e = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> esum = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> eold = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a> = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    e = (float)(<a class="code" href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">x</a> - w);                         <span class="comment">// calculate the controller offset</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//----PID-control-------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    esum = esum + e;                            <span class="comment">// add e to the current sum</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    y += <a class="code" href="pixy__control_8c.html#aa229051d61aedca94d95afa01c6ab3fe">REG_PID_KP</a> * e;                        <span class="comment">// add the proportional part to the output</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    y += <a class="code" href="pixy__control_8c.html#a518bf70ad380fa7605e895f59ba08249">REG_PID_KI</a> * <a class="code" href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a> * esum;        <span class="comment">// add the integral part to the output</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    y += <a class="code" href="pixy__control_8c.html#a270b42ec5ef46a54c91fe1958d551231">REG_PID_KD</a> * (e - eold) / <a class="code" href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a>;  <span class="comment">// add the differential part to the output</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//----------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    eold = e;                                   <span class="comment">// save the previous value</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> (int16_t)<a class="code" href="struct_block.html#ab0580f504a7428539be299fa71565f30">y</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<div class="ttc" id="pixy__control_8c_html_a518bf70ad380fa7605e895f59ba08249"><div class="ttname"><a href="pixy__control_8c.html#a518bf70ad380fa7605e895f59ba08249">REG_PID_KI</a></div><div class="ttdeci">#define REG_PID_KI</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00038">pixy_control.c:38</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_aa229051d61aedca94d95afa01c6ab3fe"><div class="ttname"><a href="pixy__control_8c.html#aa229051d61aedca94d95afa01c6ab3fe">REG_PID_KP</a></div><div class="ttdeci">#define REG_PID_KP</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00037">pixy_control.c:37</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_ac490324cc61d8be6f8cd13076c0b5644"><div class="ttname"><a href="pixy__control_8c.html#ac490324cc61d8be6f8cd13076c0b5644">REG_PID_TA</a></div><div class="ttdeci">#define REG_PID_TA</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00040">pixy_control.c:40</a></div></div>
+<div class="ttc" id="struct_block_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="struct_block.html#ab0580f504a7428539be299fa71565f30">Block::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> <a href="pixy_8h_source.html#l00081">pixy.h:81</a></div></div>
+<div class="ttc" id="struct_block_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="struct_block.html#a4dde988b1b2adba65ae3efa69f65d960">Block::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> <a href="pixy_8h_source.html#l00080">pixy.h:80</a></div></div>
+<div class="ttc" id="pixy__control_8c_html_a270b42ec5ef46a54c91fe1958d551231"><div class="ttname"><a href="pixy__control_8c.html#a270b42ec5ef46a54c91fe1958d551231">REG_PID_KD</a></div><div class="ttdeci">#define REG_PID_KD</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00039">pixy_control.c:39</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -189,7 +245,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:19 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

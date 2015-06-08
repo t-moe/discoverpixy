@@ -89,41 +89,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">pixy_frame.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pixy__frame_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PIXY_FRAME_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PIXY_FRAME_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="filesystem_8h.html">filesystem.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<a href="pixy__frame_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/app/pixy_frame.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-06-07    timolang@gmail.com  c87220d Renamed pixy_helper to pixy_frame. Updated docu of appliaction. added doxygen comments to pixy_{frame,control}.h</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef PIXY_FRAME_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define PIXY_FRAME_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="filesystem_8h.html">filesystem.h</a>&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a>(uint16_t x, uint16_t y);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a>(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a>(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_FRAME_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="struct_f_i_l_e___h_a_n_d_l_e_html"><div class="ttname"><a href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a></div><div class="ttdef"><b>Definition:</b> filesystem.h:66</div></div>
-<div class="ttc" id="group__pixy__helper_html_gaf0820ad9bb1ae6791fecb3916372c479"><div class="ttname"><a href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a></div><div class="ttdeci">int pixy_save_cropped_frame(FILE_HANDLE *handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_frame.c:54</div></div>
-<div class="ttc" id="group__pixy__helper_html_gaeb47b641ad8f8cb10c26debb27c7dead"><div class="ttname"><a href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a></div><div class="ttdeci">int pixy_save_full_frame(FILE_HANDLE *handle)</div><div class="ttdef"><b>Definition:</b> pixy_frame.c:50</div></div>
-<div class="ttc" id="group__pixy__helper_html_gad8071a378a78f150cd14bbbd9b93c925"><div class="ttname"><a href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a></div><div class="ttdeci">int pixy_render_cropped_frame(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_frame.c:17</div></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a>(uint16_t x, uint16_t y);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a>(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a>(<a class="code" href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a>* handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a>(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_FRAME_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="struct_f_i_l_e___h_a_n_d_l_e_html"><div class="ttname"><a href="struct_f_i_l_e___h_a_n_d_l_e.html">FILE_HANDLE</a></div><div class="ttdef"><b>Definition:</b> <a href="filesystem_8h_source.html#l00081">filesystem.h:81</a></div></div>
+<div class="ttc" id="group__pixy__helper_html_gaf0820ad9bb1ae6791fecb3916372c479"><div class="ttname"><a href="group__pixy__helper.html#gaf0820ad9bb1ae6791fecb3916372c479">pixy_save_cropped_frame</a></div><div class="ttdeci">int pixy_save_cropped_frame(FILE_HANDLE *handle, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__frame_8c_source.html#l00070">pixy_frame.c:70</a></div></div>
+<div class="ttc" id="group__pixy__helper_html_gaeb47b641ad8f8cb10c26debb27c7dead"><div class="ttname"><a href="group__pixy__helper.html#gaeb47b641ad8f8cb10c26debb27c7dead">pixy_save_full_frame</a></div><div class="ttdeci">int pixy_save_full_frame(FILE_HANDLE *handle)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__frame_8c_source.html#l00065">pixy_frame.c:65</a></div></div>
+<div class="ttc" id="group__pixy__helper_html_gad8071a378a78f150cd14bbbd9b93c925"><div class="ttname"><a href="group__pixy__helper.html#gad8071a378a78f150cd14bbbd9b93c925">pixy_render_cropped_frame</a></div><div class="ttdeci">int pixy_render_cropped_frame(uint16_t x, uint16_t y, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__frame_8c_source.html#l00031">pixy_frame.c:31</a></div></div>
 <div class="ttc" id="filesystem_8h_html"><div class="ttname"><a href="filesystem_8h.html">filesystem.h</a></div></div>
-<div class="ttc" id="group__pixy__helper_html_ga31b46efdf685d2337447b1e529693e2f"><div class="ttname"><a href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a></div><div class="ttdeci">int pixy_render_full_frame(uint16_t x, uint16_t y)</div><div class="ttdef"><b>Definition:</b> pixy_frame.c:12</div></div>
-<div class="ttc" id="group__pixy__helper_html_gad9068bef13bfd5e3cee9ecfe4d070f02"><div class="ttname"><a href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a></div><div class="ttdeci">int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> pixy_frame.c:225</div></div>
+<div class="ttc" id="group__pixy__helper_html_ga31b46efdf685d2337447b1e529693e2f"><div class="ttname"><a href="group__pixy__helper.html#ga31b46efdf685d2337447b1e529693e2f">pixy_render_full_frame</a></div><div class="ttdeci">int pixy_render_full_frame(uint16_t x, uint16_t y)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__frame_8c_source.html#l00025">pixy_frame.c:25</a></div></div>
+<div class="ttc" id="group__pixy__helper_html_gad9068bef13bfd5e3cee9ecfe4d070f02"><div class="ttname"><a href="group__pixy__helper.html#gad9068bef13bfd5e3cee9ecfe4d070f02">pixy_cc_set_region</a></div><div class="ttdeci">int pixy_cc_set_region(uint8_t signum, uint16_t xoffset, uint16_t yoffset, uint16_t width, uint16_t height)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__frame_8c_source.html#l00233">pixy_frame.c:233</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

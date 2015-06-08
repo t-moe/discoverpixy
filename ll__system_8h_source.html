@@ -89,19 +89,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ll_system.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ll__system_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<a href="ll__system_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/lowlevel/ll_system.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  1f2af9f Added more tft functions to common and emulator. Fixed eventloop.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  cab8609 Integrated pixy into emulator. Pixy is no longer in the common/libs folder but in emulator/libs and discovery/libs</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  9a1d12a Refactored discovery, to use new project structure. Almost ready.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* 2015-04-25    timolang@gmail.com  3d1e4b2 Simplified code a bit. Emulator does not work stable when replugging pixy.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">* 2015-04-25    timolang@gmail.com  0858b0d Fixed some bugs when receiving large data.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">* 2015-05-15    timolang@gmail.com  9a16865 Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__ll__system.html#gad6c3b701d60604cc59b68e1af81c8f85">ll_system_init</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga02dc69a2258a680c99ace8167652ea91">ll_system_delay</a>(uint32_t msec);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga1314af5893cdde97e48bf135b6996b1c">ll_system_process</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga619ececb655f5b1bf378ced866103952">ll_system_toggle_led</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__ll__system.html#gad6c3b701d60604cc59b68e1af81c8f85">ll_system_init</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga02dc69a2258a680c99ace8167652ea91">ll_system_delay</a>(uint32_t msec);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga1314af5893cdde97e48bf135b6996b1c">ll_system_process</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__system.html#ga619ececb655f5b1bf378ced866103952">ll_system_toggle_led</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="ttc" id="group__ll__system_html_gad6c3b701d60604cc59b68e1af81c8f85"><div class="ttname"><a href="group__ll__system.html#gad6c3b701d60604cc59b68e1af81c8f85">ll_system_init</a></div><div class="ttdeci">bool ll_system_init()</div></div>
 <div class="ttc" id="group__ll__system_html_ga619ececb655f5b1bf378ced866103952"><div class="ttname"><a href="group__ll__system.html#ga619ececb655f5b1bf378ced866103952">ll_system_toggle_led</a></div><div class="ttdeci">void ll_system_toggle_led()</div></div>
 <div class="ttc" id="group__ll__system_html_ga1314af5893cdde97e48bf135b6996b1c"><div class="ttname"><a href="group__ll__system.html#ga1314af5893cdde97e48bf135b6996b1c">ll_system_process</a></div><div class="ttdeci">void ll_system_process()</div></div>
@@ -109,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

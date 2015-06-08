@@ -134,6 +134,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Definition at line <a class="el" href="screen_8h_source.html#l00047">47</a> of file <a class="el" href="screen_8h_source.html">screen.h</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="gaf7783b8728d6d218aa9e3b29eaf9689c"></a>
@@ -164,6 +166,38 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Navigate one screen back as soon as the app enters the main loop again. It's safe to call this method from an interrupt </p><dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
+<p>Definition at line <a class="el" href="screen_8c_source.html#l00085">85</a> of file <a class="el" href="screen_8c_source.html">screen.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="screen_8c.html#ad773a80ed58bd458652b3072dedea8e0">screen_list</a> == NULL) { <span class="comment">//the list head is emtpy, nothing to go back to</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* current = <a class="code" href="screen_8c.html#ad773a80ed58bd458652b3072dedea8e0">screen_list</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* last = NULL;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//Find second last element in list</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">while</span> (current-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> != NULL) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        last = current;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        current = current-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (last == NULL) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;    <span class="comment">//There&#39;s only a single screen, there&#39;s no going back here</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (current != <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;    <span class="comment">//The last entry in the list is not the current screen. List corrupted?</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a> = last; <span class="comment">//&quot;send message&quot; to main loop, to switch the screen</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_a914e64c0c6cfaf4f7b2b0c3493f0cbf2"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">SCREEN_S::next</a></div><div class="ttdeci">struct SCREEN_S * next</div><div class="ttdoc">Used internally. do not modify, do not initialize. </div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00057">screen.h:57</a></div></div>
+<div class="ttc" id="screen_8c_html_ac1cf7544db4ed268dcdb6c084608bce2"><div class="ttname"><a href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_current</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00032">screen.c:32</a></div></div>
+<div class="ttc" id="screen_8c_html_a351887a0341328604386e22e71b1fc1b"><div class="ttname"><a href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a></div><div class="ttdeci">static volatile SCREEN_STRUCT * screen_goto</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00033">screen.c:33</a></div></div>
+<div class="ttc" id="screen_8c_html_ad773a80ed58bd458652b3072dedea8e0"><div class="ttname"><a href="screen_8c.html#ad773a80ed58bd458652b3072dedea8e0">screen_list</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_list</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00031">screen.c:31</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00052">screen.h:52</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -189,6 +223,12 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Returns the currently active screen </p><dl class="section return"><dt>Returns</dt><dd>A Pointer to the active SCREEN_STRUCT </dd></dl>
 
+<p>Definition at line <a class="el" href="screen_8c_source.html#l00035">35</a> of file <a class="el" href="screen_8c_source.html">screen.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="ttc" id="screen_8c_html_ac1cf7544db4ed268dcdb6c084608bce2"><div class="ttname"><a href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_current</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00032">screen.c:32</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad4473a16eaf48dab405d23f5f63af3aa"></a>
@@ -213,6 +253,21 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success </dd></dl>
 
+<p>Definition at line <a class="el" href="screen_8c_source.html#l00074">74</a> of file <a class="el" href="screen_8c_source.html">screen.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (screen == NULL || screen == <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a> || screen == <a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a>) { <span class="comment">//invalid argument passed</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    screen-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> = NULL; <span class="comment">//this will become the new tail of the list, so the next pointer must be NULL</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a> = <a class="code" href="screen__filetest_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a>; <span class="comment">//&quot;send message&quot; to main loop, to switch the screen</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_a914e64c0c6cfaf4f7b2b0c3493f0cbf2"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">SCREEN_S::next</a></div><div class="ttdeci">struct SCREEN_S * next</div><div class="ttdoc">Used internally. do not modify, do not initialize. </div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00057">screen.h:57</a></div></div>
+<div class="ttc" id="screen_8c_html_ac1cf7544db4ed268dcdb6c084608bce2"><div class="ttname"><a href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_current</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00032">screen.c:32</a></div></div>
+<div class="ttc" id="screen_8c_html_a351887a0341328604386e22e71b1fc1b"><div class="ttname"><a href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a></div><div class="ttdeci">static volatile SCREEN_STRUCT * screen_goto</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00033">screen.c:33</a></div></div>
+<div class="ttc" id="screen__filetest_8c_html_a939fdd806f427cc8505ed817e28cce9d"><div class="ttname"><a href="screen__filetest_8c.html#a939fdd806f427cc8505ed817e28cce9d">screen</a></div><div class="ttdeci">static SCREEN_STRUCT screen</div><div class="ttdef"><b>Definition:</b> <a href="screen__filetest_8c_source.html#l00134">screen_filetest.c:134</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -238,6 +293,45 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Updates the current screen. Switches the screen if <a class="el" href="group__screen.html#gad4473a16eaf48dab405d23f5f63af3aa">gui_screen_navigate()</a> or <a class="el" href="group__screen.html#ga8e14bc7ee0214e2926965f9bdb54a866">gui_screen_back()</a> have been called since the last call to this method. This method should be called repeatedly from the main loop (e.g. <a class="el" href="group__app.html#ga071d403b77a003f23a0d2ab1fbb67a36">app_process()</a>) </p>
 
+<p>Definition at line <a class="el" href="screen_8c_source.html#l00041">41</a> of file <a class="el" href="screen_8c_source.html">screen.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a> != NULL) { <span class="comment">//we received the task to switch the screen</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* go = (<a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>*) <a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a>; <span class="comment">//Backup volatile variable</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a> = NULL; <span class="comment">//reset the &quot;goto instruction&quot;, since we&#39;re processing it now</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (go-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> != NULL) { <span class="comment">//The screen is not the last in the list, so we&#39;re going back</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (go-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> != <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>) { <span class="comment">//this condition should always be false</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">return</span>; <span class="comment">//list corrupted?</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a5e8f3db07ddecd10762ce1088cb2fbd8">on_leave</a>(<a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>); <span class="comment">//let the current screen free/unregister it&#39;s resources</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            go-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> = NULL; <span class="comment">//remove the current screen from the list</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        } <span class="keywordflow">else</span> { <span class="comment">//we&#39;re going forward (to a new screen)</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a> != NULL) { <span class="comment">//this is not the first screen</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a5e8f3db07ddecd10762ce1088cb2fbd8">on_leave</a>(<a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>); <span class="comment">//let the current screen free/unregister it&#39;s resources</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">next</a> = go; <span class="comment">//append the new screen to the end of the list</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            } <span class="keywordflow">else</span> { <span class="comment">//first screen ever seen</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="screen_8c.html#ad773a80ed58bd458652b3072dedea8e0">screen_list</a> = go; <span class="comment">//set the new screen as list-head</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        go-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#ae6559e38ebbedb8f94a8754256dc454b">on_enter</a>(go); <span class="comment">//let the new screen allocate/register it&#39;s resources</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a> = go; <span class="comment">//the new screen is now the current screen. Transition done</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a> != NULL) { <span class="comment">//A screen has been set</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>-&gt;<a class="code" href="struct_s_c_r_e_e_n___s.html#ac795215b462e455f4d482f38c05e0b40">on_update</a>(<a class="code" href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a>); <span class="comment">//Update current screen</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_ae6559e38ebbedb8f94a8754256dc454b"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#ae6559e38ebbedb8f94a8754256dc454b">SCREEN_S::on_enter</a></div><div class="ttdeci">SCREEN_CALLBACK on_enter</div><div class="ttdoc">The Callback which is called when the screen is entered. Add/Register all UI-Elements here...</div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00053">screen.h:53</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_a914e64c0c6cfaf4f7b2b0c3493f0cbf2"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#a914e64c0c6cfaf4f7b2b0c3493f0cbf2">SCREEN_S::next</a></div><div class="ttdeci">struct SCREEN_S * next</div><div class="ttdoc">Used internally. do not modify, do not initialize. </div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00057">screen.h:57</a></div></div>
+<div class="ttc" id="screen_8c_html_ac1cf7544db4ed268dcdb6c084608bce2"><div class="ttname"><a href="screen_8c.html#ac1cf7544db4ed268dcdb6c084608bce2">screen_current</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_current</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00032">screen.c:32</a></div></div>
+<div class="ttc" id="screen_8c_html_a351887a0341328604386e22e71b1fc1b"><div class="ttname"><a href="screen_8c.html#a351887a0341328604386e22e71b1fc1b">screen_goto</a></div><div class="ttdeci">static volatile SCREEN_STRUCT * screen_goto</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00033">screen.c:33</a></div></div>
+<div class="ttc" id="screen_8c_html_ad773a80ed58bd458652b3072dedea8e0"><div class="ttname"><a href="screen_8c.html#ad773a80ed58bd458652b3072dedea8e0">screen_list</a></div><div class="ttdeci">static SCREEN_STRUCT * screen_list</div><div class="ttdef"><b>Definition:</b> <a href="screen_8c_source.html#l00031">screen.c:31</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_a5e8f3db07ddecd10762ce1088cb2fbd8"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#a5e8f3db07ddecd10762ce1088cb2fbd8">SCREEN_S::on_leave</a></div><div class="ttdeci">SCREEN_CALLBACK on_leave</div><div class="ttdoc">The Callback which is called when the screen is left. Remove/Unregister all UI-Elements here...</div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00054">screen.h:54</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00052">screen.h:52</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html_ac795215b462e455f4d482f38c05e0b40"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html#ac795215b462e455f4d482f38c05e0b40">SCREEN_S::on_update</a></div><div class="ttdeci">SCREEN_CALLBACK on_update</div><div class="ttdoc">The Callback which is called repeatedly when the screen should be updated. Update/Redraw all UI-Eleme...</div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00055">screen.h:55</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -252,7 +346,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:19 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

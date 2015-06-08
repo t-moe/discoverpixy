@@ -106,7 +106,9 @@ Include dependency graph for numupdown.c:</div>
 <map name="common_2gui_2numupdown_8c" id="common_2gui_2numupdown_8c">
 <area shape="rect" id="node2" href="tft_8h.html" title="tft.h" alt="" coords="21,229,65,256"/><area shape="rect" id="node5" href="touch_8h.html" title="touch.h" alt="" coords="105,229,170,256"/><area shape="rect" id="node6" href="button_8h.html" title="button.h" alt="" coords="103,155,172,181"/><area shape="rect" id="node7" href="numupdown_8h.html" title="numupdown.h" alt="" coords="50,80,153,107"/></map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="numupdown_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1ebc507af747f5594ea2251c0d5b23e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="numupdown_8c.html#a1ebc507af747f5594ea2251c0d5b23e4">BASE_COLOR</a>&#160;&#160;&#160;<a class="el" href="group__tft.html#ga4a118ad3ee36468a3fa616977a64864e">RGB</a>(90,90,90)</td></tr>
@@ -140,6 +142,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="numupdown_8c_source.html#l00031">31</a> of file <a class="el" href="numupdown_8c_source.html">numupdown.c</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -157,6 +161,26 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="numupdown_8c_source.html#l00050">50</a> of file <a class="el" href="numupdown_8c_source.html">numupdown.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//Get the pointer to the numupdown: subtract the offset of the buttonDown member in the struct from the button pointer</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a>* element = button - offsetof(<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a>, buttonDown);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a> &gt; element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a29dc67311876da954d1fb5911f161fed">min</a>) { <span class="comment">//old value lies above the minimum</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a>--; <span class="comment">//let&#39;s decrease the value</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9">gui_numupdown_update</a>(element); <span class="comment">//and redraw everything</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">callback</a> != NULL) { <span class="comment">//the user provided a callback</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">callback</a>(element, element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a>); <span class="comment">//Call the user callback with the new value</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a70d80bf3a066e14217829f05fa3600f8"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">NUMUPDOWN_STRUCT::callback</a></div><div class="ttdeci">NUMUPDOWN_CALLBACK callback</div><div class="ttdoc">Callback which is executed when the value changes. </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00055">numupdown.h:55</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00048">numupdown.h:48</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a29dc67311876da954d1fb5911f161fed"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a29dc67311876da954d1fb5911f161fed">NUMUPDOWN_STRUCT::min</a></div><div class="ttdeci">int16_t min</div><div class="ttdoc">The minimum possible value (inclusive) </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00053">numupdown.h:53</a></div></div>
+<div class="ttc" id="group__numupdown_html_ga99d528cc9828d6dcf46e04673e5e51d9"><div class="ttname"><a href="group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9">gui_numupdown_update</a></div><div class="ttdeci">void gui_numupdown_update(NUMUPDOWN_STRUCT *numupdown)</div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8c_source.html#l00154">numupdown.c:154</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a7375fa3485ce43bbc621f90ce895d52a"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">NUMUPDOWN_STRUCT::value</a></div><div class="ttdeci">int16_t value</div><div class="ttdoc">The current/default value. </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00052">numupdown.h:52</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -191,6 +215,26 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="numupdown_8c_source.html#l00034">34</a> of file <a class="el" href="numupdown_8c_source.html">numupdown.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//Get the pointer to the numupdown: subtract the offset of the buttonUp member in the struct from the button pointer</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a>* element = button - offsetof(<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a>, buttonUp);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a> &lt; element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a43a190f55cab9276eb1d6b6a4f453ccf">max</a>) { <span class="comment">//old value lies below the maximum</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a>++; <span class="comment">//let&#39;s increase the value</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9">gui_numupdown_update</a>(element); <span class="comment">//and redraw everything</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">if</span> (element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">callback</a> != NULL) { <span class="comment">//the user provided a callback</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">callback</a>(element, element-&gt;<a class="code" href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">value</a>); <span class="comment">//Call the user callback with the new value</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a70d80bf3a066e14217829f05fa3600f8"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a70d80bf3a066e14217829f05fa3600f8">NUMUPDOWN_STRUCT::callback</a></div><div class="ttdeci">NUMUPDOWN_CALLBACK callback</div><div class="ttdoc">Callback which is executed when the value changes. </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00055">numupdown.h:55</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a43a190f55cab9276eb1d6b6a4f453ccf"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a43a190f55cab9276eb1d6b6a4f453ccf">NUMUPDOWN_STRUCT::max</a></div><div class="ttdeci">int16_t max</div><div class="ttdoc">The maximum possible value (inclusive) </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00054">numupdown.h:54</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html">NUMUPDOWN_STRUCT</a></div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00048">numupdown.h:48</a></div></div>
+<div class="ttc" id="group__numupdown_html_ga99d528cc9828d6dcf46e04673e5e51d9"><div class="ttname"><a href="group__numupdown.html#ga99d528cc9828d6dcf46e04673e5e51d9">gui_numupdown_update</a></div><div class="ttdeci">void gui_numupdown_update(NUMUPDOWN_STRUCT *numupdown)</div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8c_source.html#l00154">numupdown.c:154</a></div></div>
+<div class="ttc" id="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t_html_a7375fa3485ce43bbc621f90ce895d52a"><div class="ttname"><a href="struct_n_u_m_u_p_d_o_w_n___s_t_r_u_c_t.html#a7375fa3485ce43bbc621f90ce895d52a">NUMUPDOWN_STRUCT::value</a></div><div class="ttdeci">int16_t value</div><div class="ttdoc">The current/default value. </div><div class="ttdef"><b>Definition:</b> <a href="numupdown_8h_source.html#l00052">numupdown.h:52</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -233,6 +277,20 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Definition at line <a class="el" href="numupdown_8c_source.html#l00066">66</a> of file <a class="el" href="numupdown_8c_source.html">numupdown.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint8_t <a class="code" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">width</a> = 1 + (val &lt; 0); <span class="comment">//1 if positive, 2 if negative (to let space for sign)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    val = abs(val); <span class="comment">//Make the number positive</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">while</span> (val &gt;= 10) { <span class="comment">//while we have two or more digits</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        val /= 10; <span class="comment">//remove one digit</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        width++; <span class="comment">//add one character</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">width</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="ttc" id="struct_block_html_ad0eab1042455a2067c812ab8071d5376"><div class="ttname"><a href="struct_block.html#ad0eab1042455a2067c812ab8071d5376">Block::width</a></div><div class="ttdeci">uint16_t width</div><div class="ttdef"><b>Definition:</b> <a href="pixy_8h_source.html#l00082">pixy.h:82</a></div></div>
+</div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -247,7 +305,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:19 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

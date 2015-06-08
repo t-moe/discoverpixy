@@ -89,26 +89,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">pixy_control.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="pixy__control_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PIXY_CONTROL_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PIXY_CONTROL_H_</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include&lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<a href="pixy__control_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/app/pixy_control.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-06-02    aaron@duckpond.ch   e018a75 Implemented basic pi and pid controller</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-06-06    aaron@duckpond.ch   8c264c2 Comment refactoring, updated PID values</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">* 2015-06-06    aaron@duckpond.ch   a04cda9 Refactured comments and implemented a bugfix for the PID controller</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* 2015-06-07    aaron@duckpond.ch   802d3df Fixed pid controller and refactored code</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">* 2015-06-07    timolang@gmail.com  c87220d Renamed pixy_helper to pixy_frame. Updated docu of appliaction. added doxygen comments to pixy_{frame,control}.h</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef PIXY_CONTROL_H_</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define PIXY_CONTROL_H_</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include&lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;int16_t <a class="code" href="group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b">pixy_PID_Y</a>(int16_t x, int16_t w);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;int16_t <a class="code" href="group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902">pixy_PID_X</a>(int16_t x, int16_t w);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_CONTROL_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="group__pixy__control_html_gab3724cbb7b6c771af9ad87db9c0d3902"><div class="ttname"><a href="group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902">pixy_PID_X</a></div><div class="ttdeci">int16_t pixy_PID_X(int16_t x, int16_t w)</div><div class="ttdef"><b>Definition:</b> pixy_control.c:49</div></div>
-<div class="ttc" id="group__pixy__control_html_ga4b2080c6002ea758f49d748ecf8db28b"><div class="ttname"><a href="group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b">pixy_PID_Y</a></div><div class="ttdeci">int16_t pixy_PID_Y(int16_t x, int16_t w)</div><div class="ttdef"><b>Definition:</b> pixy_control.c:26</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;int16_t <a class="code" href="group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b">pixy_PID_Y</a>(int16_t x, int16_t w);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;int16_t <a class="code" href="group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902">pixy_PID_X</a>(int16_t x, int16_t w);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PIXY_CONTROL_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="group__pixy__control_html_gab3724cbb7b6c771af9ad87db9c0d3902"><div class="ttname"><a href="group__pixy__control.html#gab3724cbb7b6c771af9ad87db9c0d3902">pixy_PID_X</a></div><div class="ttdeci">int16_t pixy_PID_X(int16_t x, int16_t w)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00067">pixy_control.c:67</a></div></div>
+<div class="ttc" id="group__pixy__control_html_ga4b2080c6002ea758f49d748ecf8db28b"><div class="ttname"><a href="group__pixy__control.html#ga4b2080c6002ea758f49d748ecf8db28b">pixy_PID_Y</a></div><div class="ttdeci">int16_t pixy_PID_Y(int16_t x, int16_t w)</div><div class="ttdef"><b>Definition:</b> <a href="pixy__control_8c_source.html#l00044">pixy_control.c:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -89,31 +89,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ll_tft.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ll__tft_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// init functions</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__ll__tft.html#gac974fbb4327f3b0abaac5c33c07337c7">ll_tft_init</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// draw functions</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga74b49691a101619b939c085ff607a582">ll_tft_clear</a>(uint16_t color);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f">ll_tft_draw_line</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309">ll_tft_draw_pixel</a>(uint16_t x,uint16_t y,uint16_t color);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e">ll_tft_draw_rectangle</a>(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f">ll_tft_fill_rectangle</a>(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61">ll_tft_draw_bitmap_unscaled</a>(uint16_t x, uint16_t y, uint16_t width, uint16_t height, <span class="keyword">const</span> uint16_t *dat);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gaa2d2a94a228ad5fc8364a642f32b680d">ll_tft_draw_circle</a>(uint16_t x, uint16_t y, uint16_t r, uint16_t color);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6">ll_tft_num_fonts</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#ga8dbc8b40717be527e6f1c5a2cfc72aeb">ll_tft_font_height</a>(uint8_t fontnum);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3">ll_tft_font_width</a>(uint8_t fontnum);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga408570a2b70769255924792ce189f2c1">ll_tft_draw_char</a>(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, <span class="keywordtype">char</span> c);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<a href="ll__tft_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/lowlevel/ll_tft.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  51089aa Refactored Project Structure for use with emulator</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  1f2af9f Added more tft functions to common and emulator. Fixed eventloop.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  9a1d12a Refactored discovery, to use new project structure. Almost ready.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* 2015-04-03    timolang@gmail.com  1aa9194 Fixed Drawing of rects in Emulator. Got frames from pixy to emulator. Slooooow.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">* 2015-04-27    aaron@duckpond.ch   aed90ef Drawcircle added (emulator)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">* 2015-04-27    timolang@gmail.com  e249fb2 Added font support</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">* 2015-04-27    aaron@duckpond.ch   f0a6c3b Implemented init functions for gpio, fsmc and display</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">* 2015-04-27    aaron@duckpond.ch   0b61f21 Fixed misplacement of prototypes in ll_tft.h and implemented a propper init function.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">* 2015-05-15    timolang@gmail.com  9a16865 Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// init functions</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__ll__tft.html#gac974fbb4327f3b0abaac5c33c07337c7">ll_tft_init</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// draw functions</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga74b49691a101619b939c085ff607a582">ll_tft_clear</a>(uint16_t color);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga2560737bf118275e6ce728f6dce1e83f">ll_tft_draw_line</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gad219f39d734f774eb4f5390b5f9f8309">ll_tft_draw_pixel</a>(uint16_t x, uint16_t y, uint16_t color);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga3a0826993525194c868cc435738dd31e">ll_tft_draw_rectangle</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga0111ae5623214d3d466b2b24598f303f">ll_tft_fill_rectangle</a>(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gafaf8d5f70b46fcbdd3c700a030f14b61">ll_tft_draw_bitmap_unscaled</a>(uint16_t x, uint16_t y, uint16_t width, uint16_t height, <span class="keyword">const</span> uint16_t* dat);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#gaa2d2a94a228ad5fc8364a642f32b680d">ll_tft_draw_circle</a>(uint16_t x, uint16_t y, uint16_t r, uint16_t color);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6">ll_tft_num_fonts</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#ga8dbc8b40717be527e6f1c5a2cfc72aeb">ll_tft_font_height</a>(uint8_t fontnum);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;uint8_t <a class="code" href="group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3">ll_tft_font_width</a>(uint8_t fontnum);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__ll__tft.html#ga408570a2b70769255924792ce189f2c1">ll_tft_draw_char</a>(uint16_t x, uint16_t y, uint16_t color, uint16_t bgcolor, uint8_t font, <span class="keywordtype">char</span> c);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="ttc" id="group__ll__tft_html_gaa2d2a94a228ad5fc8364a642f32b680d"><div class="ttname"><a href="group__ll__tft.html#gaa2d2a94a228ad5fc8364a642f32b680d">ll_tft_draw_circle</a></div><div class="ttdeci">void ll_tft_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)</div></div>
 <div class="ttc" id="group__ll__tft_html_ga3639ec94b2239cc02b3c47a14f6637a3"><div class="ttname"><a href="group__ll__tft.html#ga3639ec94b2239cc02b3c47a14f6637a3">ll_tft_font_width</a></div><div class="ttdeci">uint8_t ll_tft_font_width(uint8_t fontnum)</div></div>
 <div class="ttc" id="group__ll__tft_html_gaf4b0b73ab01e1dc300ae65dc0ac029b6"><div class="ttname"><a href="group__ll__tft.html#gaf4b0b73ab01e1dc300ae65dc0ac029b6">ll_tft_num_fonts</a></div><div class="ttdeci">uint8_t ll_tft_num_fonts()</div></div>
@@ -129,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

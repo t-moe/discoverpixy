@@ -89,23 +89,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">screen_main.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="screen__main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<a href="screen__main_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/app/screen_main.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-04-27    timolang@gmail.com  cf72baa Introduced a Screen (sub) module and divided app into multiple screens.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-05-10    timolang@gmail.com  21edc56 Added doxyfile (doxygen) for the common folder. Started with doxygen comments for app and tft module.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">* 2015-05-11    timolang@gmail.com  08d9fe0 More work on doxygen module structure</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">* 2015-05-12    timolang@gmail.com  1402598 Added doxygen stuff for button module and some minor changes to touch, screen_main and tft module.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">* 2015-05-15    timolang@gmail.com  9a16865 Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* <a class="code" href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a>();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* <a class="code" href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="ttc" id="screen_8h_html"><div class="ttname"><a href="screen_8h.html">screen.h</a></div></div>
-<div class="ttc" id="group__main_html_ga6310b719fc2b06860024d0992d08acd1"><div class="ttname"><a href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a></div><div class="ttdeci">SCREEN_STRUCT * get_screen_main()</div><div class="ttdef"><b>Definition:</b> screen_main.c:169</div></div>
-<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> screen.h:34</div></div>
+<div class="ttc" id="group__main_html_ga6310b719fc2b06860024d0992d08acd1"><div class="ttname"><a href="group__main.html#ga6310b719fc2b06860024d0992d08acd1">get_screen_main</a></div><div class="ttdeci">SCREEN_STRUCT * get_screen_main()</div><div class="ttdef"><b>Definition:</b> <a href="screen__main_8c_source.html#l00196">screen_main.c:196</a></div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00052">screen.h:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

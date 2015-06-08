@@ -89,30 +89,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">screen_calibrate.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="screen__calibrate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<a href="screen__calibrate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**************************************************************************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Project:       discoverpixy</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">* Website:       https://github.com/t-moe/discoverpixy</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors:       Aaron Schmocker, Timo Lang</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">* Institution:   BFH Bern University of Applied Sciences</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">* File:          common/touch/screen_calibrate.h</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">* Version History:</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">* Date          Autor Email         SHA     Changes</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">* 2015-06-01    timolang@gmail.com  06227da Added calibrate screen (WIP). fixed bug in emulator drawing.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">* 2015-06-01    timolang@gmail.com  eb573bc Finalized calibration. Fixed a bug in screen module.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">*</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">**************************************************************************************************************************************/</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* <a class="code" href="group__calibrate.html#ga700642cd5aa866218124361499bbd072">get_screen_calibrate</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="screen_8h.html">screen.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//TODO: Move this define to a common accessible, but private header file (they are used by screen_calibrate.c and touch.c)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#acc17d86219605385a23782e12bc3899c">   28</a></span>&#160;<span class="preprocessor">#define CCENTER 20  //Pixel Distance from Sides for Calibration Cross</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a1b157b9cb83c0673aa50369fa5d52f67">   29</a></span>&#160;<span class="preprocessor">#define CLENGTH 10  //Length of the Calibration Cross Lines</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#ab27a8a2ceccbcaf9d8123727458f3cdf">   30</a></span>&#160;<span class="preprocessor">#define CBEGIN (CCENTER-CLENGTH/2)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a283da6e6504bde446407b33b014c4b54">   31</a></span>&#160;<span class="preprocessor">#define CEND (CCENTER + CLENGTH/2)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a7f32e26ea2ffbc0c5408e65b30d4f0c8">   32</a></span>&#160;<span class="preprocessor">#define DWIDTH 320 //TODO: move define to tft module or make a function out of it</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a2c0e9cadedb91327295c0249e8a3ad6f">   33</a></span>&#160;<span class="preprocessor">#define DHEIGHT 240 //TODO: move define to tft module or make a function out of it</span></div>
-<div class="ttc" id="group__calibrate_html_ga700642cd5aa866218124361499bbd072"><div class="ttname"><a href="group__calibrate.html#ga700642cd5aa866218124361499bbd072">get_screen_calibrate</a></div><div class="ttdeci">SCREEN_STRUCT * get_screen_calibrate()</div><div class="ttdef"><b>Definition:</b> screen_calibrate.c:91</div></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<a class="code" href="struct_s_c_r_e_e_n___s.html">SCREEN_STRUCT</a>* <a class="code" href="group__calibrate.html#ga700642cd5aa866218124361499bbd072">get_screen_calibrate</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//TODO: Move this define to a common accessible, but private header file (they are used by screen_calibrate.c and touch.c)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#acc17d86219605385a23782e12bc3899c">   42</a></span>&#160;<span class="preprocessor">#define CCENTER 20  //Pixel Distance from Sides for Calibration Cross</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a1b157b9cb83c0673aa50369fa5d52f67">   43</a></span>&#160;<span class="preprocessor">#define CLENGTH 10  //Length of the Calibration Cross Lines</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#ab27a8a2ceccbcaf9d8123727458f3cdf">   44</a></span>&#160;<span class="preprocessor">#define CBEGIN (CCENTER-CLENGTH/2)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a283da6e6504bde446407b33b014c4b54">   45</a></span>&#160;<span class="preprocessor">#define CEND (CCENTER + CLENGTH/2)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a7f32e26ea2ffbc0c5408e65b30d4f0c8">   46</a></span>&#160;<span class="preprocessor">#define DWIDTH 320 //TODO: move define to tft module or make a function out of it</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="screen__calibrate_8h.html#a2c0e9cadedb91327295c0249e8a3ad6f">   47</a></span>&#160;<span class="preprocessor">#define DHEIGHT 240 //TODO: move define to tft module or make a function out of it</span></div>
+<div class="ttc" id="group__calibrate_html_ga700642cd5aa866218124361499bbd072"><div class="ttname"><a href="group__calibrate.html#ga700642cd5aa866218124361499bbd072">get_screen_calibrate</a></div><div class="ttdeci">SCREEN_STRUCT * get_screen_calibrate()</div><div class="ttdef"><b>Definition:</b> <a href="screen__calibrate_8c_source.html#l00118">screen_calibrate.c:118</a></div></div>
 <div class="ttc" id="screen_8h_html"><div class="ttname"><a href="screen_8h.html">screen.h</a></div></div>
-<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> screen.h:34</div></div>
+<div class="ttc" id="struct_s_c_r_e_e_n___s_html"><div class="ttname"><a href="struct_s_c_r_e_e_n___s.html">SCREEN_S</a></div><div class="ttdef"><b>Definition:</b> <a href="screen_8h_source.html#l00052">screen.h:52</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 8 2015 01:15:03 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 8 2015 11:01:18 for discoverpixy by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
