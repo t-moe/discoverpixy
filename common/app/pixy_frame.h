@@ -1,3 +1,16 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/app/pixy_frame.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-06-07	timolang@gmail.com	c87220d	Renamed pixy_helper to pixy_frame. Updated docu of appliaction. added doxygen comments to pixy_{frame,control}.h
+*
+**************************************************************************************************************************************/
+
 #ifndef PIXY_FRAME_H
 #define PIXY_FRAME_H
 

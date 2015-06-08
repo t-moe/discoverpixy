@@ -1,3 +1,20 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/app/pixy_control.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-06-02	aaron@duckpond.ch	e018a75	Implemented basic pi and pid controller
+* 2015-06-06	aaron@duckpond.ch	8c264c2	Comment refactoring, updated PID values
+* 2015-06-06	aaron@duckpond.ch	a04cda9	Refactured comments and implemented a bugfix for the PID controller
+* 2015-06-07	aaron@duckpond.ch	802d3df	Fixed pid controller and refactored code
+* 2015-06-07	timolang@gmail.com	c87220d	Renamed pixy_helper to pixy_frame. Updated docu of appliaction. added doxygen comments to pixy_{frame,control}.h
+*
+**************************************************************************************************************************************/
+
 #ifndef PIXY_CONTROL_H_
 #define PIXY_CONTROL_H_
 

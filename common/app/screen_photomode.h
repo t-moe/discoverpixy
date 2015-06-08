@@ -1,3 +1,16 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/app/screen_photomode.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-05-15	timolang@gmail.com	27c09ba	Redesigned main menu. Moved stuff from pixytest to a new helper file and to the new "photo mode"-screen.
+*
+**************************************************************************************************************************************/
+
 #include "screen.h"
 
 /**

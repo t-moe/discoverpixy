@@ -1,3 +1,16 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/app/screen_photomode_save.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-05-16	timolang@gmail.com	62006e0	Documented pixy_helper and implemented/finished photo-mode screens! Snap some shots!
+*
+**************************************************************************************************************************************/
+
 #include "screen.h"
 
 /**
@@ -20,4 +33,3 @@ SCREEN_STRUCT* get_screen_photomodesave();
 
 /*@}*/
 /*@}*/
-
