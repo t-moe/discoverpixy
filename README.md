@@ -7,6 +7,8 @@ A Project with the Pixy cam and the STM32F4 Discovery. The project can also be r
 
 ## Documentation
 Take a look at our [docu.pdf](./doc/docu.pdf) (German)
+Also make sure to check out the [doxygen documentation](http://t-moe.github.io/discoverpixy/) for the common folder.
+
 
 ## Folder structure
 * *common*: device independent code and the "Application" itself
