@@ -1,3 +1,28 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/tft/tft.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-03	timolang@gmail.com	51089aa	Refactored Project Structure for use with emulator
+* 2015-04-03	timolang@gmail.com	1f2af9f	Added more tft functions to common and emulator. Fixed eventloop.
+* 2015-04-03	timolang@gmail.com	1aa9194	Fixed Drawing of rects in Emulator. Got frames from pixy to emulator. Slooooow.
+* 2015-04-27	aaron@duckpond.ch	aed90ef	Drawcircle added (emulator)
+* 2015-04-27	timolang@gmail.com	e249fb2	Added font support
+* 2015-04-30	timolang@gmail.com	76ea9d8	Added num up down support.
+* 2015-05-04	aaron@duckpond.ch	c224d40	Changed display init
+* 2015-05-10	timolang@gmail.com	21edc56	Added doxyfile (doxygen) for the common folder. Started with doxygen comments for app and tft module.
+* 2015-05-11	timolang@gmail.com	a175a2f	Added doxygen docu for touch module
+* 2015-05-11	timolang@gmail.com	08d9fe0	More work on doxygen module structure
+* 2015-05-12	timolang@gmail.com	1402598	Added doxygen stuff for button module and some minor changes to touch, screen_main and tft module.
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+* 2015-05-15	timolang@gmail.com	b08a897	Added tft method to draw a bmp from filesystem. Added another font to emulator.
+*
+**************************************************************************************************************************************/
+
 #ifndef TFT_H
 #define TFT_H
 
@@ -69,7 +94,7 @@ void tft_draw_line(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t 
  * @param y The y-Coordinate of the pixel
  * @param color The 16-bit color to draw the pixel with
  */
-void tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
+void tft_draw_pixel(uint16_t x, uint16_t y, uint16_t color);
 
 /**
  * Draws the outline of a rectangle onto the display.
@@ -80,7 +105,7 @@ void tft_draw_pixel(uint16_t x,uint16_t y,uint16_t color);
  * @param y2 The y-Coordinate of the end-point
  * @param color The 16-bit color to draw the pixel with
  */
-void tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);
+void tft_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
 
 /**
  * Draws a filled rectangle onto the display. The start,end points are inclusive
@@ -90,7 +115,7 @@ void tft_draw_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_
  * @param y2 The y-Coordinate of the end-point
  * @param color The 16-bit color to draw the pixel with
  */
-void tft_fill_rectangle(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2, uint16_t color);
+void tft_fill_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t color);
 
 /**
  * Draws a bitmap onto the display without scaling/cropping.

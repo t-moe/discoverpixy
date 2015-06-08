@@ -1,3 +1,18 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/gui/numupdown.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-30	timolang@gmail.com	76ea9d8	Added num up down support.
+* 2015-05-11	timolang@gmail.com	08d9fe0	More work on doxygen module structure
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+*
+**************************************************************************************************************************************/
+
 #ifndef NUMUPDOWN_H
 #define NUMUPDOWN_H
 
@@ -25,22 +40,22 @@
  * @param numupdown The pointer to the NUMUPDOWN_STRUCT where to corresponding NummericUpDown has changed it's value
  * @param value The new value of the NummericUpDown
  */
-typedef void (*NUMUPDOWN_CALLBACK)(void *numupdown, int16_t value);
+typedef void (*NUMUPDOWN_CALLBACK)(void* numupdown, int16_t value);
 
 /**
  * Structure to configure the NummericUpDown
  */
 typedef struct {
-	uint16_t x; //!< The x-Coordinate of the Top-Left Starting Point.
-	uint16_t y; //!< The y-Coordinate of the Top-Left Starting Point.
-	uint16_t fgcolor; //!< The 16-bit color of the value-text
-	int16_t value; //!< The current/default value
-	int16_t min; //!< The minimum possible value (inclusive)
-	int16_t max; //!< The maximum possible value (inclusive)
-	NUMUPDOWN_CALLBACK callback; //!< Callback which is executed when the value changes
-	
-	BUTTON_STRUCT buttonUp; //!< For internal use, don't change, don't initialize
-	BUTTON_STRUCT buttonDown; //!< For internal use, don't change, don't initialize
+    uint16_t x; //!< The x-Coordinate of the Top-Left Starting Point.
+    uint16_t y; //!< The y-Coordinate of the Top-Left Starting Point.
+    uint16_t fgcolor; //!< The 16-bit color of the value-text
+    int16_t value; //!< The current/default value
+    int16_t min; //!< The minimum possible value (inclusive)
+    int16_t max; //!< The maximum possible value (inclusive)
+    NUMUPDOWN_CALLBACK callback; //!< Callback which is executed when the value changes
+
+    BUTTON_STRUCT buttonUp; //!< For internal use, don't change, don't initialize
+    BUTTON_STRUCT buttonDown; //!< For internal use, don't change, don't initialize
 } NUMUPDOWN_STRUCT;
 
 /**

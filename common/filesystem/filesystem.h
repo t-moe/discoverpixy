@@ -1,3 +1,18 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/filesystem/filesystem.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-03	timolang@gmail.com	51089aa	Refactored Project Structure for use with emulator
+* 2015-05-10	timolang@gmail.com	e2bce8f	Added filesystem module, tests and implementation for it in emulator.
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+*
+**************************************************************************************************************************************/
+
 #ifndef FILESYSTEM_H
 #define FILESYSTEM_H
 
@@ -15,57 +30,57 @@
  * See http://en.wikipedia.org/wiki/Design_of_the_FAT_file_system#attributes for detailed description
  */
 typedef enum {
-	F_RDO=0x01,//!< File is readonly. You cannot write to it
-	F_HID=0x02,//!< File is hidden
-	F_SYS=0x04,//!< File is a system file
-	F_DIR=0x10,//!< It's a directory and not a file
-	F_ARC=0x20 //!< File has the archive flag set (probably unused)
+    F_RDO = 0x01, //!< File is readonly. You cannot write to it
+    F_HID = 0x02, //!< File is hidden
+    F_SYS = 0x04, //!< File is a system file
+    F_DIR = 0x10, //!< It's a directory and not a file
+    F_ARC = 0x20 //!< File has the archive flag set (probably unused)
 } FILE_ATTRIBUTES;
 
 /**
  * Structure which represents last modified date of a file / directory
  */
 typedef struct {
-	unsigned year : 7; //!< year from 1980 (0..127)
-	unsigned month: 4; //!< month (1..12)
-	unsigned day: 5; //!< day (1..31)
+    unsigned year : 7; //!< year from 1980 (0..127)
+    unsigned month: 4; //!< month (1..12)
+    unsigned day: 5; //!< day (1..31)
 } FILE_DATE_STRUCT;
 
 /**
  * Structure which represents last modified time of a file / directory
  */
 typedef struct {
-	unsigned hour : 5; //!< hour (0..23)
-	unsigned min: 6; //!< minute (0..59
-	unsigned sec: 5; //!< second/2 (0..29)
+    unsigned hour : 5; //!< hour (0..23)
+    unsigned min: 6; //!< minute (0..59
+    unsigned sec: 5; //!< second/2 (0..29)
 } FILE_TIME_STRUCT;
 
 /**
  * Structure which represents a file/directory entry. \sa DIRECTORY_STRUCT
  */
 typedef struct {
-	uint32_t fsize; //!< File size in bytes. 0 for directories
-	FILE_DATE_STRUCT fdate; //!< Last modified date
-	FILE_TIME_STRUCT ftime; //!< Last modified time
-	uint8_t fattrib; //!< File/Directory Attributes
-	char*    fname; //!< File/Directory name
+    uint32_t fsize; //!< File size in bytes. 0 for directories
+    FILE_DATE_STRUCT fdate; //!< Last modified date
+    FILE_TIME_STRUCT ftime; //!< Last modified time
+    uint8_t fattrib; //!< File/Directory Attributes
+    char*    fname; //!< File/Directory name
 } FILE_STRUCT;
 
 /**
  * Structure which represents an open directory with all it's entries. \sa filesystem_dir_open
  */
 typedef struct {
-	const char* path; //!< Directory path (absolute)
-	uint16_t num_files; //!< Number of files/directories in this directory
-	FILE_STRUCT* files; //!< An array with \ref num_files FILE_STRUCT entries
+    const char* path; //!< Directory path (absolute)
+    uint16_t num_files; //!< Number of files/directories in this directory
+    FILE_STRUCT* files; //!< An array with \ref num_files FILE_STRUCT entries
 } DIRECTORY_STRUCT;
 
 /**
  * Structure which represents an open file. \sa filesystem_file_open
  */
 typedef struct {
-	const char* fname; //!< The absolute file name
-	uint32_t fpos; //!< The current byte-position in the file. \sa filesystem_file_seek
+    const char* fname; //!< The absolute file name
+    uint32_t fpos; //!< The current byte-position in the file. \sa filesystem_file_seek
     uint32_t fsize; //!< The total file size in bytes
 } FILE_HANDLE;
 
@@ -73,11 +88,11 @@ typedef struct {
  * Enum to represent the success or error-code of the filesystem_file_* functions
  */
 typedef enum {
-	F_OK,          //!< Everything ok
-	F_EOF,         //!< The write/read operation tried to write/read past the end of the file. This is not a fatal error.
-	F_EACCESS,     //!< The file can not be read/written due to access problems. This is a fatal error.
-	F_INVALIDPARAM,//!< You passed invalid parameters to the function
-	F_DISKERROR    //!< A lowlevel disk-error occoured. This is a fatal error.
+    F_OK,          //!< Everything ok
+    F_EOF,         //!< The write/read operation tried to write/read past the end of the file. This is not a fatal error.
+    F_EACCESS,     //!< The file can not be read/written due to access problems. This is a fatal error.
+    F_INVALIDPARAM,//!< You passed invalid parameters to the function
+    F_DISKERROR    //!< A lowlevel disk-error occoured. This is a fatal error.
 } FILE_STATUS;
 
 /**
@@ -144,4 +159,3 @@ FILE_STATUS filesystem_file_write(FILE_HANDLE* handle, uint8_t* buf, uint32_t si
 /*@}*/
 
 #endif /* FILESYSTEM_H */
-

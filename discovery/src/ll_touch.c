@@ -1,3 +1,28 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          discovery/src/ll_touch.c
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-27	timolang@gmail.com	259d446	Added touch support to emulator. Implemented basic touch function.
+* 2015-05-12	aaron@duckpond.ch	3b2ef30	Added PID source code and Pinmap
+* 2015-05-12	aaron@duckpond.ch	5e374f4	Added datasheet and touch template
+* 2015-05-12	aaron@duckpond.ch	aec62d4	Added datasheets, updated touchsupport.
+* 2015-05-13	aaron@duckpond.ch	1396d24	Working touchcontroller communication
+* 2015-05-28	aaron@duckpond.ch	5bda699	implemented functions to get x and y coordinates and a test function
+* 2015-05-28	aaron@duckpond.ch	9b1020c	Working PENIRQ
+* 2015-05-28	aaron@duckpond.ch	30197bf	recent changes
+* 2015-05-29	aaron@duckpond.ch	7d2d1a1	Implemented basic sampling and averaging of touch coordinates using timer7
+* 2015-06-01	aaron@duckpond.ch	dff2e76	Touch recognition working
+* 2015-06-01	aaron@duckpond.ch	caa7b5c	Added IRQ for user button, fixed some touchproblems.
+* 2015-06-01	timolang@gmail.com	eb573bc	Finalized calibration. Fixed a bug in screen module.
+* 2015-06-03	timolang@gmail.com	74aa186	Made pixy_test screen working again. Had to disable pixy_service. Recalibrated initial touch values.
+*
+**************************************************************************************************************************************/
+
 #include "ll_touch.h"
 #include "screen.h"
 #include "screen_calibrate.h"
@@ -22,8 +47,8 @@
 /* Globals ----------------------------------------------------------- */
 volatile bool pen_state     = false;    // PenDown = True; PenUp = False;
 volatile bool tim_flag      = false;
-volatile uint16_t x_samples[NSAMPLE-1];
-volatile uint16_t y_samples[NSAMPLE-1];
+volatile uint16_t x_samples[NSAMPLE - 1];
+volatile uint16_t y_samples[NSAMPLE - 1];
 volatile int i;
 
 /* Prototypes -------------------------------------------------------- */
@@ -42,11 +67,11 @@ static uint16_t avg_vals(volatile uint16_t samples[], uint16_t len)
     uint16_t j = 0;
     uint32_t tmp = 0;
 
-    for(j = 0; j < len; j++){
-        tmp += samples[j];    
+    for (j = 0; j < len; j++) {
+        tmp += samples[j];
     }
 
-    return (uint16_t)(tmp/len);
+    return (uint16_t)(tmp / len);
 }
 
 static uint16_t touch_get_x_coord()
@@ -54,8 +79,8 @@ static uint16_t touch_get_x_coord()
     uint16_t buf_x = 0;
     CLEAR_CS;                                           // clear chipselect
     touch_send(REQ_X_COORD);                            // request x coordinate
-    
-    buf_x = ((uint16_t) touch_send(REQ_1_DATAB)) << 5;    
+
+    buf_x = ((uint16_t) touch_send(REQ_1_DATAB)) << 5;
     buf_x |= touch_send(REQ_1_DATAB) >> 3;
 
     SET_CS;                                             // set chipselect
@@ -69,7 +94,7 @@ static uint16_t touch_get_y_coord()
 
     CLEAR_CS;                                           // clear chipselect
     touch_send(REQ_Y_COORD);                            // request y coordinate
-    
+
     buf_y  = ((uint16_t) touch_send(REQ_1_DATAB)) << 5;
     buf_y |= touch_send(REQ_1_DATAB) >> 3;
 
@@ -80,10 +105,13 @@ static uint16_t touch_get_y_coord()
 
 static uint8_t touch_send(uint8_t dat)
 {
-  SPI_I2S_SendData(SPI2, dat);
-  while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_BSY) != RESET);  
-  while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-  return  SPI_I2S_ReceiveData(SPI2);                                    
+    SPI_I2S_SendData(SPI2, dat);
+
+    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_BSY) != RESET);
+
+    while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+
+    return  SPI_I2S_ReceiveData(SPI2);
 }
 
 void touch_test(uint16_t x, uint16_t y)
@@ -100,12 +128,12 @@ void touch_test(uint16_t x, uint16_t y)
     tft_print_line(10, 30, WHITE, TRANSPARENT, 0, (const char*)ys);
 }
 
-bool ll_touch_init() 
+bool ll_touch_init()
 {
     touch_set_value_convert_mode(true); //Tell the touch module that we need converted values and display calibration
     touch_set_calibration_values(526, 2922, 588, 2736); //set calibration values (copied from memory using the debugger)
-    
-    
+
+
     //We have a ADS7843 Touch controller
     //Datasheet: http://www.ti.com/lit/ds/symlink/ads7843.pdf
 
@@ -124,13 +152,13 @@ bool ll_touch_init()
     GPIO_SPI2_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
     GPIO_SPI2_InitStructure.GPIO_PuPd   = GPIO_PuPd_NOPULL;
     GPIO_Init(GPIOB, &GPIO_SPI2_InitStructure);
-    
+
     SET_CS; // set chip select
 
     /* fill gpio init struct and init gpio */
     GPIO_StructInit(&GPIO_SPI2_InitStructure);
     GPIO_SPI2_InitStructure.GPIO_Pin    = GPIO_Pin_9;           // 9 = SPI2_CS
-    GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_OUT; 
+    GPIO_SPI2_InitStructure.GPIO_Mode   = GPIO_Mode_OUT;
     GPIO_SPI2_InitStructure.GPIO_OType  = GPIO_OType_PP;
     GPIO_SPI2_InitStructure.GPIO_Speed  = GPIO_Speed_50MHz;
     GPIO_Init(GPIOB, &GPIO_SPI2_InitStructure);
@@ -139,7 +167,7 @@ bool ll_touch_init()
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource10, GPIO_AF_SPI2);
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource14, GPIO_AF_SPI2);
     GPIO_PinAFConfig(GPIOB, GPIO_PinSource15, GPIO_AF_SPI2);
-    
+
     SPI_I2S_DeInit(SPI2); // Clear spi initialisation
 
     /* fill spi init structure */
@@ -184,9 +212,9 @@ static void init_exti()
     gpio.GPIO_PuPd   = GPIO_PuPd_UP;
     gpio.GPIO_Speed  = GPIO_Speed_100MHz;
     GPIO_Init(GPIOC, &gpio);
-    
+
     SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource1); // Bind Exti_line1 to PC1
-    
+
     /* Set GPIOA0 as input */
     gpio.GPIO_Mode   = GPIO_Mode_IN;
     gpio.GPIO_OType  = GPIO_OType_OD;
@@ -201,10 +229,10 @@ static void init_exti()
     EXTI_StructInit(&exti);
     exti.EXTI_Line      = EXTI_Line1;
     exti.EXTI_Mode      = EXTI_Mode_Interrupt;
-    exti.EXTI_Trigger   = EXTI_Trigger_Falling;      // Trigger on falling edge (PENIRQ) 
+    exti.EXTI_Trigger   = EXTI_Trigger_Falling;      // Trigger on falling edge (PENIRQ)
     exti.EXTI_LineCmd   = ENABLE;
     EXTI_Init(&exti);
-    
+
     /* EXTI on PA0 */
     EXTI_StructInit(&exti);
     exti.EXTI_Line      = EXTI_Line0;
@@ -219,7 +247,7 @@ static void init_exti()
     nvic.NVIC_IRQChannelSubPriority = 0x00;          // Set sub priority
     nvic.NVIC_IRQChannelCmd = ENABLE;                // Enable interrupt
     NVIC_Init(&nvic);                                // Config NVIC
-    
+
     /* Add IRQ vector to NVIC */
     nvic.NVIC_IRQChannel = EXTI0_IRQn;               // PA0 -> EXTI_Line0 -> EXTI0_IRQn vector
     nvic.NVIC_IRQChannelPreemptionPriority = 0x00;   // Set priority
@@ -232,7 +260,7 @@ static void init_timer()
 {
     TIM_TimeBaseInitTypeDef t;
     const int APB1_CLK = 42E6;
-    
+
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM7, ENABLE);    // Enable clock for TIM6
 
     /* Timer 7 configuration */
@@ -263,16 +291,16 @@ void EXTI1_IRQHandler()
 
 void TIM7_IRQHandler()
 {
-    if(TIM_GetFlagStatus(TIM7, TIM_IT_Update) == SET){      // Make sure the interrupt flag is set
-  
+    if (TIM_GetFlagStatus(TIM7, TIM_IT_Update) == SET) {    // Make sure the interrupt flag is set
+
         TIM_Cmd(TIM7, DISABLE);                             // Disable the timer during the measuring
 
-        if(PENIRQ){                                         // Only do this if the PENIRQ line is still low
-            for(i = 0; i < (NSAMPLE-1); i++){               // Sample 16 times
+        if (PENIRQ) {                                       // Only do this if the PENIRQ line is still low
+            for (i = 0; i < (NSAMPLE - 1); i++) {           // Sample 16 times
                 x_samples[i] = touch_get_x_coord();
                 y_samples[i] = touch_get_y_coord();
             }
-    
+
             touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_DOWN);    // Update position
             //tft_draw_pixel(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), RED);
             TIM_Cmd(TIM7, ENABLE);                                                                          // Reenable timer
@@ -281,8 +309,8 @@ void TIM7_IRQHandler()
             touch_add_raw_event(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), TOUCH_UP);      // Update position one last time
             //tft_draw_pixel(avg_vals(x_samples, NSAMPLE), avg_vals(y_samples, NSAMPLE), RED);
             TIM_Cmd(TIM7, DISABLE);                                                                         // Disable timer
-        } 
+        }
 
         TIM_ClearFlag(TIM7, TIM_IT_Update);                                                                 // Clear timer interrupt flag
-    }    
+    }
 }

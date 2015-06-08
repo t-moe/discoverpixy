@@ -1,3 +1,19 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/gui/checkbox.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-27	timolang@gmail.com	b300ac5	Added Checkbox support
+* 2015-05-11	timolang@gmail.com	08d9fe0	More work on doxygen module structure
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+* 2015-05-17	timolang@gmail.com	2d46336	Improved comments in implementation of button, checkbox, numupdown, tft, touch and screen modules/submodules.
+*
+**************************************************************************************************************************************/
+
 #ifndef CHECKBOX_H
 #define CHECKBOX_H
 
@@ -26,16 +42,16 @@
  * @param checkbox The pointer to the CHECKBOX_STRUCT where to corresponding Checkbox has changed the state
  * @param checked A boolean which indicates whether the checkbox is now checked or not.
  */
-typedef void (*CHECKBOX_CALLBACK)(void *checkbox, bool checked);
+typedef void (*CHECKBOX_CALLBACK)(void* checkbox, bool checked);
 
 /**
  * Structure to configure the Checkbox
  */
 typedef struct {
-	TOUCH_AREA_STRUCT base; //!<  Basic geometry of the Checkbox. You only need to set the x1, y1, x2, y2 members of this struct.
-	uint16_t fgcolor; //!< The 16-bit color of the tickmark
-	bool checked; //!< A boolean which indicates whether or not the checkbox is currently checked.
-	CHECKBOX_CALLBACK callback; //!< Callback which is executed when the checkbox changes state
+    TOUCH_AREA_STRUCT base; //!<  Basic geometry of the Checkbox. You only need to set the x1, y1, x2, y2 members of this struct.
+    uint16_t fgcolor; //!< The 16-bit color of the tickmark
+    bool checked; //!< A boolean which indicates whether or not the checkbox is currently checked.
+    CHECKBOX_CALLBACK callback; //!< Callback which is executed when the checkbox changes state
 } CHECKBOX_STRUCT;
 
 /**

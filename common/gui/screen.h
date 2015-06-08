@@ -1,3 +1,21 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/gui/screen.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-27	timolang@gmail.com	cf72baa	Introduced a Screen (sub) module and divided app into multiple screens.
+* 2015-04-27	timolang@gmail.com	77e6d0e	Fixed screen implementation.
+* 2015-05-11	timolang@gmail.com	08d9fe0	More work on doxygen module structure
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+* 2015-05-17	timolang@gmail.com	2d46336	Improved comments in implementation of button, checkbox, numupdown, tft, touch and screen modules/submodules.
+* 2015-06-06	timolang@gmail.com	c06661d	Fixed some outdated comments in source code. Documented Gui Module in docu.
+*
+**************************************************************************************************************************************/
+
 #ifndef SCREEN_H
 #define SCREEN_H
 
@@ -12,7 +30,7 @@
 /**
  * @defgroup screen Screen
  * The Screen Submodule provides an api to navigate between different "screens" on the UI.
- * Each screen must provide an enter, update and a leave method; which will be called from this module at the right time. 
+ * Each screen must provide an enter, update and a leave method; which will be called from this module at the right time.
  * The implemented screens of the application are documented in the \ref screens module.
  */
 /*@}*/
@@ -31,12 +49,12 @@ typedef void (*SCREEN_CALLBACK)(void* screen);
 /**
  * Structure to configure the Screen
  */
-typedef struct SCREEN_S{
-	SCREEN_CALLBACK on_enter; //!< The Callback which is called when the screen is entered. Add/Register all UI-Elements here
-	SCREEN_CALLBACK on_leave; //!< The Callback which is called when the screen is left. Remove/Unregister all UI-Elements here
-	SCREEN_CALLBACK on_update; //!< The Callback which is called repeatedly when the screen should be updated. Update/Redraw all UI-Elements here
+typedef struct SCREEN_S {
+    SCREEN_CALLBACK on_enter; //!< The Callback which is called when the screen is entered. Add/Register all UI-Elements here
+    SCREEN_CALLBACK on_leave; //!< The Callback which is called when the screen is left. Remove/Unregister all UI-Elements here
+    SCREEN_CALLBACK on_update; //!< The Callback which is called repeatedly when the screen should be updated. Update/Redraw all UI-Elements here
 
-	struct SCREEN_S* next; //!< Used internally. do not modify, do not initialize
+    struct SCREEN_S* next; //!< Used internally. do not modify, do not initialize
 } SCREEN_STRUCT;
 
 

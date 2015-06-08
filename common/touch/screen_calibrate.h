@@ -1,3 +1,17 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/touch/screen_calibrate.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-06-01	timolang@gmail.com	06227da	Added calibrate screen (WIP). fixed bug in emulator drawing.
+* 2015-06-01	timolang@gmail.com	eb573bc	Finalized calibration. Fixed a bug in screen module.
+*
+**************************************************************************************************************************************/
+
 #include "screen.h"
 
 /**

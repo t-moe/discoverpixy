@@ -1,3 +1,21 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/touch/touch.c
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-27	timolang@gmail.com	259d446	Added touch support to emulator. Implemented basic touch function.
+* 2015-05-02	timolang@gmail.com	3281616	Added some more touch functions. Improved pixy test. Drag the Image around!
+* 2015-05-17	timolang@gmail.com	2d46336	Improved comments in implementation of button, checkbox, numupdown, tft, touch and screen modules/submodules.
+* 2015-06-01	timolang@gmail.com	06227da	Added calibrate screen (WIP). fixed bug in emulator drawing.
+* 2015-06-01	timolang@gmail.com	eb573bc	Finalized calibration. Fixed a bug in screen module.
+* 2015-06-06	timolang@gmail.com	c06661d	Fixed some outdated comments in source code. Documented Gui Module in docu.
+*
+**************************************************************************************************************************************/
+
 #include "touch.h"
 #include "ll_touch.h"
 #include "screen_calibrate.h"
@@ -18,184 +36,179 @@
 TOUCH_AREA_STRUCT* areas[NUM_AREAS] = {NULL}; //list with pointers to all managed touch area's
 
 volatile POINT_STRUCT pos; //the last touch point
-volatile TOUCH_STATE oldState=TOUCH_UP; //the last touch state
+volatile TOUCH_STATE oldState = TOUCH_UP; //the last touch state
 volatile bool calibration = false; //whether or not we're currently calibrating
 
-bool use_calibration=false; //Whether or not the current platform needs calibration and recalc of the values
+bool use_calibration = false; //Whether or not the current platform needs calibration and recalc of the values
 
 //Calibration parameters (dummy values).
-int cal_xs=10;
-int cal_dx=100;
-int cal_ys=10;
-int cal_dy=100;
+int cal_xs = 10;
+int cal_dx = 100;
+int cal_ys = 10;
+int cal_dy = 100;
 
 
-void touch_set_calibration_values(int xs, int dx, int ys, int dy) {
-	cal_xs = xs;
-	cal_ys = ys;
-	cal_dx = dx;
-	cal_dy = dy;
+void touch_set_calibration_values(int xs, int dx, int ys, int dy)
+{
+    cal_xs = xs;
+    cal_ys = ys;
+    cal_dx = dx;
+    cal_dy = dy;
 }
 
 
 
-bool touch_init() {
-	return ll_touch_init();
+bool touch_init()
+{
+    return ll_touch_init();
 }
 
-void touch_set_value_convert_mode(bool uc) {
-	use_calibration=uc;
+void touch_set_value_convert_mode(bool uc)
+{
+    use_calibration = uc;
 }
 
 
-bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state) {
-	//Update current and old position/state
-	bool penDown = (state==TOUCH_DOWN);
-	bool oldPenDown = (oldState==TOUCH_DOWN);
-	oldState=state;
+bool touch_add_raw_event(uint16_t touchX, uint16_t touchY, TOUCH_STATE state)
+{
+    //Update current and old position/state
+    bool penDown = (state == TOUCH_DOWN);
+    bool oldPenDown = (oldState == TOUCH_DOWN);
+    oldState = state;
 
-	if(calibration)	//If in Calibration mode
-	{
-		if(penDown)
-		{
-			pos.x=touchX;
-			pos.y=touchY;
-		}
-		else
-		{
-			if(oldPenDown) //Run only if we got at least one pen down
-				calibration=0;	 //Calibration finish (Touch X and Y are the values from the last measure, where the pen was down)
-		}
-		return true;
-	}
+    if (calibration) {	//If in Calibration mode
+        if (penDown) {
+            pos.x = touchX;
+            pos.y = touchY;
+        } else {
+            if (oldPenDown) { //Run only if we got at least one pen down
+                calibration = 0;    //Calibration finish (Touch X and Y are the values from the last measure, where the pen was down)
+            }
+        }
 
-	//If we reach this point we're not in calibration mode and we need to process the event and call the registred handlers..
+        return true;
+    }
 
-	if(use_calibration) { //the underlying touch hardware uses calibration
-		//Calculate the real touch position out of the passed ones, and the calibration values
-		pos.x=touchX=(((long)(DWIDTH-2*CCENTER)*2*(long)((long)touchX-cal_xs)/cal_dx+1)>>1)+CCENTER;
-		pos.y=touchY=(((long)(DHEIGHT-2*CCENTER)*2*(long)((long)touchY-cal_ys)/cal_dy+1)>>1)+CCENTER;
-	} else { //no conversion needed for the underlying hardware
-		pos.x=touchX;
-		pos.y=touchY;
-	}
+    //If we reach this point we're not in calibration mode and we need to process the event and call the registred handlers..
 
- 	if(penDown) //pen is down now
-    {
- 		//tft_draw_pixel(touchX,touchY,WHITE);
-		if(!oldPenDown) //pen wasn't down before (positive edge) => First Touch
-		{
-			for(int z=0; z < NUM_AREAS; z++) // For every touch area
-			{
-				//Check if pos is inside area
-				if(areas[z]!=NULL  && touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2 )
-				{
-					areas[z]->flags=1; //Save PenInside=1
-					if(areas[z]->hookedActions & PEN_DOWN) //The user wants to receive pen down events
-						areas[z]->callback(areas[z],PEN_DOWN); //Send event to user callback
-				}
-			}
-		}
-		else //Pen was down before => Second, Third event in row
-		{
-			for(int z=0; z < NUM_AREAS; z++) // For every touch area
-			{
-				if(areas[z]!=NULL )
-				{
-					//Check if pos is inside area
-					if(touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2)
-					{
-						if(areas[z]->flags==0) //Pen was not inside before (PenInside==0)
-						{
-							areas[z]->flags=1; //Pen is inside now (PenInside=1)
-							if(areas[z]->hookedActions & PEN_ENTER) //The user wants to receive pen enter events
-								areas[z]->callback(areas[z],PEN_ENTER);
-						}
-					}
-					else if(areas[z]->flags) //Pos not inside area, but it was before (PenInside==1)
-					{
-						areas[z]->flags=0; //Pen is no longer inside (PenInside=0)
-						if(areas[z]->hookedActions & PEN_LEAVE) //The user wants to receive pen leave events
-							areas[z]->callback(areas[z],PEN_LEAVE);
-					}
-				}
-			}
-		}
-		for(int z=0; z < NUM_AREAS; z++) // For every touch area
-		{
-			if(areas[z]!=NULL && (areas[z]->hookedActions&PEN_MOVE)) //User want's to receive pen move events
-			{
-				//Check if pos is inside area
-				if(touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2)
-				{
-					areas[z]->callback(areas[z],PEN_MOVE);
-				}
-			}
-		}
-	}
-	else //pen is not down now
-	{
-		if(oldPenDown) //but it was down before (negative edge)
-		{
-			for(int z=0; z < NUM_AREAS; z++) // For every touch area
-			{
-				//Check if pos is inside area
-				if(areas[z]!=NULL && touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2 )
-				{
-					areas[z]->flags=0; //The pen is no longer inside (PenInside = 0);
-					if(areas[z]->hookedActions & PEN_UP) //user want's to receive pen up events
-						areas[z]->callback(areas[z],PEN_UP);
-				}
-			}
-		}
-	}
-	return true;
+    if (use_calibration) { //the underlying touch hardware uses calibration
+        //Calculate the real touch position out of the passed ones, and the calibration values
+        pos.x = touchX = (((long)(DWIDTH - 2 * CCENTER) * 2 * (long)((long)touchX - cal_xs) / cal_dx + 1) >> 1) + CCENTER;
+        pos.y = touchY = (((long)(DHEIGHT - 2 * CCENTER) * 2 * (long)((long)touchY - cal_ys) / cal_dy + 1) >> 1) + CCENTER;
+    } else { //no conversion needed for the underlying hardware
+        pos.x = touchX;
+        pos.y = touchY;
+    }
+
+    if (penDown) { //pen is down now
+        //tft_draw_pixel(touchX,touchY,WHITE);
+        if (!oldPenDown) { //pen wasn't down before (positive edge) => First Touch
+            for (int z = 0; z < NUM_AREAS; z++) { // For every touch area
+                //Check if pos is inside area
+                if (areas[z] != NULL  && touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2) {
+                    areas[z]->flags = 1; //Save PenInside=1
+
+                    if (areas[z]->hookedActions & PEN_DOWN) { //The user wants to receive pen down events
+                        areas[z]->callback(areas[z], PEN_DOWN);    //Send event to user callback
+                    }
+                }
+            }
+        } else { //Pen was down before => Second, Third event in row
+            for (int z = 0; z < NUM_AREAS; z++) { // For every touch area
+                if (areas[z] != NULL) {
+                    //Check if pos is inside area
+                    if (touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2) {
+                        if (areas[z]->flags == 0) { //Pen was not inside before (PenInside==0)
+                            areas[z]->flags = 1; //Pen is inside now (PenInside=1)
+
+                            if (areas[z]->hookedActions & PEN_ENTER) { //The user wants to receive pen enter events
+                                areas[z]->callback(areas[z], PEN_ENTER);
+                            }
+                        }
+                    } else if (areas[z]->flags) { //Pos not inside area, but it was before (PenInside==1)
+                        areas[z]->flags = 0; //Pen is no longer inside (PenInside=0)
+
+                        if (areas[z]->hookedActions & PEN_LEAVE) { //The user wants to receive pen leave events
+                            areas[z]->callback(areas[z], PEN_LEAVE);
+                        }
+                    }
+                }
+            }
+        }
+
+        for (int z = 0; z < NUM_AREAS; z++) { // For every touch area
+            if (areas[z] != NULL && (areas[z]->hookedActions & PEN_MOVE)) { //User want's to receive pen move events
+                //Check if pos is inside area
+                if (touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2) {
+                    areas[z]->callback(areas[z], PEN_MOVE);
+                }
+            }
+        }
+    } else { //pen is not down now
+        if (oldPenDown) { //but it was down before (negative edge)
+            for (int z = 0; z < NUM_AREAS; z++) { // For every touch area
+                //Check if pos is inside area
+                if (areas[z] != NULL && touchX >= areas[z]->x1 && touchX <= areas[z]->x2 && touchY >= areas[z]->y1 && touchY <= areas[z]->y2) {
+                    areas[z]->flags = 0; //The pen is no longer inside (PenInside = 0);
+
+                    if (areas[z]->hookedActions & PEN_UP) { //user want's to receive pen up events
+                        areas[z]->callback(areas[z], PEN_UP);
+                    }
+                }
+            }
+        }
+    }
+
+    return true;
 }
 
 bool touch_have_empty(unsigned char num)
 {
-	//go through pointer array and check for free spaces
-	for(unsigned char i=0; i<NUM_AREAS; i++)
-	{
-		if(areas[i]==NULL) num--; //a free space was found, we need one less
-		if(num==0) return true; //enough free spaces found
-	}
-	return false; //not enough free spaces found
+    //go through pointer array and check for free spaces
+    for (unsigned char i = 0; i < NUM_AREAS; i++) {
+        if (areas[i] == NULL) {
+            num--;    //a free space was found, we need one less
+        }
+
+        if (num == 0) {
+            return true;    //enough free spaces found
+        }
+    }
+
+    return false; //not enough free spaces found
 }
 
 bool touch_register_area(TOUCH_AREA_STRUCT* area)
 {
-	//go through pointer array and check for free space
-	for(unsigned char i=0; i<NUM_AREAS; i++)
-	{
-		if(areas[i]==NULL) //free space found
-		{
-			area->flags=0; //we start with empty flags (PenInside=0)
-			areas[i]=area; //save pointer into list
-			return true;
-		}
-	}
-	return false; //no free space found
+    //go through pointer array and check for free space
+    for (unsigned char i = 0; i < NUM_AREAS; i++) {
+        if (areas[i] == NULL) { //free space found
+            area->flags = 0; //we start with empty flags (PenInside=0)
+            areas[i] = area; //save pointer into list
+            return true;
+        }
+    }
+
+    return false; //no free space found
 }
 
 void touch_unregister_area(TOUCH_AREA_STRUCT* area)
 {
-	if(area==NULL) return;
+    if (area == NULL) {
+        return;
+    }
 
-	//go through pointer array and find the area to remove
-	for(unsigned char i=0; i<NUM_AREAS; i++)
-	{
-		if(areas[i]==area) //area found in pointer array at pos i
-		{
-			areas[i]=NULL; //set pointer in list to NULL again
-			break;
-		}
-	}
+    //go through pointer array and find the area to remove
+    for (unsigned char i = 0; i < NUM_AREAS; i++) {
+        if (areas[i] == area) { //area found in pointer array at pos i
+            areas[i] = NULL; //set pointer in list to NULL again
+            break;
+        }
+    }
 }
 
 
-POINT_STRUCT touch_get_last_point() {
-	return pos;
+POINT_STRUCT touch_get_last_point()
+{
+    return pos;
 }
-
-

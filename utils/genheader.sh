@@ -2,6 +2,7 @@
 
 echo "/**************************************************************************************************************************************"
 echo "* Project:       discoverpixy"
+echo "* Website:       https://github.com/t-moe/discoverpixy"
 echo "* Authors:       Aaron Schmocker, Timo Lang"
 echo "* Institution:   BFH Bern University of Applied Sciences"
 echo "* File:          $1"

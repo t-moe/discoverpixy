@@ -1,3 +1,16 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/app/screen_tracking.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-05-16	timolang@gmail.com	e46314b	Added Tracking Screen and implemented "Reference Tracking" and "Color Region Selection"
+*
+**************************************************************************************************************************************/
+
 #include "screen.h"
 
 /**
@@ -16,8 +29,8 @@
  * Enum which contains the available tracking implementations
  */
 enum Tracking_Implementation {
-	OUR_TRACKING,     //!< Our own tracking PID implementation
-	REFERENCE_TRACKING//!< Pixy's internal tracking implementation
+    OUR_TRACKING,     //!< Our own tracking PID implementation
+    REFERENCE_TRACKING//!< Pixy's internal tracking implementation
 };
 
 /**

@@ -1,3 +1,25 @@
+/**************************************************************************************************************************************
+* Project:       discoverpixy
+* Website:       https://github.com/t-moe/discoverpixy
+* Authors:       Aaron Schmocker, Timo Lang
+* Institution:   BFH Bern University of Applied Sciences
+* File:          common/touch/touch.h
+*
+* Version History:
+* Date			Autor Email			SHA		Changes
+* 2015-04-03	timolang@gmail.com	51089aa	Refactored Project Structure for use with emulator
+* 2015-04-27	timolang@gmail.com	259d446	Added touch support to emulator. Implemented basic touch function.
+* 2015-04-27	timolang@gmail.com	cf72baa	Introduced a Screen (sub) module and divided app into multiple screens.
+* 2015-05-02	timolang@gmail.com	3281616	Added some more touch functions. Improved pixy test. Drag the Image around!
+* 2015-05-11	timolang@gmail.com	a175a2f	Added doxygen docu for touch module
+* 2015-05-11	timolang@gmail.com	08d9fe0	More work on doxygen module structure
+* 2015-05-12	timolang@gmail.com	1402598	Added doxygen stuff for button module and some minor changes to touch, screen_main and tft module.
+* 2015-05-15	timolang@gmail.com	9a16865	Added doxgen comments to filesyste, checkbox, numupdown and screen module. And some minor changes to the other modules.
+* 2015-06-01	timolang@gmail.com	06227da	Added calibrate screen (WIP). fixed bug in emulator drawing.
+* 2015-06-01	timolang@gmail.com	eb573bc	Finalized calibration. Fixed a bug in screen module.
+*
+**************************************************************************************************************************************/
+
 #ifndef TOUCH_H
 #define TOUCH_H
 
@@ -19,8 +41,8 @@
 Enum to describe the current Touch State. \sa touch_add_raw_event
  */
 typedef enum {
-	TOUCH_UP, //!< The display is currently not touched
-	TOUCH_DOWN //!< The display is currently touched at some point
+    TOUCH_UP, //!< The display is currently not touched
+    TOUCH_DOWN //!< The display is currently touched at some point
 } TOUCH_STATE ;
 
 /**
@@ -28,12 +50,12 @@ typedef enum {
  * You can OR-combine them. \sa touch_register_area
  */
 typedef enum {
-	NONE=0x00,      //!< Do not receive any events
-	PEN_DOWN=0x01,  //!< Receive an event when the pen goes down inside the region
-	PEN_UP=0x02,    //!< Receive an event when the pen goes up inside the region
-	PEN_ENTER=0x04, //!< Receive an event when the pen enters the region (pen was down before)
-	PEN_LEAVE=0x08, //!< Receive an event when the pen leaves the region (pen was inside region before)
-	PEN_MOVE=0x10   //!< Receive an event when the pen moves inside the region (pen is down)
+    NONE = 0x00,    //!< Do not receive any events
+    PEN_DOWN = 0x01, //!< Receive an event when the pen goes down inside the region
+    PEN_UP = 0x02,  //!< Receive an event when the pen goes up inside the region
+    PEN_ENTER = 0x04, //!< Receive an event when the pen enters the region (pen was down before)
+    PEN_LEAVE = 0x08, //!< Receive an event when the pen leaves the region (pen was inside region before)
+    PEN_MOVE = 0x10 //!< Receive an event when the pen moves inside the region (pen is down)
 } TOUCH_ACTION;
 
 /**
@@ -48,13 +70,13 @@ typedef void (*TOUCH_CALLBACK)(void* touchArea, TOUCH_ACTION triggeredAction);
  * Structure to configure a Touch Area
  */
 typedef struct {
-        TOUCH_ACTION hookedActions; //!< Actions to listen to
-        uint16_t x1; //!< Top Left X-Coordinate of Area
-        uint16_t y1; //!< Top Left Y-Coordinate of Area
-        uint16_t x2; //!< Bottom Right X-Coordinate of Area
-        uint16_t y2; //!< Bottom Right Y-Coordinate of Area
-        TOUCH_CALLBACK callback; //!< Callback which is executed when an event occurred in this Area.
-        uint8_t flags; //!< For internal use, don't change, don't initialize
+    TOUCH_ACTION hookedActions; //!< Actions to listen to
+    uint16_t x1; //!< Top Left X-Coordinate of Area
+    uint16_t y1; //!< Top Left Y-Coordinate of Area
+    uint16_t x2; //!< Bottom Right X-Coordinate of Area
+    uint16_t y2; //!< Bottom Right Y-Coordinate of Area
+    TOUCH_CALLBACK callback; //!< Callback which is executed when an event occurred in this Area.
+    uint8_t flags; //!< For internal use, don't change, don't initialize
 } TOUCH_AREA_STRUCT;
 
 
@@ -62,8 +84,8 @@ typedef struct {
  * Struct which represents a 2D point on the display
  */
 typedef struct {
-	uint16_t x; //!< The X-Coordinate of the point
-	uint16_t y; //!< The Y-Coordinate of the point
+    uint16_t x; //!< The X-Coordinate of the point
+    uint16_t y; //!< The Y-Coordinate of the point
 } POINT_STRUCT;
 
 /**
@@ -82,7 +104,7 @@ bool touch_init();
  * @param state Whether the pen is up or down
  * @return True on success
  */
-bool touch_add_raw_event(uint16_t x, uint16_t y,TOUCH_STATE state);
+bool touch_add_raw_event(uint16_t x, uint16_t y, TOUCH_STATE state);
 
 /**
  * Checks whether or not we have memory to manage and track additional \p num TOUCH_AREA_STRUCT%s
